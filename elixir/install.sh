@@ -1,5 +1,10 @@
 #!/bin/bash
-
+function colors {
+  GREEN="\e[32m"
+  YELLOW="\e[33m"
+  RED="\e[39m"
+  NORMAL="\e[0m"
+}
 # Функция для отображения логотипа
 display_logo() {
   echo -e '\e[0;37m'
@@ -12,6 +17,10 @@ display_logo() {
   echo -e '\e[0m'
 
   echo -e "\nПідписуйтеся на канал Vitok про Bitok щоб бути в курсі самих актуальних нод - https://t.me/vitoooookBitok"
+}
+
+function line {
+  echo -e "${GREEN}-----------------------------------------------------------------------------${NORMAL}"
 }
 
 function install_docker {

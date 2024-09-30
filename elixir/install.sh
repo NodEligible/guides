@@ -6,8 +6,6 @@ function colors {
   NORMAL="\e[0m"
 }
 
-#!/bin/bash
-
 # Функция для отображения логотипа
 display_logo() {
   echo -e '\e[0;37m'

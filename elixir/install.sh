@@ -5,6 +5,7 @@ function colors {
   RED="\e[39m"
   NORMAL="\e[0m"
 }
+
 # Функция для отображения логотипа
 display_logo() {
   echo -e '\e[0;37m'

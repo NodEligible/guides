@@ -104,6 +104,5 @@ mv "$TMP_FILE" "$FILE"
 # Создание сессии screen и запуск ноды
 log_message 'Создание screen сессии и запуск ноды Rivalz...'
 screen -S rivalz -dm bash -c 'rivalz run'
-screen -r rivalz
 
-log_message 'Установка завершена. Нода Rivalz запущена в screen сессии "rivalz_node".'
+screen -r rivalz

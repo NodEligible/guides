@@ -20,6 +20,9 @@ display_logo() {
   echo -e "\nПідписуйтеся на канал Vitok про Bitok щоб бути в курсі самих актуальних нод - https://t.me/vitoooookBitok"
 }
 
+# Отображение логотипа
+display_logo
+
 function line {
   echo -e "${GREEN}-----------------------------------------------------------------------------${NORMAL}"
 }

@@ -7,7 +7,7 @@ function colors {
 }
 
 function logo {
-  curl -s https://raw.githubusercontent.com/DOUBLE-TOP/tools/main/doubletop.sh | bash
+  curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 }
 
 function line {
@@ -17,7 +17,7 @@ function line {
 function install_docker {
     if ! type "docker" > /dev/null; then
         echo -e "${YELLOW}Устанавливаем докер${NORMAL}"
-        bash <(curl -s https://raw.githubusercontent.com/DOUBLE-TOP/tools/main/docker.sh)
+        bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
     else
         echo -e "${YELLOW}Докер уже установлен. Переходим на следующий шаг${NORMAL}"
     fi

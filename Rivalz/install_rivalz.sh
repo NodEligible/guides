@@ -1,14 +1,17 @@
 #!/bin/bash
 
-# Отображение логотипа
-display_logo {
-bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh)
+# Функция для отображения логотипа
+display_logo() {
+curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 }
 
 # Функция для логирования
 log_message() {
   echo -e "\e[33m'$1'\e[0m"
 }
+
+# Отображение логотипа
+display_logo
 
 # Вывод надписи зеленым цветом
 log_message 'Запуск установки ноды Rivalz...'

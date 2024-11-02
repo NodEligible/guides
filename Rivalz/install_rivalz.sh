@@ -2,7 +2,7 @@
 
 # Функция для отображения логотипа
 function logo {
-  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh)
+  curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 }
 
 # Функция для логирования

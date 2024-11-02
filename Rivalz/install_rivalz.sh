@@ -1,6 +1,9 @@
 #!/bin/bash
 
+# Отображение логотипа
+display_logo {
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh)
+}
 
 # Функция для логирования
 log_message() {

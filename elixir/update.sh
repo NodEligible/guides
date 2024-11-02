@@ -1,5 +1,9 @@
 #!/bin/bash
 
+function logo {
+  curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
+}
+
 cd $HOME/elixir/
 
 docker kill elixir &>/dev/null

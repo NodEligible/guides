@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Функция для отображения логотипа
-function logo {
-  curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
+function printLogo {
+  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh)
 }
 
 # Функция для логирования

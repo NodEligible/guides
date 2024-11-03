@@ -1,13 +1,8 @@
 #!/bin/bash
-
-# Функция для отображения логотипа
-display_logo() {
-curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
+exists()
+{
+  command -v "$1" >/dev/null 2>&1
 }
-
-# Отображение логотипа
-display_logo
-
 # Check if 'curl' is installed
 if exists curl; then
   echo ""
@@ -22,6 +17,7 @@ bash_profile=$HOME/.bash_profile
 if [ -f "$bash_profile" ]; then
     source $HOME/.bash_profile
 fi
+sleep 1 && curl -s https://api.nodes.guru/logo.sh | bash && sleep 1
 
 cd $HOME
 sudo install -m 0755 -d /etc/apt/keyrings

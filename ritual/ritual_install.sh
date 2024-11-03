@@ -127,7 +127,7 @@ cd $HOME/infernet-container-starter/deploy
 docker compose down
 sleep 3
 sudo rm -rf docker-compose.yaml
-wget https://raw.githubusercontent.com/NodEligible/guides/refs/heads/main/ritual/docker_compose.yml
+wget https://raw.githubusercontent.com/NodEligible/guides/refs/heads/main/ritual/docker-compose.yaml
 docker compose up -d
 
 docker rm -fv infernet-anvil  &>/dev/null

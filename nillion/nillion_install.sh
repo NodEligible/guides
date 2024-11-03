@@ -8,10 +8,6 @@ curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/d
 # Отображение логотипа
 display_logo
 
-exists()
-{
-  command -v "$1" >/dev/null 2>&1
-}
 # Check if 'curl' is installed
 if exists curl; then
   echo ""

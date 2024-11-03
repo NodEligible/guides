@@ -1,17 +1,13 @@
 #!/bin/bash
 
-exists()
-{
-  command -v "$1" >/dev/null 2>&1
-}
 
 # Check if 'curl' is installed
 if exists curl; then
   echo ""
 else
-  echo "Установка curl..."
+  echo "Installing curl..."
   if ! sudo apt update && sudo apt install curl -y < "/dev/null"; then
-    echo "Не удалось установить Curl. Выход"
+    echo "Failed to install curl. Exiting."
     exit 1
   fi
 fi
@@ -19,7 +15,6 @@ bash_profile=$HOME/.bash_profile
 if [ -f "$bash_profile" ]; then
     source $HOME/.bash_profile
 fi
-sleep 1 && curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash && sleep 1
 
 cd $HOME
 sudo install -m 0755 -d /etc/apt/keyrings

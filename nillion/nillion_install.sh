@@ -1,15 +1,17 @@
 #!/bin/bash
+
 exists()
 {
   command -v "$1" >/dev/null 2>&1
 }
+
 # Check if 'curl' is installed
 if exists curl; then
   echo ""
 else
-  echo "Installing curl..."
+  echo "Установка curl..."
   if ! sudo apt update && sudo apt install curl -y < "/dev/null"; then
-    echo "Failed to install curl. Exiting."
+    echo "Не удалось установить Curl. Выход"
     exit 1
   fi
 fi

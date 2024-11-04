@@ -5,22 +5,19 @@ display_logo() {
 curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 }
 
-# Функция для логирования
-log_message() {
-  echo -e "\e[33m'$1'\e[0m"
-}
-
 # Отображение логотипа
 display_logo
 
-log_message 'Установка Main'
+echo -e "\033[32mУстановка Main\033[0m"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
 
-log_message 'Установка Ufw'
+echo -e "\033[32mУстановка Ufw\033[0m"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
 
-log_message 'Установка Docker'
+echo -e "\033[32mУстановка Docker\033[0m"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
 
-log_message 'Установка Go'
+echo -e "\033[32mУстановка Go\033[0m"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/go.sh)
+
+echo -e "\033[32mУстановка Nesa\033[0m"'

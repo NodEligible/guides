@@ -12,16 +12,16 @@ curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/d
 # Отображение логотипа
 display_logo
 
-echo "${GREEN}Установка Main${NORMA}"
+echo -e "${GREEN}Установка Main${NORMA}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
 
-echo "${GREEN}Установка Ufw${NORMA}"
+echo -e "${GREEN}Установка Ufw${NORMA}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
 
-echo "${GREEN}Установка Docker${NORMA}"
+echo -e "${GREEN}Установка Docker${NORMA}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
 
-echo "${GREEN}Установка Go${NORMA}"
+echo -e "${GREEN}Установка Go${NORMA}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/go.sh)
 
-echo "${GREEN}Установка Nesa${NORMA}"
+echo -e "${GREEN}Установка Nesa${NORMA}"

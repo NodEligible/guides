@@ -8,16 +8,16 @@ curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/d
 # Отображение логотипа
 display_logo
 
-printf "\033[32mУстановка Main\033[0m"
+echo "${green}Установка Main${reset}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
 
-printf "\033[32mУстановка Ufw\033[0m"
+echo "${green}Установка Ufw${reset}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
 
-printf "\033[32mУстановка Docker\033[0m"
+echo "${green}Установка Docker${reset}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
 
-printf "\033[32mУстановка Go\033[0m"
+echo "${green}Установка Go${reset}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/go.sh)
 
-printf "\033[32mУстановка Nesa\033[0m"'
+echo "${green}Установка Nesa${reset}"

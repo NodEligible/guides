@@ -14,13 +14,13 @@ log_message() {
 display_logo
 
 log_message 'Установка Main'
-curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh | bash &>/dev/null
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
 
 log_message 'Установка Ufw'
-curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh | bash &>/dev/null
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
 
 log_message 'Установка Docker'
-curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh | bash &>/dev/null
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
 
 log_message 'Установка Go'
-curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/go.sh | bash &>/dev/null
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/go.sh)

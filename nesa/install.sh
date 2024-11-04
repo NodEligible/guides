@@ -16,9 +16,7 @@ curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/d
 display_logo
 
 function install_Main {
-       if echo -e "${YELLOW}Устанавливаем Main${NORMAL}"
+echo -e "${YELLOW}Устанавливаем Main${NORMAL}"
         bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
-    else
         echo -e "${GREEN}Докер уже установлен. Переходим на следующий шаг${NORMAL}"
-    fi
 }

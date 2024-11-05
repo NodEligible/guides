@@ -18,6 +18,8 @@ bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}Docker успешно установлено!${NC}"
 else
-    echo -e "${RED}Ошибка при установке Docker${NC}"
+    echo -e "${RED}Ошибка при установке Docker!${NC}"
 fi
 
+# Сообщение о начале установки
+echo -e "${YELLOW}Установка Docker...${NC}"

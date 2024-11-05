@@ -6,20 +6,48 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m' # Сброс цвета
 
+display_logo() {
+curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
+}
 
+display_logo
 
-# Сообщение о начале установки
 echo -e "${YELLOW}Установка Docker...${NC}"
 
-# Установка Docker
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
 
-# Проверка статуса установки
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}Docker успешно установлено!${NC}"
 else
     echo -e "${RED}Ошибка при установке Docker!${NC}"
 fi
 
-# Сообщение о начале установки
-echo -e "${YELLOW}Установка Docker...${NC}"
+echo -e "${YELLOW}Установка Main...${NC}"
+
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
+
+if [ $? -eq 0 ]; then
+    echo -e "${GREEN}Main успешно установлено!${NC}"
+else
+    echo -e "${RED}Ошибка при установке Main!${NC}"
+fi
+
+echo -e "${YELLOW}Установка Ufw...${NC}"
+
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
+
+if [ $? -eq 0 ]; then
+    echo -e "${GREEN}Ufw успешно установлено!${NC}"
+else
+    echo -e "${RED}Ошибка при установке Ufw!${NC}"
+fi
+
+echo -e "${YELLOW}Установка Go...${NC}"
+
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/go.sh)
+
+if [ $? -eq 0 ]; then
+    echo -e "${GREEN}Go успешно установлено!${NC}"
+else
+    echo -e "${RED}Ошибка при установке Go!${NC}"
+fi

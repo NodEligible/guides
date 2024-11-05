@@ -9,6 +9,10 @@ curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/d
 # Отображение логотипа
 display_logo
 
+# Налаштовуємо кольори
+green=$(tput setaf 2)
+reset=$(tput sgr0)
+
 # Встановлюємо Docker
 echo "${green}Установка Docker${reset}"
 sudo apt update

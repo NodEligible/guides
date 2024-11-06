@@ -1,16 +1,18 @@
 #!/bin/bash
 
+# Функция для отображения логотипа
+display_logo() {
+curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
+}
+
+# Отображение логотипа
+display_logo
+
 # Сменные для цветов
 YELLOW='\e[0;33m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m' # Сброс цвета
-
-display_logo() {
-curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
-}
-
-display_logo
 
 echo -e "${YELLOW}Установка Docker...${NC}"
 

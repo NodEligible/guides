@@ -15,7 +15,6 @@ RED='\033[0;31m'
 NC='\033[0m' # Сброс цвета
 
 echo -e "${YELLOW}Установка Docker...${NC}"
-
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
 
 if [ $? -eq 0 ]; then
@@ -25,7 +24,6 @@ else
 fi
 
 echo -e "${YELLOW}Установка Main...${NC}"
-
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
 
 if [ $? -eq 0 ]; then
@@ -35,7 +33,6 @@ else
 fi
 
 echo -e "${YELLOW}Установка Ufw...${NC}"
-
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
 
 if [ $? -eq 0 ]; then
@@ -45,7 +42,6 @@ else
 fi
 
 echo -e "${YELLOW}Установка Go...${NC}"
-
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/go.sh)
 
 if [ $? -eq 0 ]; then
@@ -55,7 +51,6 @@ else
 fi
 
 echo -e "${YELLOW}Установка Nesa...${NC}"
-
 bash <(curl -s https://raw.githubusercontent.com/nesaorg/bootstrap/master/bootstrap.sh)
 
 if [ $? -eq 0 ]; then

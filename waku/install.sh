@@ -128,13 +128,9 @@ echo_info() {
 
 # Основний процес встановлення
 main() {
-  line_1
   install_tools
-  line_1
   install_docker
-  line_1
   install_ufw
-  line_1
   read_sepolia_rpc
   line_2
   read_private_key

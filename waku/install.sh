@@ -14,6 +14,14 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m' # Сброс цвета
 
+line_1() {
+  echo -e "${GREEN}-----------------------------------------------------------------------------${NORMAL}"
+}
+
+line_2() {
+  echo -e "${RED}-------------------------------------------------------------------------------${NORMAL}"
+}
+
 echo -e "${YELLOW}Установка Tools...${NC}" 
   sudo apt update && sudo apt install mc wget htop jq git -y
 if [ $? -eq 0 ]; then
@@ -41,14 +49,14 @@ fi
 read_sepolia_rpc() 
   if [ ! $RPC_URL ]; then
   echo -e "Введите ваш RPC Sepolia https url. Пример url'a - https://sepolia.infura.io/v3/ТУТ_ВАШ_КЛЮЧ"
-  line_1
+  line_1()
   read RPC_URL
   fi
 
 read_private_key()
   if [ ! $WAKU_PRIVATE_KEY ]; then
   echo -e "Введите ваш приватник от ETH кошелека на котором есть как минимум 0.1 ETH в сети Sepolia"
-  line_1
+  line_1()
   read WAKU_PRIVATE_KEY
   fi
 

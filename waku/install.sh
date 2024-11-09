@@ -23,7 +23,7 @@ line_2() {
 }
 
 echo -e "${YELLOW}Установка Tools...${NC}" 
-sudo apt update && sudo apt install mc wget htop jq git -y
+  sudo apt update && sudo apt install mc wget htop jq git -y
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}Tools успешно установлено!${NC}"
 else
@@ -31,7 +31,7 @@ else
 fi
 
 echo -e "${YELLOW}Установка Docker...${NC}"
-bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
+  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}Docker успешно установлено!${NC}"
 else
@@ -39,7 +39,7 @@ else
 fi
 
 echo -e "${YELLOW}Установка Ufw...${NC}" 
-bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
+  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}Ufw успешно установлено!${NC}"
 else

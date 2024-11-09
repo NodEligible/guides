@@ -14,14 +14,6 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m' # Сброс цвета
 
-line_1() {
-  echo -e "${YELLOW}-----------------------------------------------------------------------------${NC}"
-}
-
-line_2() {
-  echo -e "${GREEN}-----------------------------------------------------------------------------${NC}"
-}
-
 # Встановлення інструментів
 install_tools() {
   echo -e "${YELLOW}Установка Tools...${NC}" 
@@ -59,7 +51,6 @@ install_ufw() {
 read_sepolia_rpc() {
   if [ -z "$RPC_URL" ]; then
     echo -e "Введите ваш RPC Sepolia https url. Пример url'a - https://sepolia.infura.io/v3/ТУТ_ВАШ_КЛЮЧ"
-    line_1
     read -r RPC_URL
   fi
 }
@@ -68,7 +59,6 @@ read_sepolia_rpc() {
 read_private_key() {
   if [ -z "$WAKU_PRIVATE_KEY" ]; then
     echo -e "Введите ваш приватник от ETH кошелека на котором есть как минимум 0.1 ETH в сети Sepolia"
-    line_1
     read -r WAKU_PRIVATE_KEY
   fi
 }
@@ -77,7 +67,6 @@ read_private_key() {
 read_pass() {
   if [ -z "$WAKU_PASS" ]; then
     echo -e "Введите(придумайте) пароль который будет использваться для сетапа ноды"
-    line_1
     read -r WAKU_PASS
   fi
 }

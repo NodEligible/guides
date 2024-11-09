@@ -112,7 +112,7 @@ echo_info() {
   
   ip_address=$(hostname -I | awk '{print $1}')
   echo -e "${GREEN}Для проверки дашборда графаны, перейдите по ссылке: ${NC}"
-  echo -e "${RED}   http://$ip_address:3004/d/yns_4vFVk/nwaku-monitoring${NC}"
+  echo -e "${YELLOW}   http://$ip_address:3004/d/yns_4vFVk/nwaku-monitoring${NC}"
 }
 
 # Основний процес встановлення

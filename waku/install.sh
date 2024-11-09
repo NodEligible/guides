@@ -132,18 +132,12 @@ main() {
   install_docker
   install_ufw
   read_sepolia_rpc
-  line_2
   read_private_key
-  line_2
   read_pass
-  line_2
   git_clone
   setup_env
-  line_1
   docker_compose_up
-  line_2
   echo_info
-  line_2
 }
 
 # Виконання основного процесу

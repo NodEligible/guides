@@ -113,13 +113,13 @@ docker_compose_up() {
 # Інформація про команди для користувача
 echo_info() {
   echo -e "${GREEN}Для остановки ноды waku: ${NC}"
-  echo -e "${RED}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml down${NC}"
+  echo -e "${YELLOW}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml down${NC}"
   echo -e "${GREEN}Для запуска ноды и фармера waku: ${NC}"
-  echo -e "${RED}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml up -d${NC}"
+  echo -e "${YELLOW}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml up -d${NC}"
   echo -e "${GREEN}Для перезагрузки ноды waku: ${NC}"
-  echo -e "${RED}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml restart${NC}"
+  echo -e "${YELLOW}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml restart${NC}"
   echo -e "${GREEN}Для проверки логов ноды выполняем команду: ${NC}"
-  echo -e "${RED}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml logs -f --tail=100${NC}"
+  echo -e "${YELLOW}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml logs -f --tail=100${NC}"
   
   ip_address=$(hostname -I | awk '{print $1}')
   echo -e "${GREEN}Для проверки дашборда графаны, перейдите по ссылке: ${NC}"
@@ -128,12 +128,6 @@ echo_info() {
 
 # Основний процес встановлення
 main() {
-  line_1
-  install_tools
-  line_1
-  install_docker
-  line_1
-  install_ufw
   line_1
   read_sepolia_rpc
   line_2
@@ -144,8 +138,6 @@ main() {
   git_clone
   setup_env
   line_1
-  docker_compose_up
-  line_2
   echo_info
   line_2
 }

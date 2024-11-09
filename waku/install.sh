@@ -22,33 +22,29 @@ line_2() {
   echo -e "${RED}##############################################################################${NC}"
 }
 
-echo -e "${YELLOW}Установка инструментов...${NC}" {
+echo -e "${YELLOW}Установка инструментов...${NC}" 
 sudo apt update && sudo apt install mc wget htop jq git -y
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}Docker успешно установлено!${NC}"
 else
     echo -e "${RED}Ошибка при установке Docker!${NC}"
 fi
-}
 
-echo -e "${YELLOW}Установка Docker...${NC}" {
+echo -e "${YELLOW}Установка Docker...${NC}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}Docker успешно установлено!${NC}"
 else
     echo -e "${RED}Ошибка при установке Docker!${NC}"
 fi
-}
 
-echo -e "${YELLOW}Установка Ufw...${NC}" {
+echo -e "${YELLOW}Установка Ufw...${NC}" 
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
-
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}Ufw успешно установлено!${NC}"
 else
     echo -e "${RED}Ошибка при установке Ufw!${NC}"
 fi
-}
 
 read_sepolia_rpc() {
   if [ ! $RPC_URL ]; then

@@ -100,6 +100,7 @@ echo_info() {
 }
 
 main() {
+  logo
   install_tools
   install_docker
   install_ufw

@@ -1,19 +1,13 @@
 #!/bin/bash
 
-# Функция для отображения логотипа
-display_logo() {
+logo() {
 curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 }
 
-# Отображение логотипа
-display_logo
-
-# Оголошення кольорів для використання в скрипті
 YELLOW='\e[0;33m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
-NC='\033[0m' # Сброс цвета
-
+NC='\033[0m' 
 
 cleanup() {
  echo -e "${YELLOW}Очистка...${NC}"
@@ -45,10 +39,8 @@ cleanup() {
 
 update() {
 echo -e "${YELLOW}Обновление...${NC}"
-  # Выгружаем переменные с .env в среду выполнения
   source $HOME/nwaku-compose/.env &>/dev/null
 
-  # Удаляем старый .env
   rm -rf $HOME/nwaku-compose/.env
   cd $HOME/nwaku-compose
   git pull
@@ -101,6 +93,7 @@ echo_info() {
   echo -e "${YELLOW}   http://$ip_address:3004/d/yns_4vFVk/nwaku-monitoring \n ${NC}"
 }
 
+logo
 cleanup
 update
 docker_compose_up

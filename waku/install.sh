@@ -14,13 +14,11 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m' # Сброс цвета
 
-line_1() {
+line_1() 
   echo -e "${GREEN}-----------------------------------------------------------------------------${NC}"
-}
 
-line_2() {
+line_2() 
   echo -e "${RED}##############################################################################${NC}"
-}
 
 echo -e "${YELLOW}Установка Tools...${NC}" 
   sudo apt update && sudo apt install mc wget htop jq git -y
@@ -46,35 +44,31 @@ else
     echo -e "${RED}Ошибка при установке Ufw!${NC}"
 fi
 
-read_sepolia_rpc() {
+read_sepolia_rpc() 
   if [ ! $RPC_URL ]; then
   echo -e "Введите ваш RPC Sepolia https url. Пример url'a - https://sepolia.infura.io/v3/ТУТ_ВАШ_КЛЮЧ"
   line_1
   read RPC_URL
   fi
-}
 
-read_private_key() {
+read_private_key()
   if [ ! $WAKU_PRIVATE_KEY ]; then
   echo -e "Введите ваш приватник от ETH кошелека на котором есть как минимум 0.1 ETH в сети Sepolia"
   line_1
   read WAKU_PRIVATE_KEY
   fi
-}
 
-read_pass() {
+read_pass()
   if [ ! $WAKU_PASS ]; then
   echo -e "Введите(придумайте) пароль который будет использваться для сетапа ноды"
   line_1
   read WAKU_PASS
   fi
-}
 
-git_clone() {
+git_clone()
   git clone https://github.com/waku-org/nwaku-compose
-}
 
-setup_env() {
+setup_env() 
   cd nwaku-compose
   cp .env.example .env
 
@@ -91,14 +85,12 @@ setup_env() {
 
 
   bash $HOME/nwaku-compose/register_rln.sh
-}
 
 
-docker_compose_up() {
+docker_compose_up()
   docker compose -f $HOME/nwaku-compose/docker-compose.yml up -d
-}
 
-echo_info() {
+echo_info()
   echo -e "${GREEN}Для остановки ноды waku: ${NC}"
   echo -e "${RED}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml down \n ${NC}"
   echo -e "${GREEN}Для запуска ноды и фармера waku: ${NC}"
@@ -110,7 +102,6 @@ echo_info() {
   ip_address=$(hostname -I | awk '{print $1}') >/dev/null
   echo -e "${GREEN}Для проверки дашборда графаны, перейдите по ссылке: ${NC}"
   echo -e "${RED}   http://$ip_address:3004/d/yns_4vFVk/nwaku-monitoring \n ${NC}"
-}
 
 colors
 line_1

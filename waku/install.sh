@@ -22,12 +22,12 @@ line_2() {
   echo -e "${RED}##############################################################################${NC}"
 }
 
-echo -e "${YELLOW}Установка инструментов...${NC}" 
+echo -e "${YELLOW}Установка Tools...${NC}" 
 sudo apt update && sudo apt install mc wget htop jq git -y
 if [ $? -eq 0 ]; then
-    echo -e "${GREEN}Docker успешно установлено!${NC}"
+    echo -e "${GREEN}Tools успешно установлено!${NC}"
 else
-    echo -e "${RED}Ошибка при установке Docker!${NC}"
+    echo -e "${RED}Ошибка при установке Tools!${NC}"
 fi
 
 echo -e "${YELLOW}Установка Docker...${NC}"

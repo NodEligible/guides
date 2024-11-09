@@ -1,10 +1,8 @@
 #!/bin/bash
 
-display_logo() {
+logo() {
 curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 }
-
-display_logo
 
 YELLOW='\e[0;33m'
 GREEN='\033[0;32m'

@@ -23,10 +23,16 @@ fi
 REGISTRY_ADDRESS=0x3B1554f346DFe5c482Bb4BA31b880c1C18412170
 IMAGE="ritualnetwork/infernet-node:1.2.0"
 
-echo "-----------------------------------------------------------------------------"
-echo "Устанавливаем софт"
-echo "-----------------------------------------------------------------------------"
-sudo apt update -y
+update() {
+echo -e "${YELLOW}Обновление sudo apt...${NC}"
+ sudo apt update -y
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}sudo успешно обновлено!${NC}"
+  else
+      echo -e "${RED}Ошибка при обновлении sudo!${NC}"
+  fi
+ }
+
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh) &>/dev/null
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh) &>/dev/null
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh) &>/dev/null

@@ -11,48 +11,71 @@ RED='\033[0;31m'
 NC='\033[0m' # Сброс цвета
 
 # Установка curl
-echo -e "${YELLOW}Установка Curl...${NC}"
-   if sudo apt update && sudo apt install -y curl; then
-       echo -e "${GREEN}Curl успешно установлен!${NC}"
+if ! command -v curl &> /dev/null; then
+    echo -e "${YELLOW}Установка Curl...${NC}"
+    if sudo apt update &> /dev/null && sudo apt install -y curl &> /dev/null; then
+        echo -e "${GREEN}Curl успешно установлен!${NC}"
+    else
+        echo -e "${RED}Ошибка при установке Curl!${NC}"
+        exit 1
+    fi
 else
-    echo -e "${RED}Ошибка при установке Curl!${NC}"
+    echo -e "${GREEN}Curl уже установлен.${NC}"
 fi
+
 # Установка Docker
+if ! command -v docker &> /dev/null; then
     echo -e "${YELLOW}Установка Docker...${NC}"
     if bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh); then
         echo -e "${GREEN}Docker успешно установлен!${NC}"
     else
         echo -e "${RED}Ошибка при установке Docker!${NC}"
+        exit 1
     fi
+else
+    echo -e "${GREEN}Docker уже установлен.${NC}"
+fi
 
 # Установка Main
-echo -e "${YELLOW}Установка Main...${NC}"
-if bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh); then
-    echo -e "${GREEN}Main успешно установлен!${NC}"
-else
-    echo -e "${RED}Ошибка при установке Main!${NC}"
-fi
-
+if ! command -v main &> /dev/null; then
+    echo -e "${YELLOW}Установка Main...${NC}"
+    if bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh); then
+        echo -e "${GREEN}Main успешно установлен!${NC}"
+    else
+        echo -e "${RED}Ошибка при установке Main!${NC}"
+        exit 1
+     fi
+ else   
+     echo -e "${GREEN}Main уже установлен.${NC}"
+ fi
+  
 # Установка Ufw
-echo -e "${YELLOW}Установка Ufw...${NC}"
-if bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh); then
-    echo -e "${GREEN}Ufw успешно установлен!${NC}"
-else
-    echo -e "${RED}Ошибка при установке Ufw!${NC}"
-fi
+if ! command -v ufw &> /dev/null; then
+    echo -e "${YELLOW}Установка Ufw...${NC}"
+    if bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh); then
+         echo -e "${GREEN}Ufw успешно установлен!${NC}"
+    else
+        echo -e "${RED}Ошибка при установке Ufw!${NC}"
+        exit 1
+     fi
+ else   
+     echo -e "${GREEN}Ufw уже установлен.${NC}"
+ fi
 
 # Установка Go
-echo -e "${YELLOW}Установка Go...${NC}"
-if bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/go.sh); then
-    echo -e "${GREEN}Go успешно установлен!${NC}"
-else
-    echo -e "${RED}Ошибка при установке Go!${NC}"
-fi
+if ! command -v go &> /dev/null; then
+    echo -e "${YELLOW}Установка Go...${NC}"
+    if bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/go.sh); then
+         echo -e "${GREEN}Go успешно установлен!${NC}"
+    else
+        echo -e "${RED}Ошибка при установке Go!${NC}"
+        exit 1
+     fi
+ else   
+     echo -e "${GREEN}Go уже установлен.${NC}"
+ fi
 
 # Установка Nesa
 echo -e "${YELLOW}Установка Nesa...${NC}"
-if bash <(curl -s https://raw.githubusercontent.com/nesaorg/bootstrap/master/bootstrap.sh); then
-    echo -e "${GREEN}Nesa успешно установлена и запущена!${NC}"
-else
-    echo -e "${RED}Ошибка при установке Nesa!${NC}"
-fi
+bash <(curl -s https://raw.githubusercontent.com/nesaorg/bootstrap/master/bootstrap.sh)
+echo -e "${GREEN}Nesa успешно установлена и запущена!${NC}"

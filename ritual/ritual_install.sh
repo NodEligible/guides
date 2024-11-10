@@ -166,9 +166,3 @@ wget https://raw.githubusercontent.com/NodEligible/guides/refs/heads/main/ritual
 docker compose up -d
 
 docker rm -fv infernet-anvil  &>/dev/null
-
-request_param
-update
-install_main
-install_ufw
-install_docker

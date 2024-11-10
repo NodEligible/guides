@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Загрузка и отображение логотипа
+logo() {
 curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
+}
 
 # Сменные для цветов
 YELLOW='\e[0;33m'
@@ -63,3 +65,10 @@ install_nesa() {
       echo -e "${RED}Ошибка при установке Nesa!${NC}"
   fi
 }
+
+logo
+install_docker
+install_main
+install_ufw
+install_go
+install_nesa

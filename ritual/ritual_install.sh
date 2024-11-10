@@ -1,6 +1,10 @@
 #!/bin/bash
 
-bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh)
+logo() {
+    indent="    "  # 4 пробіли
+    curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | sed "s/^/$indent/"
+}
+
 
 # Функция для запроса параметра у пользователя
 request_param() {

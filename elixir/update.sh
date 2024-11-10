@@ -1,12 +1,6 @@
 #!/bin/bash
 
-# Функция для отображения логотипа
-display_logo() {
 curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
-}
-
-# Отображение логотипа
-display_logo
 
 cd $HOME/elixir/
 

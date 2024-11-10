@@ -66,9 +66,11 @@ install_nesa() {
   fi
 }
 
+main() {
 logo
 install_docker
 install_main
 install_ufw
 install_go
 install_nesa
+}

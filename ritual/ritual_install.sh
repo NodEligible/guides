@@ -32,21 +32,45 @@ IMAGE="ritualnetwork/infernet-node:1.2.0"
 update() {
     echo -e "${YELLOW}Обновление пакетов...${NC}"
     sudo apt update -y
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}Пакеты успешно обновлены!${NC}"
+    else
+        echo -e "${RED}Ошибка при обновлении пакетов!${NC}"
+        exit 1
+    fi
 }
 
 install_main() {
     echo -e "${YELLOW}Установка main...${NC}"
     bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh) &>/dev/null
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}Main успешно установлен!${NC}"
+    else
+        echo -e "${RED}Ошибка при установке main!${NC}"
+        exit 1
+    fi
 }
 
 install_ufw() {
     echo -e "${YELLOW}Установка ufw...${NC}"
     bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh) &>/dev/null
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}ufw успешно установлено!${NC}"
+    else
+        echo -e "${RED}Ошибка при установке ufw!${NC}"
+        exit 1
+    fi
 }
 
 install_docker() {
     echo -e "${YELLOW}Установка Docker...${NC}"
     bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh) &>/dev/null
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}Docker успешно установлен!${NC}"
+    else
+        echo -e "${RED}Ошибка при установке Docker!${NC}"
+        exit 1
+    fi
 }
 
 # Вызовы функций
@@ -55,7 +79,7 @@ install_main
 install_ufw
 install_docker
 
-echo -e "${GREEN}Все необходимые программы успешно установлены!${NC}"
+echo -e "${GREEN}Все программы успешно установлены!${NC}"
 
 # Клонирование репозитория
 cd $HOME

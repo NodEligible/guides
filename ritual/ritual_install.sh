@@ -36,40 +36,36 @@ update() {
         echo -e "${GREEN}Пакеты успешно обновлены!${NC}"
     else
         echo -e "${RED}Ошибка при обновлении пакетов!${NC}"
-        exit 1
     fi
 }
 
 install_main() {
-    echo -e "${YELLOW}Установка main...${NC}"
-    bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh) &>/dev/null
+    echo -e "${YELLOW}Установка Main...${NC}"
+    bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}Main успешно установлен!${NC}"
     else
-        echo -e "${RED}Ошибка при установке main!${NC}"
-        exit 1
+        echo -e "${RED}Ошибка при установке Main!${NC}"
     fi
 }
 
 install_ufw() {
-    echo -e "${YELLOW}Установка ufw...${NC}"
-    bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh) &>/dev/null
+    echo -e "${YELLOW}Установка Ufw...${NC}"
+    bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
     if [ $? -eq 0 ]; then
-        echo -e "${GREEN}ufw успешно установлено!${NC}"
+        echo -e "${GREEN}Ufw успешно установлено!${NC}"
     else
-        echo -e "${RED}Ошибка при установке ufw!${NC}"
-        exit 1
+        echo -e "${RED}Ошибка при установке Ufw!${NC}"
     fi
 }
 
 install_docker() {
     echo -e "${YELLOW}Установка Docker...${NC}"
-    bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh) &>/dev/null
+    bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}Docker успешно установлен!${NC}"
     else
         echo -e "${RED}Ошибка при установке Docker!${NC}"
-        exit 1
     fi
 }
 

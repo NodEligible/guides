@@ -2,6 +2,11 @@
 
 curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 
+YELLOW='\e[0;33m'
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m'
+
 # Функция для запроса параметра у пользователя
 request_param() {
     read -p "$1: " param
@@ -24,8 +29,8 @@ REGISTRY_ADDRESS=0x3B1554f346DFe5c482Bb4BA31b880c1C18412170
 IMAGE="ritualnetwork/infernet-node:1.2.0"
 
 update() {
-echo -e "${YELLOW}Обновление sudo apt...${NC}"
- sudo apt update -y
+  echo -e "${YELLOW}Обновление sudo apt...${NC}"
+  sudo apt update -y
   if [ $? -eq 0 ]; then
       echo -e "${GREEN}sudo успешно обновлено!${NC}"
   else
@@ -33,19 +38,43 @@ echo -e "${YELLOW}Обновление sudo apt...${NC}"
   fi
  }
 
-bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh) &>/dev/null
-bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh) &>/dev/null
-bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh) &>/dev/null
+install_main() {
+  echo -e "${YELLOW}Установка main...${NC}"
+  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh) &>/dev/null
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}Main установлено!${NC}"
+  else
+      echo -e "${RED}Ошибка при установке main!${NC}"
+  fi
+ }
 
-echo "-----------------------------------------------------------------------------"
-echo "Весь необходимый софт установлен"
-echo "-----------------------------------------------------------------------------"
+install_ufw() {
+  echo -e "${YELLOW}Установка ufw...${NC}"
+  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh) &>/dev/null
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}ufw установлено!${NC}"
+  else
+      echo -e "${RED}Ошибка при установке ufw!${NC}"
+  fi
+ }
 
-# Клонирование репозитория
+install_docker() {
+  echo -e "${YELLOW}Установка Docker...${NC}"
+  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}Docker успешно установлено!${NC}"
+  else
+      echo -e "${RED}Ошибка при установке Docker!${NC}"
+  fi
+}
+
+echo -e "${GREEN}Все необходимые программы успешно установлены!${NC}"
+
+echo -e "${YELLOW}Клонирование репозитория${NC}"
 cd $HOME
 git clone https://github.com/ritual-net/infernet-container-starter && cd infernet-container-starter
 cp $HOME/infernet-container-starter/projects/hello-world/container/config.json $HOME/infernet-container-starter/deploy/config.json
-
+echo -e "${GREEN}Клонирование завершено!${NC}"
 
 # Конфигурация deploy/config.json
 DEPLOY_JSON=$HOME/infernet-container-starter/deploy/config.json

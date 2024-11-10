@@ -85,15 +85,6 @@ docker_compose_up() {
 }
 
 echo_info() {
-  echo -e "${GREEN}Для остановки ноды waku: ${NC}"
-  echo -e "${YELLOW}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml down${NC}"
-  echo -e "${GREEN}Для запуска ноды и фармера waku: ${NC}"
-  echo -e "${YELLOW}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml up -d${NC}"
-  echo -e "${GREEN}Для перезагрузки ноды waku: ${NC}"
-  echo -e "${YELLOW}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml restart${NC}"
-  echo -e "${GREEN}Для проверки логов ноды выполняем команду: ${NC}"
-  echo -e "${YELLOW}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml logs -f --tail=100${NC}"
-  
   ip_address=$(hostname -I | awk '{print $1}')
   echo -e "${GREEN}Для проверки дашборда графаны, перейдите по ссылке: ${NC}"
   echo -e "${YELLOW}   http://$ip_address:3004/d/yns_4vFVk/nwaku-monitoring${NC}"

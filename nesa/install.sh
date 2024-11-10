@@ -25,9 +25,9 @@ install_main() {
   echo -e "${YELLOW}Установка Main...${NC}"
   bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
   if [ $? -eq 0 ]; then
-     echo -e "${GREEN}Main успешно установлен!${NC}"
+      echo -e "${GREEN}Main успешно установлен!${NC}"
   else
-     echo -e "${RED}Ошибка при установке Main!${NC}"
+      echo -e "${RED}Ошибка при установке Main!${NC}"
   fi
  }
   
@@ -47,19 +47,19 @@ install_go() {
     echo -e "${YELLOW}Установка Go...${NC}"
     bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/go.sh)
     if [ $? -eq 0 ]; then
-       echo -e "${GREEN}Go успешно установлен!${NC}"
+        echo -e "${GREEN}Go успешно установлен!${NC}"
     else
-       echo -e "${RED}Ошибка при установке Go!${NC}"
+        echo -e "${RED}Ошибка при установке Go!${NC}"
     fi
 }    
 
 # Установка Nesa
 install_nesa() {
-echo -e "${YELLOW}Установка Nesa...${NC}"
-bash <(curl -s https://raw.githubusercontent.com/nesaorg/bootstrap/master/bootstrap.sh)
+  echo -e "${YELLOW}Установка Nesa...${NC}"
+  bash <(curl -s https://raw.githubusercontent.com/nesaorg/bootstrap/master/bootstrap.sh)
 if [ $? -eq 0 ]; then
-   echo -e "${GREEN}Nesa успешно установлена и запущена!${NC}"
+    echo -e "${GREEN}Nesa успешно установлена и запущена!${NC}"
 else
-   echo -e "${RED}Ошибка при установке Nesa!${NC}"
+    echo -e "${RED}Ошибка при установке Nesa!${NC}"
 fi
 }

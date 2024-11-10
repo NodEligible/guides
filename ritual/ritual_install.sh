@@ -40,7 +40,7 @@ update() {
 
 install_main() {
   echo -e "${YELLOW}Установка main...${NC}"
-  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh) &>/dev/null
+  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
   if [ $? -eq 0 ]; then
       echo -e "${GREEN}Main установлено!${NC}"
   else
@@ -50,7 +50,7 @@ install_main() {
 
 install_ufw() {
   echo -e "${YELLOW}Установка ufw...${NC}"
-  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh) &>/dev/null
+  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
   if [ $? -eq 0 ]; then
       echo -e "${GREEN}ufw установлено!${NC}"
   else

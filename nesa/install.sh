@@ -74,3 +74,5 @@ install_ufw
 install_go
 install_nesa
 }
+
+main

@@ -1,11 +1,8 @@
 #!/bin/bash
 
 # Загрузка и отображение логотипа
-if curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash; then
-    echo -e "${GREEN}Логотип загружен!${NC}"
-else
-    echo -e "${RED}Не удалось загрузить логотип.${NC}"
-fi
+curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
+
 
 # Сменные для цветов
 YELLOW='\e[0;33m'
@@ -13,24 +10,20 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m' # Сброс цвета
 
-# Установка curl, если он не установлен
-if ! command -v curl &> /dev/null; then
-    echo "Устанавливаем curl..."
-    sudo apt update && sudo apt install -y curl
+# Установка curl
+echo -e "${YELLOW}Установка Curl...${NC}"
+   if sudo apt update && sudo apt install -y curl; then
+       echo -e "${GREEN}Curl успешно установлен!${NC}"
+else
+    echo -e "${RED}Ошибка при установке Curl!${NC}"
 fi
-
-# Проверка наличия Docker
-if ! command -v docker &> /dev/null; then
+# Установка Docker
     echo -e "${YELLOW}Установка Docker...${NC}"
     if bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh); then
         echo -e "${GREEN}Docker успешно установлен!${NC}"
     else
         echo -e "${RED}Ошибка при установке Docker!${NC}"
-        exit 1
     fi
-else
-    echo -e "${GREEN}Docker уже установлен.${NC}"
-fi
 
 # Установка Main
 echo -e "${YELLOW}Установка Main...${NC}"

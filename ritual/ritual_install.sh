@@ -1,7 +1,11 @@
 #!/bin/bash
-echo "-----------------------------------------------------------------------------"
-curl -s https://raw.githubusercontent.com/DOUBLE-TOP/tools/main/doubletop.sh | bash
-echo "-----------------------------------------------------------------------------"
+
+curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
+
+YELLOW='\e[0;33m'
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m'
 
 # Функция для запроса параметра у пользователя
 request_param() {
@@ -144,6 +148,4 @@ docker compose up -d
 
 docker rm -fv infernet-anvil  &>/dev/null
 
-echo "-----------------------------------------------------------------------------"
-echo "Wish lifechange case with DOUBLETOP"
-echo "-----------------------------------------------------------------------------"
+echo -e "${GREEN}Ritual успешно установлен!${NC}"

@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# Функция для отображения логотипа
-logo() {
 curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
-}
 
 # Функция для запроса параметра у пользователя
 request_param() {

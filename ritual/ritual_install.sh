@@ -68,6 +68,12 @@ install_docker() {
   fi
 }
 
+# Вызовы функций
+update
+install_main
+install_ufw
+install_docker
+
 echo -e "${GREEN}Все необходимые программы успешно установлены!${NC}"
 
 echo -e "${YELLOW}Клонирование репозитория${NC}"

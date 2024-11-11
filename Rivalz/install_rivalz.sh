@@ -1,25 +1,22 @@
 #!/bin/bash
 
-# Функция для отображения логотипа
-display_logo() {
 curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
-}
 
-# Функция для логирования
-log_message() {
-  echo -e "\e[33m'$1'\e[0m"
-}
+YELLOW='\e[0;33m'
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m
 
-# Отображение логотипа
-display_logo
+echo -e "${YELLOW}Запуск установки ноды Rivalz...${NC}"
 
-# Вывод надписи зеленым цветом
-log_message 'Запуск установки ноды Rivalz...'
-
-# Обновление пакетов
-log_message 'Обновление пакетов...'
+echo -e "${YELLOW}Запуск установки ноды Rivalz...${NC}"
 sudo apt update && sudo apt upgrade -y
-
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}Docker успешно установлено!${NC}"
+  else
+      echo -e "${RED}Ошибка при установке Docker!${NC}"
+  fi
+  
 # Установка утилиты screen
 log_message 'Установка утилиты screen...'
 sudo apt-get install -y screen

@@ -9,7 +9,6 @@ NC='\033[0m
 
 echo -e "${YELLOW}Запуск установки ноды Rivalz...${NC}"
 
-update() {
 echo -e "${YELLOW}Обновление пакетов...${NC}"
 sudo apt update && sudo apt upgrade -y
   if [ $? -eq 0 ]; then
@@ -17,9 +16,7 @@ sudo apt update && sudo apt upgrade -y
   else
       echo -e "${RED}Ошибка при обновлении пакетов!${NC}"
   fi
- }
 
-screen() {
 echo -e "${YELLOW}Установка утилиты screen...${NC}"
 sudo apt-get install -y screen
   if [ $? -eq 0 ]; then
@@ -27,30 +24,34 @@ sudo apt-get install -y screen
   else
       echo -e "${RED}Ошибка при установке Screen!${NC}"
   fi
-  }
-  
-# Установка node.js
-log_message 'Установка node.js...'
+
+echo -e "${YELLOW}Установка node.js...${NC}"
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install -y nodejs
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}JS успешно установлен!${NC}"
+  else
+      echo -e "${RED}Ошибка при установке Js!${NC}"
+  fi
 
-# Установка ноды Rivalz
-log_message 'Установка ноды Rivalz...'
+echo -e "${YELLOW}Установка ноды Rivalz...${NC}"
 npm i -g rivalz-node-cli
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}Rivalz успешно установлен!${NC}"
+  else
+      echo -e "${RED}Ошибка при установке Rivalz!${NC}"
+  fi
 
-# Определение пути к файлу
+echo -e "${YELLOW}Определение пути к файлу${NC}"
 FILE="/usr/lib/node_modules/rivalz-node-cli/node_modules/systeminformation/lib/filesystem.js"
 
-# Функция для поиска пути к файлу
-find_file_path() {
+echo -e "${YELLOW}Поиска пути к файлу${NC}"
   local search_path="$1"
   find "$search_path" -type f -name "filesystem.js" 2>/dev/null | grep "systeminformation/lib/filesystem.js" | head -n 1
-}
 
-# Проверка наличия файла
-log_message 'Проверка наличия файла filesystem.js...'
+echo -e "${YELLOW}Проверка наличия файла filesystem.js...${NC}"
 if [ ! -f "$FILE" ]; then
-  log_message "Файл не найден по пути $FILE. Попытка найти файл..."
+  echo -e "${RED}Файл не найден по пути $FILE. Попытка найти файл...${NC}"
   FILE=$(find_file_path "/usr/lib")
   
   if [ -z "$FILE" ]; then
@@ -67,13 +68,13 @@ if [ ! -f "$FILE" ]; then
   fi
   
   if [ -z "$FILE" ]; then
-    log_message "Ошибка: файл filesystem.js не найден. Убедитесь, что npm установлен и путь к файлу корректен."
+     echo -e "${RED}Ошибка: файл filesystem.js не найден. Убедитесь, что npm установлен и путь к файлу корректен.${NC}"
     exit 1
   fi
 
-  log_message "Файл найден по пути $FILE"
+  echo -e "${GREEN}Файл найден по пути $FILE${NC}"
 else
-  log_message "Файл найден по пути $FILE"
+   echo -e "${GREEN}Файл не найден по пути $FILE${NC}"
 fi
 
 # Создание временного файла
@@ -84,7 +85,7 @@ ORIGINAL_LINE="devices = outJSON.blockdevices.filter(item => { return (item.type
 NEW_LINE="devices = outJSON.blockdevices.filter(item => { return (item.type === 'disk') && item.size > 0 }).sort((a, b) => b.size - a.size);"
 
 # Чтение файла построчно и замена строки
-log_message 'Замена строки в файле filesystem.js...'
+echo -e "${YELLOW}Замена строки в файле filesystem.js...${NC}"
 while IFS= read -r line
 do
   if [[ "$line" == *"$ORIGINAL_LINE"* ]]; then
@@ -98,6 +99,6 @@ done < "$FILE"
 mv "$TMP_FILE" "$FILE"
 
 # Создание сессии screen и запуск ноды
-log_message 'Создание screen сессии и запуск ноды Rivalz...'
+echo -e "${GREEN}Создание screen сессии и запуск ноды Rivalz...${NC}"
 screen -S rivalz -dm bash -c 'rivalz run'
 screen -r rivalz

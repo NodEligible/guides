@@ -1,30 +1,26 @@
 #!/bin/bash
-function colors {
-  GREEN="\e[32m"
-  YELLOW="\e[33m"
-  RED="\e[39m"
-  NORMAL="\e[0m"
-}
 
-function logo {
+logo() {
   curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 }
 
-function line {
-  echo -e "${GREEN}-----------------------------------------------------------------------------${NORMAL}"
-}
+YELLOW='\e[0;33m'
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m'
 
-function install_docker {
+
+install_docker() {
     if ! type "docker" > /dev/null; then
-        echo -e "${YELLOW}Устанавливаем докер${NORMAL}"
+        echo -e "${YELLOW}Установка Docker...${NC}"
         bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
     else
-        echo -e "${YELLOW}Докер уже установлен. Переходим на следующий шаг${NORMAL}"
+        echo -e "${GREEN}Docker уже установлен!${NC}"
     fi
 }
 
-function prepare_files {
-    echo -e "${YELLOW}Подготавливаем файлы конфига${NORMAL}"
+prepare_files() {
+    echo -e "${YELLOW}Подготавливаем файлы конфига${NC}"
     if [ ! -d "$HOME/elixir" ]; then
         rm -rf $HOME/elixir
     fi
@@ -48,12 +44,12 @@ SIGNER_PRIVATE_KEY=$SIGNER_PRIVATE_KEY
 EOF
 }
 
-function run_docker {
-    echo -e "${YELLOW}Запускаем докер контейнер для валидатора${NORMAL}"
+run_docker() {
+    echo -e "${YELLOW}Запускаем докер контейнер для валидатора${NC}"
     docker pull elixirprotocol/validator --platform linux/amd64
     if [ ! "$(docker ps -q -f name=^elixir$)" ]; then
         if [ "$(docker ps -aq -f status=exited -f name=^elixir$)" ]; then
-            echo -e "${YELLOW}Докер контейнер уже существует в статусе exited. Удаляем его и запускаем заново${NORMAL}"
+            echo -e "${YELLOW}Докер контейнер уже существует в статусе exited. Удаляем его и запускаем заново${NC}"
             docker rm -f elixir &>/dev/null
         fi
     fi
@@ -61,23 +57,9 @@ function run_docker {
     docker run --env-file $HOME/elixir/.env --name elixir --platform linux/amd64 --restart always -p 17690:17690 elixirprotocol/validator
   }
 
+echo -e "${GREEN}Установка успешно завершена!${NC}"
 
-function output {
-    echo -e "${YELLOW}Для проверки логов выполняем команду:${NORMAL}"
-    echo -e "docker logs -f elixir --tail=100"
-    echo -e "${YELLOW}Для перезапуска выполняем команду:${NORMAL}"
-    echo -e "docker restart elixir"
-}
-
-
-colors
-line
 logo
-line
 prepare_files
-line
 install_docker
-line
 run_docker
-line
-output

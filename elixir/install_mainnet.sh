@@ -11,12 +11,13 @@ NC='\033[0m'
 
 
 install_docker() {
-    if ! type "docker" > /dev/null; then
-        echo -e "${YELLOW}Установка Docker...${NC}"
-        bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
-    else
-        echo -e "${GREEN}Docker уже установлен!${NC}"
-    fi
+  echo -e "${YELLOW}Установка Docker...${NC}"
+  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}Docker успешно установлено!${NC}"
+  else
+      echo -e "${RED}Ошибка при установке Docker!${NC}"
+  fi
 }
 
 prepare_files() {

@@ -88,5 +88,5 @@ mv "$TMP_FILE" "$FILE"
 
 # Creating screen session and running Rivalz node
 echo -e "${GREEN}Создание screen сессии и запуск ноды Rivalz...${NC}"
-screen -S rivalz -dm bash -c 'rivalz run'
+screen -S rivalz -dm bash -c 'sleep 5; rivalz run'
 screen -r rivalz

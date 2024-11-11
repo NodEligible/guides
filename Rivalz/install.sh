@@ -9,18 +9,26 @@ NC='\033[0m
 
 echo -e "${YELLOW}Запуск установки ноды Rivalz...${NC}"
 
-echo -e "${YELLOW}Запуск установки ноды Rivalz...${NC}"
+update() {
+echo -e "${YELLOW}Обновление пакетов...${NC}"
 sudo apt update && sudo apt upgrade -y
   if [ $? -eq 0 ]; then
-      echo -e "${GREEN}Docker успешно установлено!${NC}"
+      echo -e "${GREEN}Пакеты успешно обновлены!${NC}"
   else
-      echo -e "${RED}Ошибка при установке Docker!${NC}"
+      echo -e "${RED}Ошибка при обновлении пакетов!${NC}"
   fi
-  
-# Установка утилиты screen
-log_message 'Установка утилиты screen...'
-sudo apt-get install -y screen
+ }
 
+screen() {
+echo -e "${YELLOW}Установка утилиты screen...${NC}"
+sudo apt-get install -y screen
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}Screen успешно установлен!${NC}"
+  else
+      echo -e "${RED}Ошибка при установке Screen!${NC}"
+  fi
+  }
+  
 # Установка node.js
 log_message 'Установка node.js...'
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -

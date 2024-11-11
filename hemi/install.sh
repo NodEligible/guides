@@ -9,7 +9,6 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 # Установка Main
-install_main() {
   echo -e "${YELLOW}Установка Main...${NC}"
   bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
   if [ $? -eq 0 ]; then
@@ -17,10 +16,9 @@ install_main() {
   else
       echo -e "${RED}Ошибка при установке Main!${NC}"
   fi
- }
+
 
  # Установка Ufw
-install_ufw() {
   echo -e "${YELLOW}Установка Ufw...${NC}" 
   bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
   if [ $? -eq 0 ]; then
@@ -28,10 +26,8 @@ install_ufw() {
   else
       echo -e "${RED}Ошибка при установке Ufw!${NC}"
   fi
-}
 
 # Установка Go
-install_go() {
   echo -e "${YELLOW}Установка Go...${NC}"
   bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/go.sh)
   if [ $? -eq 0 ]; then
@@ -39,15 +35,8 @@ install_go() {
   else
       echo -e "${RED}Ошибка при установке Go!${NC}"
   fi
-}
 
-install_main
-install_ufw
-install_go
-
-echo -e "${GREEN}Весь необходимый софт установлен!${NC}
-
-echo -e "${YELLOW}Установка майнера Hemi${NC}"
+echo -e "${YELLOW}Установка майнера Hemi!${NC}"
 
 cd $HOME
 wget https://github.com/hemilabs/heminetwork/releases/download/v0.5.0/heminetwork_v0.5.0_linux_amd64.tar.gz

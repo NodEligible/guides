@@ -57,8 +57,6 @@ run_docker() {
     docker run --env-file $HOME/elixir/.env --name elixir --platform linux/amd64 --restart always -p 17690:17690 elixirprotocol/validator
   }
 
-echo -e "${GREEN}Установка успешно завершена!${NC}"
-
 logo
 prepare_files
 install_docker

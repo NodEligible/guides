@@ -32,13 +32,13 @@ install_ufw() {
 
 # Установка Go
 install_go() {
-   echo -e "${YELLOW}Установка Go...${NC}"
-   bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/go.sh)
-   if [ $? -eq 0 ]; then
-       echo -e "${GREEN}Go успешно установлен!${NC}"
-   else
-       echo -e "${RED}Ошибка при установке Go!${NC}"
-   fi
+  echo -e "${YELLOW}Установка Go...${NC}"
+  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/go.sh)
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}Go успешно установлен!${NC}"
+  else
+      echo -e "${RED}Ошибка при установке Go!${NC}"
+  fi
 }
 
 install_main

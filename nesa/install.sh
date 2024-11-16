@@ -59,11 +59,6 @@ install_go() {
 install_nesa() {
   echo -e "${YELLOW}Установка Nesa...${NC}"
   bash <(curl -s https://raw.githubusercontent.com/nesaorg/bootstrap/master/bootstrap.sh)
-  if [ $? -eq 0 ]; then
-      echo -e "${GREEN}Nesa успешно установлена и запущена!${NC}"
-  else
-      echo -e "${RED}Ошибка при установке Nesa!${NC}"
-  fi
 }
 
 logo

@@ -7,7 +7,7 @@ curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/d
 sudo locale-gen ru_RU.UTF-8
 sudo update-locale
 
-sudo ufw allow 10000/tcp
+sudo ufw allow 11000/tcp
 
 # Color codes for output
 YELLOW='\e[0;33m'
@@ -36,7 +36,7 @@ fi
 
 # Получение внешнего IP-адреса
 SERVER_IP=$(hostname -I | awk '{print $1}')
-BROWSER_URL="http://${SERVER_IP}:10000"
+BROWSER_URL="http://${SERVER_IP}:11000"
 
 echo -e "${YELLOW}Автоматически определен IP-адрес сервера: ${SERVER_IP}${NC}"
 
@@ -96,7 +96,7 @@ else
         -e PASSWORD="$PASSWORD" \
         -e LANGUAGE=ru_RU.UTF-8 \
         -v "$HOME/chromium/config:/config" \
-        -p 10000:3000 \
+        -p 11000:3000 \
         --shm-size="2gb" \
         --restart unless-stopped \
         lscr.io/linuxserver/chromium:latest
@@ -110,6 +110,6 @@ else
 fi
 
 # Вывод информации для пользователя
-echo -e "${YELLOW}Открывайте браузер по адресу: http://${SERVER_IP}:10000/${NC}"
+echo -e "${YELLOW}Открывайте браузер по адресу: http://${SERVER_IP}:11000/${NC}"
 echo -e "${YELLOW}Имя пользователя: $USERNAME${NC}"
 echo -e "${YELLOW}Введите ваш пароль при входе.${NC}"

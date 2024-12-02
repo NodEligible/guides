@@ -51,7 +51,7 @@ if command_exists sonaric; then
     sonaric delete -a --force
 fi
 
-print_message "Удаление установленных пакетов"
+echo -e "${YELLOW}Удаление установленных пакетов${NC}"
 
 DEBIAN_FRONTEND=noninteractive apt-get remove --auto-remove -y -qq sonaricd
 rm -f /etc/apt/sources.list.d/sonaric.list

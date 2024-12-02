@@ -56,4 +56,4 @@ print_message "Удаление установленных пакетов"
 DEBIAN_FRONTEND=noninteractive apt-get remove --auto-remove -y -qq sonaricd
 rm -f /etc/apt/sources.list.d/sonaric.list
 rm -f /etc/apt/keyrings/sonaric.gpg
-
+echo -e "${GREEN}Удаление завершено!${NC}"

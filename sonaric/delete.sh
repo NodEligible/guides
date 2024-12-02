@@ -1,12 +1,11 @@
 #!/bin/bash
 
-echo "-----------------------------------------------------------------------------"
-curl -s https://raw.githubusercontent.com/DOUBLE-TOP/tools/main/doubletop.sh | bash
-echo "-----------------------------------------------------------------------------"
+curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 
-echo "-----------------------------------------------------------------------------"
-echo "Удаление Sonaric Node"
-echo "-----------------------------------------------------------------------------"
+YELLOW='\e[0;33m'
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m'
 
 DEVNULL="/dev/null"
 
@@ -58,6 +57,3 @@ DEBIAN_FRONTEND=noninteractive apt-get remove --auto-remove -y -qq sonaricd
 rm -f /etc/apt/sources.list.d/sonaric.list
 rm -f /etc/apt/keyrings/sonaric.gpg
 
-echo "-----------------------------------------------------------------------------"
-echo "Wish lifechange case with DOUBLETOP"
-echo "-----------------------------------------------------------------------------"

@@ -39,11 +39,11 @@ NC='\033[0m'
 echo -e "${YELLOW}Установка майнера Hemi!${NC}"
 
 cd $HOME
-wget https://github.com/hemilabs/heminetwork/releases/download/v0.7.0/heminetwork_v0.7.0_linux_amd64.tar.gz
+wget https://github.com/hemilabs/heminetwork/releases/download/v0.8.0/heminetwork_v0.8.0_linux_amd64.tar.gz
 
-tar -xvf heminetwork_v0.7.0_linux_amd64.tar.gz && rm heminetwork_v0.7.0_linux_amd64.tar.gz
-mv heminetwork_v0.7.0_linux_amd64 heminetwork
-rm -rf $HOME/heminetwork_v0.7.0_linux_amd64
+tar -xvf heminetwork_v0.8.0_linux_amd64.tar.gz && rm heminetwork_v0.8.0_linux_amd64.tar.gz
+mv heminetwork_v0.8.0_linux_amd64 heminetwork
+rm -rf $HOME/heminetwork_v0.8.0_linux_amd64
 
 echo -e "${YELLOW}Создание кошелька${NC}"
 

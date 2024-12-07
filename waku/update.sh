@@ -12,29 +12,29 @@ NC='\033[0m'
 cleanup() {
  echo -e "${YELLOW}Чистка...${NC}"
   docker-compose -f $HOME/nwaku-compose/docker-compose.yml down
-    if [ $? -eq 0 ]; then
-      echo -e "${GREEN}Чистка завершена!${NC}"
-  else
-      echo -e "${RED}Ошибка при чистке!${NC}"
-  fi
-  mkdir -p $HOME/nwaku_backups
-  if [ -d "$HOME/nwaku_backups/keystore0.30" ]; then
-    echo -e "${GREEN}Бекап сделан!${NC}"
-  else
-    echo -e "${YELLOW}Делаем бекап ключей...${NC}"
-    mkdir -p $HOME/nwaku_backups/keystore0.30
-    cp $HOME/nwaku-compose/keystore/keystore.json $HOME/nwaku_backups/keystore0.30/keystore.json
-    rm -rf $HOME/nwaku-compose/keystore/
-  fi
+   # if [ $? -eq 0 ]; then
+    #  echo -e "${GREEN}Чистка завершена!${NC}"
+ # else
+  #    echo -e "${RED}Ошибка при чистке!${NC}"
+ # fi
+ # mkdir -p $HOME/nwaku_backups
+ # if [ -d "$HOME/nwaku_backups/keystore0.30" ]; then
+   # echo -e "${GREEN}Бекап сделан!${NC}"
+ # else
+   # echo -e "${YELLOW}Делаем бекап ключей...${NC}"
+   # mkdir -p $HOME/nwaku_backups/keystore0.30
+   # cp $HOME/nwaku-compose/keystore/keystore.json $HOME/nwaku_backups/keystore0.30/keystore.json
+  #  rm -rf $HOME/nwaku-compose/keystore/
+ # fi
   
-  rm -rf $HOME/nwaku-compose/rln_tree/ 
+ # rm -rf $HOME/nwaku-compose/rln_tree/ 
   cd $HOME/nwaku-compose
   git restore . &>/dev/null
-      if [ $? -eq 0 ]; then
-      echo -e "${GREEN}Бекап ключей сделан!${NC}"
-  else
-      echo -e "${RED}Ошибка при бекапе ключей!${NC}"
-  fi
+   #   if [ $? -eq 0 ]; then
+  #    echo -e "${GREEN}Бекап ключей сделан!${NC}"
+ # else
+ #    echo -e "${RED}Ошибка при бекапе ключей!${NC}"
+ # fi
 }
 
 update() {

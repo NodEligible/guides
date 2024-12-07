@@ -84,7 +84,7 @@ setup_env() {
 }
 
 docker_compose_up() {
-  docker compose -f docker-compose.yml up -d
+  docker compose -f $HOME/nwaku-compose/docker-compose.yml up -d
 }
 
 echo_info() {

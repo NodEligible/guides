@@ -10,7 +10,7 @@ RED='\033[0;31m'
 NC='\033[0m' 
 
 cleanup() {
- echo -e "${YELLOW}Очистка...${NC}"
+ echo -e "${YELLOW}Чистка...${NC}"
   docker-compose -f $HOME/nwaku-compose/docker-compose.yml down
     if [ $? -eq 0 ]; then
       echo -e "${GREEN}Чистка завершена!${NC}"

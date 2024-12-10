@@ -34,6 +34,8 @@ bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads
       echo -e "${RED}Ошибка при установке Rust!${NC}"
   fi
 
+sudo apt install -y protobuf-compiler
+
 source .profile
 
 NEXUS_HOME=$HOME/.nexus
@@ -97,5 +99,8 @@ EOF
 systemctl daemon-reload
 systemctl enable nexus
 systemctl start nexus
+lsb_release -a
+rustc --version
+cargo --version
 
 echo -e "${GREEN}Установка завершена${NC}"

@@ -34,14 +34,11 @@ bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads
       echo -e "${RED}Ошибка при установке Rust!${NC}"
   fi
 
+source .profile
+
 NEXUS_HOME=$HOME/.nexus
 
-git --version 2>&1 >/dev/null
-GIT_IS_AVAILABLE=$?
-if [ $GIT_IS_AVAILABLE != 0 ]; then
-  echo Unable to find git. Please install it and try again.
-  exit 1;
-fi
+mkdir -p $NEXUS_HOME
 
 PROVER_ID=$(cat $NEXUS_HOME/prover-id 2>/dev/null)
 if [ -z "$NONINTERACTIVE" ] && [ "${#PROVER_ID}" -ne "28" ]; then
@@ -72,6 +69,11 @@ else
 fi
 (cd $REPO_PATH && git -c advice.detachedHead=false checkout $(git rev-list --tags --max-count=1))
 
+cd $REPO_PATH/clients/cli
+cargo build --release --bin prover
+
+cp /root/.nexus/network-api/clients/cli/target/release/prover /root/.nexus/network-api/clients/cli/prover
+
 cat <<EOF | sudo tee /etc/systemd/system/nexus.service >/dev/null
 [Unit]
 Description=Nexus prover
@@ -84,8 +86,8 @@ Restart=always
 RestartSec=30
 LimitNOFILE=65535
 Type=simple
-WorkingDirectory=$REPO_PATH/clients/cli
-ExecStart=cargo run --release --bin prover -- beta.orchestrator.nexus.xyz
+WorkingDirectory=/root/.nexus/network-api/clients/cli
+ExecStart=/root/.nexus/network-api/clients/cli/prover -- beta.orchestrator.nexus.xyz
 Restart=on-failure
 
 [Install]

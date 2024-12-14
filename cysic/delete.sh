@@ -22,6 +22,5 @@ echo -e "${YELLOW}Удаление файлов ноды...${NC}"
 rm -rf ~/cysic-verifier
 rm -f ~/cysic-verifier/logs.txt
 rm -f ~/cysic-verifier/manage_verifier.sh
-rm -rf $HOME/.cysic
 
 echo -e "${GREEN}Нода Cysic успешно удалена!${NC}"

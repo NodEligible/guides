@@ -20,7 +20,7 @@ tar -xvf heminetwork_v0.8.0_linux_amd64.tar.gz && rm heminetwork_v0.8.0_linux_am
 mv -f $HOME/heminetwork_v0.8.0_linux_amd64/* $HOME/heminetwork
 rm -rf $HOME/heminetwork_v0.8.0_linux_amd64
 
-sed -i "s|FEE=.*|FEE=2000\"|" /etc/systemd/system/hemi.service
+sed -i "s|FEE=.*|FEE=4000\"|" /etc/systemd/system/hemi.service
 
 sudo systemctl daemon-reload
 sudo systemctl start hemi

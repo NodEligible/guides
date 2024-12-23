@@ -95,7 +95,6 @@ echo_info() {
   echo -e "${YELLOW}   http://$ip_address:3004/d/yns_4vFVk/nwaku-monitoring${NC}"
 }
 
-main() {
   logo
   install_tools
   install_docker
@@ -107,4 +106,3 @@ main() {
   setup_env
   docker_compose_up
   echo_info
-}

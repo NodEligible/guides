@@ -82,7 +82,7 @@ ExecStart=/root/gaianet/bin/gaianet start
 ExecStop=/root/gaianet/bin/gaianet stop
 ExecStopPost=/bin/sleep 20
 Restart=always
-RestartSec=10
+RestartSec=5
 User=root
 
 [Install]

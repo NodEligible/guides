@@ -74,4 +74,6 @@ install_docker
 install_gaianet
 initialization
 
+gaianet start
+
 echo -e "${GREEN}Установка ноди GaiaNet полностью завершена!${NC}"

@@ -76,11 +76,9 @@ Description=Gaianet Node Service
 After=network.target
 
 [Service]
-Type=forking
-RemainAfterExit=true
-ExecStart=/root/gaianet/bin/gaianet start
-ExecStop=/root/gaianet/bin/gaianet stop
-ExecStopPost=/bin/sleep 20
+User=root
+WorkingDirectory=/root/gaianet/bin
+ExecStart=/root/gaianet/bin/gaianet star
 Restart=always
 RestartSec=5
 User=root

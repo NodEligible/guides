@@ -52,7 +52,7 @@ initialization() {
       sed -i 's/"llamaedge_port": "8080"/"llamaedge_port": "8200"/' "$CONFIG_FILE"
       
       if [ $? -eq 0 ]; then
-          echo -e "${GREEN}Порт успешно обновлен на 8070!${NC}"
+          echo -e "${GREEN}Порт успешно обновлен на 8200!${NC}"
       else
           echo -e "${RED}Ошибка при обновлении порта!${NC}"
       fi

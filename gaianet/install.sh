@@ -79,7 +79,7 @@ After=network.target
 User=root
 WorkingDirectory=/root/gaianet/bin
 ExecStart=/root/gaianet/bin/gaianet star
-Restart=always
+Restart=on-failure
 RestartSec=5
 User=root
 

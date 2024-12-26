@@ -41,12 +41,32 @@ initialization() {
   echo -e "${YELLOW}Инициализация конфигурации...${NC}"
   source ~/.bashrc
   gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/main/qwen2-0.5b-instruct/config.json
+
+  # Шлях до конфігураційного файлу
+  CONFIG_FILE="/root/gaianet/config.json"
+
+  if [ -f "$CONFIG_FILE" ]; then
+      echo -e "${YELLOW}Обновление порта в конфигурационном файле...${NC}"
+
+      # Використовуємо sed для заміни порту
+      sed -i 's/"llamaedge_port": "8080"/"llamaedge_port": "8070"/' "$CONFIG_FILE"
+      
+      if [ $? -eq 0 ]; then
+          echo -e "${GREEN}Порт успешно обновлен на 8070!${NC}"
+      else
+          echo -e "${RED}Ошибка при обновлении порта!${NC}"
+      fi
+  else
+      echo -e "${RED}Файл конфигурации не найден!${NC}"
+  fi
+
   if [ $? -eq 0 ]; then
       echo -e "${GREEN}Инициализация завершена!${NC}"
   else
       echo -e "${RED}Ошибка при инициализации!${NC}"
   fi
 }
+
 
 create_service() {
   echo -e "${YELLOW}Создание сервиса GaiaNet...${NC}"

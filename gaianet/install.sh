@@ -100,8 +100,8 @@ EOF
   fi
 }
 
-echo -e "${YELLOW}Установка автоматического общения с AI ботом${NC}"
 install_dependencies() {
+  echo -e "${YELLOW}Установка автоматического общения с AI ботом${NC}"
   echo -e "${YELLOW}Установка Python, nano и screen...${NC}"
   sudo apt update -y && sudo apt install python3-pip nano screen -y
   if [ $? -eq 0 ]; then

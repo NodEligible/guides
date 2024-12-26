@@ -80,7 +80,7 @@ User=root
 WorkingDirectory=/root/gaianet/bin
 ExecStart=/root/gaianet/bin/gaianet star
 Restart=on-failure
-RestartSec=5
+RestartSec=10
 User=root
 
 [Install]

@@ -20,88 +20,71 @@ install_docker() {
 update() {
   echo -e "${YELLOW}Обновление пакетов...${NC}"
   sudo apt update -y && sudo apt-get update
-   if [ $? -eq 0 ]; then
-       echo -e "${GREEN}Пакеты успешно обновлены!${NC}"
-   else
-       echo -e "${RED}Ошибка при обновлении пакетов!${NC}"
-   fi
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}Пакеты успешно обновлены!${NC}"
+  else
+      echo -e "${RED}Ошибка при обновлении пакетов!${NC}"
+  fi
 }
 
 install_gaianet() {
   echo -e "${YELLOW}Установка GaiaNet...${NC}"
   curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/install.sh' | bash
-   if [ $? -eq 0 ]; then
-       echo -e "${GREEN}Установка завершена!${NC}"
-   else
-       echo -e "${RED}Ошибка при установке!${NC}"
-   fi
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}Установка завершена!${NC}"
+  else
+      echo -e "${RED}Ошибка при установке!${NC}"
+  fi
 }
 
 initialization() {
   echo -e "${YELLOW}Инициализация конфигурации...${NC}"
   source ~/.bashrc
   gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/main/qwen2-0.5b-instruct/config.json
-   if [ $? -eq 0 ]; then
-       echo -e "${GREEN}Инициализация завершена!${NC}"
-   else
-       echo -e "${RED}Ошибка при инициализация!${NC}"
-   fi
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}Инициализация завершена!${NC}"
+  else
+      echo -e "${RED}Ошибка при инициализации!${NC}"
+  fi
 }
 
-
-
-servise() {
+create_service() {
+  echo -e "${YELLOW}Создание сервиса GaiaNet...${NC}"
   sudo tee /etc/systemd/system/gaianet.service > /dev/null <<EOF
-  [Unit]
-  Description=Gaianet Node Service
-  After=network.target
-  
-  [Service]
-  Type=forking
-  RemainAfterExit=true
-  ExecStart=/root/gaianet/bin/gaianet start
-  ExecStop=/root/gaianet/bin/gaianet stop
-  ExecStopPost=/bin/sleep 20
-  Restart=always
-  RestartSec=10
-  User=root
-  
-  [Install]
-  WantedBy=multi-user.target
-  EOF
+[Unit]
+Description=Gaianet Node Service
+After=network.target
+
+[Service]
+Type=forking
+RemainAfterExit=true
+ExecStart=/root/gaianet/bin/gaianet start
+ExecStop=/root/gaianet/bin/gaianet stop
+ExecStopPost=/bin/sleep 20
+Restart=always
+RestartSec=10
+User=root
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+  sudo systemctl daemon-reload
+  sudo systemctl restart gaianet.service
+  sudo systemctl enable gaianet.service
+
+  if [ $? -eq 0 ]; then
+      echo -e "${GREEN}Сервис GaiaNet успешно создан и запущен!${NC}"
+  else
+      echo -e "${RED}Ошибка при создании или запуске сервиса!${NC}"
+  fi
 }
 
-sudo systemctl daemon-reload
-sudo systemctl restart gaianet.service
-sudo systemctl enable gaianet.service
+# Основной процесс установки
+update
+install_docker
+install_gaianet
+initialization
+create_service
 
 echo -e "${GREEN}Установка ноди GaiaNet полностью завершена!${NC}"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

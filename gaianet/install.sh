@@ -49,10 +49,10 @@ initialization() {
       echo -e "${YELLOW}Обновление порта в конфигурационном файле...${NC}"
 
       # Використовуємо sed для заміни порту
-      sed -i 's/"llamaedge_port": "8080"/"llamaedge_port": "8200"/' "$CONFIG_FILE"
+      sed -i 's/"llamaedge_port": "8080"/"llamaedge_port": "8060"/' "$CONFIG_FILE"
       
       if [ $? -eq 0 ]; then
-          echo -e "${GREEN}Порт успешно обновлен на 8200!${NC}"
+          echo -e "${GREEN}Порт успешно обновлен на 8060!${NC}"
       else
           echo -e "${RED}Ошибка при обновлении порта!${NC}"
       fi

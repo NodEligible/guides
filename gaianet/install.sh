@@ -78,7 +78,7 @@ After=network.target
 [Service]
 User=root
 WorkingDirectory=/root/gaianet/bin
-ExecStart=/root/gaianet/bin/gaianet star
+ExecStart=/root/gaianet/bin/gaianet start
 Restart=on-failure
 RestartSec=10
 User=root

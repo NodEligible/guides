@@ -1,5 +1,11 @@
 #!/bin/bash
 
+color() {
+YELLOW='\e[0;33m'
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m'
+}
 
 install_dependencies() {
   echo -e "${YELLOW}Установка автоматического общения с AI ботом${NC}"
@@ -142,6 +148,7 @@ EOF
 }
 
 main() {
+  color
   install_dependencies
   install_python_libraries
   create_python_script

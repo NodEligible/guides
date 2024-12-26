@@ -106,49 +106,8 @@ EOL
   fi
 }
 
-create_service() {
-  echo -e "${YELLOW}Создание сервиса random_chat.service...${NC}"
-  sudo tee /etc/systemd/system/random_chat.service > /dev/null <<EOF
-[Unit]
-Description=Random Chat with Faker Bot
-After=network.target
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/python3 /root/random_chat_with_faker.py
-Restart=always
-RestartSec=10
-User=root
-StandardOutput=journal
-StandardError=journal
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-  if [ $? -eq 0 ]; then
-      echo -e "${GREEN}Сервис random_chat.service успешно создан!${NC}"
-  else
-      echo -e "${RED}Ошибка при создании сервиса!${NC}"
-      exit 1
-  fi
-
-  echo -e "${YELLOW}Перезагрузка systemd и запуск сервиса...${NC}"
-  sudo systemctl daemon-reload
-  sudo systemctl start random_chat.service
-  sudo systemctl enable random_chat.service
-
-  if [ $? -eq 0 ]; then
-      echo -e "${GREEN}Сервис random_chat.service успешно запущен и включен!${NC}"
-  else
-      echo -e "${RED}Ошибка при запуске сервиса!${NC}"
-      exit 1
-  fi
-}
-
   install_dependencies
   install_python_libraries
   create_python_script
-  create_service
 
-  echo -e "${GREEN}Установка завершена! Логи доступны в systemd (journalctl -u random_chat.service).${NC}"
+  echo -e "${GREEN}Установка завершена!${NC}"

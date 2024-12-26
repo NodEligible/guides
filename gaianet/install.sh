@@ -57,4 +57,4 @@ initialization
 
 gaianet start
 
-echo -e "${GREEN}Установка ноди GaiaNet полностью завершена!${NC}"
+echo -e "${GREEN}Установка GaiaNet завершена!${NC}"

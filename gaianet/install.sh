@@ -68,41 +68,10 @@ initialization() {
 }
 
 
-create_service() {
-  echo -e "${YELLOW}Создание сервиса GaiaNet...${NC}"
-  sudo tee /etc/systemd/system/gaianet.service > /dev/null <<EOF
-[Unit]
-Description=Gaianet Node Service
-After=network.target
-
-[Service]
-User=root
-WorkingDirectory=/root/gaianet/bin
-ExecStart=/root/gaianet/bin/gaianet start
-Restart=on-failure
-RestartSec=10
-User=root
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-  sudo systemctl daemon-reload
-  sudo systemctl restart gaianet.service
-  sudo systemctl enable gaianet.service
-
-  if [ $? -eq 0 ]; then
-      echo -e "${GREEN}Сервис GaiaNet успешно создан и запущен!${NC}"
-  else
-      echo -e "${RED}Ошибка при создании или запуске сервиса!${NC}"
-  fi
-}
-
 # Основной процесс установки
 update
 install_docker
 install_gaianet
 initialization
-create_service
 
 echo -e "${GREEN}Установка ноди GaiaNet полностью завершена!${NC}"

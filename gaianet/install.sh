@@ -46,3 +46,61 @@ initialization() {
        echo -e "${RED}Ошибка при инициализация!${NC}"
    fi
 }
+
+
+
+servise() {
+  sudo tee /etc/systemd/system/gaianet.service > /dev/null <<EOF
+  [Unit]
+  Description=Gaianet Node Service
+  After=network.target
+  
+  [Service]
+  Type=forking
+  RemainAfterExit=true
+  ExecStart=/root/gaianet/bin/gaianet start
+  ExecStop=/root/gaianet/bin/gaianet stop
+  ExecStopPost=/bin/sleep 20
+  Restart=always
+  RestartSec=10
+  User=root
+  
+  [Install]
+  WantedBy=multi-user.target
+  EOF
+}
+
+sudo systemctl daemon-reload
+sudo systemctl restart gaianet.service
+sudo systemctl enable gaianet.service
+
+echo -e "${GREEN}Установка ноди GaiaNet полностью завершена!${NC}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -40,18 +40,11 @@ install_gaianet() {
 initialization() {
   echo -e "${YELLOW}Инициализация конфигурации...${NC}"
   source ~/.bashrc
-
-  if ! command -v gaianet &> /dev/null; then
-      echo -e "${RED}GaiaNet не найдено!${NC}"
-      exit 1
-  fi
-
   gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/main/qwen2-0.5b-instruct/config.json
-  if [ $? -eq 0 ]; then
+ if [ $? -eq 0 ]; then
       echo -e "${GREEN}Инициализация завершена!${NC}"
   else
       echo -e "${RED}Ошибка при инициализации!${NC}"
-      exit 1
   fi
 }
 

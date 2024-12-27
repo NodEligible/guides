@@ -44,7 +44,6 @@ initialization() {
 
   # Шлях до конфігураційного файлу
   CONFIG_FILE="/root/gaianet/config.json"
-
   if [ -f "$CONFIG_FILE" ]; then
       echo -e "${GREEN}}Файл конфигурации найден!${NC}"
   else

@@ -39,8 +39,8 @@ install_gaianet() {
 
 
 Update_the_environment() {
-echo -e "${YELLOW}Обновление окружения...${NC}"
-source ~/.bashrc
+  echo -e "${YELLOW}Обновление окружения...${NC}"
+  source ~/.bashrc
 }
 
 initialization() {

@@ -41,7 +41,17 @@ initialization() {
   echo -e "${YELLOW}Инициализация конфигурации...${NC}"
   source ~/.bashrc
   gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/main/qwen2-0.5b-instruct/config.json
- if [ $? -eq 0 ]; then
+
+  # Шлях до конфігураційного файлу
+  CONFIG_FILE="/root/gaianet/config.json"
+
+  if [ -f "$CONFIG_FILE" ]; then
+      echo -e "${GREEN}}Файл конфигурации найден!${NC}"
+  else
+      echo -e "${RED}Файл конфигурации не найден!${NC}"
+  fi
+
+  if [ $? -eq 0 ]; then
       echo -e "${GREEN}Инициализация завершена!${NC}"
   else
       echo -e "${RED}Ошибка при инициализации!${NC}"

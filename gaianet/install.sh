@@ -40,7 +40,8 @@ install_gaianet() {
 
 initialization() {
   echo -e "${YELLOW}Инициализация конфигурации...${NC}"
-/root/gaianet/bin/gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/main/qwen2-0.5b-instruct/config.json
+source ~/.bashrc
+gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/main/qwen2-0.5b-instruct/config.json
 }
 
 

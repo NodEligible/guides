@@ -38,15 +38,13 @@ install_gaianet() {
 }
 
 
-Update_the_environment() {
-  echo -e "${YELLOW}Обновление окружения...${NC}"
-  source ~/.bashrc
-}
-
 initialization() {
   echo -e "${YELLOW}Инициализация конфигурации...${NC}"
+  source ~/.bashrc
+  sleep 5
   gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/main/qwen2-0.5b-instruct/config.json
 }
+
 
 start() {
 echo -e "${YELLOW}Старт${NC}"
@@ -57,7 +55,6 @@ gaianet start
 update
 install_docker
 install_gaianet
-Update_the_environment
 initialization
 start
 

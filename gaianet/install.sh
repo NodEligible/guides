@@ -48,13 +48,17 @@ initialization() {
   gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/main/qwen2-0.5b-instruct/config.json
 }
 
+start() {
+echo -e "${YELLOW}Старт${NC}"
+gaianet start
+}
+
 # Основной процесс установки
 update
 install_docker
 install_gaianet
 Update_the_environment
 initialization
-
-gaianet start
+start
 
 echo -e "${GREEN}Установка GaiaNet завершена!${NC}"

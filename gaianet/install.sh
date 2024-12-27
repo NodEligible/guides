@@ -40,22 +40,27 @@ install_gaianet() {
 initialization() {
   echo -e "${YELLOW}Инициализация конфигурации...${NC}"
   source ~/.bashrc
-  gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/main/qwen2-0.5b-instruct/config.json
 
-  # Шлях до конфігураційного файлу
+  # Выполняем инициализацию GaiaNet
+  gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/main/qwen2-0.5b-instruct/config.json
+  GAIANET_EXIT_CODE=$?
+
+  # Проверяем файл конфигурации
   CONFIG_FILE="/root/gaianet/config.json"
   if [ -f "$CONFIG_FILE" ]; then
-      echo -e "${GREEN}}Файл конфигурации найден!${NC}"
+      echo -e "${GREEN}Файл конфигурации найден!${NC}"
   else
       echo -e "${RED}Файл конфигурации не найден!${NC}"
   fi
 
-  if [ $? -eq 0 ]; then
+  # Проверяем результат инициализации
+  if [ $GAIANET_EXIT_CODE -eq 0 ]; then
       echo -e "${GREEN}Инициализация завершена!${NC}"
   else
       echo -e "${RED}Ошибка при инициализации!${NC}"
   fi
 }
+
 
 
 

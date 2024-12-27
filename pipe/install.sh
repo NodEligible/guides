@@ -25,8 +25,13 @@ sudo apt update -y
   else
       echo -e "${RED}Ошибка при установке Ufw!${NC}"
   fi
-  
+
+
 echo -e "${YELLOW}Установка PIPE...${NC}"
+
+printf '%*s\n' 80 '' | tr ' ' '-'
+echo -e "${YELLOW}Авторизация и регистрация${NC}"
+printf '%*s\n' 80 '' | tr ' ' '-' 
 
 echo "Введите PIPE URL: "
 read PIPE

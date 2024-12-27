@@ -61,9 +61,6 @@ initialization() {
   fi
 }
 
-
-
-
 # Основной процесс установки
 update
 install_docker

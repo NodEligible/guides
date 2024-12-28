@@ -31,7 +31,7 @@ install_python_libraries() {
 
 create_python_script() {
   echo -e "${YELLOW}Создание скрипта random_chat_with_faker.py...${NC}"
-  read -p "Введите адрес вашего кошелька : " wallet_address
+  read -p "Введите Subdomain вашей ноди : " wallet_address
 
   if [ -z "$wallet_address" ]; then
       echo -e "${RED}Адрес кошелька не может быть пустым!${NC}"

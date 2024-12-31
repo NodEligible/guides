@@ -3,17 +3,24 @@
 # Display the logo (assuming it's needed)
 curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 
-
-sudo locale-gen ru_RU.UTF-8
-sudo update-locale
-
-sudo ufw allow 11000/tcp
-
 # Color codes for output
 YELLOW='\e[0;33m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
+
+# Проверяем, установлена ли локаль ru_RU.UTF-8
+if locale -a | grep -q "ru_RU.utf8"; then
+    echo -e "${YELLOW}Локаль ru_RU.UTF-8 уже установлена. Пропускаем установку.${NC}"
+else
+    echo -e "${YELLOW}Локаль ru_RU.UTF-8 не найдена. Устанавливаем...${NC}"
+    sudo locale-gen ru_RU.UTF-8
+    sudo update-locale LANG=ru_RU.UTF-8
+    echo -e "${GREEN}Локаль ru_RU.UTF-8 успешно установлена.${NC}"
+fi
+
+sudo ufw allow 21000/tcp
+sudo ufw allow 22000/tcp
 
 # Обновление и установка зависимостей
 echo -e "${YELLOW}Обновление пакетов...${NC}"
@@ -36,22 +43,29 @@ fi
 
 # Получение внешнего IP-адреса
 SERVER_IP=$(hostname -I | awk '{print $1}')
-BROWSER_URL="http://${SERVER_IP}:11000"
+BROWSER_URL="${SERVER_IP}"
 
 echo -e "${YELLOW}Автоматически определен IP-адрес сервера: ${SERVER_IP}${NC}"
 
 # Запрашиваем имя пользователя
-read -p "Введите имя пользователя: " USERNAME
+if [ -z "$USERNAME" ]; then
+   echo -e "Введите имя пользователя:"
+   read -r USERNAME
+fi
 
 # Запрашиваем пароль с подтверждением
-read -s -p "Введите пароль: " PASSWORD
-echo
-read -s -p "Подтвердите пароль: " PASSWORD_CONFIRM
-echo
+if [ -z "$PASSWORD" ]; then
+    echo -e "Введите пароль:"
+    read -s -r PASSWORD
+    echo
+    echo -e "Подтвердите пароль:"
+    read -s -r PASSWORD_CONFIRM
+    echo
 
-if [ "$PASSWORD" != "$PASSWORD_CONFIRM" ]; then
-    echo -e "${RED}Пароли не совпадают. Попробуйте снова.${NC}"
-    exit 1
+    if [ "$PASSWORD" != "$PASSWORD_CONFIRM" ]; then
+        echo -e "${RED}Пароли не совпадают. Попробуйте снова.${NC}"
+        exit 1
+    fi
 fi
 
 # Сохранение учетных данных
@@ -88,7 +102,7 @@ else
 
     docker run -d --name "$container_name" \
         --privileged \
-        -e TITLE=ShishkaCrypto \
+        -e TITLE=NodEligible \
         -e DISPLAY=:1 \
         -e PUID=1000 \
         -e PGID=1000 \
@@ -96,7 +110,8 @@ else
         -e PASSWORD="$PASSWORD" \
         -e LANGUAGE=ru_RU.UTF-8 \
         -v "$HOME/chromium/config:/config" \
-        -p 11000:3000 \
+        -p 21000:3000 \
+        -p 22000:3001 \
         --shm-size="2gb" \
         --restart unless-stopped \
         lscr.io/linuxserver/chromium:latest
@@ -110,6 +125,6 @@ else
 fi
 
 # Вывод информации для пользователя
-echo -e "${YELLOW}Открывайте браузер по адресу: http://${SERVER_IP}:11000/${NC}"
+echo -e "${YELLOW}Открывайте браузер по адресу: http://${SERVER_IP}:21000/${NC}"
 echo -e "${YELLOW}Имя пользователя: $USERNAME${NC}"
 echo -e "${YELLOW}Введите ваш пароль при входе.${NC}"

@@ -19,3 +19,8 @@ sleep 2
 
 echo -e "${GREEN}Запуск ноди${NC}"
 cd /root/cysic-verifier && bash start.sh > /root/cysic-verifier/logs.txt 2>&1 &
+
+sleep 1
+
+echo -e "${YELLOW}Проверка логов${NC}"
+tail -f /root/cysic-verifier/logs.txt

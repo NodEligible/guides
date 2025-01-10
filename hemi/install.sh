@@ -75,7 +75,7 @@ After=network.target
 [Service]
 User=$USER
 Environment="POPM_BTC_PRIVKEY=$PRIVATE_KEY"
-Environment="POPM_STATIC_FEE=2000"
+Environment="POPM_STATIC_FEE=1000"
 Environment="POPM_BFG_URL=wss://testnet.rpc.hemi.network/v1/ws/public"
 WorkingDirectory=$HOME/heminetwork
 ExecStart=$HOME/heminetwork/popmd

@@ -10,15 +10,18 @@ NC='\033[0m'
 
 echo -e "${YELLOW}Обновление Hemi...${NC}"
 
+grep -qxF 'fs.inotify.max_user_watches=524288' /etc/sysctl.conf || echo 'fs.inotify.max_user_watches=524288' | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+
 systemctl stop hemi
 
 cd $HOME
 
-wget https://github.com/hemilabs/heminetwork/releases/download/v0.8.0/heminetwork_v0.8.0_linux_amd64.tar.gz
+wget https://github.com/hemilabs/heminetwork/releases/download/v0.10.0/heminetwork_v0.10.0_linux_amd64.tar.gz
 
-tar -xvf heminetwork_v0.8.0_linux_amd64.tar.gz && rm heminetwork_v0.8.0_linux_amd64.tar.gz
-mv -f $HOME/heminetwork_v0.8.0_linux_amd64/* $HOME/heminetwork
-rm -rf $HOME/heminetwork_v0.8.0_linux_amd64
+tar -xvf heminetwork_v0.10.0_linux_amd64.tar.gz && rm heminetwork_v0.10.0_linux_amd64.tar.gz
+mv -f $HOME/heminetwork_v0.10.0_linux_amd64/* $HOME/heminetwork
+rm -rf $HOME/heminetwork_v0.10.0_linux_amd64
 
 sed -i "s|FEE=.*|FEE=4000\"|" /etc/systemd/system/hemi.service
 

@@ -1,5 +1,6 @@
+#!/bin/bash
 
-
+curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 
 SERVICE_FILE=/etc/systemd/system/pop.service
 exec_line=$(grep '^ExecStart=' "$SERVICE_FILE")

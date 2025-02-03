@@ -71,7 +71,7 @@ sudo systemctl start multiple
 # Функція для запиту Account ID
 get_identifier() {
     while [[ -z "$IDENTIFIER" ]]; do
-        echo -e "${YELLOW}Введите ваш Account ID:${NC}"
+        echo -e "${YELLOW}🔗 Введите ваш Account ID:${NC}"
         read IDENTIFIER
         if [[ -z "$IDENTIFIER" ]]; then
             echo -e "${RED}Ошибка: Account ID не может быть пустым. Попробуйте снова.${NC}"
@@ -82,7 +82,7 @@ get_identifier() {
 # Функція для запиту PIN
 get_pin() {
     while [[ -z "$PIN" ]]; do
-        echo -e "${YELLOW}Установите ваш PIN:${NC}"
+        echo -e "${YELLOW}🔗 Установите ваш PIN:${NC}"
         read PIN
         if [[ -z "$PIN" ]]; then
             echo -e "${RED}Ошибка: PIN не может быть пустым. Попробуйте снова.${NC}"

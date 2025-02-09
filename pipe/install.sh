@@ -118,13 +118,5 @@ else
     echo -e "${RED}❌ Ошибка при запуске сервиса!${NC}"
 fi
 
-echo -e "${YELLOW}📁 Копирование node_info.json в pipe_backup...${NC}"
-cp $HOME/opt/dcdn/node_info.json $HOME/pipe_backup/node_info.json
-if [ $? -eq 0 ]; then
-    echo -e "${GREEN}✅ Файл node_info.json скопирован!${NC}"
-else
-    echo -e "${RED}❌ Ошибка при копировании node_info.json!${NC}"
-fi
-
 echo -e "${GREEN}🚀 Установка PIPE завершена!${NC}"
 

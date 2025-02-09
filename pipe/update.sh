@@ -18,7 +18,7 @@ else
 fi
 
 echo -e "${YELLOW}📥 Загрузка новой версии POP...${NC}"
-sudo wget -O $HOME/opt/dcdn/pop "https://dl.pipecdn.app/v0.2.3/pop"
+sudo wget -O $HOME/opt/dcdn/pop "https://dl.pipecdn.app/v0.2.4/pop"
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✅ POP успешно загружен!${NC}"
 else

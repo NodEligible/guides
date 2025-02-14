@@ -27,17 +27,22 @@ fi
 
 echo -e "${YELLOW}🚀 Установка Multiple...${NC}"
 
-wget $CLIENT_URL -O multipleforlinux.tar
+# Завантаження файлу з Google Drive
+wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1KRKoEyex7hyX5zXPDCJW_kP4G6XX5mNU' -O multipleforlinux.tar
 
+# Розпакування архіву
 tar -xvf multipleforlinux.tar
 rm -rf multipleforlinux.tar
 
+# Перехід у директорію
 cd multipleforlinux
 chmod +x ./multiple-cli
 chmod +x ./multiple-node
 
+# Додавання до PATH
 echo "PATH=\$PATH:$(pwd)" >> $HOME/.bash_profile
 source $HOME/.bash_profile
+
 
 sudo tee /etc/systemd/system/multiple.service > /dev/null << EOF
 [Unit]

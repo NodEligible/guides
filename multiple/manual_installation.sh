@@ -23,10 +23,11 @@ else
     echo -e "${RED}❌ Ошибка при установке Ufw!${NC}"
 fi
 
-echo -e "${YELLOW}🚀 Установка Multiple...${NC}"
+echo -e "${YELLOW}Установка Gdown...${NC}"
+pip install gdown
 
-# Завантаження файлу з Google Drive
-wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1KRKoEyex7hyX5zXPDCJW_kP4G6XX5mNU' -O multipleforlinux.tar
+echo -e "${YELLOW}🚀 Установка Multiple...${NC}"
+gdown --id 1KRKoEyex7hyX5zXPDCJW_kP4G6XX5mNU -O multipleforlinux.tar
 
 # Розпакування архіву
 tar -xvf multipleforlinux.tar

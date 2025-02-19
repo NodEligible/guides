@@ -17,8 +17,16 @@ else
     echo -e "${RED}❌ Ошибка при остановке сервиса PIPE!${NC}"
 fi
 
+echo -e "${YELLOW}🔄 Обновление сервиса...${NC}"
+sudo sed -i '/^ExecStart=/ { /--enable-80-443/! s/$/ --enable-80-443/ }' /etc/systemd/system/pop.service
+if [ $? -eq 0 ]; then
+    echo -e "${GREEN}✅ Обновление сервиса завершено!${NC}"
+else
+    echo -e "${RED}❌ Ошибка при обновлении сервиса!${NC}"
+fi
+
 echo -e "${YELLOW}📥 Загрузка новой версии POP...${NC}"
-sudo wget -O $HOME/opt/dcdn/pop "https://dl.pipecdn.app/v0.2.6/pop"
+sudo wget -O $HOME/opt/dcdn/pop "https://dl.pipecdn.app/v0.2.8/pop"
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✅ POP успешно загружен!${NC}"
 else
@@ -44,6 +52,7 @@ else
 fi
 
 echo -e "${YELLOW}🚀 Запуск сервиса PIPE...${NC}"
+sudo systemctl daemon-reload
 sudo systemctl start pop
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✅ Сервис PIPE успешно запущен!${NC}"

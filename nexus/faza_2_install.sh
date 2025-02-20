@@ -25,15 +25,19 @@ NC='\033[0m'
       echo -e "${RED}Ошибка при установке Ufw!${NC}"
   fi
 
-  echo -e "${YELLOW}Установка Rust...${NC}"
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    if [ $? -eq 0 ]; then
-      echo -e "${GREEN}Rust успешно установлено!${NC}"
-  else
-      echo -e "${RED}Ошибка при установке Rust!${NC}"
-  fi
+PROTOC_VERSION=$(protoc --version 2>/dev/null | awk '{print $2}')
+if [[ "$PROTOC_VERSION" != "3.21.12" ]]; then
+    echo "Устанавливаем protoc версии 3.21.12"
+    wget https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip
+    unzip protoc-21.12-linux-x86_64.zip -d $HOME/.local
+    export PATH="$HOME/.local/bin:$PATH"
+else
+    echo "protoc 3.21.12 уже установлен, пропускаем установку."
+fi
 
-  rustup target add riscv32i-unknown-none-elf
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+rustup target add riscv32i-unknown-none-elf
 sudo apt install -y protobuf-compiler
 
 # remove previous data
@@ -41,6 +45,23 @@ systemctl stop nexus &>/dev/null
 systemctl disable nexus &>/dev/null
 rm -rf $HOME/.nexus /etc/systemd/system/nexus.service 
 source .profile
+
+# swap file fix
+
+SWAP_LOCATE=$(swapon --show | awk 'NR==2 {print $1}') && \
+swapoff $SWAP_LOCATE && rm $SWAP_LOCATE && \
+
+fallocate -l 6G /swapfile && \
+chmod 600 /swapfile && \
+mkswap /swapfile && \
+swapon /swapfile && \
+swapon --show && \
+echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab && \
+sysctl vm.swappiness=10 && \
+sysctl vm.vfs_cache_pressure=50 && \
+echo "vm.swappiness=10" >> /etc/sysctl.conf && \
+echo "vm.vfs_cache_pressure=50" >> /etc/sysctl.conf
+
 
 NEXUS_HOME="$HOME/.nexus"
 mkdir -p "$NEXUS_HOME"

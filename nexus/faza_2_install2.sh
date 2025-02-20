@@ -10,6 +10,8 @@ NC='\033[0m'
 echo -e "${YELLOW}Удаляем сессию...${NC}"
 tmux kill-session -t nexus
 
+sleep 5
+
 echo -e "${YELLOW}Удаляем protoc...${NC}"
 rm -rf $HOME/.local/bin/protoc
 rm -rf $HOME/.local/include/google

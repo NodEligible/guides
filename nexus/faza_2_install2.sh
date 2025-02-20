@@ -10,12 +10,18 @@ NC='\033[0m'
 echo -e "${YELLOW}Удаляем сессию...${NC}"
 tmux kill-session -t nexus
 
-sleep 5
+sleep 3
 
 echo -e "${YELLOW}Удаляем protoc...${NC}"
+# Видалення всього в /root/.local/bin/
+rm -rf /root/.local/bin/
+
+# Видалення всього в /root/.local/include/
+rm -rf /root/.local/include/
+
+# Видалення конкретного файлу readme.txt
 rm -f /root/.local/readme.txt
-rm -rf /root/.local/bin
-rm -rf /root/.local/include
+
 
 # Установка Main
   echo -e "${YELLOW}Установка Main...${NC}"

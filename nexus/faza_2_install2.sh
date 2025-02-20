@@ -10,19 +10,6 @@ NC='\033[0m'
 echo -e "${YELLOW}Удаляем сессию...${NC}"
 tmux kill-session -t nexus
 
-sleep 3
-
-echo -e "${YELLOW}Удаляем protoc...${NC}"
-# Видалення всього в /root/.local/bin/
-rm -rf /root/.local/bin/
-
-# Видалення всього в /root/.local/include/
-rm -rf /root/.local/include/
-
-# Видалення конкретного файлу readme.txt
-rm -f /root/.local/readme.txt
-
-
 # Установка Main
   echo -e "${YELLOW}Установка Main...${NC}"
   bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
@@ -41,8 +28,10 @@ rm -f /root/.local/readme.txt
       echo -e "${RED}Ошибка при установке Ufw!${NC}"
   fi
 
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
+
+sudo apt purge -y protobuf-compiler
 
 ARCH=$(uname -m)
 
@@ -57,13 +46,14 @@ else
     exit 1
 fi
 
-sudo apt purge -y protobuf-compiler
 curl -LO "$PROTOC_URL"
 unzip "protoc-${PROTOC_VERSION}-linux-*.zip" -d "$HOME/.local"
 # curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v25.2/protoc-25.2-linux-x86_64.zip
 # unzip protoc-25.2-linux-x86_64.zip -d $HOME/.local
 grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.bashrc || echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
+sleep 2
+export PATH=$HOME/.local/bin:$PATH
 protoc --version
 
 rustup target add riscv32i-unknown-none-elf
@@ -116,9 +106,9 @@ fi
 
 cd "$REPO_PATH/clients/cli" 
 
-wget https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip
-unzip protoc-21.12-linux-x86_64.zip -d $HOME/.local
-export PATH="$HOME/.local/bin:$PATH"
+# wget https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip
+# unzip protoc-21.12-linux-x86_64.zip -d $HOME/.local
+# export PATH="$HOME/.local/bin:$PATH"
 
 cargo clean
 RUST_BACKTRACE=1 cargo build --release
@@ -128,3 +118,6 @@ cp /root/.nexus/network-api/clients/cli/target/release/nexus-network /root/.nexu
 lsb_release -a
 rustc --version
 cargo --version
+file $HOME/.local/bin/protoc
+
+echo -e "${GREEN}Установка завершена${NC}"

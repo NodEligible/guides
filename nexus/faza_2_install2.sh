@@ -13,14 +13,9 @@ tmux kill-session -t nexus
 sleep 5
 
 echo -e "${YELLOW}Удаляем protoc...${NC}"
-rm -rf $HOME/.local/bin/protoc
-rm -rf $HOME/.local/include/google
-rm protoc-25.2-linux-x86_64.zip
-rm protoc-21.12-linux-x86_64.zip
-rm -rf /root/.local/bin/protoc
-rm -rf /root/.local/include/google/protobuf
 rm -f /root/.local/readme.txt
-
+rm -rf /root/.local/bin
+rm -rf /root/.local/include
 
 # Установка Main
   echo -e "${YELLOW}Установка Main...${NC}"

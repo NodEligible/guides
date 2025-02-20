@@ -25,7 +25,6 @@ NC='\033[0m'
       echo -e "${RED}Ошибка при установке Ufw!${NC}"
   fi
 
-#!/bin/bash
 
 set -e
 

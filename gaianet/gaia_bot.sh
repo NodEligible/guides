@@ -171,10 +171,10 @@ echo -e "\"How does AI contribute to the advancement of global digital solutions
 # Добавление ролей в roles.txt
 echo -e "system\nuser\nassistant\ntool" > roles.txt
 
-echo -e "${WHITE}[${CYAN}2/4${WHITE}] ${GREEN}➜ ${WHITE}📥 Загрузка скрипта бота...${NC}"
+echo -e "${YELLOW}📥 Загрузка скрипта бота...${NC}"
 curl -L https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/gaia_bot.py -o gaia_bot.py
 
-echo -e "${WHITE}[${CYAN}3/4${WHITE}] ${GREEN}➜ ${WHITE}⚙️  Настройка бота...${NC}"
+echo -e "${YELLOW}⚙️  Настройка бота...${NC}"
 echo -e "${YELLOW}🔑 Введите адрес вашей ноды:${NC}"
 read -p "➜ " NODE_ID
         
@@ -183,7 +183,7 @@ sed -i "s|\$NODE_ID|$NODE_ID|g" gaia_bot.py
 USERNAME=$(whoami)
 HOME_DIR=$(eval echo ~$USERNAME)
 
-echo -e "${WHITE}[${CYAN}4/4${WHITE}] ${GREEN}➜ ${WHITE}🚀 Настройка и запуск сервиса...${NC}"
+echo -e "${YELLOW}🚀 Настройка и запуск сервиса...${NC}"
 # Сервис для запуска бота
 echo -e "[Unit]
 Description=Gaia Bot
@@ -209,8 +209,8 @@ sleep 1
 sudo systemctl enable gaia-bot.service
 sudo systemctl start gaia-bot.service
 
-echo -e "\n${BOLD}${GREEN}✅ Бот успешно запущен!${NC}"
-echo -e "\n${WHITE}📋 Для просмотра логов используйте команду:${NC}"
-echo -e "${CYAN}sudo journalctl -u gaia-bot -f${NC}\n"
-        
-sudo journalctl -u gaia-bot -f
+echo -e "${GREEN}✅ Бот успешно запущен!${NC}"
+echo -e "📋 Для просмотра логов используйте команду:"
+echo -e "sudo journalctl -u gaia-bot -f"
+
+

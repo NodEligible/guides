@@ -167,6 +167,67 @@ echo -e "\"What are the potential benefits of AI in enhancing digital solutions?
 echo -e "\"How does AI influence the design of future digital solutions?\"" >> phrases.txt
 echo -e "\"What are the challenges of AI in maintaining ethical standards in digital solutions?\"" >> phrases.txt
 echo -e "\"How does AI contribute to the advancement of global digital solutions?\"" >> phrases.txt
+echo -e "\"What are the latest advancements in quantum computing?\"" > phrases.txt
+echo -e "\"How does artificial intelligence impact climate change solutions?\"" >> phrases.txt
+echo -e "\"What are the ethical considerations of gene editing technologies?\"" >> phrases.txt
+echo -e "\"How can blockchain technology improve supply chain transparency?\"" >> phrases.txt
+echo -e "\"What are the potential benefits and risks of autonomous vehicles?\"" >> phrases.txt
+echo -e "\"How does virtual reality change the landscape of education?\"" >> phrases.txt
+echo -e "\"What role does AI play in cybersecurity?\"" >> phrases.txt
+echo -e "\"What are the latest breakthroughs in space travel?\"" >> phrases.txt
+echo -e "\"How do quantum computers differ from classical computers?\"" >> phrases.txt
+echo -e "\"What are the potential risks of artificial intelligence?\"" >> phrases.txt
+echo -e "\"How does genetic engineering impact modern medicine?\"" >> phrases.txt
+echo -e "\"What are the future trends in autonomous robotics?\"" >> phrases.txt
+echo -e "\"How can IoT improve urban infrastructure?\"" >> phrases.txt
+echo -e "\"What are the benefits and drawbacks of nuclear energy?\"" >> phrases.txt
+echo -e "\"How does machine learning enhance financial fraud detection?\"" >> phrases.txt
+echo -e "\"What are the latest advancements in drone technology?\"" >> phrases.txt
+echo -e "\"How does AI contribute to personalized learning?\"" >> phrases.txt
+echo -e "\"What are the challenges of deep-sea exploration?\"" >> phrases.txt
+echo -e "\"How can smart contracts improve business efficiency?\"" >> phrases.txt
+echo -e "\"What are the ethical concerns of AI-generated content?\"" >> phrases.txt
+echo -e "\"How does space mining impact Earth's economy?\"" >> phrases.txt
+echo -e "\"What are the future applications of nanotechnology?\"" >> phrases.txt
+echo -e "\"How does blockchain enhance digital identity verification?\"" >> phrases.txt
+echo -e "\"What is the role of AI in disaster response management?\"" >> phrases.txt
+echo -e "\"How does 3D printing impact industrial manufacturing?\"" >> phrases.txt
+echo -e "\"What are the implications of brain-computer interfaces?\"" >> phrases.txt
+echo -e "\"How does the metaverse shape online interactions?\"" >> phrases.txt
+echo -e "\"What are the consequences of mass surveillance technology?\"" >> phrases.txt
+echo -e "\"How does AI-powered automation affect employment?\"" >> phrases.txt
+echo -e "\"What are the cybersecurity risks of smart cities?\"" >> phrases.txt
+echo -e "\"How does biotechnology revolutionize pharmaceuticals?\"" >> phrases.txt
+echo -e "\"What are the key components of a sustainable economy?\"" >> phrases.txt
+echo -e "\"How does AI help in wildlife conservation?\"" >> phrases.txt
+echo -e "\"What are the benefits of decentralized finance (DeFi)?\"" >> phrases.txt
+echo -e "\"How does AI assist in autonomous driving?\"" >> phrases.txt
+echo -e "\"What are the challenges in achieving nuclear fusion energy?\"" >> phrases.txt
+echo -e "\"How does AI-driven drug discovery work?\"" >> phrases.txt
+echo -e "\"What are the future prospects of flying cars?\"" >> phrases.txt
+echo -e "\"How can technology mitigate climate change?\"" >> phrases.txt
+echo -e "\"What are the security risks of quantum computing?\"" >> phrases.txt
+echo -e "\"How does AI-powered facial recognition impact privacy?\"" >> phrases.txt
+echo -e "\"What are the advancements in wearable medical devices?\"" >> phrases.txt
+echo -e "\"How does robotics improve elderly care?\"" >> phrases.txt
+echo -e "\"What are the implications of AI in military applications?\"" >> phrases.txt
+echo -e "\"How does AI contribute to advancements in space exploration?\"" >> phrases.txt
+echo -e "\"What are the ethical implications of AI in genetic engineering?\"" >> phrases.txt
+echo -e "\"How does AI influence the future of personalized medicine?\"" >> phrases.txt
+echo -e "\"What are the potential impacts of AI on global trade dynamics?\"" >> phrases.txt
+echo -e "\"How does AI enhance the capabilities of smart home devices?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating AI in public transportation systems?\"" >> phrases.txt
+echo -e "\"How does AI-driven innovation affect the future of work?\"" >> phrases.txt
+echo -e "\"What are the implications of AI in the development of smart cities?\"" >> phrases.txt
+echo -e "\"How does AI impact the evolution of digital entertainment?\"" >> phrases.txt
+echo -e "\"What are the potential benefits of AI in disaster management?\"" >> phrases.txt
+echo -e "\"How does AI influence the design of future urban landscapes?\"" >> phrases.txt
+echo -e "\"What are the challenges of AI in maintaining ethical standards?\"" >> phrases.txt
+echo -e "\"How does AI contribute to the advancement of renewable energy technologies?\"" >> phrases.txt
+echo -e "\"What are the key ethical concerns in AI development?\"" >> phrases.txt
+echo -e "\"How can AI be leveraged for mental health therapy?\"" >> phrases.txt
+echo -e "\"What are the risks and benefits of AI in predictive policing?\"" >> phrases.txt
+echo -e "\"How does AI impact the gig economy and freelancing?\"" >> phrases.txt
         
 # Добавление ролей в roles.txt
 echo -e "system\nuser\nassistant\ntool" > roles.txt

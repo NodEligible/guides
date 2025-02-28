@@ -93,6 +93,8 @@ get_pin() {
 get_identifier
 get_pin
 
+sleep 10
+
 # Виконуємо команду
 ./multiple-cli bind --bandwidth-download 100 --identifier "$IDENTIFIER" --pin "$PIN" --storage 200 --bandwidth-upload 100
 

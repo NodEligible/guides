@@ -1561,6 +1561,339 @@ echo -e "\"How does cave art influence modern logos?\"" >> phrases.txt
 echo -e "\"What is the impact of zinc on oyster health?\"" >> phrases.txt
 echo -e "\"How can AI improve escalator safety for elderly?\"" >> phrases.txt
 echo -e "\"What are the benefits of urban nut groves?\"" >> phrases.txt
+echo -e "\"What is the potential of AI in predicting droughts?\"" >> phrases.txt
+echo -e "\"How does satellite internet impact rural commerce?\"" >> phrases.txt
+echo -e "\"What are the prospects of dye-sensitized solar cells?\"" >> phrases.txt
+echo -e "\"How can AR enhance orthopedic surgery precision?\"" >> phrases.txt
+echo -e "\"What are the effects of afforestation on humidity?\"" >> phrases.txt
+echo -e "\"How does energy cooperatives affect local grids?\"" >> phrases.txt
+echo -e "\"What is the role of neurosteroids in mood?\"" >> phrases.txt
+echo -e "\"How can robotic mussels monitor water quality?\"" >> phrases.txt
+echo -e "\"What are the impacts of diaspora on music genres?\"" >> phrases.txt
+echo -e "\"How does bog restoration improve water retention?\"" >> phrases.txt
+echo -e "\"What is the future of photonic neural networks?\"" >> phrases.txt
+echo -e "\"How can AI optimize migratory bird tracking?\"" >> phrases.txt
+echo -e "\"What are the mental effects of suburban isolation?\"" >> phrases.txt
+echo -e "\"How does bioprinted leather reduce waste?\"" >> phrases.txt
+echo -e "\"What is the potential of B-cell therapy for autoimmunity?\"" >> phrases.txt
+echo -e "\"How can electrochromic glass save energy?\"" >> phrases.txt
+echo -e "\"What are the ecological impacts of crab farming?\"" >> phrases.txt
+echo -e "\"How does haiku poetry shape mindfulness?\"" >> phrases.txt
+echo -e "\"What is the impact of solar wind on space missions?\"" >> phrases.txt
+echo -e "\"How can gamified diets improve nutrition habits?\"" >> phrases.txt
+echo -e "\"What are the challenges of scaling ethanol plants?\"" >> phrases.txt
+echo -e "\"How does surf tourism affect reef ecosystems?\"" >> phrases.txt
+echo -e "\"What is the role of polyphenols in brain health?\"" >> phrases.txt
+echo -e "\"How can holographic maps enhance navigation?\"" >> phrases.txt
+echo -e "\"What are the social effects of growing exurbs?\"" >> phrases.txt
+echo -e "\"How does wave power affect seabed habitats?\"" >> phrases.txt
+echo -e "\"What is the future of neural implants for speech?\"" >> phrases.txt
+echo -e "\"How can microgrids empower urban slums?\"" >> phrases.txt
+echo -e "\"What are the ethical concerns of mitochondrial swaps?\"" >> phrases.txt
+echo -e "\"How does terrace gardening affect runoff?\"" >> phrases.txt
+echo -e "\"What is the potential of laser sintering in 3D printing?\"" >> phrases.txt
+echo -e "\"How can AI-generated stories inspire novelists?\"" >> phrases.txt
+echo -e "\"What are the effects of dust storms on allergies?\"" >> phrases.txt
+echo -e "\"How does youth mentorship enhance coding skills?\"" >> phrases.txt
+echo -e "\"What is the role of estuaries in nutrient cycling?\"" >> phrases.txt
+echo -e "\"How can blockchain verify sustainable fishing?\"" >> phrases.txt
+echo -e "\"What are the limits of cyclone prediction models?\"" >> phrases.txt
+echo -e "\"How does cultural blending affect architecture?\"" >> phrases.txt
+echo -e "\"What is the impact of battery waste on ecosystems?\"" >> phrases.txt
+echo -e "\"How can radiative cooling improve solar farms?\"" >> phrases.txt
+echo -e "\"What are the benefits of tai chi in elder care?\"" >> phrases.txt
+echo -e "\"How does AI customize adventure travel plans?\"" >> phrases.txt
+echo -e "\"What is the future of space junk recycling?\"" >> phrases.txt
+echo -e "\"How can lichen walls filter urban pollutants?\"" >> phrases.txt
+echo -e "\"What are the societal impacts of paleo diets?\"" >> phrases.txt
+echo -e "\"How does phototherapy optimize sleep patterns?\"" >> phrases.txt
+echo -e "\"What is the potential of zinc-air batteries?\"" >> phrases.txt
+echo -e "\"How can crowd science track light pollution?\"" >> phrases.txt
+echo -e "\"What are the challenges of archiving extinct dialects?\"" >> phrases.txt
+echo -e "\"How does bluff erosion affect cliff ecosystems?\"" >> phrases.txt
+echo -e "\"What is the role of chemokines in inflammation?\"" >> phrases.txt
+echo -e "\"How can foldable robots aid lunar exploration?\"" >> phrases.txt
+echo -e "\"What are the impacts of bike-sharing on delivery?\"" >> phrases.txt
+echo -e "\"How does eco-tourism uplift rural artisans?\"" >> phrases.txt
+echo -e "\"What is the future of dissolvable electronics?\"" >> phrases.txt
+echo -e "\"How can AI predict storm surge impacts?\"" >> phrases.txt
+echo -e "\"What are the effects of microgravity on immunity?\"" >> phrases.txt
+echo -e "\"How does yarn upcycling cut fashion waste?\"" >> phrases.txt
+echo -e "\"What is the potential of sonar in urban planning?\"" >> phrases.txt
+echo -e "\"How can virtual labs bridge STEM education gaps?\"" >> phrases.txt
+echo -e "\"What are the ecological benefits of lynx reintroduction?\"" >> phrases.txt
+echo -e "\"How does slang diversity affect AI chatbots?\"" >> phrases.txt
+echo -e "\"What is the role of adrenaline in stamina?\"" >> phrases.txt
+echo -e "\"How can wave energy power ocean sensors?\"" >> phrases.txt
+echo -e "\"What are the challenges of imaging quasars?\"" >> phrases.txt
+echo -e "\"How does AR fitness influence home workouts?\"" >> phrases.txt
+echo -e "\"What is the impact of fish ladders on rivers?\"" >> phrases.txt
+echo -e "\"How can smart patches monitor skin health?\"" >> phrases.txt
+echo -e "\"What are the social benefits of pedestrian malls?\"" >> phrases.txt
+echo -e "\"How does prairie restoration curb flooding?\"" >> phrases.txt
+echo -e "\"What is the future of plasmid-based therapies?\"" >> phrases.txt
+echo -e "\"How can pressure power light underwater bases?\"" >> phrases.txt
+echo -e "\"What are the effects of rural noise on cognition?\"" >> phrases.txt
+echo -e "\"How does oral lore enhance eco-education?\"" >> phrases.txt
+echo -e "\"What is the potential of optic nerve regeneration?\"" >> phrases.txt
+echo -e "\"How can UV sensors track forest fire spread?\"" >> phrases.txt
+echo -e "\"What are the risks of solar radiation management?\"" >> phrases.txt
+echo -e "\"How does bamboo leather impact green fashion?\"" >> phrases.txt
+echo -e "\"What is the role of dopamine in reward systems?\"" >> phrases.txt
+echo -e "\"How can robotic shrimp monitor pH levels?\"" >> phrases.txt
+echo -e "\"What are the benefits of peer-to-peer networks?\"" >> phrases.txt
+echo -e "\"How does nonlinear narrative reshape films?\"" >> phrases.txt
+echo -e "\"What is the impact of poultry farms on streams?\"" >> phrases.txt
+echo -e "\"How can evaporative cooling save server farms?\"" >> phrases.txt
+echo -e "\"What are the challenges of decoding lipidomes?\"" >> phrases.txt
+echo -e "\"How does adventure tourism fund habitat protection?\"" >> phrases.txt
+echo -e "\"What is the future of compact fusion reactors?\"" >> phrases.txt
+echo -e "\"How can AI enhance dialect preservation?\"" >> phrases.txt
+echo -e "\"What are the effects of LED lights on melatonin?\"" >> phrases.txt
+echo -e "\"How does ancient glassmaking inform optics?\"" >> phrases.txt
+echo -e "\"What is the potential of lab-grown opals?\"" >> phrases.txt
+echo -e "\"How can pocket farms cool urban streets?\"" >> phrases.txt
+echo -e "\"What are the ethical dilemmas of AI in courts?\"" >> phrases.txt
+echo -e "\"How does pyroclastic flow affect energy sites?\"" >> phrases.txt
+echo -e "\"What is the role of plankton in bioremediation?\"" >> phrases.txt
+echo -e "\"How can smart vending boost local sales?\"" >> phrases.txt
+echo -e "\"What are the social impacts of scooter adoption?\"" >> phrases.txt
+echo -e "\"How does heath restoration enhance pastures?\"" >> phrases.txt
+echo -e "\"What is the future of portable MRI scanners?\"" >> phrases.txt
+echo -e "\"How can AI detect Ponzi scheme patterns?\"" >> phrases.txt
+echo -e "\"What are the challenges of cloning seagrass?\"" >> phrases.txt
+echo -e "\"How does tai chi influence mental agility?\"" >> phrases.txt
+echo -e "\"What is the potential of ethanol as a green fuel?\"" >> phrases.txt
+echo -e "\"How can VR preserve ancient trade routes?\"" >> phrases.txt
+echo -e "\"What are the effects of manure runoff on ponds?\"" >> phrases.txt
+echo -e "\"How does passive design cut building energy?\"" >> phrases.txt
+echo -e "\"What is the role of lysins in cell breakdown?\"" >> phrases.txt
+echo -e "\"How can robotic wasps enhance crop dusting?\"" >> phrases.txt
+echo -e "\"What are the benefits of clam diets for nutrition?\"" >> phrases.txt
+echo -e "\"How does DeFi affect traditional banking?\"" >> phrases.txt
+echo -e "\"What is the impact of channelization on wetlands?\"" >> phrases.txt
+echo -e "\"How can neural caps improve focus skills?\"" >> phrases.txt
+echo -e "\"What are the challenges of scaling snail farming?\"" >> phrases.txt
+echo -e "\"How does periurban sprawl affect city services?\"" >> phrases.txt
+echo -e "\"What is the potential of photon propulsion in space?\"" >> phrases.txt
+echo -e "\"How can mime theater build empathy skills?\"" >> phrases.txt
+echo -e "\"What are the ecological effects of wind shadows?\"" >> phrases.txt
+echo -e "\"How does AI improve biomass forecasting?\"" >> phrases.txt
+echo -e "\"What is the role of archaea in gut health?\"" >> phrases.txt
+echo -e "\"How can subsurface irrigation boost yields?\"" >> phrases.txt
+echo -e "\"What are the social impacts of declining radio use?\"" >> phrases.txt
+echo -e "\"How does clay soil boost drought resistance?\"" >> phrases.txt
+echo -e "\"What is the future of phage-based pest control?\"" >> phrases.txt
+echo -e "\"How can static energy power micro-sensors?\"" >> phrases.txt
+echo -e "\"What are the effects of aroma therapy on focus?\"" >> phrases.txt
+echo -e "\"How does fintech reshape small loans?\"" >> phrases.txt
+echo -e "\"What is the potential of algal desalination?\"" >> phrases.txt
+echo -e "\"How can AR train civic engineers effectively?\"" >> phrases.txt
+echo -e "\"What are the challenges of conserving tidal flats?\"" >> phrases.txt
+echo -e "\"How does myth storytelling influence ethics?\"" >> phrases.txt
+echo -e "\"What is the impact of heat domes on wind power?\"" >> phrases.txt
+echo -e "\"How can nanovesicles deliver gene therapies?\"" >> phrases.txt
+echo -e "\"What are the benefits of hedgerows in cities?\"" >> phrases.txt
+echo -e "\"How does AI improve dock safety protocols?\"" >> phrases.txt
+echo -e "\"What is the role of terpenes in plant defense?\"" >> phrases.txt
+echo -e "\"How can inflatable robots aid flood rescues?\"" >> phrases.txt
+echo -e "\"What are the effects of sulfur on lake acidity?\"" >> phrases.txt
+echo -e "\"How does remote presenting reshape seminars?\"" >> phrases.txt
+echo -e "\"What is the potential of plant-robot hybrids?\"" >> phrases.txt
+echo -e "\"How can native grains boost food resilience?\"" >> phrases.txt
+echo -e "\"What are the challenges of shielding orbital bases?\"" >> phrases.txt
+echo -e "\"How does pub culture enhance social ties?\"" >> phrases.txt
+echo -e "\"What is the impact of reef gaps on snorkeling?\"" >> phrases.txt
+echo -e "\"How can AI drones halt illegal mining?\"" >> phrases.txt
+echo -e "\"What are the benefits of flex-time sleep schedules?\"" >> phrases.txt
+echo -e "\"How does rainwater trading affect conservation?\"" >> phrases.txt
+echo -e "\"What is the role of desmosomes in cell bonding?\"" >> phrases.txt
+echo -e "\"How can tidal farms ease coastal land use?\"" >> phrases.txt
+echo -e "\"What are the ethical issues of AI in therapy?\"" >> phrases.txt
+echo -e "\"How does methane from rice fields affect climate?\"" >> phrases.txt
+echo -e "\"What is the future of elastic alloys in robotics?\"" >> phrases.txt
+echo -e "\"How can locals track urban squirrel populations?\"" >> phrases.txt
+echo -e "\"What are the effects of blizzards on urban wildlife?\"" >> phrases.txt
+echo -e "\"How does folk singing preserve heritage?\"" >> phrases.txt
+echo -e "\"What is the potential of proton-based imaging?\"" >> phrases.txt
+echo -e "\"How can switchable glass cut heating costs?\"" >> phrases.txt
+echo -e "\"What are the social impacts of approval voting?\"" >> phrases.txt
+echo -e "\"How does pressure gradient power generation work?\"" >> phrases.txt
+echo -e "\"What is the role of actinobacteria in soil?\"" >> phrases.txt
+echo -e "\"How can AI streamline asylum aid delivery?\"" >> phrases.txt
+echo -e "\"What are the challenges of reusing zinc batteries?\"" >> phrases.txt
+echo -e "\"How does balcony beekeeping aid city crops?\"" >> phrases.txt
+echo -e "\"What is the future of bacterial CO2 converters?\"" >> phrases.txt
+echo -e "\"How can haptic VR enhance physical therapy?\"" >> phrases.txt
+echo -e "\"What are the effects of dolphin calls on fish?\"" >> phrases.txt
+echo -e "\"How does microgrants empower rural women?\"" >> phrases.txt
+echo -e "\"What is the potential of lab-grown ligaments?\"" >> phrases.txt
+echo -e "\"How can AI predict geyser eruption patterns?\"" >> phrases.txt
+echo -e "\"What are the benefits of swamp restoration?\"" >> phrases.txt
+echo -e "\"How does VR narrative therapy treat trauma?\"" >> phrases.txt
+echo -e "\"What is the impact of silt on turbine efficiency?\"" >> phrases.txt
+echo -e "\"How can blockchain verify timber sourcing?\"" >> phrases.txt
+echo -e "\"What are the challenges of spotting dark pools?\"" >> phrases.txt
+echo -e "\"How does ride-sharing reduce rural emissions?\"" >> phrases.txt
+echo -e "\"What is the role of ghrelin in hunger signals?\"" >> phrases.txt
+echo -e "\"How can robotic counselors aid remote therapy?\"" >> phrases.txt
+echo -e "\"What are the ecological effects of canal removal?\"" >> phrases.txt
+echo -e "\"How does blogging preserve family histories?\"" >> phrases.txt
+echo -e "\"What is the potential of graphene aerogels in storage?\"" >> phrases.txt
+echo -e "\"How can AI optimize subway flow systems?\"" >> phrases.txt
+echo -e "\"What are the benefits of rotational grazing for soil?\"" >> phrases.txt
+echo -e "\"How does digital knitting affect textile waste?\"" >> phrases.txt
+echo -e "\"What is the impact of coal dust on snow melt?\"" >> phrases.txt
+echo -e "\"How can neurotraining treat insomnia?\"" >> phrases.txt
+echo -e "\"What are the challenges of mining asteroid metals?\"" >> phrases.txt
+echo -e "\"How does caricature shape public perception?\"" >> phrases.txt
+echo -e "\"What is the future of magnetic energy harvesting?\"" >> phrases.txt
+echo -e "\"How can smart labels extend produce life?\"" >> phrases.txt
+echo -e "\"What are the effects of sprawl on wetlands?\"" >> phrases.txt
+echo -e "\"How does AI enhance whale migration tracking?\"" >> phrases.txt
+echo -e "\"What is the role of ceramides in skin barriers?\"" >> phrases.txt
+echo -e "\"How can offshore solar farms boost renewables?\"" >> phrases.txt
+echo -e "\"What are the social impacts of smart earbuds?\"" >> phrases.txt
+echo -e "\"How does tree planting reverse salinization?\"" >> phrases.txt
+echo -e "\"What is the potential of NK cells for infections?\"" >> phrases.txt
+echo -e "\"How can VR simulate passive house designs?\"" >> phrases.txt
+echo -e "\"What are the challenges of deflecting gamma bursts?\"" >> phrases.txt
+echo -e "\"How does stencil art influence urban culture?\"" >> phrases.txt
+echo -e "\"What is the impact of ice dam breaks on rivers?\"" >> phrases.txt
+echo -e "\"How can AI coaches adapt to learner pace?\"" >> phrases.txt
+echo -e "\"What are the benefits of cob homes in eco-villages?\"" >> phrases.txt
+echo -e "\"How does wind electrification aid rural schools?\"" >> phrases.txt
+echo -e "\"What is the future of fungal bioluminescent lights?\"" >> phrases.txt
+echo -e "\"How can robotics improve kelp restoration?\"" >> phrases.txt
+echo -e "\"What are the ecological costs of stadiums?\"" >> phrases.txt
+echo -e "\"How does moral ambiguity shape media ethics?\"" >> phrases.txt
+echo -e "\"What is the potential of viral toxin sensors?\"" >> phrases.txt
+echo -e "\"How can woonerfs improve urban safety?\"" >> phrases.txt
+echo -e "\"What are the effects of insecticide on bats?\"" >> phrases.txt
+echo -e "\"How does AI strengthen tidal grid stability?\"" >> phrases.txt
+echo -e "\"What is the role of autophagy in immunity?\"" >> phrases.txt
+echo -e "\"How can AR enhance civil war reenactments?\"" >> phrases.txt
+echo -e "\"What are the challenges of scaling pressure power?\"" >> phrases.txt
+echo -e "\"How does herbal tea influence drug research?\"" >> phrases.txt
+echo -e "\"What is the impact of tephra on crop yields?\"" >> phrases.txt
+echo -e "\"How can nanodetectors sense air toxins?\"" >> phrases.txt
+echo -e "\"What are the benefits of biogas-powered co-ops?\"" >> phrases.txt
+echo -e "\"How does VR build trust in medical training?\"" >> phrases.txt
+echo -e "\"What is the future of CRISPR in weed control?\"" >> phrases.txt
+echo -e "\"How can AI streamline biogas production?\"" >> phrases.txt
+echo -e "\"What are the effects of runoff on coral polyps?\"" >> phrases.txt
+echo -e "\"How does co-living affect urban density?\"" >> phrases.txt
+echo -e "\"What is the potential of infrasound in monitoring?\"" >> phrases.txt
+echo -e "\"How can smart blinds improve elder comfort?\"" >> phrases.txt
+echo -e "\"What are the ecological impacts of sea walls?\"" >> phrases.txt
+echo -e "\"How does meme culture drive social change?\"" >> phrases.txt
+echo -e "\"What is the role of fibronectin in healing?\"" >> phrases.txt
+echo -e "\"How can robotic cats aid dementia patients?\"" >> phrases.txt
+echo -e "\"What are the challenges of charting magma chambers?\"" >> phrases.txt
+echo -e "\"How does urban bamboo reduce noise pollution?\"" >> phrases.txt
+echo -e "\"What is the future of epigenetic therapies?\"" >> phrases.txt
+echo -e "\"How can AI forecast wave energy output?\"" >> phrases.txt
+echo -e "\"What are the benefits of shrimp oil as biofuel?\"" >> phrases.txt
+echo -e "\"How does festival travel aid cultural preservation?\"" >> phrases.txt
+echo -e "\"What is the impact of acidity on soil microbes?\"" >> phrases.txt
+echo -e "\"How can wearables detect glucose spikes?\"" >> phrases.txt
+echo -e "\"What are the ethical issues of robot policing?\"" >> phrases.txt
+echo -e "\"How does ocean stratification affect plankton?\"" >> phrases.txt
+echo -e "\"What is the potential of bio-printed cartilage?\"" >> phrases.txt
+echo -e "\"How can AR assist in aerospace training?\"" >> phrases.txt
+echo -e "\"What are the social effects of blended learning?\"" >> phrases.txt
+echo -e "\"How does eco-brick reduce construction waste?\"" >> phrases.txt
+echo -e "\"What is the role of lamins in nuclear strength?\"" >> phrases.txt
+echo -e "\"How can drones optimize refugee camp aid?\"" >> phrases.txt
+echo -e "\"What are the ecological benefits of moor restoration?\"" >> phrases.txt
+echo -e "\"How does AI reshape symphony composition?\"" >> phrases.txt
+echo -e "\"What is the future of robotic seaweed planters?\"" >> phrases.txt
+echo -e "\"How can micro-hydropower fit urban creeks?\"" >> phrases.txt
+echo -e "\"What are the challenges of saving reef fish?\"" >> phrases.txt
+echo -e "\"How does beat poetry boost creativity?\"" >> phrases.txt
+echo -e "\"What is the impact of mini-grids on reliability?\"" >> phrases.txt
+echo -e "\"How can nanolayers boost solar reflectivity?\"" >> phrases.txt
+echo -e "\"What are the benefits of curb composting bins?\"" >> phrases.txt
+echo -e "\"How does VR reduce radiation therapy fears?\"" >> phrases.txt
+echo -e "\"What is the role of clots in stroke damage?\"" >> phrases.txt
+echo -e "\"How can AI restore weathered stone carvings?\"" >> phrases.txt
+echo -e "\"What are the effects of squalls on sea trade?\"" >> phrases.txt
+echo -e "\"How does coffee tourism aid bean farmers?\"" >> phrases.txt
+echo -e "\"What is the potential of bio-grouts in foundations?\"" >> phrases.txt
+echo -e "\"How can smart lanes predict traffic jams?\"" >> phrases.txt
+echo -e "\"What are the ecological costs of edge city growth?\"" >> phrases.txt
+echo -e "\"How does AI tailor plans for autism therapy?\"" >> phrases.txt
+echo -e "\"What is the future of micro-thermal cooling?\"" >> phrases.txt
+echo -e "\"How can VR boost lexicon acquisition?\"" >> phrases.txt
+echo -e "\"What are the challenges of saving tidal crabs?\"" >> phrases.txt
+echo -e "\"How does meal heritage shape dietary norms?\"" >> phrases.txt
+echo -e "\"What is the impact of CO on brain function?\"" >> phrases.txt
+echo -e "\"How can robotics sort recyclable fabrics?\"" >> phrases.txt
+echo -e "\"What are the benefits of alley dew collectors?\"" >> phrases.txt
+echo -e "\"How does AI detect early ALS symptoms?\"" >> phrases.txt
+echo -e "\"What is the role of codons in protein synthesis?\"" >> phrases.txt
+echo -e "\"How can urban horticulture boost food access?\"" >> phrases.txt
+echo -e "\"What are the effects of undertows on swimmers?\"" >> phrases.txt
+echo -e "\"How does virtual weaving redefine textile value?\"" >> phrases.txt
+echo -e "\"What is the potential of micro-thorium reactors?\"" >> phrases.txt
+echo -e "\"How can AI streamline runoff treatment?\"" >> phrases.txt
+echo -e "\"What are the ecological benefits of tundra revival?\"" >> phrases.txt
+echo -e "\"How does VR impact bail hearing outcomes?\"" >> phrases.txt
+echo -e "\"What is the role of insulin in fat storage?\"" >> phrases.txt
+echo -e "\"How can robotics enhance patio gardens?\"" >> phrases.txt
+echo -e "\"What are the challenges of scaling snow harvesting?\"" >> phrases.txt
+echo -e "\"How does rock art influence brand identity?\"" >> phrases.txt
+echo -e "\"What is the impact of copper on algae growth?\"" >> phrases.txt
+echo -e "\"How can AI improve doorway safety for elderly?\"" >> phrases.txt
+echo -e "\"What are the benefits of urban herb patches?\"" >> phrases.txt
+echo -e "\"How does mussel farming reduce eutrophication?\"" >> phrases.txt
+echo -e "\"What is the potential of bioengineered kidneys?\"" >> phrases.txt
+echo -e "\"How can AR train welders more effectively?\"" >> phrases.txt
+echo -e "\"What are the social effects of gamified learning?\"" >> phrases.txt
+echo -e "\"How does green plaster reduce indoor pollutants?\"" >> phrases.txt
+echo -e "\"What is the role of dynein in cell transport?\"" >> phrases.txt
+echo -e "\"How can drones optimize wildfire supply drops?\"" >> phrases.txt
+echo -e "\"What are the ecological benefits of glade revival?\"" >> phrases.txt
+echo -e "\"How does AI reshape blues music creation?\"" >> phrases.txt
+echo -e "\"What is the future of robotic mussel planters?\"" >> phrases.txt
+echo -e "\"How can nano-hydropower fit small rivers?\"" >> phrases.txt
+echo -e "\"What are the challenges of saving sea lions?\"" >> phrases.txt
+echo -e "\"How does jazz poetry boost expression?\"" >> phrases.txt
+echo -e "\"What is the impact of pico-grids on outages?\"" >> phrases.txt
+echo -e "\"How can nanogels boost solar cell life?\"" >> phrases.txt
+echo -e "\"What are the benefits of lot composting bins?\"" >> phrases.txt
+echo -e "\"How does VR reduce transplant surgery stress?\"" >> phrases.txt
+echo -e "\"What is the role of fibrinogen in clotting?\"" >> phrases.txt
+echo -e "\"How can AI restore eroded cliff paintings?\"" >> phrases.txt
+echo -e "\"What are the effects of gusts on coastal trade?\"" >> phrases.txt
+echo -e "\"How does spice tourism aid local growers?\"" >> phrases.txt
+echo -e "\"What is the potential of bio-coatings in repairs?\"" >> phrases.txt
+echo -e "\"How can smart paths predict pedestrian flow?\"" >> phrases.txt
+echo -e "\"What are the ecological costs of sprawl creep?\"" >> phrases.txt
+echo -e "\"How does AI tailor plans for OCD therapy?\"" >> phrases.txt
+echo -e "\"What is the future of nano-thermal pumps?\"" >> phrases.txt
+echo -e "\"How can VR boost rhetoric comprehension?\"" >> phrases.txt
+echo -e "\"What are the challenges of saving whale sharks?\"" >> phrases.txt
+echo -e "\"How does drink heritage shape beverage norms?\"" >> phrases.txt
+echo -e "\"What is the impact of NO2 on lung function?\"" >> phrases.txt
+echo -e "\"How can robotics sort edible food waste?\"" >> phrases.txt
+echo -e "\"What are the benefits of patio dew collectors?\"" >> phrases.txt
+echo -e "\"How does AI detect early glaucoma signs?\"" >> phrases.txt
+echo -e "\"What is the role of ribosomes in translation?\"" >> phrases.txt
+echo -e "\"How can urban viticulture boost wine supply?\"" >> phrases.txt
+echo -e "\"What are the effects of tidal bores on docks?\"" >> phrases.txt
+echo -e "\"How does virtual carving redefine wood value?\"" >> phrases.txt
+echo -e "\"What is the potential of micro-fusion reactors?\"" >> phrases.txt
+echo -e "\"How can AI streamline silt management?\"" >> phrases.txt
+echo -e "\"What are the ecological benefits of taiga revival?\"" >> phrases.txt
+echo -e "\"How does VR impact jury selection outcomes?\"" >> phrases.txt
+echo -e "\"What is the role of leptin in satiety?\"" >> phrases.txt
+echo -e "\"How can robotics enhance ledge gardens?\"" >> phrases.txt
+echo -e "\"What are the challenges of scaling hail harvesting?\"" >> phrases.txt
+echo -e "\"How does sand art influence visual design?\"" >> phrases.txt
+echo -e "\"What is the impact of nickel on coral health?\"" >> phrases.txt
+echo -e "\"How can AI improve hallway safety for elderly?\"" >> phrases.txt
+echo -e "\"What are the benefits of urban fruit orchards?\"" >> phrases.txt
      
 # Добавление ролей в roles.txt
 echo -e "system\nuser\nassistant\ntool" > roles.txt

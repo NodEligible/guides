@@ -98,6 +98,8 @@ read IDENTIFIER
 echo -e "${YELLOW}🔗 Установите ваш PIN:${NC}"
 read PIN
 
+sleep 10
+
 # Виконуємо команду
 ./multiple-cli bind --bandwidth-download 100 --identifier "$IDENTIFIER" --pin "$PIN" --storage 200 --bandwidth-upload 100
 

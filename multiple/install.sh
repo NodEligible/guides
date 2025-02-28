@@ -109,17 +109,17 @@ fi
 
 
 # Викликаємо функції для отримання даних
-get_identifier
-get_pin
+#get_identifier
+#get_pin
 
 # Виконуємо команду
-./multiple-cli bind --bandwidth-download 100 --identifier "$IDENTIFIER" --pin "$PIN" --storage 200 --bandwidth-upload 100
+#./multiple-cli bind --bandwidth-download 100 --identifier "$IDENTIFIER" --pin "$PIN" --storage 200 --bandwidth-upload 100
 
 # Перевіряємо результат виконання
-if [[ $? -ne 0 ]]; then
-    echo -e "${RED}Ошибка: Не удалось выполнить привязку аккаунта.${NC}"
-    exit 1
-fi
+#if [[ $? -ne 0 ]]; then
+#    echo -e "${RED}Ошибка: Не удалось выполнить привязку аккаунта.${NC}"
+#    exit 1
+#fi
 
 echo -e "${GREEN}Установка завершена!${NC}"
 

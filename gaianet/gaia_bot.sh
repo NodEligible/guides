@@ -265,6 +265,116 @@ echo -e "\"How does AI-driven drug development accelerate clinical trials?\"" >>
 echo -e "\"What are the risks of AI-generated misinformation?\"" >> phrases.txt
 echo -e "\"How can AI be used to combat climate change?\"" >> phrases.txt
 echo -e "\"What are the potential risks and rewards of AI-powered financial advisors?\"" >> phrases.txt
+echo -e "\"What are the biggest challenges of establishing a human colony on Mars?\"" >> phrases.txt
+echo -e "\"How does space debris impact future space exploration missions?\"" >> phrases.txt
+echo -e "\"What are the potential benefits of mining asteroids for rare minerals?\"" >> phrases.txt
+echo -e "\"How do black holes influence the structure of galaxies?\"" >> phrases.txt
+echo -e "\"What are the technological advancements needed for interstellar travel?\"" >> phrases.txt
+echo -e "\"How does microgravity affect human biology over long space missions?\"" >> phrases.txt
+echo -e "\"What are the implications of discovering extraterrestrial life?\"" >> phrases.txt
+echo -e "\"How does dark matter shape our understanding of the universe?\"" >> phrases.txt
+echo -e "\"What are the latest discoveries about exoplanets and their potential habitability?\"" >> phrases.txt
+echo -e "\"How does quantum physics influence our theories of the cosmos?\"" >> phrases.txt
+echo -e "\"What are the effects of solar radiation on spacecraft electronics?\"" >> phrases.txt
+echo -e "\"How do neutron stars differ from black holes?\"" >> phrases.txt
+echo -e "\"What are the latest advancements in space propulsion technology?\"" >> phrases.txt
+echo -e "\"How can AI improve space mission planning and execution?\"" >> phrases.txt
+echo -e "\"What are the challenges of growing food in space?\"" >> phrases.txt
+echo -e "\"How do cosmic rays affect astronauts on deep space missions?\"" >> phrases.txt
+echo -e "\"What are the latest discoveries about the Kuiper Belt?\"" >> phrases.txt
+echo -e "\"How do gravitational waves help us understand the universe?\"" >> phrases.txt
+echo -e "\"What are the potential dangers of gamma-ray bursts?\"" >> phrases.txt
+echo -e "\"How do we detect rogue planets in interstellar space?\"" >> phrases.txt
+echo -e "\"What are the possibilities of terraforming Mars?\"" >> phrases.txt
+echo -e "\"How does the Sun’s activity impact space weather?\"" >> phrases.txt
+echo -e "\"What are the biggest threats to satellites in Earth's orbit?\"" >> phrases.txt
+echo -e "\"How can 3D printing be used for building structures on the Moon?\"" >> phrases.txt
+echo -e "\"What are the most promising locations for life in our solar system?\"" >> phrases.txt
+echo -e "\"How do scientists measure the age of the universe?\"" >> phrases.txt
+echo -e "\"What role does antimatter play in modern physics?\"" >> phrases.txt
+echo -e "\"How can space elevators revolutionize space travel?\"" >> phrases.txt
+echo -e "\"What are the potential applications of lunar helium-3 as a fuel source?\"" >> phrases.txt
+echo -e "\"How do radio telescopes help us understand distant galaxies?\"" >> phrases.txt
+echo -e "\"What are the benefits of international collaboration in space exploration?\"" >> phrases.txt
+echo -e "\"How does the expansion of the universe affect the fate of galaxies?\"" >> phrases.txt
+echo -e "\"What are the main obstacles to faster-than-light travel?\"" >> phrases.txt
+echo -e "\"How do space agencies plan for long-duration missions to the outer planets?\"" >> phrases.txt
+echo -e "\"What are the future prospects of asteroid deflection technology?\"" >> phrases.txt
+echo -e "\"How do planetary magnetic fields protect atmospheres from solar wind?\"" >> phrases.txt
+echo -e "\"What is the significance of the Oort Cloud in our solar system?\"" >> phrases.txt
+echo -e "\"How do exoplanet atmospheres help us search for alien life?\"" >> phrases.txt
+echo -e "\"What are the potential risks of sending messages to extraterrestrial civilizations?\"" >> phrases.txt
+echo -e "\"How does zero gravity impact human muscle and bone density?\"" >> phrases.txt
+echo -e "\"What are the technological challenges of building habitats on Mars?\"" >> phrases.txt
+echo -e "\"How do we search for water on distant exoplanets?\"" >> phrases.txt
+echo -e "\"What is the role of dark energy in the expansion of the universe?\"" >> phrases.txt
+echo -e "\"How do we protect astronauts from cosmic radiation on long-duration missions?\"" >> phrases.txt
+echo -e "\"What are the latest developments in plasma propulsion for deep space travel?\"" >> phrases.txt
+echo -e "\"How can nuclear fusion be used for space exploration?\"" >> phrases.txt
+echo -e "\"What are the key differences between brown dwarfs and gas giants?\"" >> phrases.txt
+echo -e "\"How do we study the atmospheres of exoplanets?\"" >> phrases.txt
+echo -e "\"What are the possible effects of space weather on Earth’s power grids?\"" >> phrases.txt
+echo -e "\"How does space tourism impact the environment and space industry?\"" >> phrases.txt
+echo -e "\"What are the ethical implications of space colonization?\"" >> phrases.txt
+echo -e "\"How do tidal forces affect celestial bodies in close orbits?\"" >> phrases.txt
+echo -e "\"What are the most extreme weather conditions on other planets?\"" >> phrases.txt
+echo -e "\"How do we map the large-scale structure of the universe?\"" >> phrases.txt
+echo -e "\"What are the prospects of finding habitable moons in other star systems?\"" >> phrases.txt
+echo -e "\"How can AI improve space debris tracking and removal?\"" >> phrases.txt
+echo -e "\"What is the significance of the James Webb Space Telescope’s discoveries?\"" >> phrases.txt
+echo -e "\"What are the effects of deforestation on biodiversity?\"" >> phrases.txt
+echo -e "\"How do rainforest ecosystems maintain global oxygen levels?\"" >> phrases.txt
+echo -e "\"What are the latest advancements in rainforest conservation?\"" >> phrases.txt
+echo -e "\"How can AI improve wildlife tracking and monitoring?\"" >> phrases.txt
+echo -e "\"What are the challenges of reintroducing species into the wild?\"" >> phrases.txt
+echo -e "\"How do natural forest fires benefit ecosystems?\"" >> phrases.txt
+echo -e "\"What are the latest discoveries about the Amazon rainforest?\"" >> phrases.txt
+echo -e "\"How do mangroves protect coastal regions from storms?\"" >> phrases.txt
+echo -e "\"What are the potential dangers of habitat fragmentation?\"" >> phrases.txt
+echo -e "\"How do pollinators contribute to ecosystem stability?\"" >> phrases.txt
+echo -e "\"What are the possibilities of restoring degraded forests?\"" >> phrases.txt
+echo -e "\"How does climate change impact the water cycle in rainforests?\"" >> phrases.txt
+echo -e "\"What are the biggest threats to endangered species in the jungle?\"" >> phrases.txt
+echo -e "\"How can sustainable agriculture reduce deforestation?\"" >> phrases.txt
+echo -e "\"What are the most effective methods for reforestation?\"" >> phrases.txt
+echo -e "\"How do indigenous communities contribute to forest conservation?\"" >> phrases.txt
+echo -e "\"What role do fungi play in rainforest ecosystems?\"" >> phrases.txt
+echo -e "\"How do river systems support jungle biodiversity?\"" >> phrases.txt
+echo -e "\"What are the benefits of ecotourism in tropical forests?\"" >> phrases.txt
+echo -e "\"How does the Amazon River influence the global climate?\"" >> phrases.txt
+echo -e "\"What are the main obstacles to stopping illegal logging?\"" >> phrases.txt
+echo -e "\"How does rewilding help restore lost ecosystems?\"" >> phrases.txt
+echo -e "\"What are the future prospects of protecting rainforests?\"" >> phrases.txt
+echo -e "\"How do tropical forests act as carbon sinks?\"" >> phrases.txt
+echo -e "\"What is the significance of biodiversity hotspots?\"" >> phrases.txt
+echo -e "\"How do tree canopies create unique microhabitats?\"" >> phrases.txt
+echo -e "\"What are the best ways to combat poaching in rainforests?\"" >> phrases.txt
+echo -e "\"How does deforestation affect indigenous cultures?\"" >> phrases.txt
+echo -e "\"What are the potential medicinal properties of jungle plants?\"" >> phrases.txt
+echo -e "\"How do conservationists track large predators in the wild?\"" >> phrases.txt
+echo -e "\"What are the effects of invasive species on rainforest ecosystems?\"" >> phrases.txt
+echo -e "\"How do seasonal monsoons impact tropical forests?\"" >> phrases.txt
+echo -e "\"What are the key adaptations of animals living in dense jungles?\"" >> phrases.txt
+echo -e "\"How can urban reforestation efforts improve local biodiversity?\"" >> phrases.txt
+echo -e "\"What are the impacts of palm oil plantations on wildlife?\"" >> phrases.txt
+echo -e "\"How does deforestation contribute to global warming?\"" >> phrases.txt
+echo -e "\"What are the most endangered species of the rainforest?\"" >> phrases.txt
+echo -e "\"How do rivers and wetlands sustain jungle biodiversity?\"" >> phrases.txt
+echo -e "\"What are the effects of pesticide use in tropical forests?\"" >> phrases.txt
+echo -e "\"How do trees communicate through fungal networks?\"" >> phrases.txt
+echo -e "\"What role do keystone species play in rainforest stability?\"" >> phrases.txt
+echo -e "\"How can conservation technology improve jungle preservation?\"" >> phrases.txt
+echo -e "\"What are the best strategies for preventing illegal wildlife trade?\"" >> phrases.txt
+echo -e "\"How do rainforests regulate the Earth's water cycle?\"" >> phrases.txt
+echo -e "\"What are the long-term effects of habitat loss on ecosystems?\"" >> phrases.txt
+echo -e "\"How can tree planting initiatives help restore biodiversity?\"" >> phrases.txt
+echo -e "\"What are the consequences of mining in tropical regions?\"" >> phrases.txt
+echo -e "\"How do forest elephants shape their environment?\"" >> phrases.txt
+echo -e "\"What are the advantages of protecting primary forests?\"" >> phrases.txt
+echo -e "\"How do amphibians adapt to the humid rainforest climate?\"" >> phrases.txt
+echo -e "\"What are the benefits of integrating agroforestry into farming?\"" >> phrases.txt
+echo -e "\"How does reforestation support endangered species recovery?\"" >> phrases.txt
+
         
 # Добавление ролей в roles.txt
 echo -e "system\nuser\nassistant\ntool" > roles.txt
@@ -273,7 +383,7 @@ echo -e "${YELLOW}📥 Загрузка скрипта бота...${NC}"
 curl -L https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/gaia_bot.py -o gaia_bot.py
 
 echo -e "${YELLOW}⚙️  Настройка бота...${NC}"
-echo -e "${YELLOW}🔑 Введите адрес вашей ноды:${NC}"
+echo -e "${YELLOW}🔑 Вставьте NODE_ID вашей ноды :${NC}"
 read -p "➜ " NODE_ID
         
 sed -i "s|\$NODE_ID|$NODE_ID|g" gaia_bot.py
@@ -301,7 +411,7 @@ WorkingDirectory=$HOME_DIR/gaia-bot
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/gaia-bot.service
 
-        # Запуск бота
+# Запуск бота
 sudo systemctl daemon-reload
 sleep 1
 sudo systemctl enable gaia-bot.service

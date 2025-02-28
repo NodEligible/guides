@@ -167,7 +167,7 @@ echo -e "\"What are the potential benefits of AI in enhancing digital solutions?
 echo -e "\"How does AI influence the design of future digital solutions?\"" >> phrases.txt
 echo -e "\"What are the challenges of AI in maintaining ethical standards in digital solutions?\"" >> phrases.txt
 echo -e "\"How does AI contribute to the advancement of global digital solutions?\"" >> phrases.txt
-echo -e "\"What are the latest advancements in quantum computing?\"" > phrases.txt
+echo -e "\"What are the latest advancements in quantum computing?\"" >> phrases.txt
 echo -e "\"How does artificial intelligence impact climate change solutions?\"" >> phrases.txt
 echo -e "\"What are the ethical considerations of gene editing technologies?\"" >> phrases.txt
 echo -e "\"How can blockchain technology improve supply chain transparency?\"" >> phrases.txt

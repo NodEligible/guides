@@ -383,7 +383,7 @@ echo -e "${YELLOW}📥 Загрузка скрипта бота...${NC}"
 curl -L https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/gaia_bot.py -o gaia_bot.py
 
 echo -e "${YELLOW}⚙️  Настройка бота...${NC}"
-echo -e "${YELLOW}🔑 Вставьте NODE_ID вашей ноды :${NC}"
+echo -e "${YELLOW}📬 Вставьте NODE_ID вашей ноды :${NC}"
 read -p "➜ " NODE_ID
         
 sed -i "s|\$NODE_ID|$NODE_ID|g" gaia_bot.py

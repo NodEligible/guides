@@ -91,11 +91,11 @@ sudo systemctl start multiple
 #}
 
 # Запит Account ID
-echo -e "🔗 Введите ваш Account ID:"
+echo -e "${YELLOW}🔗 Введите ваш Account ID:${NC}"
 read IDENTIFIER
 
 # Запит PIN
-echo -e "🔗 Установите ваш PIN:"
+echo -e "${YELLOW}🔗 Установите ваш PIN:${NC}"
 read PIN
 
 # Виконуємо команду

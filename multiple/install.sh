@@ -69,26 +69,44 @@ sudo systemctl enable multiple
 sudo systemctl start multiple
 
 # Функція для запиту Account ID
-get_identifier() {
-    while [[ -z "$IDENTIFIER" ]]; do
-        echo -e "${YELLOW}🔗 Введите ваш Account ID:${NC}"
-        read IDENTIFIER
-        if [[ -z "$IDENTIFIER" ]]; then
-            echo -e "${RED}Ошибка: Account ID не может быть пустым. Попробуйте снова.${NC}"
-        fi
-    done
-}
+#get_identifier() {
+#    while [[ -z "$IDENTIFIER" ]]; do
+#        echo -e "${YELLOW}🔗 Введите ваш Account ID:${NC}"
+#        read IDENTIFIER
+#        if [[ -z "$IDENTIFIER" ]]; then
+#            echo -e "${RED}Ошибка: Account ID не может быть пустым. Попробуйте снова.${NC}"
+#        fi
+#    done
+#}
 
 # Функція для запиту PIN
-get_pin() {
-    while [[ -z "$PIN" ]]; do
-        echo -e "${YELLOW}🔗 Установите ваш PIN:${NC}"
-        read PIN
-        if [[ -z "$PIN" ]]; then
-            echo -e "${RED}Ошибка: PIN не может быть пустым. Попробуйте снова.${NC}"
-        fi
-    done
-}
+#get_pin() {
+#    while [[ -z "$PIN" ]]; do
+#        echo -e "${YELLOW}🔗 Установите ваш PIN:${NC}"
+#        read PIN
+#        if [[ -z "$PIN" ]]; then
+#            echo -e "${RED}Ошибка: PIN не может быть пустым. Попробуйте снова.${NC}"
+#        fi
+#    done
+#}
+
+# Запит Account ID
+echo -e "🔗 Введите ваш Account ID:"
+read IDENTIFIER
+
+# Запит PIN
+echo -e "🔗 Установите ваш PIN:"
+read PIN
+
+# Виконуємо команду
+./multiple-cli bind --bandwidth-download 100 --identifier "$IDENTIFIER" --pin "$PIN" --storage 200 --bandwidth-upload 100
+
+# Перевіряємо результат виконання
+if [[ $? -ne 0 ]]; then
+    echo -e "Ошибка: Не удалось выполнить привязку аккаунта."
+    exit 1
+fi
+
 
 # Викликаємо функції для отримання даних
 get_identifier

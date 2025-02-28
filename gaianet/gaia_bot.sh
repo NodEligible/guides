@@ -228,6 +228,43 @@ echo -e "\"What are the key ethical concerns in AI development?\"" >> phrases.tx
 echo -e "\"How can AI be leveraged for mental health therapy?\"" >> phrases.txt
 echo -e "\"What are the risks and benefits of AI in predictive policing?\"" >> phrases.txt
 echo -e "\"How does AI impact the gig economy and freelancing?\"" >> phrases.txt
+echo -e "\"What are the latest developments in renewable energy storage solutions?\"" >> phrases.txt
+echo -e "\"How does artificial intelligence contribute to climate modeling accuracy?\"" >> phrases.txt
+echo -e "\"What are the social implications of widespread AI-generated content?\"" >> phrases.txt
+echo -e "\"How does genetic modification impact global food security?\"" >> phrases.txt
+echo -e "\"What are the ethical concerns of AI in automated hiring processes?\"" >> phrases.txt
+echo -e "\"How can smart cities leverage big data for urban planning?\"" >> phrases.txt
+echo -e "\"What are the implications of AI-driven legal decision-making?\"" >> phrases.txt
+echo -e "\"How does cryptocurrency adoption influence traditional banking systems?\"" >> phrases.txt
+echo -e "\"What are the future challenges of quantum encryption?\"" >> phrases.txt
+echo -e "\"How can AI-powered tools improve accessibility for disabled individuals?\"" >> phrases.txt
+echo -e "\"What are the environmental effects of mass production in the fashion industry?\"" >> phrases.txt
+echo -e "\"How does personalized medicine change the pharmaceutical industry?\"" >> phrases.txt
+echo -e "\"What are the risks and benefits of AI-driven medical diagnoses?\"" >> phrases.txt
+echo -e "\"How does the gig economy influence social security structures?\"" >> phrases.txt
+echo -e "\"What are the long-term effects of social media on mental health?\"" >> phrases.txt
+echo -e "\"How does AI influence modern journalism and fact-checking?\"" >> phrases.txt
+echo -e "\"What are the security concerns of widespread biometric authentication?\"" >> phrases.txt
+echo -e "\"How does AI help detect and combat cyber threats?\"" >> phrases.txt
+echo -e "\"What are the economic impacts of the shift to electric vehicles?\"" >> phrases.txt
+echo -e "\"How does automation affect employment in traditional industries?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating AI in public healthcare systems?\"" >> phrases.txt
+echo -e "\"How can AI-driven chatbots improve customer service?\"" >> phrases.txt
+echo -e "\"What are the benefits and challenges of fully autonomous ships?\"" >> phrases.txt
+echo -e "\"How does AI contribute to real-time language translation?\"" >> phrases.txt
+echo -e "\"What are the implications of AI in high-frequency trading?\"" >> phrases.txt
+echo -e "\"How does blockchain technology enhance intellectual property protection?\"" >> phrases.txt
+echo -e "\"What are the social risks of deepfake technology?\"" >> phrases.txt
+echo -e "\"How does AI-driven music composition impact the entertainment industry?\"" >> phrases.txt
+echo -e "\"What are the potential uses of AI in archaeological research?\"" >> phrases.txt
+echo -e "\"How does AI influence predictive maintenance in industrial applications?\"" >> phrases.txt
+echo -e "\"What are the challenges in regulating autonomous weapon systems?\"" >> phrases.txt
+echo -e "\"How does AI help optimize supply chain logistics?\"" >> phrases.txt
+echo -e "\"What are the privacy concerns surrounding smart home devices?\"" >> phrases.txt
+echo -e "\"How does AI-driven drug development accelerate clinical trials?\"" >> phrases.txt
+echo -e "\"What are the risks of AI-generated misinformation?\"" >> phrases.txt
+echo -e "\"How can AI be used to combat climate change?\"" >> phrases.txt
+echo -e "\"What are the potential risks and rewards of AI-powered financial advisors?\"" >> phrases.txt
         
 # Добавление ролей в roles.txt
 echo -e "system\nuser\nassistant\ntool" > roles.txt

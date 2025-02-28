@@ -7,6 +7,12 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
+echo -e "${YELLOW}🔄 Обновление пакетов...${NC}"
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y python3-pip python3-dev python3-venv curl git
+sudo apt install -y build-essential
+pip3 install aiohttp
+
 echo -e "${YELLOW}📝 Создание конфигурации...${NC}"
 
 mkdir -p ~/gaia-bot

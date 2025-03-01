@@ -6,3 +6,6 @@ sudo systemctl daemon-reload
 rm -rf ~/gaia-bot
 
 
+
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/gaia_bot.sh)
+

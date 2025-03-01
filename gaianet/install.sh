@@ -57,5 +57,4 @@ gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/
 echo -e "${YELLOW}Старт${NC}"
 gaianet start
 
-
 echo -e "${GREEN}Установка GaiaNet завершена!${NC}"

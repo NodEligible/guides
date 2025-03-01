@@ -38,9 +38,12 @@ sleep 2
 
 echo "export PATH=\$PATH:$HOME/gaianet/bin" >> $HOME/.bashrc
 
-sleep 5
+sleep 3
 
 source $HOME/.bashrc
+
+sleep 5
+
 if ! command -v gaianet &> /dev/null; then
     echo -e "${RED}❌ Ошибка: gaianet не найден! Путь $HOME/gaianet/bin не добавлен в PATH.${NC}"
     echo -e "${YELLOW}В случае ошибки выполняем следующие команды:${NC}"

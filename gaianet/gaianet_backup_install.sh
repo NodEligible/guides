@@ -41,7 +41,8 @@ echo "export PATH=\$PATH:$HOME/gaianet/bin" >> $HOME/.bashrc
 sleep 2
 
 echo -e "${YELLOW}Пред установка GaiaNet завершена!${NC}" 
-echo -e "${YELLOW}1️⃣. Дальше закиньте в директорию /root/gaianet/ 2 файла config.json и nodeid.json и поочерёдно киньте команды ниже!${NC}"
+echo -e "${YELLOW}1️⃣. Дальше закиньте в директорию /root/gaianet/ 3 файла config.json, deviceid.txt, nodeid.json и поочерёдно киньте команды ниже!${NC}"
+echo -e "${YELLOW}--------------------------------------------------------------------------------------------------------------------------------${NC}"
 echo -e "${YELLOW}2️⃣. source $HOME/.bashrc${NC}"
 echo -e "${YELLOW}4️⃣. gaianet init${NC}"
 echo -e "${YELLOW}4️⃣. gaianet start${NC}"

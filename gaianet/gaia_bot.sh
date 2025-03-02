@@ -2090,6 +2090,6 @@ sudo systemctl start gaia-bot.service
 
 echo -e "${GREEN}✅ Бот успешно запущен!${NC}"
 echo -e "📋 Для просмотра логов используйте команду:"
-echo -e "sudo journalctl -u gaia-bot -f"
+echo -e "${YELLOW}sudo journalctl -u gaia-bot -f${NC}"
 
 

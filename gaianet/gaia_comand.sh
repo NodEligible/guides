@@ -6,6 +6,8 @@ sudo systemctl daemon-reload
 rm -rf ~/gaia-bot
 
 
-
+# Установка бота
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/gaia_bot.sh)
 
+#Установка ноды
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/install.sh)

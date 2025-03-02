@@ -384,7 +384,7 @@ echo -e "\"What is the role of blockchain in data security?\"" >> phrases.txt
 echo -e "\"How does climate change impact global food supply?\"" >> phrases.txt
 echo -e "\"What are the challenges of deep-sea exploration?\"" >> phrases.txt
 echo -e "\"How can nanotechnology improve healthcare?\"" >> phrases.txt
-echo -e "\"What are the latest breakthroughs in fusion energy research?\"" > phrases.txt
+echo -e "\"What are the latest breakthroughs in fusion energy research?\"" >> phrases.txt
 echo -e "\"How does social media influence political polarization?\"" >> phrases.txt
 echo -e "\"What is the potential of CRISPR in curing genetic diseases?\"" >> phrases.txt
 echo -e "\"How can virtual reality transform education systems?\"" >> phrases.txt

@@ -2046,6 +2046,1602 @@ echo -e "\"What are the ethical issues of AI in counseling?\"" >> phrases.txt
 echo -e "\"How does methane from swamps affect climate?\"" >> phrases.txt
 echo -e "\"What is the future of ductile alloys in robotics?\"" >> phrases.txt
 echo -e "\"How can locals track urban fox populations?\"" >> phrases.txt
+echo -e "\"What are the challenges of establishing a human colony on Mars?\"" >> phrases.txt
+echo -e "\"How did the Roman Empire influence modern legal systems?\"" >> phrases.txt
+echo -e "\"What psychological factors contribute to procrastination in students?\"" >> phrases.txt
+echo -e "\"How has 3D printing technology revolutionized the manufacturing of prosthetics?\"" >> phrases.txt
+echo -e "\"What role did Impressionism play in shaping modern art movements?\"" >> phrases.txt
+echo -e "\"How do deep-sea ecosystems survive without sunlight?\"" >> phrases.txt
+echo -e "\"What are the potential implications of discovering water on Europa?\"" >> phrases.txt
+echo -e "\"How did the Industrial Revolution change societal structures in Europe?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on self-esteem in teenagers?\"" >> phrases.txt
+echo -e "\"How can wearable technology improve healthcare monitoring?\"" >> phrases.txt
+echo -e "\"What was the cultural significance of the Renaissance in Italy?\"" >> phrases.txt
+echo -e "\"How do migratory birds navigate across thousands of miles?\"" >> phrases.txt
+echo -e "\"What are the ethical dilemmas of deep space exploration?\"" >> phrases.txt
+echo -e "\"How did ancient Egyptian architecture influence later civilizations?\"" >> phrases.txt
+echo -e "\"What motivates people to conform in group settings?\"" >> phrases.txt
+echo -e "\"How has virtual reality been used in professional training programs?\"" >> phrases.txt
+echo -e "\"What are the defining characteristics of Baroque music?\"" >> phrases.txt
+echo -e "\"How do coral reefs contribute to marine biodiversity?\"" >> phrases.txt
+echo -e "\"What are the risks associated with mining asteroids for resources?\"" >> phrases.txt
+echo -e "\"How did the Silk Road facilitate cultural exchange in ancient times?\"" >> phrases.txt
+echo -e "\"What role does cognitive dissonance play in decision-making?\"" >> phrases.txt
+echo -e "\"How can nanotechnology improve water purification systems?\"" >> phrases.txt
+echo -e "\"What inspired the creation of Cubism in the early 20th century?\"" >> phrases.txt
+echo -e "\"How do seasonal changes affect animal behavior in temperate regions?\"" >> phrases.txt
+echo -e "\"What are the long-term effects of space travel on the human body?\"" >> phrases.txt
+echo -e "\"How did the fall of Constantinople impact European trade routes?\"" >> phrases.txt
+echo -e "\"What are the psychological benefits of practicing mindfulness daily?\"" >> phrases.txt
+echo -e "\"How has drone technology changed the field of agriculture?\"" >> phrases.txt
+echo -e "\"What are the key differences between Romanticism and Realism in literature?\"" >> phrases.txt
+echo -e "\"How do volcanic eruptions contribute to soil fertility?\"" >> phrases.txt
+echo -e "\"What are the scientific goals of the James Webb Space Telescope?\"" >> phrases.txt
+echo -e "\"How did the invention of the printing press affect literacy rates?\"" >> phrases.txt
+echo -e "\"What are the effects of isolation on mental health in adults?\"" >> phrases.txt
+echo -e "\"How can renewable energy technologies reduce reliance on fossil fuels?\"" >> phrases.txt
+echo -e "\"What are the origins of traditional Japanese Noh theater?\"" >> phrases.txt
+echo -e "\"How do predators maintain ecological balance in their habitats?\"" >> phrases.txt
+echo -e "\"What are the challenges of searching for extraterrestrial life?\"" >> phrases.txt
+echo -e "\"How did the French Revolution redefine concepts of citizenship?\"" >> phrases.txt
+echo -e "\"What are the impacts of stress on cognitive performance?\"" >> phrases.txt
+echo -e "\"How has robotics transformed the automotive industry?\"" >> phrases.txt
+echo -e "\"What are the hallmarks of Gothic architecture in medieval Europe?\"" >> phrases.txt
+echo -e "\"How do ocean currents influence global climate patterns?\"" >> phrases.txt
+echo -e "\"What are the benefits of preserving endangered languages in space exploration?\"" >> phrases.txt
+echo -e "\"How did the Mongol Empire shape Eurasian trade networks?\"" >> phrases.txt
+echo -e "\"What are the psychological effects of color on human emotions?\"" >> phrases.txt
+echo -e "\"How can smart cities improve urban living conditions?\"" >> phrases.txt
+echo -e "\"What are the influences of ancient Greek sculpture on modern art?\"" >> phrases.txt
+echo -e "\"How do wetlands contribute to flood prevention?\"" >> phrases.txt
+echo -e "\"What are the technological hurdles of interstellar communication?\"" >> phrases.txt
+echo -e "\"How did the abolition of slavery impact economic systems globally?\"" >> phrases.txt
+echo -e "\"How did the Roman Empire influence modern legal systems?\"" >> phrases.txt
+echo -e "\"What psychological factors contribute to procrastination in students?\"" >> phrases.txt
+echo -e "\"How has 3D printing technology revolutionized the manufacturing of prosthetics?\"" >> phrases.txt
+echo -e "\"What role did Impressionism play in shaping modern art movements?\"" >> phrases.txt
+echo -e "\"How do deep-sea ecosystems survive without sunlight?\"" >> phrases.txt
+echo -e "\"What are the potential implications of discovering water on Europa?\"" >> phrases.txt
+echo -e "\"How did the Industrial Revolution change societal structures in Europe?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on self-esteem in teenagers?\"" >> phrases.txt
+echo -e "\"How can wearable technology improve healthcare monitoring?\"" >> phrases.txt
+echo -e "\"What was the cultural significance of the Renaissance in Italy?\"" >> phrases.txt
+echo -e "\"How do migratory birds navigate across thousands of miles?\"" >> phrases.txt
+echo -e "\"What are the ethical dilemmas of deep space exploration?\"" >> phrases.txt
+echo -e "\"How did ancient Egyptian architecture influence later civilizations?\"" >> phrases.txt
+echo -e "\"What motivates people to conform in group settings?\"" >> phrases.txt
+echo -e "\"How has virtual reality been used in professional training programs?\"" >> phrases.txt
+echo -e "\"What are the defining characteristics of Baroque music?\"" >> phrases.txt
+echo -e "\"How do coral reefs contribute to marine biodiversity?\"" >> phrases.txt
+echo -e "\"What are the risks associated with mining asteroids for resources?\"" >> phrases.txt
+echo -e "\"How did the Silk Road facilitate cultural exchange in ancient times?\"" >> phrases.txt
+echo -e "\"What role does cognitive dissonance play in decision-making?\"" >> phrases.txt
+echo -e "\"How can nanotechnology improve water purification systems?\"" >> phrases.txt
+echo -e "\"What inspired the creation of Cubism in the early 20th century?\"" >> phrases.txt
+echo -e "\"How do seasonal changes affect animal behavior in temperate regions?\"" >> phrases.txt
+echo -e "\"What are the long-term effects of space travel on the human body?\"" >> phrases.txt
+echo -e "\"How did the fall of Constantinople impact European trade routes?\"" >> phrases.txt
+echo -e "\"What are the psychological benefits of practicing mindfulness daily?\"" >> phrases.txt
+echo -e "\"How has drone technology changed the field of agriculture?\"" >> phrases.txt
+echo -e "\"What are the key differences between Romanticism and Realism in literature?\"" >> phrases.txt
+echo -e "\"How do volcanic eruptions contribute to soil fertility?\"" >> phrases.txt
+echo -e "\"What are the scientific goals of the James Webb Space Telescope?\"" >> phrases.txt
+echo -e "\"How did the invention of the printing press affect literacy rates?\"" >> phrases.txt
+echo -e "\"What are the effects of isolation on mental health in adults?\"" >> phrases.txt
+echo -e "\"How can renewable energy technologies reduce reliance on fossil fuels?\"" >> phrases.txt
+echo -e "\"What are the origins of traditional Japanese Noh theater?\"" >> phrases.txt
+echo -e "\"How do predators maintain ecological balance in their habitats?\"" >> phrases.txt
+echo -e "\"What are the challenges of searching for extraterrestrial life?\"" >> phrases.txt
+echo -e "\"How did the French Revolution redefine concepts of citizenship?\"" >> phrases.txt
+echo -e "\"What are the impacts of stress on cognitive performance?\"" >> phrases.txt
+echo -e "\"How has robotics transformed the automotive industry?\"" >> phrases.txt
+echo -e "\"What are the hallmarks of Gothic architecture in medieval Europe?\"" >> phrases.txt
+echo -e "\"How do ocean currents influence global climate patterns?\"" >> phrases.txt
+echo -e "\"What are the benefits of preserving endangered languages in space exploration?\"" >> phrases.txt
+echo -e "\"How did the Mongol Empire shape Eurasian trade networks?\"" >> phrases.txt
+echo -e "\"What are the psychological effects of color on human emotions?\"" >> phrases.txt
+echo -e "\"How can smart cities improve urban living conditions?\"" >> phrases.txt
+echo -e "\"What are the influences of ancient Greek sculpture on modern art?\"" >> phrases.txt
+echo -e "\"How do wetlands contribute to flood prevention?\"" >> phrases.txt
+echo -e "\"What are the technological hurdles of interstellar communication?\"" >> phrases.txt
+echo -e "\"How did the abolition of slavery impact economic systems globally?\"" >> phrases.txt
+echo -e "\"What are the effects of childhood trauma on adult relationships?\"" >> phrases.txt
+echo -e "\"How can augmented reality enhance educational experiences?\"" >> phrases.txt
+echo -e "\"What are the origins of surrealism in the early 20th century?\"" >> phrases.txt
+echo -e "\"How do forest fires contribute to ecological renewal?\"" >> phrases.txt
+echo -e "\"What are the challenges of terraforming Venus for human habitation?\"" >> phrases.txt
+echo -e "\"How did the Byzantine Empire preserve ancient Greek texts?\"" >> phrases.txt
+echo -e "\"What are the psychological benefits of engaging in creative hobbies?\"" >> phrases.txt
+echo -e "\"How can biometric technology improve security in public spaces?\"" >> phrases.txt
+echo -e "\"What are the cultural influences behind traditional Chinese opera?\"" >> phrases.txt
+echo -e "\"How do symbiotic relationships benefit ecosystems?\"" >> phrases.txt
+echo -e "\"What are the implications of discovering microbial life on Mars?\"" >> phrases.txt
+echo -e "\"How did the Age of Exploration affect indigenous populations?\"" >> phrases.txt
+echo -e "\"What are the effects of sleep deprivation on decision-making?\"" >> phrases.txt
+echo -e "\"How has laser technology advanced medical surgeries?\"" >> phrases.txt
+echo -e "\"What are the stylistic elements of Art Nouveau design?\"" >> phrases.txt
+echo -e "\"How do desert ecosystems adapt to extreme temperatures?\"" >> phrases.txt
+echo -e "\"What are the ethical concerns of colonizing exoplanets?\"" >> phrases.txt
+echo -e "\"How did the Ottoman Empire influence modern Middle Eastern politics?\"" >> phrases.txt
+echo -e "\"What are the psychological impacts of long-term unemployment?\"" >> phrases.txt
+echo -e "\"How can geothermal energy be harnessed for sustainable power?\"" >> phrases.txt
+echo -e "\"What are the contributions of women artists to the Renaissance?\"" >> phrases.txt
+echo -e "\"How do alpine glaciers contribute to global water cycles?\"" >> phrases.txt
+echo -e "\"What are the challenges of building telescopes on the Moon?\"" >> phrases.txt
+echo -e "\"How did the Cold War shape global diplomatic relations?\"" >> phrases.txt
+echo -e "\"What are the effects of positive reinforcement on workplace productivity?\"" >> phrases.txt
+echo -e "\"How has fiber optic technology improved internet connectivity?\"" >> phrases.txt
+echo -e "\"What are the origins of flamenco dance in Spanish culture?\"" >> phrases.txt
+echo -e "\"How do mangrove forests protect coastal ecosystems?\"" >> phrases.txt
+echo -e "\"What are the scientific benefits of studying Venus's atmosphere?\"" >> phrases.txt
+echo -e "\"How did the Spanish Inquisition affect religious diversity in Europe?\"" >> phrases.txt
+echo -e "\"What are the psychological drivers behind impulsive buying?\"" >> phrases.txt
+echo -e "\"How can hydroelectric power be integrated into urban planning?\"" >> phrases.txt
+echo -e "\"What are the key features of postmodern architecture?\"" >> phrases.txt
+echo -e "\"How do polar ecosystems respond to climate change?\"" >> phrases.txt
+echo -e "\"What are the technical challenges of creating a lunar base?\"" >> phrases.txt
+echo -e "\"How did the Harlem Renaissance influence African American literature?\"" >> phrases.txt
+echo -e "\"What are the effects of peer pressure on adolescent behavior?\"" >> phrases.txt
+echo -e "\"How has solar power technology evolved over the past decade?\"" >> phrases.txt
+echo -e "\"What are the cultural roots of Aboriginal Australian art?\"" >> phrases.txt
+echo -e "\"How do invasive species impact native biodiversity?\"" >> phrases.txt
+echo -e "\"What are the potential benefits of exploring Jupiter's moons?\"" >> phrases.txt
+echo -e "\"How did the Great Depression affect global economic policies?\"" >> phrases.txt
+echo -e "\"What are the psychological impacts of living in extreme confinement?\"" >> phrases.txt
+echo -e "\"How can wind energy be optimized for small communities?\"" >> phrases.txt
+echo -e "\"What are the defining traits of classical Greek theater?\"" >> phrases.txt
+echo -e "\"How do rainforests regulate global carbon levels?\"" >> phrases.txt
+echo -e "\"What are the challenges of detecting exoplanets in habitable zones?\"" >> phrases.txt
+echo -e "\"How did the Meiji Restoration modernize Japan?\"" >> phrases.txt
+echo -e "\"What are the effects of multitasking on cognitive efficiency?\"" >> phrases.txt
+echo -e "\"How can tidal energy contribute to renewable energy goals?\"" >> phrases.txt
+echo -e "\"What are the influences of African art on modern Western artists?\"" >> phrases.txt
+echo -e "\"How do grasslands support herbivore populations?\"" >> phrases.txt
+echo -e "\"What are the risks of space debris to future missions?\"" >> phrases.txt
+echo -e "\"How did the Crusades affect Christian-Muslim relations?\"" >> phrases.txt
+echo -e "\"What are the psychological benefits of outdoor recreation?\"" >> phrases.txt
+echo -e "\"How has satellite technology improved weather forecasting?\"" >> phrases.txt
+echo -e "\"What are the stylistic elements of Victorian-era literature?\"" >> phrases.txt
+echo -e "\"How do Arctic animals survive extreme cold?\"" >> phrases.txt
+echo -e "\"What are the potential uses of lunar soil in space construction?\"" >> phrases.txt
+echo -e "\"How did the Vietnam War influence global anti-war movements?\"" >> phrases.txt
+echo -e "\"What are the effects of social isolation on elderly populations?\"" >> phrases.txt
+echo -e "\"How can biomimicry inspire new engineering designs?\"" >> phrases.txt
+echo -e "\"What are the origins of ancient Sumerian cuneiform writing?\"" >> phrases.txt
+echo -e "\"How do fungal networks contribute to forest ecosystems?\"" >> phrases.txt
+echo -e "\"What are the challenges of studying black holes up close?\"" >> phrases.txt
+echo -e "\"How did the Enlightenment shape modern democratic ideals?\"" >> phrases.txt
+echo -e "\"What are the psychological impacts of chronic pain on mental health?\"" >> phrases.txt
+echo -e "\"How has infrared technology advanced night vision capabilities?\"" >> phrases.txt
+echo -e "\"What are the influences of Persian poetry on global literature?\"" >> phrases.txt
+echo -e "\"How do tidal flats support migratory bird populations?\"" >> phrases.txt
+echo -e "\"What are the scientific implications of discovering exomoons?\"" >> phrases.txt
+echo -e "\"How did the Han Dynasty contribute to Chinese culture?\"" >> phrases.txt
+echo -e "\"What are the effects of gratitude journaling on emotional well-being?\"" >> phrases.txt
+echo -e "\"How can magnetic levitation improve transportation systems?\"" >> phrases.txt
+echo -e "\"What are the key elements of traditional Korean Hanbok design?\"" >> phrases.txt
+echo -e "\"How do mountain ecosystems adapt to high altitudes?\"" >> phrases.txt
+echo -e "\"What are the logistical challenges of a manned mission to Saturn?\"" >> phrases.txt
+echo -e "\"How did the Treaty of Versailles shape the 20th century?\"" >> phrases.txt
+echo -e "\"What are the psychological benefits of pet ownership?\"" >> phrases.txt
+echo -e "\"How has radar technology improved aviation safety?\"" >> phrases.txt
+echo -e "\"What are the cultural origins of Russian ballet?\"" >> phrases.txt
+echo -e "\"How do kelp forests support marine life diversity?\"" >> phrases.txt
+echo -e "\"What are the challenges of studying neutron stars?\"" >> phrases.txt
+echo -e "\"How did the Black Death influence European society?\"" >> phrases.txt
+echo -e "\"What are the effects of caffeine on cognitive performance?\"" >> phrases.txt
+echo -e "\"How can hydrogen fuel cells power future vehicles?\"" >> phrases.txt
+echo -e "\"What are the artistic influences behind Mexican muralism?\"" >> phrases.txt
+echo -e "\"How do savanna ecosystems support large herbivores?\"" >> phrases.txt
+echo -e "\"What are the potential benefits of studying cosmic background radiation?\"" >> phrases.txt
+echo -e "\"How did the Russian Revolution impact global politics?\"" >> phrases.txt
+echo -e "\"What are the psychological effects of urban living on mental health?\"" >> phrases.txt
+echo -e "\"How has sonar technology improved underwater exploration?\"" >> phrases.txt
+echo -e "\"What are the defining features of ancient Mayan art?\"" >> phrases.txt
+echo -e "\"How do estuaries contribute to coastal biodiversity?\"" >> phrases.txt
+echo -e "\"What are the technological barriers to achieving faster-than-light travel?\"" >> phrases.txt
+echo -e "\"How did the Magna Carta influence constitutional law?\"" >> phrases.txt
+echo -e "\"What are the psychological impacts of perfectionism on students?\"" >> phrases.txt
+echo -e "\"How can piezoelectric materials generate sustainable energy?\"" >> phrases.txt
+echo -e "\"What are the origins of ancient Indian Sanskrit literature?\"" >> phrases.txt
+echo -e "\"How do tundra ecosystems survive harsh winters?\"" >> phrases.txt
+echo -e "\"What are the challenges of studying the Sun’s corona?\"" >> phrases.txt
+echo -e "\"How did the American Civil War affect national identity?\"" >> phrases.txt
+echo -e "\"What are the effects of meditation on stress reduction?\"" >> phrases.txt
+echo -e "\"How has GPS technology transformed logistics management?\"" >> phrases.txt
+echo -e "\"What are the cultural influences behind Brazilian samba music?\"" >> phrases.txt
+echo -e "\"How do coral bleaching events impact marine food chains?\"" >> phrases.txt
+echo -e "\"What are the implications of discovering planets in binary star systems?\"" >> phrases.txt
+echo -e "\"How did the Colombian Exchange reshape global agriculture?\"" >> phrases.txt
+echo -e "\"What are the psychological drivers of risk-taking behavior?\"" >> phrases.txt
+echo -e "\"How can nuclear fusion provide clean energy solutions?\"" >> phrases.txt
+echo -e "\"What are the stylistic traits of ancient Celtic art?\"" >> phrases.txt
+echo -e "\"How do urban green spaces benefit local wildlife?\"" >> phrases.txt
+echo -e "\"What are the challenges of observing distant galaxies?\"" >> phrases.txt
+echo -e "\"How did the Protestant Reformation alter religious art?\"" >> phrases.txt
+echo -e "\"What are the effects of music therapy on mental health?\"" >> phrases.txt
+echo -e "\"How has microwave technology advanced food preparation?\"" >> phrases.txt
+echo -e "\"What are the origins of traditional Hawaiian hula dancing?\"" >> phrases.txt
+echo -e "\"How do freshwater lakes support aquatic biodiversity?\"" >> phrases.txt
+echo -e "\"What are the scientific benefits of studying supernovae?\"" >> phrases.txt
+echo -e "\"How did the Opium Wars affect China’s global standing?\"" >> phrases.txt
+echo -e "\"What are the psychological impacts of bullying on children?\"" >> phrases.txt
+echo -e "\"How can desalination technology address global water shortages?\"" >> phrases.txt
+echo -e "\"What are the influences of ancient Roman mosaics on modern design?\"" >> phrases.txt
+echo -e "\"How do seasonal migrations affect predator-prey dynamics?\"" >> phrases.txt
+echo -e "\"What are the challenges of mapping the Milky Way galaxy?\"" >> phrases.txt
+echo -e "\"How did the Suez Canal impact global trade routes?\"" >> phrases.txt
+echo -e "\"What are the psychological effects of gratitude on relationships?\"" >> phrases.txt
+echo -e "\"How has blockchain technology influenced digital security?\"" >> phrases.txt
+echo -e "\"What are the artistic origins of Native American beadwork?\"" >> phrases.txt
+echo -e "\"How do urban heat islands affect local wildlife?\"" >> phrases.txt
+echo -e "\"What are the potential benefits of studying dark energy?\"" >> phrases.txt
+echo -e "\"How did the Berlin Wall influence Cold War dynamics?\"" >> phrases.txt
+echo -e "\"What are the effects of exercise on mental clarity?\"" >> phrases.txt
+echo -e "\"How can thermal imaging improve disaster response?\"" >> phrases.txt
+echo -e "\"What are the cultural roots of ancient Egyptian hieroglyphs?\"" >> phrases.txt
+echo -e "\"How do coastal dunes protect against erosion?\"" >> phrases.txt
+echo -e "\"What are the challenges of detecting gravitational waves?\"" >> phrases.txt
+echo -e "\"How did the Louisiana Purchase shape American expansion?\"" >> phrases.txt
+echo -e "\"What are the psychological benefits of journaling for mental health?\"" >> phrases.txt
+echo -e "\"How has LED technology transformed energy-efficient lighting?\"" >> phrases.txt
+echo -e "\"What are the influences of ancient Mesopotamian art on modern culture?\"" >> phrases.txt
+echo -e "\"How do seasonal floods benefit river ecosystems?\"" >> phrases.txt
+echo -e "\"What are the technological implications of discovering habitable exoplanets?\"" >> phrases.txt
+echo -e "\"How did the Cuban Missile Crisis affect international relations?\"" >> phrases.txt
+echo -e "\"What are the effects of screen time on sleep quality?\"" >> phrases.txt
+echo -e "\"How can aeroponics revolutionize urban farming?\"" >> phrases.txt
+echo -e "\"What are the stylistic elements of traditional Thai architecture?\"" >> phrases.txt
+echo -e "\"How do bat pollinators contribute to tropical ecosystems?\"" >> phrases.txt
+echo -e "\"What are the challenges of sustaining life on a space station?\"" >> phrases.txt
+echo -e "\"How did the Gold Rush impact California’s development?\"" >> phrases.txt
+echo -e "\"What are the psychological effects of parenting styles on child development?\"" >> phrases.txt
+echo -e "\"How has quantum cryptography enhanced data security?\"" >> phrases.txt
+echo -e "\"What are the origins of ancient Peruvian textiles?\"" >> phrases.txt
+echo -e "\"How do migratory fish adapt to changing water conditions?\"" >> phrases.txt
+echo -e "\"How do tariffs impact global trade balances?\"" >> phrases.txt
+echo -e "\"What are the economic consequences of a declining birth rate?\"" >> phrases.txt
+echo -e "\"How can microfinance empower rural entrepreneurs?\"" >> phrases.txt
+echo -e "\"What are the financial benefits of investing in green infrastructure?\"" >> phrases.txt
+echo -e "\"How does inflation affect consumer purchasing power?\"" >> phrases.txt
+echo -e "\"What role do subsidies play in agricultural development?\"" >> phrases.txt
+echo -e "\"How can universal basic income influence economic inequality?\"" >> phrases.txt
+echo -e "\"What are the economic risks of over-reliance on tourism?\"" >> phrases.txt
+echo -e "\"How do stock market fluctuations impact retirement savings?\"" >> phrases.txt
+echo -e "\"What are the benefits of diversifying a national economy?\"" >> phrases.txt
+echo -e "\"How does foreign direct investment affect emerging markets?\"" >> phrases.txt
+echo -e "\"What are the challenges of implementing a cashless economy?\"" >> phrases.txt
+echo -e "\"How do trade deficits influence currency valuation?\"" >> phrases.txt
+echo -e "\"What are the economic impacts of prolonged recessions?\"" >> phrases.txt
+echo -e "\"How can cooperatives improve local economies?\"" >> phrases.txt
+echo -e "\"What role does consumer confidence play in economic recovery?\"" >> phrases.txt
+echo -e "\"How do labor unions affect wage negotiations?\"" >> phrases.txt
+echo -e "\"What are the economic benefits of renewable energy adoption?\"" >> phrases.txt
+echo -e "\"How does globalization impact small businesses?\"" >> phrases.txt
+echo -e "\"What are the challenges of regulating cryptocurrencies?\"" >> phrases.txt
+echo -e "\"How can tax incentives promote sustainable practices?\"" >> phrases.txt
+echo -e "\"What are the economic effects of automation on job markets?\"" >> phrases.txt
+echo -e "\"How do interest rates influence housing markets?\"" >> phrases.txt
+echo -e "\"What are the benefits of investing in public transportation?\"" >> phrases.txt
+echo -e "\"How does economic disparity affect national stability?\"" >> phrases.txt
+echo -e "\"What role does venture capital play in startup ecosystems?\"" >> phrases.txt
+echo -e "\"How can trade agreements reduce international conflicts?\"" >> phrases.txt
+echo -e "\"What are the economic impacts of natural disasters on GDP?\"" >> phrases.txt
+echo -e "\"How do monopolies affect consumer prices?\"" >> phrases.txt
+echo -e "\"What are the challenges of transitioning to a circular economy?\"" >> phrases.txt
+echo -e "\"How can sports improve cardiovascular health?\"" >> phrases.txt
+echo -e "\"What are the physical benefits of regular yoga practice?\"" >> phrases.txt
+echo -e "\"How does swimming enhance respiratory endurance?\"" >> phrases.txt
+echo -e "\"What are the risks of overtraining in professional athletes?\"" >> phrases.txt
+echo -e "\"How can team sports foster leadership skills?\"" >> phrases.txt
+echo -e "\"What are the psychological benefits of marathon running?\"" >> phrases.txt
+echo -e "\"How does weightlifting improve bone density?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining hydration during endurance events?\"" >> phrases.txt
+echo -e "\"How can stretching reduce the risk of sports injuries?\"" >> phrases.txt
+echo -e "\"What role does nutrition play in athletic performance?\"" >> phrases.txt
+echo -e "\"How do extreme sports affect adrenaline levels?\"" >> phrases.txt
+echo -e "\"What are the benefits of cross-training for amateur athletes?\"" >> phrases.txt
+echo -e "\"How can mindfulness improve focus in competitive sports?\"" >> phrases.txt
+echo -e "\"What are the long-term effects of concussions in contact sports?\"" >> phrases.txt
+echo -e "\"How does altitude training enhance athletic performance?\"" >> phrases.txt
+echo -e "\"What are the challenges of doping regulations in professional sports?\"" >> phrases.txt
+echo -e "\"How can sports programs benefit underprivileged youth?\"" >> phrases.txt
+echo -e "\"What role does recovery play in athletic training regimens?\"" >> phrases.txt
+echo -e "\"How do esports impact traditional sports viewership?\"" >> phrases.txt
+echo -e "\"What are the benefits of outdoor sports for mental health?\"" >> phrases.txt
+echo -e "\"How can sports psychology improve performance under pressure?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating technology into sports officiating?\"" >> phrases.txt
+echo -e "\"How does participation in youth sports affect academic performance?\"" >> phrases.txt
+echo -e "\"What are the benefits of interval training for fitness?\"" >> phrases.txt
+echo -e "\"How can wearable tech improve athletic training?\"" >> phrases.txt
+echo -e "\"What are the risks of extreme dieting in competitive sports?\"" >> phrases.txt
+echo -e "\"How do Paralympic sports inspire adaptive fitness?\"" >> phrases.txt
+echo -e "\"What are the cultural impacts of hosting the Olympics?\"" >> phrases.txt
+echo -e "\"How can community sports leagues reduce crime rates?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining fairness in amateur sports?\"" >> phrases.txt
+echo -e "\"How does early detection improve cancer treatment outcomes?\"" >> phrases.txt
+echo -e "\"What are the benefits of vaccination programs for public health?\"" >> phrases.txt
+echo -e "\"How can telemedicine improve access to healthcare in rural areas?\"" >> phrases.txt
+echo -e "\"What are the risks of antibiotic resistance in modern medicine?\"" >> phrases.txt
+echo -e "\"How does diet impact the prevention of type 2 diabetes?\"" >> phrases.txt
+echo -e "\"What are the challenges of developing affordable generic drugs?\"" >> phrases.txt
+echo -e "\"How can physical therapy aid recovery from joint surgeries?\"" >> phrases.txt
+echo -e "\"What are the benefits of mindfulness for chronic pain management?\"" >> phrases.txt
+echo -e "\"How does sleep quality affect immune system function?\"" >> phrases.txt
+echo -e "\"What are the ethical concerns of organ transplantation?\"" >> phrases.txt
+echo -e "\"How can public health campaigns reduce smoking rates?\"" >> phrases.txt
+echo -e "\"What are the long-term effects of obesity on cardiovascular health?\"" >> phrases.txt
+echo -e "\"How does stress influence the progression of autoimmune diseases?\"" >> phrases.txt
+echo -e "\"What are the benefits of early childhood dental care?\"" >> phrases.txt
+echo -e "\"How can wearable devices monitor chronic health conditions?\"" >> phrases.txt
+echo -e "\"What are the challenges of treating mental health in aging populations?\"" >> phrases.txt
+echo -e "\"How does hydration impact kidney function?\"" >> phrases.txt
+echo -e "\"What are the benefits of integrative medicine in cancer care?\"" >> phrases.txt
+echo -e "\"How can genetic testing improve personalized medicine?\"" >> phrases.txt
+echo -e "\"What are the risks of untreated hypertension in adults?\"" >> phrases.txt
+echo -e "\"How does occupational therapy help stroke survivors?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing healthcare disparities?\"" >> phrases.txt
+echo -e "\"How can nutrition education reduce childhood obesity?\"" >> phrases.txt
+echo -e "\"What are the benefits of regular hearing screenings for the elderly?\"" >> phrases.txt
+echo -e "\"How does air quality impact respiratory health?\"" >> phrases.txt
+echo -e "\"What are the ethical dilemmas of end-of-life care?\"" >> phrases.txt
+echo -e "\"How can community health centers improve maternal care?\"" >> phrases.txt
+echo -e "\"What are the challenges of treating rare diseases?\"" >> phrases.txt
+echo -e "\"How does exercise impact mental health recovery?\"" >> phrases.txt
+echo -e "\"What are the benefits of palliative care for terminal illnesses?\"" >> phrases.txt
+echo -e "\"How do economic policies affect healthcare funding?\"" >> phrases.txt
+echo -e "\"What are the benefits of strength training for aging populations?\"" >> phrases.txt
+echo -e "\"How can sports reduce stress in high-pressure professions?\"" >> phrases.txt
+echo -e "\"What are the economic challenges of hosting international sporting events?\"" >> phrases.txt
+echo -e "\"How does caffeine intake affect athletic performance?\"" >> phrases.txt
+echo -e "\"What are the benefits of water sports for physical rehabilitation?\"" >> phrases.txt
+echo -e "\"How can sports sponsorships influence local economies?\"" >> phrases.txt
+echo -e "\"What are the psychological effects of losing in competitive sports?\"" >> phrases.txt
+echo -e "\"How does climate change impact outdoor sports venues?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting gender equality in sports?\"" >> phrases.txt
+echo -e "\"How can sports education enhance school curriculums?\"" >> phrases.txt
+echo -e "\"What are the economic impacts of medical tourism?\"" >> phrases.txt
+echo -e "\"How does access to healthcare influence economic productivity?\"" >> phrases.txt
+echo -e "\"What are the benefits of preventative healthcare programs?\"" >> phrases.txt
+echo -e "\"How can economic incentives encourage healthier lifestyles?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing healthcare costs for aging populations?\"" >> phrases.txt
+echo -e "\"How does poverty correlate with health outcomes?\"" >> phrases.txt
+echo -e "\"What are the benefits of universal healthcare systems?\"" >> phrases.txt
+echo -e "\"How can economic reforms improve access to medical supplies?\"" >> phrases.txt
+echo -e "\"What are the challenges of regulating pharmaceutical pricing?\"" >> phrases.txt
+echo -e "\"How does economic stability affect mental health treatment access?\"" >> phrases.txt
+echo -e "\"What are the benefits of sports for children with disabilities?\"" >> phrases.txt
+echo -e "\"How can technology enhance sports injury recovery?\"" >> phrases.txt
+echo -e "\"What are the economic effects of sports betting legalization?\"" >> phrases.txt
+echo -e "\"How does fan culture influence sports marketing strategies?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring safety in extreme sports?\"" >> phrases.txt
+echo -e "\"How can sports programs combat childhood obesity?\"" >> phrases.txt
+echo -e "\"What are the psychological benefits of group fitness classes?\"" >> phrases.txt
+echo -e "\"How does media coverage impact athlete performance?\"" >> phrases.txt
+echo -e "\"What are the economic benefits of grassroots sports initiatives?\"" >> phrases.txt
+echo -e "\"How can sports facilities improve community health outcomes?\"" >> phrases.txt
+echo -e "\"What are the challenges of funding public healthcare innovations?\"" >> phrases.txt
+echo -e "\"How does telemedicine impact healthcare costs?\"" >> phrases.txt
+echo -e "\"What are the benefits of mental health screenings in schools?\"" >> phrases.txt
+echo -e "\"How can economic policies support medical research?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing vaccine hesitancy?\"" >> phrases.txt
+echo -e "\"How does diet diversity impact long-term health?\"" >> phrases.txt
+echo -e "\"What are the benefits of community-based health education?\"" >> phrases.txt
+echo -e "\"How can healthcare systems prepare for pandemics?\"" >> phrases.txt
+echo -e "\"What are the economic impacts of chronic disease management?\"" >> phrases.txt
+echo -e "\"How does access to clean water influence public health?\"" >> phrases.txt
+echo -e "\"What are the benefits of stretching routines for elderly athletes?\"" >> phrases.txt
+echo -e "\"How can adaptive sports improve quality of life for disabled individuals?\"" >> phrases.txt
+echo -e "\"What are the economic effects of sports-related tourism?\"" >> phrases.txt
+echo -e "\"How does climate affect outdoor sports performance?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining amateur status in competitive sports?\"" >> phrases.txt
+echo -e "\"How can sports diplomacy foster international relations?\"" >> phrases.txt
+echo -e "\"What are the psychological effects of sports fandom on identity?\"" >> phrases.txt
+echo -e "\"How does athletic training impact adolescent development?\"" >> phrases.txt
+echo -e "\"What are the economic benefits of promoting women’s sports?\"" >> phrases.txt
+echo -e "\"How can sports analytics improve team strategies?\"" >> phrases.txt
+echo -e "\"What are the challenges of balancing academics and athletics in schools?\"" >> phrases.txt
+echo -e "\"How does sports infrastructure impact local economies?\"" >> phrases.txt
+echo -e "\"What are the benefits of plyometric training for speed?\"" >> phrases.txt
+echo -e "\"How can sports reduce social isolation in communities?\"" >> phrases.txt
+echo -e "\"What are the economic impacts of sports stadium construction?\"" >> phrases.txt
+echo -e "\"How does athletic competition influence personality development?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting inclusivity in sports organizations?\"" >> phrases.txt
+echo -e "\"How can sports therapy aid mental health recovery?\"" >> phrases.txt
+echo -e "\"What are the benefits of lifelong participation in sports?\"" >> phrases.txt
+echo -e "\"How does sports culture vary across different countries?\"" >> phrases.txt
+echo -e "\"What are the economic risks of over-investing in sports franchises?\"" >> phrases.txt
+echo -e "\"How can sports programs address bullying in schools?\"" >> phrases.txt
+echo -e "\"What are the benefits of cross-cultural sports exchanges?\"" >> phrases.txt
+echo -e "\"How does athletic sponsorship impact brand loyalty?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring ethical practices in sports governance?\"" >> phrases.txt
+echo -e "\"How can grassroots sports initiatives empower women?\"" >> phrases.txt
+echo -e "\"What are the psychological benefits of recreational sports for adults?\"" >> phrases.txt
+echo -e "\"How does sports participation influence social skills in children?\"" >> phrases.txt
+echo -e "\"What are the economic benefits of sports education programs?\"" >> phrases.txt
+echo -e "\"How can sports facilities reduce urban overcrowding?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating nutrition into sports training?\"" >> phrases.txt
+echo -e "\"How does athletic apparel impact performance and safety?\"" >> phrases.txt
+echo -e "\"What are the benefits of sports for military veterans?\"" >> phrases.txt
+echo -e "\"How can sports events promote environmental awareness?\"" >> phrases.txt
+echo -e "\"What are the economic impacts of hosting national championships?\"" >> phrases.txt
+echo -e "\"How does sports participation affect academic motivation?\"" >> phrases.txt
+echo -e "\"What are the challenges of sustaining interest in niche sports?\"" >> phrases.txt
+echo -e "\"How can sports broadcasting influence public health campaigns?\"" >> phrases.txt
+echo -e "\"What are the benefits of aquatic therapy for injury recovery?\"" >> phrases.txt
+echo -e "\"How does sports tourism impact cultural exchange?\"" >> phrases.txt
+echo -e "\"What are the economic effects of athlete endorsements?\"" >> phrases.txt
+echo -e "\"How can sports foster resilience in youth?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring accessibility in sports venues?\"" >> phrases.txt
+echo -e "\"How does athletic competition impact teamwork skills?\"" >> phrases.txt
+echo -e "\"What are the benefits of sports volunteering for communities?\"" >> phrases.txt
+echo -e "\"How can economic policies promote sports development?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing sports injuries in youth?\"" >> phrases.txt
+echo -e "\"How does sports participation influence emotional intelligence?\"" >> phrases.txt
+echo -e "\"What are the economic benefits of sports scholarships?\"" >> phrases.txt
+echo -e "\"How can sports programs address social inequality?\"" >> phrases.txt
+echo -e "\"What are the benefits of low-impact sports for seniors?\"" >> phrases.txt
+echo -e "\"How does athletic branding affect consumer behavior?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting diversity in sports leadership?\"" >> phrases.txt
+echo -e "\"How can sports initiatives support mental health awareness?\"" >> phrases.txt
+echo -e "\"What are the economic impacts of sports-related philanthropy?\"" >> phrases.txt
+echo -e "\"How does sports participation influence body image?\"" >> phrases.txt
+echo -e "\"What are the benefits of introducing children to multiple sports?\"" >> phrases.txt
+echo -e "\"How can economic reforms support grassroots sports funding?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing sports facilities in rural areas?\"" >> phrases.txt
+echo -e "\"How does sports participation impact stress management?\"" >> phrases.txt
+echo -e "\"What are the economic benefits of promoting fitness culture?\"" >> phrases.txt
+echo -e "\"How can sports initiatives improve public safety?\"" >> phrases.txt
+echo -e "\"What are the benefits of sports for cognitive development?\"" >> phrases.txt
+echo -e "\"How does athletic performance influence career opportunities?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating sports into healthcare systems?\"" >> phrases.txt
+echo -e "\"How can economic incentives promote sports participation?\"" >> phrases.txt
+echo -e "\"What are the benefits of sports mentorship programs?\"" >> phrases.txt
+echo -e "\"How does sports participation influence community cohesion?\"" >> phrases.txt
+echo -e "\"What are the economic impacts of sports media rights?\"" >> phrases.txt
+echo -e "\"How can sports programs address youth delinquency?\"" >> phrases.txt
+echo -e "\"What are the benefits of incorporating sports into workplace wellness?\"" >> phrases.txt
+echo -e "\"How does athletic training impact long-term health outcomes?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting ethical sportsmanship?\"" >> phrases.txt
+echo -e "\"How can economic policies support sports innovation?\"" >> phrases.txt
+echo -e "\"What are the benefits of sports for social integration?\"" >> phrases.txt
+echo -e "\"How does sports participation influence academic discipline?\"" >> phrases.txt
+echo -e "\"What are the economic effects of sports-related injuries?\"" >> phrases.txt
+echo -e "\"How can sports programs promote environmental sustainability?\"" >> phrases.txt
+echo -e "\"What are the benefits of sports for emotional regulation?\"" >> phrases.txt
+echo -e "\"How does athletic culture impact youth development?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring equity in sports funding?\"" >> phrases.txt
+echo -e "\"How can economic reforms support sports medicine research?\"" >> phrases.txt
+echo -e "\"What are the benefits of sports for building self-confidence?\"" >> phrases.txt
+echo -e "\"How does sports participation influence peer relationships?\"" >> phrases.txt
+echo -e "\"What are the economic impacts of sports technology advancements?\"" >> phrases.txt
+echo -e "\"How can sports programs address cultural divides?\"" >> phrases.txt
+echo -e "\"What are the benefits of sports for physical literacy?\"" >> phrases.txt
+echo -e "\"How does athletic competition impact mental toughness?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting lifelong sports engagement?\"" >> phrases.txt
+echo -e "\"How can economic reforms enhance sports accessibility?\"" >> phrases.txt
+echo -e "\"What are the benefits of sports for community empowerment?\"" >> phrases.txt
+echo -e "\"How does sports participation influence leadership development?\"" >> phrases.txt
+echo -e "\"What are the economic impacts of sports apparel industries?\"" >> phrases.txt
+echo -e "\"How can sports programs foster creativity in youth?\"" >> phrases.txt
+echo -e "\"What are the benefits of sports for stress relief in adults?\"" >> phrases.txt
+echo -e "\"How does athletic training impact cognitive flexibility?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting safety in youth sports?\"" >> phrases.txt
+echo -e "\"How can economic policies support sports tourism?\"" >> phrases.txt
+echo -e "\"What are the benefits of sports for building resilience?\"" >> phrases.txt
+echo -e "\"How does sports participation influence cultural awareness?\"" >> phrases.txt
+echo -e "\"What are the economic benefits of sports streaming platforms?\"" >> phrases.txt
+echo -e "\"How can sports programs address mental health stigma?\"" >> phrases.txt
+echo -e "\"What are the benefits of sports for improving focus?\"" >> phrases.txt
+echo -e "\"How does athletic competition impact social bonding?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring fairness in sports judging?\"" >> phrases.txt
+echo -e "\"How does experiential learning improve student engagement?\"" >> phrases.txt
+echo -e "\"What are the benefits of bilingual education in early childhood?\"" >> phrases.txt
+echo -e "\"How can STEM programs encourage more female participation?\"" >> phrases.txt
+echo -e "\"What are the challenges of implementing inclusive education policies?\"" >> phrases.txt
+echo -e "\"How does teacher training impact student outcomes?\"" >> phrases.txt
+echo -e "\"What are the benefits of integrating arts into school curriculums?\"" >> phrases.txt
+echo -e "\"How can online learning platforms bridge educational gaps?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing bullying in schools?\"" >> phrases.txt
+echo -e "\"How does parental involvement influence academic success?\"" >> phrases.txt
+echo -e "\"What are the benefits of outdoor education programs?\"" >> phrases.txt
+echo -e "\"How can project-based learning enhance critical thinking?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching digital literacy to older adults?\"" >> phrases.txt
+echo -e "\"How does socioeconomic status affect access to quality education?\"" >> phrases.txt
+echo -e "\"What are the benefits of peer mentoring in high schools?\"" >> phrases.txt
+echo -e "\"How can gamification improve student motivation?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining academic integrity online?\"" >> phrases.txt
+echo -e "\"How does early literacy intervention impact reading skills?\"" >> phrases.txt
+echo -e "\"What are the benefits of vocational training in secondary education?\"" >> phrases.txt
+echo -e "\"How can schools better support students with learning disabilities?\"" >> phrases.txt
+echo -e "\"What are the challenges of funding public education systems?\"" >> phrases.txt
+echo -e "\"How does cultural diversity in classrooms enhance learning?\"" >> phrases.txt
+echo -e "\"What are the benefits of lifelong learning for career development?\"" >> phrases.txt
+echo -e "\"How can teacher-student relationships impact academic performance?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching empathy in schools?\"" >> phrases.txt
+echo -e "\"How does access to technology influence learning outcomes?\"" >> phrases.txt
+echo -e "\"What are the benefits of collaborative learning in higher education?\"" >> phrases.txt
+echo -e "\"How can schools address the digital divide among students?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating environmental education?\"" >> phrases.txt
+echo -e "\"How does student feedback improve teaching practices?\"" >> phrases.txt
+echo -e "\"What are the benefits of after-school programs for at-risk youth?\"" >> phrases.txt
+echo -e "\"How can culinary arts preserve cultural heritage?\"" >> phrases.txt
+echo -e "\"What are the health benefits of incorporating more plant-based meals?\"" >> phrases.txt
+echo -e "\"How does fermentation enhance the flavor of traditional dishes?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining food safety in restaurants?\"" >> phrases.txt
+echo -e "\"How can molecular gastronomy innovate fine dining?\"" >> phrases.txt
+echo -e "\"What are the benefits of using seasonal ingredients in cooking?\"" >> phrases.txt
+echo -e "\"How does slow cooking impact the texture of meats?\"" >> phrases.txt
+echo -e "\"What are the challenges of sourcing sustainable seafood?\"" >> phrases.txt
+echo -e "\"How can home gardening reduce grocery expenses?\"" >> phrases.txt
+echo -e "\"What are the benefits of learning traditional baking techniques?\"" >> phrases.txt
+echo -e "\"How does food presentation influence dining experiences?\"" >> phrases.txt
+echo -e "\"What are the challenges of catering to dietary restrictions?\"" >> phrases.txt
+echo -e "\"How can fusion cuisine blend cultural flavors?\"" >> phrases.txt
+echo -e "\"What are the benefits of mastering knife skills in the kitchen?\"" >> phrases.txt
+echo -e "\"How does pickling preserve vegetables for long-term use?\"" >> phrases.txt
+echo -e "\"What are the challenges of scaling recipes for large events?\"" >> phrases.txt
+echo -e "\"How can cooking classes build community connections?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring indigenous cooking methods?\"" >> phrases.txt
+echo -e "\"How does wine pairing enhance culinary experiences?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining consistency in food production?\"" >> phrases.txt
+echo -e "\"How can meal prepping improve weekly diets?\"" >> phrases.txt
+echo -e "\"What are the benefits of using fresh herbs in everyday cooking?\"" >> phrases.txt
+echo -e "\"How does sous-vide cooking ensure precision in meals?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing food waste in households?\"" >> phrases.txt
+echo -e "\"How can street food reflect cultural diversity?\"" >> phrases.txt
+echo -e "\"What are the benefits of learning to make homemade pasta?\"" >> phrases.txt
+echo -e "\"How does roasting vegetables enhance their natural flavors?\"" >> phrases.txt
+echo -e "\"What are the challenges of creating gluten-free desserts?\"" >> phrases.txt
+echo -e "\"How can cooking with children foster lifelong skills?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring spice blends from different cultures?\"" >> phrases.txt
+echo -e "\"How does dystopian literature reflect societal fears?\"" >> phrases.txt
+echo -e "\"What are the challenges of translating poetry across languages?\"" >> phrases.txt
+echo -e "\"How can magical realism enhance narrative depth?\"" >> phrases.txt
+echo -e "\"What are the benefits of reading classic literature in modern education?\"" >> phrases.txt
+echo -e "\"How does satire critique political systems in literature?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing historical fiction accurately?\"" >> phrases.txt
+echo -e "\"How can memoirs provide insight into cultural histories?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying Shakespeare’s influence on modern drama?\"" >> phrases.txt
+echo -e "\"How does feminist literature address gender inequality?\"" >> phrases.txt
+echo -e "\"What are the challenges of adapting novels into screenplays?\"" >> phrases.txt
+echo -e "\"How can children’s literature teach moral lessons?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring postcolonial literature?\"" >> phrases.txt
+echo -e "\"How does gothic literature explore human emotions?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing in the epistolary format?\"" >> phrases.txt
+echo -e "\"How can allegory enhance thematic depth in literature?\"" >> phrases.txt
+echo -e "\"What are the benefits of reading diverse voices in contemporary fiction?\"" >> phrases.txt
+echo -e "\"How does science fiction predict technological advancements?\"" >> phrases.txt
+echo -e "\"What are the challenges of preserving ancient manuscripts?\"" >> phrases.txt
+echo -e "\"How can literature inspire social change?\"" >> phrases.txt
+echo -e "\"What are the benefits of book clubs in fostering community?\"" >> phrases.txt
+echo -e "\"How does stream-of-consciousness writing reveal character psychology?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching literature to non-native speakers?\"" >> phrases.txt
+echo -e "\"How can mythology influence modern storytelling?\"" >> phrases.txt
+echo -e "\"What are the benefits of analyzing symbolism in literature?\"" >> phrases.txt
+echo -e "\"How does war literature reflect the human condition?\"" >> phrases.txt
+echo -e "\"What are the challenges of publishing experimental fiction?\"" >> phrases.txt
+echo -e "\"How can literature provide insight into mental health struggles?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying oral storytelling traditions?\"" >> phrases.txt
+echo -e "\"How does romantic literature explore the concept of love?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing for young adult audiences?\"" >> phrases.txt
+echo -e "\"How can literature bridge cultural divides?\"" >> phrases.txt
+echo -e "\"What are the benefits of integrating literature into therapy?\"" >> phrases.txt
+echo -e "\"How does existentialist literature address life’s meaning?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining authenticity in regional literature?\"" >> phrases.txt
+echo -e "\"How can literature influence public policy debates?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring banned books in education?\"" >> phrases.txt
+echo -e "\"How does crime fiction explore morality?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing multi-perspective narratives?\"" >> phrases.txt
+echo -e "\"How can literature deepen our understanding of history?\"" >> phrases.txt
+echo -e "\"What are the benefits of reading poetry aloud?\"" >> phrases.txt
+echo -e "\"How does modernist literature reflect societal change?\"" >> phrases.txt
+echo -e "\"What are the challenges of interpreting ancient texts?\"" >> phrases.txt
+echo -e "\"How can literature foster empathy in readers?\"" >> phrases.txt
+echo -e "\"What are the benefits of creative writing workshops for students?\"" >> phrases.txt
+echo -e "\"How does fantasy literature inspire imagination?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing for a global audience?\"" >> phrases.txt
+echo -e "\"How can literature address environmental concerns?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying literary criticism?\"" >> phrases.txt
+echo -e "\"How does horror literature explore fear?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining narrative consistency in series?\"" >> phrases.txt
+echo -e "\"How can literature reflect the immigrant experience?\"" >> phrases.txt
+echo -e "\"What are the benefits of audio narration in modern literature?\"" >> phrases.txt
+echo -e "\"How does teaching literature online impact student engagement?\"" >> phrases.txt
+echo -e "\"What are the challenges of funding arts education programs?\"" >> phrases.txt
+echo -e "\"How can school libraries promote a love of reading?\"" >> phrases.txt
+echo -e "\"What are the benefits of cross-disciplinary education approaches?\"" >> phrases.txt
+echo -e "\"How does class size affect student learning outcomes?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching ethics in schools?\"" >> phrases.txt
+echo -e "\"How can education systems prepare students for future careers?\"" >> phrases.txt
+echo -e "\"What are the benefits of cultural exchange programs in schools?\"" >> phrases.txt
+echo -e "\"How does standardized testing impact student creativity?\"" >> phrases.txt
+echo -e "\"What are the challenges of supporting gifted students?\"" >> phrases.txt
+echo -e "\"How can schools promote financial literacy among teenagers?\"" >> phrases.txt
+echo -e "\"What are the benefits of hands-on learning in science education?\"" >> phrases.txt
+echo -e "\"How does teacher diversity influence student perspectives?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating mental health education?\"" >> phrases.txt
+echo -e "\"How can education systems address language barriers?\"" >> phrases.txt
+echo -e "\"What are the benefits of mentorship programs for new teachers?\"" >> phrases.txt
+echo -e "\"How does homework impact student well-being?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining student motivation remotely?\"" >> phrases.txt
+echo -e "\"How can schools foster critical media literacy?\"" >> phrases.txt
+echo -e "\"What are the benefits of teaching history through storytelling?\"" >> phrases.txt
+echo -e "\"How does school infrastructure affect learning environments?\"" >> phrases.txt
+echo -e "\"What are the challenges of balancing academics with extracurriculars?\"" >> phrases.txt
+echo -e "\"How can education systems support refugee students?\"" >> phrases.txt
+echo -e "\"What are the benefits of debate clubs in fostering argumentation skills?\"" >> phrases.txt
+echo -e "\"How does access to higher education impact social mobility?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching STEM in underfunded schools?\"" >> phrases.txt
+echo -e "\"How can schools promote civic engagement among students?\"" >> phrases.txt
+echo -e "\"What are the benefits of play-based learning in early education?\"" >> phrases.txt
+echo -e "\"How does teacher burnout affect classroom dynamics?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing truancy in urban schools?\"" >> phrases.txt
+echo -e "\"How can education systems combat misinformation?\"" >> phrases.txt
+echo -e "\"What are the benefits of student-led conferences in schools?\"" >> phrases.txt
+echo -e "\"How does regional cuisine reflect historical trade routes?\"" >> phrases.txt
+echo -e "\"What are the challenges of preserving traditional recipes?\"" >> phrases.txt
+echo -e "\"How can culinary tourism boost local economies?\"" >> phrases.txt
+echo -e "\"What are the benefits of cooking with cast iron?\"" >> phrases.txt
+echo -e "\"How does food plating impact social media engagement?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining authenticity in fusion dishes?\"" >> phrases.txt
+echo -e "\"How can baking bread at home foster mindfulness?\"" >> phrases.txt
+echo -e "\"What are the benefits of learning to pair cheeses with wines?\"" >> phrases.txt
+echo -e "\"How does grilling techniques vary across cultures?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing allergies in food service?\"" >> phrases.txt
+echo -e "\"How can culinary schools teach sustainable cooking practices?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring raw food diets?\"" >> phrases.txt
+echo -e "\"How does food preservation impact nutritional value?\"" >> phrases.txt
+echo -e "\"What are the challenges of cooking at high altitudes?\"" >> phrases.txt
+echo -e "\"How can communal meals strengthen family bonds?\"" >> phrases.txt
+echo -e "\"What are the benefits of using local grains in baking?\"" >> phrases.txt
+echo -e "\"How does steaming vegetables retain their nutrients?\"" >> phrases.txt
+echo -e "\"What are the challenges of organizing large-scale food festivals?\"" >> phrases.txt
+echo -e "\"How can cooking shows inspire healthier eating habits?\"" >> phrases.txt
+echo -e "\"What are the benefits of mastering braising techniques?\"" >> phrases.txt
+echo -e "\"How does food storytelling enhance dining experiences?\"" >> phrases.txt
+echo -e "\"What are the challenges of reducing sodium in processed foods?\"" >> phrases.txt
+echo -e "\"How can urban farming influence culinary trends?\"" >> phrases.txt
+echo -e "\"What are the benefits of learning to make fermented beverages?\"" >> phrases.txt
+echo -e "\"How does cultural heritage shape dessert recipes?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining hygiene in commercial kitchens?\"" >> phrases.txt
+echo -e "\"How can cooking competitions foster culinary innovation?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring vegan baking?\"" >> phrases.txt
+echo -e "\"How does food photography influence culinary marketing?\"" >> phrases.txt
+echo -e "\"What are the challenges of sourcing ethical meat products?\"" >> phrases.txt
+echo -e "\"How can literature shape national identity?\"" >> phrases.txt
+echo -e "\"What are the benefits of literature festivals for aspiring writers?\"" >> phrases.txt
+echo -e "\"How does travel writing capture cultural nuances?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing biographies of living figures?\"" >> phrases.txt
+echo -e "\"How can literature address racial inequality?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying ancient epic poems?\"" >> phrases.txt
+echo -e "\"How does coming-of-age literature resonate with youth?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining originality in genre fiction?\"" >> phrases.txt
+echo -e "\"How can literature explore the concept of identity?\"" >> phrases.txt
+echo -e "\"What are the benefits of graphic novels in education?\"" >> phrases.txt
+echo -e "\"How does satirical literature influence public opinion?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing for diverse readerships?\"" >> phrases.txt
+echo -e "\"How can literature preserve endangered languages?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying folklore in literature?\"" >> phrases.txt
+echo -e "\"How does literary realism depict everyday life?\"" >> phrases.txt
+echo -e "\"What are the challenges of interpreting classical allegory?\"" >> phrases.txt
+echo -e "\"How can literature encourage environmental activism?\"" >> phrases.txt
+echo -e "\"What are the benefits of literature in teaching empathy?\"" >> phrases.txt
+echo -e "\"How does noir fiction explore moral ambiguity?\"" >> phrases.txt
+echo -e "\"What are the challenges of publishing poetry in the digital age?\"" >> phrases.txt
+echo -e "\"How can literature reflect the impact of technology on society?\"" >> phrases.txt
+echo -e "\"What are the benefits of reading translated works?\"" >> phrases.txt
+echo -e "\"How does historical literature shape modern perspectives?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching dystopian literature to teens?\"" >> phrases.txt
+echo -e "\"How can literature address mental health stigma?\"" >> phrases.txt
+echo -e "\"What are the benefits of literature in understanding human rights?\"" >> phrases.txt
+echo -e "\"How does experimental literature push creative boundaries?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing for audio formats?\"" >> phrases.txt
+echo -e "\"How can literature inspire cross-cultural dialogue?\"" >> phrases.txt
+echo -e "\"What are the benefits of mentoring young writers?\"" >> phrases.txt
+echo -e "\"How does experiential learning improve student engagement?\"" >> phrases.txt
+echo -e "\"What are the benefits of bilingual education in early childhood?\"" >> phrases.txt
+echo -e "\"How can STEM programs encourage more female participation?\"" >> phrases.txt
+echo -e "\"What are the challenges of implementing inclusive education policies?\"" >> phrases.txt
+echo -e "\"How does teacher training impact student outcomes?\"" >> phrases.txt
+echo -e "\"What are the benefits of integrating arts into school curriculums?\"" >> phrases.txt
+echo -e "\"How can online learning platforms bridge educational gaps?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing bullying in schools?\"" >> phrases.txt
+echo -e "\"How does parental involvement influence academic success?\"" >> phrases.txt
+echo -e "\"What are the benefits of outdoor education programs?\"" >> phrases.txt
+echo -e "\"How can project-based learning enhance critical thinking?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching digital literacy to older adults?\"" >> phrases.txt
+echo -e "\"How does socioeconomic status affect access to quality education?\"" >> phrases.txt
+echo -e "\"What are the benefits of peer mentoring in high schools?\"" >> phrases.txt
+echo -e "\"How can gamification improve student motivation?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining academic integrity online?\"" >> phrases.txt
+echo -e "\"How does early literacy intervention impact reading skills?\"" >> phrases.txt
+echo -e "\"What are the benefits of vocational training in secondary education?\"" >> phrases.txt
+echo -e "\"How can schools better support students with learning disabilities?\"" >> phrases.txt
+echo -e "\"What are the challenges of funding public education systems?\"" >> phrases.txt
+echo -e "\"How does cultural diversity in classrooms enhance learning?\"" >> phrases.txt
+echo -e "\"What are the benefits of lifelong learning for career development?\"" >> phrases.txt
+echo -e "\"How can teacher-student relationships impact academic performance?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching empathy in schools?\"" >> phrases.txt
+echo -e "\"How does access to technology influence learning outcomes?\"" >> phrases.txt
+echo -e "\"What are the benefits of collaborative learning in higher education?\"" >> phrases.txt
+echo -e "\"How can schools address the digital divide among students?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating environmental education?\"" >> phrases.txt
+echo -e "\"How does student feedback improve teaching practices?\"" >> phrases.txt
+echo -e "\"What are the benefits of after-school programs for at-risk youth?\"" >> phrases.txt
+echo -e "\"How can culinary arts preserve cultural heritage?\"" >> phrases.txt
+echo -e "\"What are the health benefits of incorporating more plant-based meals?\"" >> phrases.txt
+echo -e "\"How does fermentation enhance the flavor of traditional dishes?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining food safety in restaurants?\"" >> phrases.txt
+echo -e "\"How can molecular gastronomy innovate fine dining?\"" >> phrases.txt
+echo -e "\"What are the benefits of using seasonal ingredients in cooking?\"" >> phrases.txt
+echo -e "\"How does slow cooking impact the texture of meats?\"" >> phrases.txt
+echo -e "\"What are the challenges of sourcing sustainable seafood?\"" >> phrases.txt
+echo -e "\"How can home gardening reduce grocery expenses?\"" >> phrases.txt
+echo -e "\"What are the benefits of learning traditional baking techniques?\"" >> phrases.txt
+echo -e "\"How does food presentation influence dining experiences?\"" >> phrases.txt
+echo -e "\"What are the challenges of catering to dietary restrictions?\"" >> phrases.txt
+echo -e "\"How can fusion cuisine blend cultural flavors?\"" >> phrases.txt
+echo -e "\"What are the benefits of mastering knife skills in the kitchen?\"" >> phrases.txt
+echo -e "\"How does pickling preserve vegetables for long-term use?\"" >> phrases.txt
+echo -e "\"What are the challenges of scaling recipes for large events?\"" >> phrases.txt
+echo -e "\"How can cooking classes build community connections?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring indigenous cooking methods?\"" >> phrases.txt
+echo -e "\"How does wine pairing enhance culinary experiences?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining consistency in food production?\"" >> phrases.txt
+echo -e "\"How can meal prepping improve weekly diets?\"" >> phrases.txt
+echo -e "\"What are the benefits of using fresh herbs in everyday cooking?\"" >> phrases.txt
+echo -e "\"How does sous-vide cooking ensure precision in meals?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing food waste in households?\"" >> phrases.txt
+echo -e "\"How can street food reflect cultural diversity?\"" >> phrases.txt
+echo -e "\"What are the benefits of learning to make homemade pasta?\"" >> phrases.txt
+echo -e "\"How does roasting vegetables enhance their natural flavors?\"" >> phrases.txt
+echo -e "\"What are the challenges of creating gluten-free desserts?\"" >> phrases.txt
+echo -e "\"How can cooking with children foster lifelong skills?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring spice blends from different cultures?\"" >> phrases.txt
+echo -e "\"How does dystopian literature reflect societal fears?\"" >> phrases.txt
+echo -e "\"What are the challenges of translating poetry across languages?\"" >> phrases.txt
+echo -e "\"How can magical realism enhance narrative depth?\"" >> phrases.txt
+echo -e "\"What are the benefits of reading classic literature in modern education?\"" >> phrases.txt
+echo -e "\"How does satire critique political systems in literature?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing historical fiction accurately?\"" >> phrases.txt
+echo -e "\"How can memoirs provide insight into cultural histories?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying Shakespeare’s influence on modern drama?\"" >> phrases.txt
+echo -e "\"How does feminist literature address gender inequality?\"" >> phrases.txt
+echo -e "\"What are the challenges of adapting novels into screenplays?\"" >> phrases.txt
+echo -e "\"How can children’s literature teach moral lessons?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring postcolonial literature?\"" >> phrases.txt
+echo -e "\"How does gothic literature explore human emotions?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing in the epistolary format?\"" >> phrases.txt
+echo -e "\"How can allegory enhance thematic depth in literature?\"" >> phrases.txt
+echo -e "\"What are the benefits of reading diverse voices in contemporary fiction?\"" >> phrases.txt
+echo -e "\"How does science fiction predict technological advancements?\"" >> phrases.txt
+echo -e "\"What are the challenges of preserving ancient manuscripts?\"" >> phrases.txt
+echo -e "\"How can literature inspire social change?\"" >> phrases.txt
+echo -e "\"What are the benefits of book clubs in fostering community?\"" >> phrases.txt
+echo -e "\"How does stream-of-consciousness writing reveal character psychology?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching literature to non-native speakers?\"" >> phrases.txt
+echo -e "\"How can mythology influence modern storytelling?\"" >> phrases.txt
+echo -e "\"What are the benefits of analyzing symbolism in literature?\"" >> phrases.txt
+echo -e "\"How does war literature reflect the human condition?\"" >> phrases.txt
+echo -e "\"What are the challenges of publishing experimental fiction?\"" >> phrases.txt
+echo -e "\"How can literature provide insight into mental health struggles?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying oral storytelling traditions?\"" >> phrases.txt
+echo -e "\"How does romantic literature explore the concept of love?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing for young adult audiences?\"" >> phrases.txt
+echo -e "\"How can literature bridge cultural divides?\"" >> phrases.txt
+echo -e "\"What are the benefits of integrating literature into therapy?\"" >> phrases.txt
+echo -e "\"How does existentialist literature address life’s meaning?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining authenticity in regional literature?\"" >> phrases.txt
+echo -e "\"How can literature influence public policy debates?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring banned books in education?\"" >> phrases.txt
+echo -e "\"How does crime fiction explore morality?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing multi-perspective narratives?\"" >> phrases.txt
+echo -e "\"How can literature deepen our understanding of history?\"" >> phrases.txt
+echo -e "\"What are the benefits of reading poetry aloud?\"" >> phrases.txt
+echo -e "\"How does modernist literature reflect societal change?\"" >> phrases.txt
+echo -e "\"What are the challenges of interpreting ancient texts?\"" >> phrases.txt
+echo -e "\"How can literature foster empathy in readers?\"" >> phrases.txt
+echo -e "\"What are the benefits of creative writing workshops for students?\"" >> phrases.txt
+echo -e "\"How does fantasy literature inspire imagination?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing for a global audience?\"" >> phrases.txt
+echo -e "\"How can literature address environmental concerns?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying literary criticism?\"" >> phrases.txt
+echo -e "\"How does horror literature explore fear?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining narrative consistency in series?\"" >> phrases.txt
+echo -e "\"How can literature reflect the immigrant experience?\"" >> phrases.txt
+echo -e "\"What are the benefits of audio narration in modern literature?\"" >> phrases.txt
+echo -e "\"How does teaching literature online impact student engagement?\"" >> phrases.txt
+echo -e "\"What are the challenges of funding arts education programs?\"" >> phrases.txt
+echo -e "\"How can school libraries promote a love of reading?\"" >> phrases.txt
+echo -e "\"What are the benefits of cross-disciplinary education approaches?\"" >> phrases.txt
+echo -e "\"How does class size affect student learning outcomes?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching ethics in schools?\"" >> phrases.txt
+echo -e "\"How can education systems prepare students for future careers?\"" >> phrases.txt
+echo -e "\"What are the benefits of cultural exchange programs in schools?\"" >> phrases.txt
+echo -e "\"How does standardized testing impact student creativity?\"" >> phrases.txt
+echo -e "\"What are the challenges of supporting gifted students?\"" >> phrases.txt
+echo -e "\"How can schools promote financial literacy among teenagers?\"" >> phrases.txt
+echo -e "\"What are the benefits of hands-on learning in science education?\"" >> phrases.txt
+echo -e "\"How does teacher diversity influence student perspectives?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating mental health education?\"" >> phrases.txt
+echo -e "\"How can education systems address language barriers?\"" >> phrases.txt
+echo -e "\"What are the benefits of mentorship programs for new teachers?\"" >> phrases.txt
+echo -e "\"How does homework impact student well-being?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining student motivation remotely?\"" >> phrases.txt
+echo -e "\"How can schools foster critical media literacy?\"" >> phrases.txt
+echo -e "\"What are the benefits of teaching history through storytelling?\"" >> phrases.txt
+echo -e "\"How does school infrastructure affect learning environments?\"" >> phrases.txt
+echo -e "\"What are the challenges of balancing academics with extracurriculars?\"" >> phrases.txt
+echo -e "\"How can education systems support refugee students?\"" >> phrases.txt
+echo -e "\"What are the benefits of debate clubs in fostering argumentation skills?\"" >> phrases.txt
+echo -e "\"How does access to higher education impact social mobility?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching STEM in underfunded schools?\"" >> phrases.txt
+echo -e "\"How can schools promote civic engagement among students?\"" >> phrases.txt
+echo -e "\"What are the benefits of play-based learning in early education?\"" >> phrases.txt
+echo -e "\"How does teacher burnout affect classroom dynamics?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing truancy in urban schools?\"" >> phrases.txt
+echo -e "\"How can education systems combat misinformation?\"" >> phrases.txt
+echo -e "\"What are the benefits of student-led conferences in schools?\"" >> phrases.txt
+echo -e "\"How does regional cuisine reflect historical trade routes?\"" >> phrases.txt
+echo -e "\"What are the challenges of preserving traditional recipes?\"" >> phrases.txt
+echo -e "\"How can culinary tourism boost local economies?\"" >> phrases.txt
+echo -e "\"What are the benefits of cooking with cast iron?\"" >> phrases.txt
+echo -e "\"How does food plating impact social media engagement?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining authenticity in fusion dishes?\"" >> phrases.txt
+echo -e "\"How can baking bread at home foster mindfulness?\"" >> phrases.txt
+echo -e "\"What are the benefits of learning to pair cheeses with wines?\"" >> phrases.txt
+echo -e "\"How does grilling techniques vary across cultures?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing allergies in food service?\"" >> phrases.txt
+echo -e "\"How can culinary schools teach sustainable cooking practices?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring raw food diets?\"" >> phrases.txt
+echo -e "\"How does food preservation impact nutritional value?\"" >> phrases.txt
+echo -e "\"What are the challenges of cooking at high altitudes?\"" >> phrases.txt
+echo -e "\"How can communal meals strengthen family bonds?\"" >> phrases.txt
+echo -e "\"What are the benefits of using local grains in baking?\"" >> phrases.txt
+echo -e "\"How does steaming vegetables retain their nutrients?\"" >> phrases.txt
+echo -e "\"What are the challenges of organizing large-scale food festivals?\"" >> phrases.txt
+echo -e "\"How can cooking shows inspire healthier eating habits?\"" >> phrases.txt
+echo -e "\"What are the benefits of mastering braising techniques?\"" >> phrases.txt
+echo -e "\"How does food storytelling enhance dining experiences?\"" >> phrases.txt
+echo -e "\"What are the challenges of reducing sodium in processed foods?\"" >> phrases.txt
+echo -e "\"How can urban farming influence culinary trends?\"" >> phrases.txt
+echo -e "\"What are the benefits of learning to make fermented beverages?\"" >> phrases.txt
+echo -e "\"How does cultural heritage shape dessert recipes?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining hygiene in commercial kitchens?\"" >> phrases.txt
+echo -e "\"How can cooking competitions foster culinary innovation?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring vegan baking?\"" >> phrases.txt
+echo -e "\"How does food photography influence culinary marketing?\"" >> phrases.txt
+echo -e "\"What are the challenges of sourcing ethical meat products?\"" >> phrases.txt
+echo -e "\"How can literature shape national identity?\"" >> phrases.txt
+echo -e "\"What are the benefits of literature festivals for aspiring writers?\"" >> phrases.txt
+echo -e "\"How does travel writing capture cultural nuances?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing biographies of living figures?\"" >> phrases.txt
+echo -e "\"How can literature address racial inequality?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying ancient epic poems?\"" >> phrases.txt
+echo -e "\"How does coming-of-age literature resonate with youth?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining originality in genre fiction?\"" >> phrases.txt
+echo -e "\"How can literature explore the concept of identity?\"" >> phrases.txt
+echo -e "\"What are the benefits of graphic novels in education?\"" >> phrases.txt
+echo -e "\"How does satirical literature influence public opinion?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing for diverse readerships?\"" >> phrases.txt
+echo -e "\"How can literature preserve endangered languages?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying folklore in literature?\"" >> phrases.txt
+echo -e "\"How does literary realism depict everyday life?\"" >> phrases.txt
+echo -e "\"What are the challenges of interpreting classical allegory?\"" >> phrases.txt
+echo -e "\"How can literature encourage environmental activism?\"" >> phrases.txt
+echo -e "\"What are the benefits of literature in teaching empathy?\"" >> phrases.txt
+echo -e "\"How does noir fiction explore moral ambiguity?\"" >> phrases.txt
+echo -e "\"What are the challenges of publishing poetry in the digital age?\"" >> phrases.txt
+echo -e "\"How can literature reflect the impact of technology on society?\"" >> phrases.txt
+echo -e "\"What are the benefits of reading translated works?\"" >> phrases.txt
+echo -e "\"How does historical literature shape modern perspectives?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching dystopian literature to teens?\"" >> phrases.txt
+echo -e "\"How can literature address mental health stigma?\"" >> phrases.txt
+echo -e "\"What are the benefits of literature in understanding human rights?\"" >> phrases.txt
+echo -e "\"How does experimental literature push creative boundaries?\"" >> phrases.txt
+echo -e "\"What are the challenges of writing for audio formats?\"" >> phrases.txt
+echo -e "\"How can literature inspire cross-cultural dialogue?\"" >> phrases.txt
+echo -e "\"What are the benefits of mentoring young writers?\"" >> phrases.txt
+echo -e "\"How does urbanization affect social cohesion?\"" >> phrases.txt
+echo -e "\"What are the impacts of social media on interpersonal relationships?\"" >> phrases.txt
+echo -e "\"How can community initiatives reduce social inequality?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing systemic racism?\"" >> phrases.txt
+echo -e "\"How does migration influence cultural identity?\"" >> phrases.txt
+echo -e "\"What are the benefits of intergenerational living arrangements?\"" >> phrases.txt
+echo -e "\"How can social norms shape individual behavior?\"" >> phrases.txt
+echo -e "\"What are the challenges of studying subcultures in urban settings?\"" >> phrases.txt
+echo -e "\"How does poverty impact access to social services?\"" >> phrases.txt
+echo -e "\"What are the benefits of fostering social trust in communities?\"" >> phrases.txt
+echo -e "\"How can religious diversity strengthen societal bonds?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing gender stereotypes in media?\"" >> phrases.txt
+echo -e "\"How does social class influence educational opportunities?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying social movements?\"" >> phrases.txt
+echo -e "\"How can public spaces encourage social interaction?\"" >> phrases.txt
+echo -e "\"What are the challenges of combating misinformation in society?\"" >> phrases.txt
+echo -e "\"How does volunteerism impact community development?\"" >> phrases.txt
+echo -e "\"What are the benefits of cross-cultural communication skills?\"" >> phrases.txt
+echo -e "\"How can sociology inform public health strategies?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing homelessness in cities?\"" >> phrases.txt
+echo -e "\"How does peer influence shape adolescent behavior?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying family dynamics in sociology?\"" >> phrases.txt
+echo -e "\"How can social policies reduce income inequality?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating refugees into society?\"" >> phrases.txt
+echo -e "\"How does globalization impact local traditions?\"" >> phrases.txt
+echo -e "\"What are the benefits of community policing initiatives?\"" >> phrases.txt
+echo -e "\"How can social stigma affect mental health treatment?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting civic participation?\"" >> phrases.txt
+echo -e "\"How does technology influence social isolation?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying deviance in sociology?\"" >> phrases.txt
+echo -e "\"How can archaeology reveal ancient trade networks?\"" >> phrases.txt
+echo -e "\"What are the challenges of preserving underwater archaeological sites?\"" >> phrases.txt
+echo -e "\"How does carbon dating improve our understanding of history?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying ancient burial practices?\"" >> phrases.txt
+echo -e "\"How can paleoethnobotany uncover past diets?\"" >> phrases.txt
+echo -e "\"What are the challenges of excavating in conflict zones?\"" >> phrases.txt
+echo -e "\"How does archaeology inform our understanding of early urbanization?\"" >> phrases.txt
+echo -e "\"What are the benefits of community involvement in archaeological digs?\"" >> phrases.txt
+echo -e "\"How can ancient pottery reveal cultural exchanges?\"" >> phrases.txt
+echo -e "\"What are the challenges of preserving artifacts in humid climates?\"" >> phrases.txt
+echo -e "\"How does stratigraphy help date archaeological finds?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying ancient religious sites?\"" >> phrases.txt
+echo -e "\"How can archaeological evidence challenge historical narratives?\"" >> phrases.txt
+echo -e "\"What are the challenges of repatriating stolen artifacts?\"" >> phrases.txt
+echo -e "\"How does zooarchaeology reveal ancient animal domestication?\"" >> phrases.txt
+echo -e "\"What are the benefits of using drones in archaeological surveys?\"" >> phrases.txt
+echo -e "\"How can ancient tools inform modern engineering?\"" >> phrases.txt
+echo -e "\"What are the challenges of studying prehistoric migrations?\"" >> phrases.txt
+echo -e "\"How does archaeology contribute to climate change studies?\"" >> phrases.txt
+echo -e "\"What are the benefits of interdisciplinary approaches in archaeology?\"" >> phrases.txt
+echo -e "\"How can ancient inscriptions reveal forgotten languages?\"" >> phrases.txt
+echo -e "\"What are the challenges of funding archaeological expeditions?\"" >> phrases.txt
+echo -e "\"How does marine archaeology uncover lost civilizations?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying ancient metallurgy?\"" >> phrases.txt
+echo -e "\"How can archaeological sites promote cultural tourism?\"" >> phrases.txt
+echo -e "\"What are the challenges of protecting sites from looting?\"" >> phrases.txt
+echo -e "\"How does archaeoastronomy reveal ancient astronomical knowledge?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying ancient irrigation systems?\"" >> phrases.txt
+echo -e "\"How can isotopic analysis reveal ancient diets?\"" >> phrases.txt
+echo -e "\"What are the challenges of interpreting ancient art?\"" >> phrases.txt
+echo -e "\"How does fashion reflect cultural identity?\"" >> phrases.txt
+echo -e "\"What are the benefits of sustainable fashion practices?\"" >> phrases.txt
+echo -e "\"How can vintage clothing inspire modern design?\"" >> phrases.txt
+echo -e "\"What are the challenges of ethical sourcing in the fashion industry?\"" >> phrases.txt
+echo -e "\"How does streetwear influence high fashion trends?\"" >> phrases.txt
+echo -e "\"What are the benefits of upcycling in fashion design?\"" >> phrases.txt
+echo -e "\"How can fashion promote body positivity?\"" >> phrases.txt
+echo -e "\"What are the challenges of reducing waste in fast fashion?\"" >> phrases.txt
+echo -e "\"How does cultural appropriation impact fashion ethics?\"" >> phrases.txt
+echo -e "\"What are the benefits of handmade textiles in modern fashion?\"" >> phrases.txt
+echo -e "\"How can fashion weeks influence global trends?\"" >> phrases.txt
+echo -e "\"What are the challenges of designing for diverse body types?\"" >> phrases.txt
+echo -e "\"How does fashion photography shape beauty standards?\"" >> phrases.txt
+echo -e "\"What are the benefits of minimalist wardrobes?\"" >> phrases.txt
+echo -e "\"How can fashion education promote sustainability?\"" >> phrases.txt
+echo -e "\"What are the challenges of regulating labor in fashion production?\"" >> phrases.txt
+echo -e "\"How does fashion reflect political movements?\"" >> phrases.txt
+echo -e "\"What are the benefits of supporting local designers?\"" >> phrases.txt
+echo -e "\"How can wearable tech enhance fashion functionality?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining authenticity in fashion branding?\"" >> phrases.txt
+echo -e "\"How does haute couture preserve traditional craftsmanship?\"" >> phrases.txt
+echo -e "\"What are the benefits of gender-neutral fashion lines?\"" >> phrases.txt
+echo -e "\"How can fashion museums educate about historical trends?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting diversity in fashion models?\"" >> phrases.txt
+echo -e "\"How does seasonal fashion impact consumer behavior?\"" >> phrases.txt
+echo -e "\"What are the benefits of eco-friendly dyes in clothing?\"" >> phrases.txt
+echo -e "\"How can fashion influence self-expression?\"" >> phrases.txt
+echo -e "\"What are the challenges of balancing trends with timelessness?\"" >> phrases.txt
+echo -e "\"How does fashion journalism shape industry narratives?\"" >> phrases.txt
+echo -e "\"What are the benefits of thrifting for sustainable fashion?\"" >> phrases.txt
+echo -e "\"How can social media influence fashion marketing?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing fast fashion’s environmental impact?\"" >> phrases.txt
+echo -e "\"How does traditional embroidery enhance modern fashion?\"" >> phrases.txt
+echo -e "\"What are the benefits of capsule wardrobes for travel?\"" >> phrases.txt
+echo -e "\"How can fashion designers collaborate with indigenous artisans?\"" >> phrases.txt
+echo -e "\"What are the challenges of predicting fashion trends?\"" >> phrases.txt
+echo -e "\"How does color theory influence fashion design?\"" >> phrases.txt
+echo -e "\"What are the benefits of slow fashion movements?\"" >> phrases.txt
+echo -e "\"How can fashion address mental health awareness?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating technology into runway shows?\"" >> phrases.txt
+echo -e "\"How does vintage fashion inspire sustainable practices?\"" >> phrases.txt
+echo -e "\"What are the benefits of fashion mentorship programs?\"" >> phrases.txt
+echo -e "\"How can fashion brands promote ethical consumerism?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring fair wages in fashion supply chains?\"" >> phrases.txt
+echo -e "\"How does fashion reflect economic conditions?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying historical costume design?\"" >> phrases.txt
+echo -e "\"How can fashion influence cultural diplomacy?\"" >> phrases.txt
+echo -e "\"What are the challenges of designing adaptive clothing for disabilities?\"" >> phrases.txt
+echo -e "\"How does fashion impact first impressions?\"" >> phrases.txt
+echo -e "\"What are the benefits of zero-waste fashion design?\"" >> phrases.txt
+echo -e "\"How can archaeology inform modern urban planning?\"" >> phrases.txt
+echo -e "\"What are the challenges of conserving ancient textiles?\"" >> phrases.txt
+echo -e "\"How does archaeological tourism benefit local economies?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying ancient shipwrecks?\"" >> phrases.txt
+echo -e "\"How can remote sensing uncover hidden archaeological sites?\"" >> phrases.txt
+echo -e "\"What are the challenges of protecting archaeological sites from climate change?\"" >> phrases.txt
+echo -e "\"How does archaeology contribute to understanding prehistoric art?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying ancient agricultural practices?\"" >> phrases.txt
+echo -e "\"How can isotopic analysis reveal ancient migration patterns?\"" >> phrases.txt
+echo -e "\"What are the challenges of dating organic artifacts?\"" >> phrases.txt
+echo -e "\"How does archaeology reveal ancient social hierarchies?\"" >> phrases.txt
+echo -e "\"What are the benefits of public archaeology programs?\"" >> phrases.txt
+echo -e "\"How can ancient architecture inspire modern design?\"" >> phrases.txt
+echo -e "\"What are the challenges of interpreting ancient mythology through artifacts?\"" >> phrases.txt
+echo -e "\"How does archaeology contribute to understanding early human diets?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying ancient warfare?\"" >> phrases.txt
+echo -e "\"How can archaeological discoveries influence education curricula?\"" >> phrases.txt
+echo -e "\"What are the challenges of collaborating with indigenous communities in archaeology?\"" >> phrases.txt
+echo -e "\"How does archaeology reveal ancient climate changes?\"" >> phrases.txt
+echo -e "\"What are the benefits of interdisciplinary approaches in archaeological research?\"" >> phrases.txt
+echo -e "\"How can social networks influence cultural diffusion?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing ageism in society?\"" >> phrases.txt
+echo -e "\"How does social capital impact community resilience?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying social stratification?\"" >> phrases.txt
+echo -e "\"How can sociology inform disaster response strategies?\"" >> phrases.txt
+echo -e "\"What are the challenges of combating social exclusion?\"" >> phrases.txt
+echo -e "\"How does social media shape political activism?\"" >> phrases.txt
+echo -e "\"What are the benefits of intergenerational programs in communities?\"" >> phrases.txt
+echo -e "\"How can social policies address youth unemployment?\"" >> phrases.txt
+echo -e "\"What are the challenges of studying informal economies?\"" >> phrases.txt
+echo -e "\"How does social inequality influence health outcomes?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying collective behavior?\"" >> phrases.txt
+echo -e "\"How can sociology inform criminal justice reforms?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting multiculturalism in schools?\"" >> phrases.txt
+echo -e "\"How does social mobility impact family dynamics?\"" >> phrases.txt
+echo -e "\"What are the benefits of community-led development projects?\"" >> phrases.txt
+echo -e "\"How can sociology address the digital divide?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating technology into social research?\"" >> phrases.txt
+echo -e "\"How does social stigma influence addiction recovery?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying urban sociology?\"" >> phrases.txt
+echo -e "\"How can social policies reduce food insecurity?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing domestic violence?\"" >> phrases.txt
+echo -e "\"How does social change impact traditional values?\"" >> phrases.txt
+echo -e "\"What are the benefits of mentorship programs in social work?\"" >> phrases.txt
+echo -e "\"How can sociology inform education reforms?\"" >> phrases.txt
+echo -e "\"What are the challenges of studying global social trends?\"" >> phrases.txt
+echo -e "\"How does social support influence mental health?\"" >> phrases.txt
+echo -e "\"What are the benefits of participatory democracy in communities?\"" >> phrases.txt
+echo -e "\"How can sociology address environmental justice?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting social inclusion for minorities?\"" >> phrases.txt
+echo -e "\"How does fashion impact workplace professionalism?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying fashion history?\"" >> phrases.txt
+echo -e "\"How can fashion brands promote inclusivity?\"" >> phrases.txt
+echo -e "\"What are the challenges of reducing carbon footprints in fashion?\"" >> phrases.txt
+echo -e "\"How does fashion influence youth culture?\"" >> phrases.txt
+echo -e "\"What are the benefits of bespoke tailoring?\"" >> phrases.txt
+echo -e "\"How can fashion education address industry ethics?\"" >> phrases.txt
+echo -e "\"What are the challenges of combating counterfeit fashion?\"" >> phrases.txt
+echo -e "\"How does fashion reflect technological advancements?\"" >> phrases.txt
+echo -e "\"What are the benefits of collaborative fashion projects?\"" >> phrases.txt
+echo -e "\"How can fashion promote mental health awareness?\"" >> phrases.txt
+echo -e "\"What are the challenges of designing for extreme climates?\"" >> phrases.txt
+echo -e "\"How does fashion influence social status perceptions?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying fashion anthropology?\"" >> phrases.txt
+echo -e "\"How can fashion internships foster professional growth?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining quality in mass production?\"" >> phrases.txt
+echo -e "\"How does fashion impact self-confidence?\"" >> phrases.txt
+echo -e "\"What are the benefits of circular fashion economies?\"" >> phrases.txt
+echo -e "\"How can fashion advocate for social causes?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating AI into fashion design?\"" >> phrases.txt
+echo -e "\"How does classical music influence cognitive development?\"" >> phrases.txt
+echo -e "\"What are the challenges of preserving traditional folk songs?\"" >> phrases.txt
+echo -e "\"How can music therapy aid autism spectrum disorder?\"" >> phrases.txt
+echo -e "\"What are the benefits of learning to play multiple instruments?\"" >> phrases.txt
+echo -e "\"How does jazz improvisation reflect cultural fusion?\"" >> phrases.txt
+echo -e "\"What are the challenges of funding music education programs?\"" >> phrases.txt
+echo -e "\"How can electronic music shape modern dance culture?\"" >> phrases.txt
+echo -e "\"What are the benefits of community choirs for social bonding?\"" >> phrases.txt
+echo -e "\"How does music influence emotional regulation?\"" >> phrases.txt
+echo -e "\"What are the challenges of copyright in the music industry?\"" >> phrases.txt
+echo -e "\"How can music festivals promote cultural exchange?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying music theory for composition?\"" >> phrases.txt
+echo -e "\"How does hip-hop reflect social justice issues?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining authenticity in pop music?\"" >> phrases.txt
+echo -e "\"How can music education foster creativity in children?\"" >> phrases.txt
+echo -e "\"What are the benefits of live music for mental health?\"" >> phrases.txt
+echo -e "\"How does reggae music promote messages of peace?\"" >> phrases.txt
+echo -e "\"What are the challenges of archiving rare musical recordings?\"" >> phrases.txt
+echo -e "\"How can music streaming platforms support indie artists?\"" >> phrases.txt
+echo -e "\"What are the benefits of cross-genre musical collaborations?\"" >> phrases.txt
+echo -e "\"How does music shape national identity?\"" >> phrases.txt
+echo -e "\"What are the challenges of performing in outdoor music venues?\"" >> phrases.txt
+echo -e "\"How can music criticism influence listener preferences?\"" >> phrases.txt
+echo -e "\"What are the benefits of music mentorship for young artists?\"" >> phrases.txt
+echo -e "\"How does classical Indian music influence modern compositions?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching music remotely?\"" >> phrases.txt
+echo -e "\"How can music enhance language learning?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying ancient musical instruments?\"" >> phrases.txt
+echo -e "\"How does music impact memory retention?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating music into therapy?\"" >> phrases.txt
+echo -e "\"How can documentary films raise awareness about social issues?\"" >> phrases.txt
+echo -e "\"What are the challenges of independent film financing?\"" >> phrases.txt
+echo -e "\"How does cinematography enhance storytelling in films?\"" >> phrases.txt
+echo -e "\"What are the benefits of film festivals for emerging directors?\"" >> phrases.txt
+echo -e "\"How can animation films appeal to all age groups?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining historical accuracy in period films?\"" >> phrases.txt
+echo -e "\"How does film scoring influence audience emotions?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying classic cinema?\"" >> phrases.txt
+echo -e "\"How can international cinema foster cultural understanding?\"" >> phrases.txt
+echo -e "\"What are the challenges of adapting literature into films?\"" >> phrases.txt
+echo -e "\"How does virtual reality enhance cinematic experiences?\"" >> phrases.txt
+echo -e "\"What are the benefits of short films in storytelling?\"" >> phrases.txt
+echo -e "\"How can film education promote diversity in media?\"" >> phrases.txt
+echo -e "\"What are the challenges of regulating content in streaming platforms?\"" >> phrases.txt
+echo -e "\"How does costume design impact film authenticity?\"" >> phrases.txt
+echo -e "\"What are the benefits of collaborative filmmaking?\"" >> phrases.txt
+echo -e "\"How can horror films explore psychological fears?\"" >> phrases.txt
+echo -e "\"What are the challenges of producing environmentally sustainable films?\"" >> phrases.txt
+echo -e "\"How does film editing shape narrative pace?\"" >> phrases.txt
+echo -e "\"What are the benefits of film criticism for audience engagement?\"" >> phrases.txt
+echo -e "\"How can sci-fi films predict future technologies?\"" >> phrases.txt
+echo -e "\"What are the challenges of casting underrepresented groups in films?\"" >> phrases.txt
+echo -e "\"How does film noir reflect societal anxieties?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying silent films?\"" >> phrases.txt
+echo -e "\"How can films address mental health stigma?\"" >> phrases.txt
+echo -e "\"What are the challenges of producing films during global crises?\"" >> phrases.txt
+echo -e "\"How does lighting design influence film mood?\"" >> phrases.txt
+echo -e "\"What are the benefits of local film industries for economies?\"" >> phrases.txt
+echo -e "\"How can films promote environmental awareness?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring ethical representation in cinema?\"" >> phrases.txt
+echo -e "\"How does solo travel impact personal growth?\"" >> phrases.txt
+echo -e "\"What are the benefits of ecotourism for conservation efforts?\"" >> phrases.txt
+echo -e "\"How can cultural immersion enhance travel experiences?\"" >> phrases.txt
+echo -e "\"What are the challenges of sustainable travel in developing countries?\"" >> phrases.txt
+echo -e "\"How does budget travel encourage creativity?\"" >> phrases.txt
+echo -e "\"What are the benefits of learning local languages while traveling?\"" >> phrases.txt
+echo -e "\"How can travel photography preserve memories?\"" >> phrases.txt
+echo -e "\"What are the challenges of traveling with dietary restrictions?\"" >> phrases.txt
+echo -e "\"How does slow travel deepen cultural understanding?\"" >> phrases.txt
+echo -e "\"What are the benefits of adventure travel for physical health?\"" >> phrases.txt
+echo -e "\"How can travel blogging inspire wanderlust?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing overtourism in popular destinations?\"" >> phrases.txt
+echo -e "\"How does volunteering abroad impact local communities?\"" >> phrases.txt
+echo -e "\"What are the benefits of traveling during off-peak seasons?\"" >> phrases.txt
+echo -e "\"How can travel apps improve trip planning?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring safety while traveling solo?\"" >> phrases.txt
+echo -e "\"How does heritage tourism preserve historical sites?\"" >> phrases.txt
+echo -e "\"What are the benefits of train travel for scenic routes?\"" >> phrases.txt
+echo -e "\"How can travel foster global citizenship?\"" >> phrases.txt
+echo -e "\"What are the challenges of navigating language barriers abroad?\"" >> phrases.txt
+echo -e "\"How does culinary tourism showcase regional flavors?\"" >> phrases.txt
+echo -e "\"What are the benefits of homestays for cultural exchange?\"" >> phrases.txt
+echo -e "\"How can travel itineraries balance relaxation and adventure?\"" >> phrases.txt
+echo -e "\"What are the challenges of reducing carbon footprints while traveling?\"" >> phrases.txt
+echo -e "\"How does backpacking build resilience?\"" >> phrases.txt
+echo -e "\"What are the benefits of guided tours for historical sites?\"" >> phrases.txt
+echo -e "\"How can travel insurance mitigate risks?\"" >> phrases.txt
+echo -e "\"What are the challenges of traveling with young children?\"" >> phrases.txt
+echo -e "\"How does wellness tourism promote mental health?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring hidden gems in cities?\"" >> phrases.txt
+echo -e "\"How can music education address cultural divides?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching rhythm to beginners?\"" >> phrases.txt
+echo -e "\"How does music influence social movements?\"" >> phrases.txt
+echo -e "\"What are the benefits of music in early childhood education?\"" >> phrases.txt
+echo -e "\"How can orchestral music inspire cinematic scores?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining instruments in humid climates?\"" >> phrases.txt
+echo -e "\"How does music shape emotional intelligence?\"" >> phrases.txt
+echo -e "\"What are the benefits of music workshops for communities?\"" >> phrases.txt
+echo -e "\"How can music history inform modern compositions?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting underrepresented genres?\"" >> phrases.txt
+echo -e "\"How does music impact physical rehabilitation?\"" >> phrases.txt
+echo -e "\"What are the benefits of learning music notation?\"" >> phrases.txt
+echo -e "\"How can music competitions foster talent development?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating music into public spaces?\"" >> phrases.txt
+echo -e "\"How does indigenous music preserve cultural heritage?\"" >> phrases.txt
+echo -e "\"What are the benefits of music for stress relief?\"" >> phrases.txt
+echo -e "\"How can music festivals promote environmental sustainability?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing large music events?\"" >> phrases.txt
+echo -e "\"How does music influence brand marketing?\"" >> phrases.txt
+echo -e "\"What are the benefits of collaborative songwriting?\"" >> phrases.txt
+echo -e "\"How can music therapy address anxiety disorders?\"" >> phrases.txt
+echo -e "\"What are the challenges of teaching music to diverse learners?\"" >> phrases.txt
+echo -e "\"How does music reflect economic conditions?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying world music traditions?\"" >> phrases.txt
+echo -e "\"How can music education support language development?\"" >> phrases.txt
+echo -e "\"What are the challenges of funding music research?\"" >> phrases.txt
+echo -e "\"How does music shape cultural identity?\"" >> phrases.txt
+echo -e "\"What are the benefits of music in corporate wellness programs?\"" >> phrases.txt
+echo -e "\"How can music inspire cross-disciplinary creativity?\"" >> phrases.txt
+echo -e "\"What are the challenges of preserving oral music traditions?\"" >> phrases.txt
+echo -e "\"How does experimental cinema push artistic boundaries?\"" >> phrases.txt
+echo -e "\"What are the benefits of film mentorship programs?\"" >> phrases.txt
+echo -e "\"How can films address climate change narratives?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring diversity in film production?\"" >> phrases.txt
+echo -e "\"How does stop-motion animation create unique storytelling?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying film theory?\"" >> phrases.txt
+echo -e "\"How can films promote gender equality?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining authenticity in biopics?\"" >> phrases.txt
+echo -e "\"How does film marketing influence box office success?\"" >> phrases.txt
+echo -e "\"What are the benefits of community-driven film projects?\"" >> phrases.txt
+echo -e "\"How can films explore cultural heritage?\"" >> phrases.txt
+echo -e "\"What are the challenges of producing films on tight budgets?\"" >> phrases.txt
+echo -e "\"How does film criticism shape public perception?\"" >> phrases.txt
+echo -e "\"What are the benefits of student film competitions?\"" >> phrases.txt
+echo -e "\"How can films educate about historical events?\"" >> phrases.txt
+echo -e "\"What are the challenges of integrating CGI into live-action films?\"" >> phrases.txt
+echo -e "\"How does film influence fashion trends?\"" >> phrases.txt
+echo -e "\"What are the benefits of international film collaborations?\"" >> phrases.txt
+echo -e "\"How can films address social justice issues?\"" >> phrases.txt
+echo -e "\"What are the challenges of producing multilingual films?\"" >> phrases.txt
+echo -e "\"How does film preservation ensure cultural legacy?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying film genres?\"" >> phrases.txt
+echo -e "\"How can films inspire environmental activism?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing censorship in cinema?\"" >> phrases.txt
+echo -e "\"How does film reflect political ideologies?\"" >> phrases.txt
+echo -e "\"What are the benefits of film literacy programs?\"" >> phrases.txt
+echo -e "\"How can documentaries influence policy changes?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring ethical filmmaking practices?\"" >> phrases.txt
+echo -e "\"How does film shape cultural narratives?\"" >> phrases.txt
+echo -e "\"What are the benefits of film education for youth?\"" >> phrases.txt
+echo -e "\"How can travel inspire artistic creativity?\"" >> phrases.txt
+echo -e "\"What are the challenges of traveling to remote destinations?\"" >> phrases.txt
+echo -e "\"How does cultural tourism benefit local artisans?\"" >> phrases.txt
+echo -e "\"What are the benefits of traveling with minimal luggage?\"" >> phrases.txt
+echo -e "\"How can travel memoirs capture transformative experiences?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring accessibility in travel?\"" >> phrases.txt
+echo -e "\"How does adventure tourism promote physical fitness?\"" >> phrases.txt
+echo -e "\"What are the benefits of eco-friendly lodging options?\"" >> phrases.txt
+echo -e "\"How can travel educate about global inequalities?\"" >> phrases.txt
+echo -e "\"What are the challenges of preserving authenticity in tourist destinations?\"" >> phrases.txt
+echo -e "\"How does travel photography influence social media?\"" >> phrases.txt
+echo -e "\"What are the benefits of studying abroad for personal growth?\"" >> phrases.txt
+echo -e "\"How can travel reduce cultural stereotypes?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing tourism in protected areas?\"" >> phrases.txt
+echo -e "\"How does travel impact mental well-being?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring local markets while traveling?\"" >> phrases.txt
+echo -e "\"How can travel inspire sustainable living practices?\"" >> phrases.txt
+echo -e "\"What are the challenges of traveling during natural disasters?\"" >> phrases.txt
+echo -e "\"How does pilgrimage travel shape spiritual beliefs?\"" >> phrases.txt
+echo -e "\"What are the benefits of travel loyalty programs?\"" >> phrases.txt
+echo -e "\"How can travel promote language immersion?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring ethical wildlife tourism?\"" >> phrases.txt
+echo -e "\"How does travel influence career perspectives?\"" >> phrases.txt
+echo -e "\"What are the benefits of cultural festivals for tourists?\"" >> phrases.txt
+echo -e "\"How can travel inspire culinary exploration?\"" >> phrases.txt
+echo -e "\"What are the challenges of navigating foreign transportation systems?\"" >> phrases.txt
+echo -e "\"How does travel shape interpersonal skills?\"" >> phrases.txt
+echo -e "\"What are the benefits of group travel for social bonding?\"" >> phrases.txt
+echo -e "\"How can travel promote historical awareness?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining hygiene while traveling?\"" >> phrases.txt
+echo -e "\"How has satellite technology transformed disaster preparedness?\"" >> phrases.txt
+echo -e "\"What are the impacts of the Hundred Years' War on European politics?\"" >> phrases.txt
+echo -e "\"How does gratitude influence workplace relationships?\"" >> phrases.txt
+echo -e "\"What are the ecological consequences of deforestation in the Amazon?\"" >> phrases.txt
+echo -e "\"How does minimalism in art challenge traditional aesthetics?\"" >> phrases.txt
+echo -e "\"What are the benefits of rock climbing for mental resilience?\"" >> phrases.txt
+echo -e "\"How can robotics improve precision in industrial manufacturing?\"" >> phrases.txt
+echo -e "\"What were the social effects of the Great Fire of London?\"" >> phrases.txt
+echo -e "\"How does imposter syndrome affect academic performance?\"" >> phrases.txt
+echo -e "\"What are the impacts of invasive plants on native ecosystems?\"" >> phrases.txt
+echo -e "\"How does street art reflect urban social issues?\"" >> phrases.txt
+echo -e "\"What are the challenges of training for high-altitude sports?\"" >> phrases.txt
+echo -e "\"How has cloud computing influenced data storage solutions?\"" >> phrases.txt
+echo -e "\"What were the cultural impacts of the Spanish colonization of the Americas?\"" >> phrases.txt
+echo -e "\"How does parental attachment influence emotional development?\"" >> phrases.txt
+echo -e "\"What are the effects of ocean acidification on shellfish populations?\"" >> phrases.txt
+echo -e "\"How does performance art engage audiences differently than traditional theater?\"" >> phrases.txt
+echo -e "\"What are the benefits of archery for improving concentration?\"" >> phrases.txt
+echo -e "\"How can IoT devices enhance smart home security?\"" >> phrases.txt
+echo -e "\"What were the economic consequences of the California Gold Rush?\"" >> phrases.txt
+echo -e "\"How does social comparison affect self-worth in adolescents?\"" >> phrases.txt
+echo -e "\"What are the impacts of melting Arctic ice on polar bear habitats?\"" >> phrases.txt
+echo -e "\"How does conceptual art challenge viewer interpretations?\"" >> phrases.txt
+echo -e "\"What are the challenges of organizing international sports tournaments?\"" >> phrases.txt
+echo -e "\"How has 5G technology impacted mobile communication?\"" >> phrases.txt
+echo -e "\"What were the political effects of the Treaty of Tordesillas?\"" >> phrases.txt
+echo -e "\"How does nostalgia influence consumer behavior?\"" >> phrases.txt
+echo -e "\"What are the benefits of rewilding efforts in degraded ecosystems?\"" >> phrases.txt
+echo -e "\"How does pop art critique consumer culture?\"" >> phrases.txt
+echo -e "\"What are the psychological benefits of team sports for adults?\"" >> phrases.txt
+echo -e "\"How can blockchain improve digital voting systems?\"" >> phrases.txt
+echo -e "\"What were the social impacts of the Industrial Revolution in Britain?\"" >> phrases.txt
+echo -e "\"How does fear of failure affect entrepreneurial risk-taking?\"" >> phrases.txt
+echo -e "\"What are the effects of pesticide use on pollinator populations?\"" >> phrases.txt
+echo -e "\"How does abstract expressionism explore emotional depth?\"" >> phrases.txt
+echo -e "\"What are the benefits of martial arts for self-discipline?\"" >> phrases.txt
+echo -e "\"How has wearable tech influenced fitness tracking?\"" >> phrases.txt
+echo -e "\"What were the cultural impacts of the Renaissance in Northern Europe?\"" >> phrases.txt
+echo -e "\"How does learned helplessness impact motivation in students?\"" >> phrases.txt
+echo -e "\"What are the consequences of overfishing in the Pacific Ocean?\"" >> phrases.txt
+echo -e "\"How does land art interact with natural environments?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting diversity in professional sports?\"" >> phrases.txt
+echo -e "\"How can virtual assistants improve workplace productivity?\"" >> phrases.txt
+echo -e "\"What were the economic effects of the Black Death in Europe?\"" >> phrases.txt
+echo -e "\"How does empathy influence conflict resolution?\"" >> phrases.txt
+echo -e "\"What are the impacts of drought on agricultural ecosystems?\"" >> phrases.txt
+echo -e "\"How does graffiti art challenge public space norms?\"" >> phrases.txt
+echo -e "\"What are the benefits of surfing for physical fitness?\"" >> phrases.txt
+echo -e "\"How has machine learning enhanced predictive analytics?\"" >> phrases.txt
+echo -e "\"What were the military impacts of the Napoleonic Wars?\"" >> phrases.txt
+echo -e "\"How does self-efficacy influence career success?\"" >> phrases.txt
+echo -e "\"What are the effects of climate change on migratory fish patterns?\"" >> phrases.txt
+echo -e "\"How does kinetic sculpture engage with viewer interaction?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring safety in extreme sports events?\"" >> phrases.txt
+echo -e "\"How can edge computing improve real-time data processing?\"" >> phrases.txt
+echo -e "\"What were the cultural effects of the Viking invasions in Europe?\"" >> phrases.txt
+echo -e "\"How does cognitive bias affect decision-making in groups?\"" >> phrases.txt
+echo -e "\"What are the impacts of plastic pollution on marine ecosystems?\"" >> phrases.txt
+echo -e "\"How does video art explore new media expressions?\"" >> phrases.txt
+echo -e "\"What are the benefits of cycling for urban commuting?\"" >> phrases.txt
+echo -e "\"How has augmented reality enhanced retail experiences?\"" >> phrases.txt
+echo -e "\"What were the social impacts of the abolition of serfdom in Russia?\"" >> phrases.txt
+echo -e "\"How does peer support influence addiction recovery?\"" >> phrases.txt
+echo -e "\"What are the consequences of soil erosion on farmland productivity?\"" >> phrases.txt
+echo -e "\"How does installation art transform public spaces?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing injuries in youth sports?\"" >> phrases.txt
+echo -e "\"How can biometrics enhance cybersecurity measures?\"" >> phrases.txt
+echo -e "\"What were the economic impacts of the Silk Road on medieval Asia?\"" >> phrases.txt
+echo -e "\"How does optimism influence physical health outcomes?\"" >> phrases.txt
+echo -e "\"What are the effects of wildfire frequency on forest regeneration?\"" >> phrases.txt
+echo -e "\"How does surrealist art provoke subconscious thought?\"" >> phrases.txt
+echo -e "\"What are the benefits of dance as a form of exercise?\"" >> phrases.txt
+echo -e "\"How has drone technology improved aerial photography?\"" >> phrases.txt
+echo -e "\"What were the cultural impacts of the Reformation in Germany?\"" >> phrases.txt
+echo -e "\"How can quantum cryptography enhance data privacy?\"" >> phrases.txt
+echo -e "\"What are the political implications of populist movements?\"" >> phrases.txt
+echo -e "\"How does reforestation mitigate climate change effects?\"" >> phrases.txt
+echo -e "\"What are the ethical challenges of utilitarianism in decision-making?\"" >> phrases.txt
+echo -e "\"How does sustainable architecture reduce urban heat islands?\"" >> phrases.txt
+echo -e "\"What are the benefits of foraging for wild edibles in cooking?\"" >> phrases.txt
+echo -e "\"How has edge AI improved latency in IoT devices?\"" >> phrases.txt
+echo -e "\"What are the impacts of electoral reforms on voter turnout?\"" >> phrases.txt
+echo -e "\"How can wetland restoration improve water quality?\"" >> phrases.txt
+echo -e "\"What are the philosophical implications of free will in determinism?\"" >> phrases.txt
+echo -e "\"How does parametric design influence modern architecture?\"" >> phrases.txt
+echo -e "\"What are the challenges of pairing exotic spices with traditional dishes?\"" >> phrases.txt
+echo -e "\"How can IoT sensors optimize energy consumption in buildings?\"" >> phrases.txt
+echo -e "\"What are the benefits of grassroots political activism?\"" >> phrases.txt
+echo -e "\"How does urban farming reduce food miles?\"" >> phrases.txt
+echo -e "\"What are the existentialist views on the meaning of suffering?\"" >> phrases.txt
+echo -e "\"How can passive house design lower energy costs?\"" >> phrases.txt
+echo -e "\"What are the benefits of using ancient grains in modern cuisine?\"" >> phrases.txt
+echo -e "\"How has blockchain technology streamlined financial transactions?\"" >> phrases.txt
+echo -e "\"What are the challenges of implementing proportional representation?\"" >> phrases.txt
+echo -e "\"How can carbon capture technology reduce industrial emissions?\"" >> phrases.txt
+echo -e "\"What are the stoic principles for managing daily stress?\"" >> phrases.txt
+echo -e "\"How does biophilic design improve mental health in offices?\"" >> phrases.txt
+echo -e "\"What are the challenges of introducing entomophagy to Western diets?\"" >> phrases.txt
+echo -e "\"How can predictive algorithms improve supply chain logistics?\"" >> phrases.txt
+echo -e "\"What are the effects of gerrymandering on democratic processes?\"" >> phrases.txt
+echo -e "\"How does permaculture promote sustainable land use?\"" >> phrases.txt
+echo -e "\"What are the philosophical debates around moral relativism?\"" >> phrases.txt
+echo -e "\"How can modular architecture address housing shortages?\"" >> phrases.txt
+echo -e "\"What are the benefits of creating zero-waste recipes?\"" >> phrases.txt
+echo -e "\"How has facial recognition technology impacted law enforcement?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining coalition governments?\"" >> phrases.txt
+echo -e "\"How can agroforestry enhance biodiversity on farms?\"" >> phrases.txt
+echo -e "\"What are the ethical concerns of existentialist ethics?\"" >> phrases.txt
+echo -e "\"How does vernacular architecture preserve cultural identity?\"" >> phrases.txt
+echo -e "\"What are the challenges of using molecular gastronomy in home cooking?\"" >> phrases.txt
+echo -e "\"How can smart grids improve electricity distribution efficiency?\"" >> phrases.txt
+echo -e "\"What are the impacts of voter suppression on marginalized communities?\"" >> phrases.txt
+echo -e "\"How does ocean cleanup technology address plastic pollution?\"" >> phrases.txt
+echo -e "\"What are the implications of Kantian ethics in modern law?\"" >> phrases.txt
+echo -e "\"How can adaptive reuse of buildings promote sustainability?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring umami in vegetarian cuisine?\"" >> phrases.txt
+echo -e "\"How has virtual reality training improved surgical precision?\"" >> phrases.txt
+echo -e "\"What are the benefits of participatory democracy in local governance?\"" >> phrases.txt
+echo -e "\"How can green roofs reduce stormwater runoff in cities?\"" >> phrases.txt
+echo -e "\"What are the philosophical foundations of natural law theory?\"" >> phrases.txt
+echo -e "\"How does brutalist architecture evoke emotional responses?\"" >> phrases.txt
+echo -e "\"What are the challenges of preserving traditional fermentation methods?\"" >> phrases.txt
+echo -e "\"How can exoskeletons enhance mobility for the disabled?\"" >> phrases.txt
+echo -e "\"What are the effects of lobbying on legislative outcomes?\"" >> phrases.txt
+echo -e "\"How does soil health impact carbon sequestration?\"" >> phrases.txt
+echo -e "\"What are the debates around consequentialism in moral philosophy?\"" >> phrases.txt
+echo -e "\"How can bamboo construction promote eco-friendly building?\"" >> phrases.txt
+echo -e "\"What are the benefits of pairing craft beers with artisanal cheeses?\"" >> phrases.txt
+echo -e "\"How has 3D scanning technology improved archaeological preservation?\"" >> phrases.txt
+echo -e "\"What are the challenges of balancing national security with civil liberties?\"" >> phrases.txt
+echo -e "\"How can renewable energy microgrids support rural communities?\"" >> phrases.txt
+echo -e "\"What are the implications of Nietzsche’s philosophy on modern individualism?\"" >> phrases.txt
+echo -e "\"How does deconstructivist architecture challenge traditional forms?\"" >> phrases.txt
+echo -e "\"What are the challenges of sourcing fair-trade ingredients globally?\"" >> phrases.txt
+echo -e "\"How can autonomous robots improve warehouse efficiency?\"" >> phrases.txt
+echo -e "\"What are the impacts of political polarization on media bias?\"" >> phrases.txt
+echo -e "\"How does bee conservation support agricultural ecosystems?\"" >> phrases.txt
+echo -e "\"What are the philosophical arguments for and against determinism?\"" >> phrases.txt
+echo -e "\"How can cob construction be adapted for modern climates?\"" >> phrases.txt
+echo -e "\"What are the benefits of cooking with heritage vegetables?\"" >> phrases.txt
+echo -e "\"How has AI-driven translation improved global communication?\"" >> phrases.txt
+echo -e "\"What are the effects of campaign finance laws on election fairness?\"" >> phrases.txt
+echo -e "\"How can biodegradable packaging reduce landfill waste?\"" >> phrases.txt
+echo -e "\"What are the ethical dilemmas of virtue ethics in leadership?\"" >> phrases.txt
+echo -e "\"How does modernist architecture reflect societal progress?\"" >> phrases.txt
+echo -e "\"What are the challenges of creating allergen-free menus?\"" >> phrases.txt
+echo -e "\"How can neural interfaces advance prosthetic functionality?\"" >> phrases.txt
+echo -e "\"What are the benefits of decentralization in political systems?\"" >> phrases.txt
+echo -e "\"How does mangrove restoration protect coastal ecosystems?\"" >> phrases.txt
+echo -e "\"What are the philosophical implications of the social contract theory?\"" >> phrases.txt
+echo -e "\"How can floating architecture address rising sea levels?\"" >> phrases.txt
+echo -e "\"What are the benefits of reviving ancient cooking techniques?\"" >> phrases.txt
+echo -e "\"How has wearable health tech improved chronic disease management?\"" >> phrases.txt
+echo -e "\"What are the challenges of implementing universal voting rights?\"" >> phrases.txt
+echo -e "\"How can wildlife corridors reduce habitat fragmentation?\"" >> phrases.txt
+echo -e "\"What are the debates around the philosophy of mind and consciousness?\"" >> phrases.txt
+echo -e "\"How does neo-futurist architecture inspire innovation?\"" >> phrases.txt
+echo -e "\"What are the challenges of introducing plant-based diets in schools?\"" >> phrases.txt
+echo -e "\"How can robotics enhance precision in agriculture?\"" >> phrases.txt
+echo -e "\"What are the impacts of trade sanctions on global politics?\"" >> phrases.txt
+echo -e "\"How does sustainable fishing protect marine biodiversity?\"" >> phrases.txt
+echo -e "\"What are the implications of Plato’s theory of forms in education?\"" >> phrases.txt
+echo -e "\"How can prefab housing address disaster recovery needs?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring microgreens in culinary arts?\"" >> phrases.txt
+echo -e "\"How has synthetic biology advanced medical treatments?\"" >> phrases.txt
+echo -e "\"What are the effects of political corruption on public trust?\"" >> phrases.txt
+echo -e "\"How can desert reclamation restore arid ecosystems?\"" >> phrases.txt
+echo -e "\"What are the ethical concerns of Aristotelian ethics in modern governance?\"" >> phrases.txt
+echo -e "\"How does Gothic Revival architecture reflect cultural nostalgia?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining food authenticity in global chains?\"" >> phrases.txt
+echo -e "\"How can holographic displays enhance educational experiences?\"" >> phrases.txt
+echo -e "\"What are the benefits of diplomatic soft power in international relations?\"" >> phrases.txt
+echo -e "\"How does coral transplantation help reef recovery?\"" >> phrases.txt
+echo -e "\"What are the philosophical foundations of libertarianism?\"" >> phrases.txt
+echo -e "\"How can earthship homes promote off-grid living?\"" >> phrases.txt
+echo -e "\"What are the benefits of incorporating edible flowers in dishes?\"" >> phrases.txt
+echo -e "\"How has sensor technology improved environmental monitoring?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring transparency in political funding?\"" >> phrases.txt
+echo -e "\"How can urban tree planting improve air quality?\"" >> phrases.txt
+echo -e "\"What are the implications of Heidegger’s concept of Being in modern thought?\"" >> phrases.txt
+echo -e "\"How does vernacular architecture adapt to extreme climates?\"" >> phrases.txt
+echo -e "\"What are the challenges of pairing regional wines with fusion cuisine?\"" >> phrases.txt
+echo -e "\"How can robotics improve accessibility in public spaces?\"" >> phrases.txt
+echo -e "\"What are the impacts of foreign aid on developing nations’ politics?\"" >> phrases.txt
+echo -e "\"How does organic farming reduce pesticide runoff?\"" >> phrases.txt
+echo -e "\"What are the debates around the philosophy of language and meaning?\"" >> phrases.txt
+echo -e "\"How can sustainable materials enhance architectural durability?\"" >> phrases.txt
+echo -e "\"What are the benefits of hosting pop-up dining events?\"" >> phrases.txt
+echo -e "\"How has automation impacted small-scale manufacturing?\"" >> phrases.txt
+echo -e "\"What are the effects of constitutional amendments on civil rights?\"" >> phrases.txt
+echo -e "\"How can eco-villages promote sustainable living practices?\"" >> phrases.txt
+echo -e "\"What are the ethical implications of deontological ethics in policy?\"" >> phrases.txt
+echo -e "\"How does minimalist architecture foster tranquility?\"" >> phrases.txt
+echo -e "\"What are the challenges of creating low-sugar desserts?\"" >> phrases.txt
+echo -e "\"How can genetic algorithms optimize urban planning designs?\"" >> phrases.txt
+echo -e "\"What are the benefits of international peacekeeping missions?\"" >> phrases.txt
+echo -e "\"How does regenerative agriculture improve soil fertility?\"" >> phrases.txt
+echo -e "\"What are the philosophical debates around the concept of justice?\"" >> phrases.txt
+echo -e "\"How can adaptive architecture respond to climate change?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring raw food diets in culinary trends?\"" >> phrases.txt
+echo -e "\"How has nanotechnology improved drug delivery systems?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing political misinformation online?\"" >> phrases.txt
+echo -e "\"How can rain gardens mitigate urban flooding?\"" >> phrases.txt
+echo -e "\"What are the implications of Sartre’s existential freedom in ethics?\"" >> phrases.txt
+echo -e "\"How does kinetic architecture enhance building functionality?\"" >> phrases.txt
+echo -e "\"What are the challenges of cooking for large dietary diversity?\"" >> phrases.txt
+echo -e "\"How can swarm robotics improve search-and-rescue missions?\"" >> phrases.txt
+echo -e "\"What are the impacts of political alliances on global stability?\"" >> phrases.txt
+echo -e "\"How does biochar enhance soil carbon storage?\"" >> phrases.txt
+echo -e "\"What are the philosophical arguments for and against skepticism?\"" >> phrases.txt
+echo -e "\"How can underground architecture address urban space constraints?\"" >> phrases.txt
+echo -e "\"What are the benefits of using sea vegetables in everyday cooking?\"" >> phrases.txt
+echo -e "\"How has augmented reality improved remote technical support?\"" >> phrases.txt
+echo -e "\"What are the effects of nationalism on international trade agreements?\"" >> phrases.txt
+echo -e "\"How can wildlife sanctuaries protect endangered species?\"" >> phrases.txt
+echo -e "\"What are the implications of Hume’s empiricism in scientific inquiry?\"" >> phrases.txt
+echo -e "\"How does neo-Gothic architecture inspire modern design?\"" >> phrases.txt
+echo -e "\"What are the challenges of adapting traditional recipes for vegan diets?\"" >> phrases.txt
+echo -e "\"How can voice recognition technology enhance accessibility?\"" >> phrases.txt
+echo -e "\"What are the benefits of political education in schools?\"" >> phrases.txt
+echo -e "\"How does native landscaping reduce water usage?\"" >> phrases.txt
+echo -e "\"What are the ethical concerns of hedonism in modern society?\"" >> phrases.txt
+echo -e "\"How can cultural centers in architecture foster community?\"" >> phrases.txt
+echo -e "\"What are the benefits of hosting farm-to-table dining events?\"" >> phrases.txt
+echo -e "\"How has laser technology improved precision in manufacturing?\"" >> phrases.txt
+echo -e "\"What are the challenges of implementing direct democracy?\"" >> phrases.txt
+echo -e "\"How can tidal marshes mitigate coastal erosion?\"" >> phrases.txt
+echo -e "\"What are the implications of Spinoza’s rationalism in ethics?\"" >> phrases.txt
+echo -e "\"How does high-tech architecture integrate smart systems?\"" >> phrases.txt
+echo -e "\"What are the challenges of balancing flavor with health in cooking?\"" >> phrases.txt
+echo -e "\"How can wearable sensors improve athlete monitoring?\"" >> phrases.txt
+echo -e "\"What are the effects of judicial independence on democratic systems?\"" >> phrases.txt
+echo -e "\"How does forest management reduce wildfire risks?\"" >> phrases.txt
+echo -e "\"What are the philosophical foundations of pragmatism?\"" >> phrases.txt
+echo -e "\"How can shipping container homes address affordability?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring regional barbecue styles?\"" >> phrases.txt
+echo -e "\"How has gamification improved user engagement in apps?\"" >> phrases.txt
+echo -e "\"What are the impacts of political dynasties on governance?\"" >> phrases.txt
+echo -e "\"How can green infrastructure improve urban resilience?\"" >> phrases.txt
+echo -e "\"What are the debates around the philosophy of aesthetics?\"" >> phrases.txt
+echo -e "\"How does vernacular architecture adapt to seismic zones?\"" >> phrases.txt
+echo -e "\"What are the challenges of introducing fermented foods to new diets?\"" >> phrases.txt
+echo -e "\"How can neural networks enhance weather forecasting?\"" >> phrases.txt
+echo -e "\"What are the benefits of transparency in political decision-making?\"" >> phrases.txt
+echo -e "\"How does river restoration improve aquatic ecosystems?\"" >> phrases.txt
+echo -e "\"What are the implications of Locke's social contract in modern politics?\"" >> phrases.txt
+echo -e "\"How can rooftop gardens enhance urban architecture?\"" >> phrases.txt
+echo -e "\"What are the benefits of using aquafaba in baking?\"" >> phrases.txt
+echo -e "\"How has blockchain improved transparency in charitable donations?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing political extremism online?\"" >> phrases.txt
+echo -e "\"How can peatland restoration reduce greenhouse gas emissions?\"" >> phrases.txt
+echo -e "\"What are the philosophical debates around the concept of truth?\"" >> phrases.txt
+echo -e "\"How does landscape architecture enhance public parks?\"" >> phrases.txt
+echo -e "\"What are the challenges of creating authentic street food experiences?\"" >> phrases.txt
+echo -e "\"How can AI-driven diagnostics improve early disease detection?\"" >> phrases.txt
+echo -e "\"What are the effects of geopolitical tensions on migration patterns?\"" >> phrases.txt
+echo -e "\"How does sustainable forestry balance economic and ecological needs?\"" >> phrases.txt
+echo -e "\"What are the ethical implications of care ethics in healthcare?\"" >> phrases.txt
+echo -e "\"How can architecture adapt to post-pandemic needs?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring savory baking traditions?\"" >> phrases.txt
+echo -e "\"How has photonic technology advanced optical communications?\"" >> phrases.txt
+echo -e "\"What are the impacts of referendums on public policy?\"" >> phrases.txt
+echo -e "\"How can citizen science contribute to ecological research?\"" >> phrases.txt
+echo -e "\"What are the implications of Rousseau’s general will in democracy?\"" >> phrases.txt
+echo -e "\"How does green architecture improve indoor air quality?\"" >> phrases.txt
+echo -e "\"What are the challenges of hosting sustainable food festivals?\"" >> phrases.txt
+echo -e "\"How can drones enhance precision in agricultural monitoring?\"" >> phrases.txt
+echo -e "\"What are the benefits of political literacy for civic engagement?\"" >> phrases.txt
+echo -e "\"How does grassland restoration support migratory birds?\"" >> phrases.txt
+echo -e "\"What are the philosophical foundations of egalitarianism?\"" >> phrases.txt
+echo -e "\"How can architecture foster social equity in urban design?\"" >> phrases.txt
+echo -e "\"What are the benefits of using heritage seeds in culinary gardens?\"" >> phrases.txt
+echo -e "\"How can mentorship programs enhance teacher retention?\"" >> phrases.txt
+echo -e "\"What are the impacts of influencer culture on consumer trust?\"" >> phrases.txt
+echo -e "\"How does metafiction challenge traditional narrative structures?\"" >> phrases.txt
+echo -e "\"What are the benefits of laughter therapy for stress reduction?\"" >> phrases.txt
+echo -e "\"How can polyphonic music enhance emotional expression?\"" >> phrases.txt
+echo -e "\"What are the challenges of traveling with pets internationally?\"" >> phrases.txt
+echo -e "\"How does flipped classroom methodology improve student outcomes?\"" >> phrases.txt
+echo -e "\"What are the effects of viral trends on social media engagement?\"" >> phrases.txt
+echo -e "\"How can autofiction blur the lines between reality and fiction?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting workplace wellness initiatives?\"" >> phrases.txt
+echo -e "\"How does microtonal music expand harmonic possibilities?\"" >> phrases.txt
+echo -e "\"What are the benefits of virtual tourism for inaccessible destinations?\"" >> phrases.txt
+echo -e "\"How can inquiry-based learning foster scientific curiosity?\"" >> phrases.txt
+echo -e "\"What are the impacts of cyberbullying on mental health?\"" >> phrases.txt
+echo -e "\"How does speculative fiction imagine alternative futures?\"" >> phrases.txt
+echo -e "\"What are the benefits of acupuncture in pain management?\"" >> phrases.txt
+echo -e "\"How can minimalist music create meditative listening experiences?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring ethical voluntourism practices?\"" >> phrases.txt
+echo -e "\"How does competency-based education support skill development?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on political polarization?\"" >> phrases.txt
+echo -e "\"How can ekphrastic poetry deepen engagement with visual art?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing sleep disorders in children?\"" >> phrases.txt
+echo -e "\"How does ambient music influence creative workspaces?\"" >> phrases.txt
+echo -e "\"What are the benefits of cultural immersion programs for travelers?\"" >> phrases.txt
+echo -e "\"How can peer-to-peer learning enhance classroom dynamics?\"" >> phrases.txt
+echo -e "\"What are the impacts of meme culture on online discourse?\"" >> phrases.txt
+echo -e "\"How does pastoral literature explore human-nature relationships?\"" >> phrases.txt
+echo -e "\"What are the benefits of hydrotherapy for chronic pain relief?\"" >> phrases.txt
+echo -e "\"How can fusion music bridge cultural divides?\"" >> phrases.txt
+echo -e "\"What are the challenges of planning multi-generational travel?\"" >> phrases.txt
+echo -e "\"How does place-based education connect students to local environments?\"" >> phrases.txt
+echo -e "\"What are the effects of social media algorithms on content visibility?\"" >> phrases.txt
+echo -e "\"How can absurdist literature reflect existential crises?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting holistic health in urban areas?\"" >> phrases.txt
+echo -e "\"How does choral music foster group harmony?\"" >> phrases.txt
+echo -e "\"What are the benefits of budget backpacking for young travelers?\"" >> phrases.txt
+echo -e "\"How can restorative practices improve school discipline?\"" >> phrases.txt
+echo -e "\"What are the impacts of social media on traditional journalism?\"" >> phrases.txt
+echo -e "\"How does confessional poetry explore personal trauma?\"" >> phrases.txt
+echo -e "\"What are the benefits of aromatherapy for mental well-being?\"" >> phrases.txt
+echo -e "\"How can traditional drumming patterns inspire modern rhythms?\"" >> phrases.txt
+echo -e "\"What are the challenges of navigating cultural etiquette while traveling?\"" >> phrases.txt
+echo -e "\"How does outdoor education promote environmental stewardship?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on body image perceptions?\"" >> phrases.txt
+echo -e "\"How can lyrical ballads preserve historical narratives?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing nutritional deficiencies globally?\"" >> phrases.txt
+echo -e "\"How does experimental music challenge listener expectations?\"" >> phrases.txt
+echo -e "\"What are the benefits of slow travel for cultural appreciation?\"" >> phrases.txt
+echo -e "\"How can social-emotional learning improve student relationships?\"" >> phrases.txt
+echo -e "\"What are the impacts of social media on grassroots activism?\"" >> phrases.txt
+echo -e "\"How does diaspora literature explore themes of displacement?\"" >> phrases.txt
+echo -e "\"What are the benefits of tai chi for elderly mobility?\"" >> phrases.txt
+echo -e "\"How can music improvisation enhance cognitive flexibility?\"" >> phrases.txt
+echo -e "\"What are the challenges of traveling sustainably in developing regions?\"" >> phrases.txt
+echo -e "\"How does culturally responsive teaching enhance inclusivity?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on public health campaigns?\"" >> phrases.txt
+echo -e "\"How can protest poetry amplify marginalized voices?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing chronic fatigue syndrome?\"" >> phrases.txt
+echo -e "\"How does music notation preserve cultural heritage?\"" >> phrases.txt
+echo -e "\"What are the benefits of dark tourism for historical education?\"" >> phrases.txt
+echo -e "\"How can trauma-informed education support vulnerable students?\"" >> phrases.txt
+echo -e "\"What are the impacts of social media on small business marketing?\"" >> phrases.txt
+echo -e "\"How does magical realism reflect cultural hybridity?\"" >> phrases.txt
+echo -e "\"What are the benefits of fasting for metabolic health?\"" >> phrases.txt
+echo -e "\"How can folk music revive community traditions?\"" >> phrases.txt
+echo -e "\"What are the challenges of traveling with limited mobility?\"" >> phrases.txt
+echo -e "\"How does service learning bridge academic and civic goals?\"" >> phrases.txt
      
 # Добавление ролей в roles.txt
 echo -e "system\nuser\nassistant\ntool" > roles.txt

@@ -3642,6 +3642,208 @@ echo -e "\"What are the benefits of fasting for metabolic health?\"" >> phrases.
 echo -e "\"How can folk music revive community traditions?\"" >> phrases.txt
 echo -e "\"What are the challenges of traveling with limited mobility?\"" >> phrases.txt
 echo -e "\"How does service learning bridge academic and civic goals?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on mental health awareness?\"" >> phrases.txt
+echo -e "\"How can epistolary novels explore intimate relationships?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting mindfulness in healthcare?\"" >> phrases.txt
+echo -e "\"How does music influence cultural identity formation?\"" >> phrases.txt
+echo -e "\"What are the benefits of overland travel for adventure seekers?\"" >> phrases.txt
+echo -e "\"How can arts integration improve literacy skills?\"" >> phrases.txt
+echo -e "\"What are the impacts of social media on privacy concerns?\"" >> phrases.txt
+echo -e "\"How does gothic fiction explore societal anxieties?\"" >> phrases.txt
+echo -e "\"What are the benefits of herbal medicine in holistic care?\"" >> phrases.txt
+echo -e "\"How can music festivals foster environmental consciousness?\"" >> phrases.txt
+echo -e "\"What are the challenges of maintaining authenticity in tourist destinations?\"" >> phrases.txt
+echo -e "\"How does interdisciplinary education prepare students for innovation?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on political mobilization?\"" >> phrases.txt
+echo -e "\"How can historical fiction illuminate forgotten perspectives?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing food allergies in schools?\"" >> phrases.txt
+echo -e "\"How does world music promote cross-cultural understanding?\"" >> phrases.txt
+echo -e "\"What are the benefits of agritourism for rural economies?\"" >> phrases.txt
+echo -e "\"How can gamified learning enhance STEM education?\"" >> phrases.txt
+echo -e "\"What are the impacts of social media on cultural trends?\"" >> phrases.txt
+echo -e "\"How does feminist poetry challenge patriarchal norms?\"" >> phrases.txt
+echo -e "\"What are the benefits of yoga for stress management?\"" >> phrases.txt
+echo -e "\"How can music education address social inequalities?\"" >> phrases.txt
+echo -e "\"What are the challenges of traveling during political unrest?\"" >> phrases.txt
+echo -e "\"How does experiential education promote lifelong learning?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on interpersonal communication?\"" >> phrases.txt
+echo -e "\"How can postcolonial literature address historical injustices?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting preventative healthcare?\"" >> phrases.txt
+echo -e "\"How does music shape generational identity?\"" >> phrases.txt
+echo -e "\"What are the benefits of road trips for family bonding?\"" >> phrases.txt
+echo -e "\"How can peer feedback improve student writing skills?\"" >> phrases.txt
+echo -e "\"What are the impacts of social media on global connectivity?\"" >> phrases.txt
+echo -e "\"How does surrealist poetry explore the unconscious mind?\"" >> phrases.txt
+echo -e "\"What are the benefits of forest bathing for mental health?\"" >> phrases.txt
+echo -e "\"How can music archives preserve endangered languages?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring safety in adventure tourism?\"" >> phrases.txt
+echo -e "\"How does inclusive education support neurodiverse students?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on academic performance?\"" >> phrases.txt
+echo -e "\"How can contemporary literature address climate crises?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing stress-related illnesses?\"" >> phrases.txt
+echo -e "\"How does music influence physical exercise motivation?\"" >> phrases.txt
+echo -e "\"What are the benefits of pilgrimage routes for spiritual growth?\"" >> phrases.txt
+echo -e "\"How can collaborative learning foster problem-solving skills?\"" >> phrases.txt
+echo -e "\"What are the impacts of social media on youth activism?\"" >> phrases.txt
+echo -e "\"How does eco-literature raise environmental awareness?\"" >> phrases.txt
+echo -e "\"What are the benefits of meditation for cognitive health?\"" >> phrases.txt
+echo -e "\"How can music mentorship inspire young composers?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting sustainable tourism in cities?\"" >> phrases.txt
+echo -e "\"How does blended learning balance flexibility and structure?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on professional networking?\"" >> phrases.txt
+echo -e "\"How can children’s literature address social issues?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing mental health in workplaces?\"" >> phrases.txt
+echo -e "\"How does music influence emotional storytelling in films?\"" >> phrases.txt
+echo -e "\"What are the benefits of cultural heritage trails for tourists?\"" >> phrases.txt
+echo -e "\"How can teacher collaboration improve school outcomes?\"" >> phrases.txt
+echo -e "\"What are the impacts of social media on cultural preservation?\"" >> phrases.txt
+echo -e "\"How does war poetry reflect human resilience?\"" >> phrases.txt
+echo -e "\"What are the benefits of sound therapy for anxiety relief?\"" >> phrases.txt
+echo -e "\"How can music education promote emotional literacy?\"" >> phrases.txt
+echo -e "\"What are the challenges of traveling to conflict zones?\"" >> phrases.txt
+echo -e "\"How does universal design in education support accessibility?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on personal branding?\"" >> phrases.txt
+echo -e "\"How can literature explore the ethics of technology?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting immunization in remote areas?\"" >> phrases.txt
+echo -e "\"How does music impact cognitive development in infants?\"" >> phrases.txt
+echo -e "\"What are the benefits of eco-friendly travel gear?\"" >> phrases.txt
+echo -e "\"How can civic education enhance democratic participation?\"" >> phrases.txt
+echo -e "\"What are the impacts of social media on mental health stigma?\"" >> phrases.txt
+echo -e "\"How does cyberpunk literature reflect technological anxieties?\"" >> phrases.txt
+echo -e "\"What are the benefits of art therapy for emotional healing?\"" >> phrases.txt
+echo -e "\"How can music festivals support local artists?\"" >> phrases.txt
+echo -e "\"What are the challenges of balancing tourism with conservation?\"" >> phrases.txt
+echo -e "\"How does project-based learning promote real-world skills?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on online radicalization?\"" >> phrases.txt
+echo -e "\"How can literature address gender fluidity?\"" >> phrases.txt
+echo -e "\"What are the challenges of managing public health crises?\"" >> phrases.txt
+echo -e "\"How does music influence social bonding in communities?\"" >> phrases.txt
+echo -e "\"What are the benefits of traveling with local guides?\"" >> phrases.txt
+echo -e "\"How can maker spaces in schools foster innovation?\"" >> phrases.txt
+echo -e "\"What are the impacts of social media on influencer ethics?\"" >> phrases.txt
+echo -e "\"How does literature explore the concept of utopia?\"" >> phrases.txt
+echo -e "\"What are the benefits of pet therapy for elderly care?\"" >> phrases.txt
+echo -e "\"How can music education address cultural stereotypes?\"" >> phrases.txt
+echo -e "\"What are the challenges of traveling in extreme weather conditions?\"" >> phrases.txt
+echo -e "\"How does critical pedagogy empower student voices?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on global marketing trends?\"" >> phrases.txt
+echo -e "\"How can literature reflect the refugee experience?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting oral health in underserved communities?\"" >> phrases.txt
+echo -e "\"How does music influence cultural tourism?\"" >> phrases.txt
+echo -e "\"What are the benefits of traveling to UNESCO World Heritage sites?\"" >> phrases.txt
+echo -e "\"How can education address global citizenship skills?\"" >> phrases.txt
+echo -e "\"What are the impacts of social media on digital literacy?\"" >> phrases.txt
+echo -e "\"How does literature explore intergenerational trauma?\"" >> phrases.txt
+echo -e "\"What are the benefits of dance therapy for physical rehabilitation?\"" >> phrases.txt
+echo -e "\"How can music inspire environmental activism?\"" >> phrases.txt
+echo -e "\"What are the challenges of promoting ethical travel blogging?\"" >> phrases.txt
+echo -e "\"How does education reform address equity gaps?\"" >> phrases.txt
+echo -e "\"What are the effects of social media on online communities?\"" >> phrases.txt
+echo -e "\"How can literature explore the ethics of war?\"" >> phrases.txt
+echo -e "\"What are the challenges of addressing obesity in children?\"" >> phrases.txt
+echo -e "\"How does music shape cultural memory?\"" >> phrases.txt
+echo -e "\"What are the benefits of exploring off-the-beaten-path destinations?\"" >> phrases.txt
+echo -e "\"How can education systems support multilingual learners?\"" >> phrases.txt
+echo -e "\"What are the impacts of social media on travel trends?\"" >> phrases.txt
+echo -e "\"How does literature address the ethics of cloning?\"" >> phrases.txt
+echo -e "\"What are the benefits of music therapy for dementia patients?\"" >> phrases.txt
+echo -e "\"How can music education foster global awareness?\"" >> phrases.txt
+echo -e "\"What are the challenges of ensuring safety in solo female travel?\"" >> phrases.txt
+echo -e "\"How can haptic technology enhance virtual learning experiences?\"" >> phrases.txt
+echo -e "\"What were the social impacts of the 1918 Spanish Flu pandemic?\"" >> phrases.txt
+echo -e "\"How does gratitude journaling impact emotional resilience?\"" >> phrases.txt
+echo -e "\"What are the effects of light pollution on nocturnal wildlife?\"" >> phrases.txt
+echo -e "\"How does outsider art challenge mainstream artistic norms?\"" >> phrases.txt
+echo -e "\"How has LiDAR technology improved autonomous vehicle navigation?\"" >> phrases.txt
+echo -e "\"What were the cultural impacts of the Ming Dynasty on East Asia?\"" >> phrases.txt
+echo -e "\"How does attachment theory explain adult relationship dynamics?\"" >> phrases.txt
+echo -e "\"What are the consequences of coral reef bleaching on global fisheries?\"" >> phrases.txt
+echo -e "\"How does photorealism in art question perceptions of reality?\"" >> phrases.txt
+echo -e "\"How can swarm intelligence optimize traffic flow in cities?\"" >> phrases.txt
+echo -e "\"What were the political effects of the Glorious Revolution in England?\"" >> phrases.txt
+echo -e "\"How does social anxiety affect public speaking performance?\"" >> phrases.txt
+echo -e "\"What are the impacts of invasive species on island ecosystems?\"" >> phrases.txt
+echo -e "\"How does interactive art engage audiences in unique ways?\"" >> phrases.txt
+echo -e "\"How has quantum sensing improved medical imaging accuracy?\"" >> phrases.txt
+echo -e "\"What were the economic impacts of the spice trade on medieval Europe?\"" >> phrases.txt
+echo -e "\"How does growth mindset influence academic perseverance?\"" >> phrases.txt
+echo -e "\"What are the effects of microplastics on freshwater ecosystems?\"" >> phrases.txt
+echo -e "\"How does feminist art address systemic inequalities?\"" >> phrases.txt
+echo -e "\"How can wearable robotics assist with physical rehabilitation?\"" >> phrases.txt
+echo -e "\"What were the social impacts of the abolition of the slave trade in Britain?\"" >> phrases.txt
+echo -e "\"How does emotional intelligence impact leadership effectiveness?\"" >> phrases.txt
+echo -e "\"What are the consequences of habitat loss on migratory birds?\"" >> phrases.txt
+echo -e "\"How does environmental art raise awareness about climate change?\"" >> phrases.txt
+echo -e "\"How has thermal imaging improved wildlife conservation efforts?\"" >> phrases.txt
+echo -e "\"What were the cultural effects of the Meiji Restoration in Japan?\"" >> phrases.txt
+echo -e "\"How does mindfulness impact workplace productivity?\"" >> phrases.txt
+echo -e "\"What are the impacts of urban sprawl on local ecosystems?\"" >> phrases.txt
+echo -e "\"How does digital art expand creative expression?\"" >> phrases.txt
+echo -e "\"How can predictive maintenance technology reduce industrial downtime?\"" >> phrases.txt
+echo -e "\"What were the political impacts of the American Revolution on global democracy?\"" >> phrases.txt
+echo -e "\"How does resilience training improve mental health outcomes?\"" >> phrases.txt
+echo -e "\"What are the effects of overgrazing on grassland ecosystems?\"" >> phrases.txt
+echo -e "\"How does public art foster community dialogue?\"" >> phrases.txt
+echo -e "\"How has blockchain ensured transparency in supply chains?\"" >> phrases.txt
+echo -e "\"What were the economic impacts of the East India Company on colonial India?\"" >> phrases.txt
+echo -e "\"How does cognitive behavioral therapy address anxiety disorders?\"" >> phrases.txt
+echo -e "\"What are the consequences of deforestation on global rainfall patterns?\"" >> phrases.txt
+echo -e "\"How does indigenous art preserve ancestral knowledge?\"" >> phrases.txt
+echo -e "\"How can AI-driven analytics improve renewable energy forecasting?\"" >> phrases.txt
+echo -e "\"What were the social impacts of the French Reign of Terror?\"" >> phrases.txt
+echo -e "\"How does self-compassion influence emotional recovery?\"" >> phrases.txt
+echo -e "\"What are the effects of noise pollution on marine mammals?\"" >> phrases.txt
+echo -e "\"How does performance art critique societal norms?\"" >> phrases.txt
+echo -e "\"How has virtual prototyping accelerated product design?\"" >> phrases.txt
+echo -e "\"What were the cultural impacts of the Pax Romana on the Mediterranean?\"" >> phrases.txt
+echo -e "\"How does locus of control affect personal achievement?\"" >> phrases.txt
+echo -e "\"What are the impacts of desertification on food security?\"" >> phrases.txt
+echo -e "\"How does textile art reflect cultural heritage?\"" >> phrases.txt
+echo -e "\"How can robotics enhance disaster recovery operations?\"" >> phrases.txt
+echo -e "\"What were the political effects of the Russian serf emancipation?\"" >> phrases.txt
+echo -e "\"How does optimism bias influence risk assessment?\"" >> phrases.txt
+echo -e "\"What are the consequences of glacial retreat on sea levels?\"" >> phrases.txt
+echo -e "\"How does folk art capture community traditions?\"" >> phrases.txt
+echo -e "\"How has AI improved personalized learning experiences?\"" >> phrases.txt
+echo -e "\"What were the economic impacts of the Opium Wars on China?\"" >> phrases.txt
+echo -e "\"How does cultural identity shape psychological well-being?\"" >> phrases.txt
+echo -e "\"What are the effects of agricultural runoff on lake ecosystems?\"" >> phrases.txt
+echo -e "\"How does contemporary art address globalization?\"" >> phrases.txt
+echo -e "\"How can thermal sensors improve energy efficiency in homes?\"" >> phrases.txt
+echo -e "\"What were the social impacts of the Irish Potato Famine?\"" >> phrases.txt
+echo -e "\"How does procrastination affect long-term goal achievement?\"" >> phrases.txt
+echo -e "\"What are the impacts of oil spills on coastal ecosystems?\"" >> phrases.txt
+echo -e "\"How does protest art inspire social change?\"" >> phrases.txt
+echo -e "\"How has AI-driven translation preserved endangered languages?\"" >> phrases.txt
+echo -e "\"What were the cultural effects of the Islamic Golden Age on Europe?\"" >> phrases.txt
+echo -e "\"How does personality type influence career satisfaction?\"" >> phrases.txt
+echo -e "\"What are the consequences of soil degradation on crop yields?\"" >> phrases.txt
+echo -e "\"How does abstract art evoke emotional responses?\"" >> phrases.txt
+echo -e "\"How can smart sensors improve urban traffic management?\"" >> phrases.txt
+echo -e "\"What were the political impacts of the fall of the Roman Empire?\"" >> phrases.txt
+echo -e "\"How does social support mitigate the effects of trauma?\"" >> phrases.txt
+echo -e "\"What are the effects of chemical pollution on river ecosystems?\"" >> phrases.txt
+echo -e "\"How does kinetic art explore motion and perception?\"" >> phrases.txt
+echo -e "\"How has virtual reality improved architectural visualization?\"" >> phrases.txt
+echo -e "\"What were the economic impacts of the triangular trade in the Atlantic?\"" >> phrases.txt
+echo -e "\"How does perfectionism impact mental health outcomes?\"" >> phrases.txt
+echo -e "\"What are the consequences of wetland drainage on biodiversity?\"" >> phrases.txt
+echo -e "\"How does immersive art engage multisensory experiences?\"" >> phrases.txt
+echo -e "\"How can nanotechnology improve water filtration systems?\"" >> phrases.txt
+echo -e "\"What were the social impacts of the Industrial Revolution in Japan?\"" >> phrases.txt
+echo -e "\"How does intrinsic motivation drive creative innovation?\"" >> phrases.txt
+echo -e "\"What are the impacts of poaching on elephant populations?\"" >> phrases.txt
+echo -e "\"How does art therapy address emotional expression?\"" >> phrases.txt
+echo -e "\"How has AI enhanced fraud detection in financial systems?\"" >> phrases.txt
+echo -e "\"What were the cultural impacts of the Hellenistic period on the Middle East?\"" >> phrases.txt
+echo -e "\"How does exposure therapy treat phobias effectively?\"" >> phrases.txt
+echo -e "\"What are the effects of habitat fragmentation on predator-prey dynamics?\"" >> phrases.txt
+echo -e "\"How does collaborative art foster community engagement?\"" >> phrases.txt
+echo -e "\"How can drones improve disaster response logistics?\"" >> phrases.txt
+echo -e "\"What were the political impacts of the Magna Carta on governance?\"" >> phrases.txt
+echo -e "\"How does self-esteem influence interpersonal relationships?\"" >> phrases.txt
+echo -e "\"What are the consequences of overfishing on coral reef ecosystems?\"" >> phrases.txt
+echo -e "\"How does land art interact with environmental activism?\"" >> phrases.txt
      
 # Добавление ролей в roles.txt
 echo -e "system\nuser\nassistant\ntool" > roles.txt

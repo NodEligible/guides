@@ -21,7 +21,7 @@ sleep 5
 
 if ! command -v gaianet &> /dev/null; then
     echo -e "${RED}❌ Ошибка: gaianet не найден! Путь $HOME/gaianet/bin не добавлен в PATH.${NC}"
-    echo -e "${RED}-----------------------------------------------------------------------------${NC}"
+    echo -e "${RED}------------------------------------------------------------------------${NC}"
     echo -e "${YELLOW}В случае ошибки выполняем следующие команды:${NC}"
     echo -e "1️⃣. source $HOME/.bashrc"
     echo -e "2️⃣. gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/main/qwen2-0.5b-instruct/config.json"

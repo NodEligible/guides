@@ -23,7 +23,7 @@ docker-compose -f $HOME/nwaku-compose/docker-compose.yml up -d
 echo -e "${GREEN}Миграция завершена!${NC}"
 
 echo -e "${YELLOW}Проверяем порт...${NC}"
-echo -e "${YELLOW}Вывод должен быть таким:${NC}" 0.0.0.0:3004->3000/tcp'
+echo -e "${YELLOW}Вывод должен быть таким:${NC} 0.0.0.0:3004->3000/tcp"
 
 sleep 3
 echo '👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇'

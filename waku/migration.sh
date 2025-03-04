@@ -23,8 +23,9 @@ docker-compose -f $HOME/nwaku-compose/docker-compose.yml up -d
 echo -e "${GREEN}Миграция завершена!${NC}"
 
 echo -e "${YELLOW}Проверяем порт...${NC}"
-echo 'Вывод должен быть таким: 0.0.0.0:3004->3000/tcp'
+echo -e "${YELLOW}Вывод должен быть таким:${NC} 0.0.0.0:3004->3000/tcp'
 
 sleep 2
-
+echo -e "${YELLOW}------------------------------------${NC}"
 docker ps --filter "ancestor=grafana/grafana:latest" --format "{{.ID}} {{.Ports}}"
+echo -e "${YELLOW}------------------------------------${NC}"

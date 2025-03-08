@@ -81,4 +81,6 @@ EOF
 echo "Запускаем Worker Node"
 docker compose up -d
 
+echo -e "${GREEN}Установка завершена!${NC}"
+
 echo -e "${YELLOW}IP вашего сервера:${NC} ${SERVER_IP} "

@@ -67,7 +67,7 @@ rm -rf $HOME/dill.sh
 
 # Качаем скрипт с сервисником
 cd $HOME/dill
-curl -sO https://raw.githubusercontent.com/NodEligible/guides/refs/heads/main/dill/service.sh
+curl -sO https://raw.githubusercontent.com/NodEligible/guides/main/dill/service.sh
 chmod +x dill_service.sh
 
 # Заменяем порты 

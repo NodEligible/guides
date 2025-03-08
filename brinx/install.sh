@@ -8,6 +8,8 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m' # Сброс цвета
 
+SERVER_IP=$(hostname -I | awk '{print $1}')
+
   echo -e "${YELLOW}Установка Docker...${NC}"
   bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
   if [ $? -eq 0 ]; then
@@ -35,9 +37,11 @@ NC='\033[0m' # Сброс цвета
       exit 1
   fi
 
+echo -e "${YELLOW}Скачиваем image...${NC}" 
 # Скачиваем image из Docker Hub
 docker pull admier/brinxai_nodes-worker:latest
 
+echo -e "${YELLOW}Копируем репозиторий...${NC}" 
 # Копируем репозиторий и заходим в директорию
 git clone https://github.com/admier1/BrinxAI-Worker-Nodes
 mv BrinxAI-Worker-Nodes brinxai_worker
@@ -76,3 +80,5 @@ EOF
 # Запускаем контейнер
 echo "Запускаем Worker Node"
 docker compose up -d
+
+echo -e "${YELLOW}IP вашего сервера:${NC} ${SERVER_IP} "

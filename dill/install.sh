@@ -26,7 +26,26 @@ NC='\033[0m' # Сброс цвета
       exit 1
   fi
 
-   echo -e "${YELLOW}Миграция Waku...${NC}"
+# Бекап Dill
+sudo systemctl stop dill &>/dev/null
+
+cd $HOME
+mkdir -p dill_backups
+mkdir -p dill_backups/alps
+
+cp -r $HOME/dill/keystore $HOME/dill_backups/alps/keystore &>/dev/null
+cp -r $HOME/dill/validator_keys $HOME/dill_backups/alps/validator_keys &>/dev/null
+cp $HOME/dill/walletPw.txt $HOME/dill_backups/alps/walletPw.txt &>/dev/null
+cp $HOME/dill/validators.json $HOME/dill_backups/alps/validators.json &>/dev/null
+
+sudo systemctl disable dill &>/dev/null
+sudo systemctl daemon-reload &>/dev/null
+
+rm -rf $HOME/dill
+rm -f /etc/systemd/system/dill.service
+
+
+echo -e "${YELLOW}Миграция Waku...${NC}"
 
 if ss -tuln | grep -q ":4000"; then
   docker compose -f $HOME/nwaku-compose/docker-compose.yml down

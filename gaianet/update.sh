@@ -7,6 +7,9 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
+
+sudo systemctl stop gaia-bot.service
+
 DATA_FILE="/root/gaianet_backup"
 
 # 🔹 Перевіряємо, чи файл існує, якщо так — видаляємо перед скачуванням
@@ -84,5 +87,9 @@ gaianet init
 
 echo -e "${YELLOW}Старт${NC}"
 gaianet start
+
+sleep 10
+
+sudo systemctl start gaia-bot.service
 
 echo -e "${GREEN}Обновление завершено!${NC}"

@@ -7,6 +7,14 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
+DATA_FILE="/root/gaianet_backup"
+
+# 🔹 Перевіряємо, чи файл існує, якщо так — видаляємо перед скачуванням
+if [[ -f "$DATA_FILE" || -f "$DATA_FILE".* ]]; then
+    echo "⚠️ Файл $DATA_FILE вже існує. Видаляю..."
+    sudo rm -f "$DATA_FILE" "$DATA_FILE".*
+fi
+
 echo -e "${YELLOW}Останавливаем GaiaNet...${NC}"
 gaianet stop
 

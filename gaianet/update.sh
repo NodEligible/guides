@@ -10,6 +10,10 @@ NC='\033[0m'
 
 sudo systemctl stop gaia-bot.service
 
+sleep 5
+
+sed -i 's/await asyncio.sleep(1)/await asyncio.sleep(60)/g' /root/gaia-bot/gaia_bot.py
+
 DATA_FILE="/root/gaianet_backup"
 
 # 🔹 Перевіряємо, чи файл існує, якщо так — видаляємо перед скачуванням

@@ -35,19 +35,19 @@ echo -e "${YELLOW}Обновляем GaiaNet...${NC}"
       echo -e "${RED}Ошибка при обновлении!${NC}"
   fi
 
-sleep 2
+sleep 3
 # Удаляем новые файлы
 rm -rf /root/gaianet/config.json
 rm -rf /root/gaianet/nodeid.json
 rm -rf /root/gaianet/deviceid.txt
 
-sleep 2
+sleep 3
 
 cp "$BACKUP_DIR/config.json" "$SOURCE_DIR/config.json"
 cp "$BACKUP_DIR/nodeid.json" "$SOURCE_DIR/nodeid.json"
 cp "$BACKUP_DIR/deviceid.txt" "$SOURCE_DIR/deviceid.txt"
 
-sleep 2
+sleep 3
 
 echo "export PATH=\$PATH:$HOME/gaianet/bin" >> $HOME/.bashrc
 

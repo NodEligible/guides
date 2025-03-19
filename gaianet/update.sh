@@ -10,6 +10,7 @@ NC='\033[0m'
 echo -e "${YELLOW}Останавливаем GaiaNet...${NC}"
 gaianet stop
 
+sleep 5
 echo -e "${YELLOW}Делаем бекап GaiaNet...${NC}"
 
 # Налаштування директорій

@@ -66,6 +66,7 @@ source $HOME/.bashrc
 sleep 5
 
 if ! command -v gaianet &> /dev/null; then
+    rm -rf /root/gaianet_backup
     echo -e "${RED}❌ Ошибка: gaianet не найден! Путь $HOME/gaianet/bin не добавлен в PATH.${NC}"
     echo -e "${RED}------------------------------------------------------------------------${NC}"
     echo -e "${YELLOW}В случае ошибки выполняем следующие команды:${NC}"
@@ -75,6 +76,9 @@ if ! command -v gaianet &> /dev/null; then
     exit 1
 fi
 
+# Удаляем бекап
+rm -rf /root/gaianet_backup
+
 echo -e "${YELLOW}Инициализация конфигурации...${NC}"
 gaianet init
 
@@ -82,4 +86,3 @@ echo -e "${YELLOW}Старт${NC}"
 gaianet start
 
 echo -e "${GREEN}Обновление завершено!${NC}"
-

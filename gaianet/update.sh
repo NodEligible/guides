@@ -76,6 +76,7 @@ if ! command -v gaianet &> /dev/null; then
     echo -e "1️⃣. source $HOME/.bashrc"
     echo -e "2️⃣. gaianet init"
     echo -e "3️⃣. gaianet start"
+    echo -e "4️⃣. sudo systemctl start gaia-bot.service"
     exit 1
 fi
 

@@ -25,7 +25,7 @@ echo -e "${YELLOW}Установка Main...${NC}"
       exit 1
   fi
 
-echo "Удаляем Go..."
+echo -e "${YELLOW}Удаляем Go...${NC}"
 sudo rm -rf /usr/local/go
 rm -rf ~/go ~/.cache/go-build ~/.config/go
 sudo apt remove --purge -y golang-go
@@ -33,7 +33,7 @@ sudo apt autoremove -y
 sudo snap remove go || true
 sed -i '/\/usr\/local\/go\/bin/d' ~/.profile ~/.bashrc ~/.zshrc || true
 
-echo "Устанавливаем Go"
+echo -e "${YELLOW}Устанавливаем Go...${NC}"
 wget https://golang.org/dl/go1.22.1.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz
 rm go1.22.1.linux-amd64.tar.gz
@@ -41,16 +41,16 @@ echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
 source ~/.bashrc
 source ~/.profile
-echo "Go установлена: $(go version)"
+echo -e "${GREEN}Go установлена: $(go version)${NC}"
 
-echo "Удаляем Rust and Cargo..."
+echo -e "${YELLOW}Удаляем Rust and Cargo...${NC}"
 rustup self uninstall -y || true
 rm -rf ~/.cargo ~/.rustup
 sudo apt remove --purge -y rustc cargo
 sudo apt autoremove -y
 sed -i '/\.cargo\/bin/d' ~/.bashrc ~/.zshrc || true
 
-echo "Устанавливаем Rust и Cargo..."
+echo -e "${YELLOW}Устанавливаем Rust и Cargo...${NC}"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 echo "Rust установлен: $(rustc --version)"
@@ -98,8 +98,7 @@ fi
 tmux new-session -d -s risc_service "cargo build && cargo run"
 echo "risc0 сервис запущен (tmux session risc_service)"
 
-echo "Начинаю билдить Go (~2-5 мин)"
-
+echo -e "${YELLOW}Начинаю билдить Go${NC}"
 cd ..
 go build
 echo "Сбилдили light-node, запускаем как systemd сервис"
@@ -143,7 +142,7 @@ systemctl enable $SERVICE_NAME
 echo "Стартуем сервис $SERVICE_NAME"
 systemctl start $SERVICE_NAME
 
-echo "light-node запущена, ждем свой public key"
+echo -e "${YELLOW}light-node запущена, ждем свой public key${NC}"
 
 log_file="/var/log/light_node.log"
 

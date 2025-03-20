@@ -28,14 +28,14 @@ echo -e "${YELLOW}Установка Main...${NC}"
 echo "Удаляем Go..."
 sudo rm -rf /usr/local/go
 rm -rf ~/go ~/.cache/go-build ~/.config/go
-sudo apt remove --purge -y golang-go &>/dev/null
-sudo apt autoremove -y &>/dev/null
-sudo snap remove go 2>/dev/null || true
-sed -i '/\/usr\/local\/go\/bin/d' ~/.profile ~/.bashrc ~/.zshrc 2>/dev/null || true
+sudo apt remove --purge -y golang-go
+sudo apt autoremove -y
+sudo snap remove go || true
+sed -i '/\/usr\/local\/go\/bin/d' ~/.profile ~/.bashrc ~/.zshrc || true
 
 echo "Устанавливаем Go"
-wget https://golang.org/dl/go1.22.1.linux-amd64.tar.gz &>/dev/null
-sudo tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz &>/dev/null
+wget https://golang.org/dl/go1.22.1.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.22.1.linux-amd64.tar.gz
 rm go1.22.1.linux-amd64.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
@@ -44,25 +44,23 @@ source ~/.profile
 echo "Go установлена: $(go version)"
 
 echo "Удаляем Rust and Cargo..."
-rustup self uninstall -y 2>/dev/null || true
+rustup self uninstall -y || true
 rm -rf ~/.cargo ~/.rustup
-sudo apt remove --purge -y rustc cargo &>/dev/null
-sudo apt autoremove -y &>/dev/null
-sed -i '/\.cargo\/bin/d' ~/.bashrc ~/.zshrc 2>/dev/null || true
+sudo apt remove --purge -y rustc cargo
+sudo apt autoremove -y
+sed -i '/\.cargo\/bin/d' ~/.bashrc ~/.zshrc || true
 
 echo "Устанавливаем Rust и Cargo..."
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y &>/dev/null
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 echo "Rust установлен: $(rustc --version)"
 sleep 1
 echo "Весь необходимый софт установлен"
-echo "-----------------------------------------------------------------------------"
 
 function get_private_key() {
   while true; do
     read -p "Введите private key вашего кошелька (без 0х): " private_key_value
 
-    # Check if the private key starts with "0x"
     if [[ $private_key_value == 0x* ]]; then
       echo "Error: Private key should not start with '0x'. Please try again."
     else
@@ -74,13 +72,12 @@ function get_private_key() {
 
 get_private_key
 
-
-curl -L https://risczero.com/install | bash &>/dev/null && rzup install &>/dev/null
+curl -L https://risczero.com/install | bash && rzup install
 source ~/.bashrc
 if [ -d "light-node" ]; then
   rm -rf "light-node"
 fi
-git clone https://github.com/Layer-Edge/light-node.git &>/dev/null
+git clone https://github.com/Layer-Edge/light-node.git
 cd light-node
 
 cat > .env <<EOL
@@ -94,7 +91,7 @@ EOL
 
 echo ".env файл создан"
 cd risc0-merkle-service
-# kill risc service if it exists
+
 if tmux has-session -t risc_service 2>/dev/null; then
     tmux kill-session -t risc_service
 fi
@@ -104,15 +101,15 @@ echo "risc0 сервис запущен (tmux session risc_service)"
 echo "Начинаю билдить Go (~2-5 мин)"
 
 cd ..
-go build &>/dev/null
+go build
 echo "Сбилдили light-node, запускаем как systemd сервис"
 
 SERVICE_NAME="light-node"
-EXECUTABLE_PATH="/root/light-node/light-node"  # Change this to the actual path
-WORKING_DIR="/root/light-node/"                # Change this to the actual working directory
+EXECUTABLE_PATH="/root/light-node/light-node"
+WORKING_DIR="/root/light-node/"
 LOG_FILE="/var/log/light_node.log"
 SERVICE_FILE="/etc/systemd/system/$SERVICE_NAME.service"
-# Ensure the script is run as root
+
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root. Use sudo."
    exit 1
@@ -146,10 +143,8 @@ systemctl enable $SERVICE_NAME
 echo "Стартуем сервис $SERVICE_NAME"
 systemctl start $SERVICE_NAME
 
-#./light-node >> /var/log/light_node.log 2>&1 &
 echo "light-node запущена, ждем свой public key"
 
-# Ждем и покажем public key когда стартанет
 log_file="/var/log/light_node.log"
 
 check_public_key() {
@@ -157,9 +152,9 @@ check_public_key() {
 
   if [[ -n "$parsed_key" ]]; then
     echo "Ваш Public Key: $parsed_key"
-    return 0  # Success
+    return 0
   else
-    return 1  # Not found
+    return 1
   fi
 }
 
@@ -171,3 +166,4 @@ while true; do
     sleep 30
   fi
 done
+

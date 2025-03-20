@@ -55,16 +55,16 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 echo "Rust установлен: $(rustc --version)"
 sleep 1
-echo "Весь необходимый софт установлен"
+echo -e "${GREEN}Весь необходимый софт установлен!${NC}"
 
 function get_private_key() {
   while true; do
     read -p "Введите private key вашего кошелька (без 0х): " private_key_value
 
     if [[ $private_key_value == 0x* ]]; then
-      echo "Error: Private key should not start with '0x'. Please try again."
+      echo -e "${RED}Закрытый ключ не должен начинаться с '0x'. Попробуйте еще раз.${NC}"
     else
-      echo "Private key accepted."
+      echo -e "${GREEN}Закрытый ключ принят.${NC}"
       break
     fi
   done
@@ -101,7 +101,7 @@ echo "risc0 сервис запущен (tmux session risc_service)"
 echo -e "${YELLOW}Начинаю билдить Go${NC}"
 cd ..
 go build
-echo "Сбилдили light-node, запускаем как systemd сервис"
+echo -e "${GREEN}Сбилдили light-node, запускаем как systemd сервис${NC}"
 
 SERVICE_NAME="light-node"
 EXECUTABLE_PATH="/root/light-node/light-node"

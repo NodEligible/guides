@@ -150,7 +150,7 @@ check_public_key() {
   parsed_key=$(tail -n 1000 "$log_file" | grep -oP 'Compressed Public Key: \K[0-9a-fA-F]+')
 
   if [[ -n "$parsed_key" ]]; then
-    echo "Ваш Public Key: $parsed_key"
+    echo -e "${GREEN}Ваш Public Key:${NC} $parsed_key"
     return 0
   else
     return 1
@@ -165,4 +165,4 @@ while true; do
     sleep 30
   fi
 done
-
+echo -e "${GREEN}Установка завершена!${NC}"

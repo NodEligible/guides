@@ -161,7 +161,7 @@ while true; do
   if check_public_key; then
     break
   else
-    echo "Ждем Public Key..."
+    echo -e "${YELLOW}Ждем Public Key...${NC}"  
     sleep 30
   fi
 done

@@ -72,26 +72,26 @@ function get_private_key() {
 
 get_private_key
 
-curl -L https://risczero.com/install | bash && rzup install
+curl -L https://risczero.com/install | bash &>/dev/null && rzup install &>/dev/null
 source ~/.bashrc
 if [ -d "light-node" ]; then
   rm -rf "light-node"
 fi
-git clone https://github.com/Layer-Edge/light-node.git
+git clone https://github.com/Layer-Edge/light-node.git &>/dev/null
 cd light-node
 
 cat > .env <<EOL
-GRPC_URL=34.31.74.109:9090
+GRPC_URL=grpc.testnet.layeredge.io:9090
 CONTRACT_ADDR=cosmos1ufs3tlq4umljk0qfe8k5ya0x6hpavn897u2cnf9k0en9jr7qarqqt56709
-ZK_PROVER_URL=http://127.0.0.1:3001
+ZK_PROVER_URL=https://layeredge.mintair.xyz
 API_REQUEST_TIMEOUT=100
-POINTS_API=http://127.0.0.1:8080
+POINTS_API=https://light-node.layeredge.io
 PRIVATE_KEY='${private_key_value}'
 EOL
 
 echo ".env файл создан"
 cd risc0-merkle-service
-
+# kill risc service if it exists
 if tmux has-session -t risc_service 2>/dev/null; then
     tmux kill-session -t risc_service
 fi
@@ -104,14 +104,31 @@ go build
 echo -e "${GREEN}Сбилдили light-node, запускаем как systemd сервис${NC}"
 
 SERVICE_NAME="light-node"
-EXECUTABLE_PATH="/root/light-node/light-node"
-WORKING_DIR="/root/light-node/"
+EXECUTABLE_PATH="/root/light-node/light-node"  # Change this to the actual path
+WORKING_DIR="/root/light-node/"                # Change this to the actual working directory
 LOG_FILE="/var/log/light_node.log"
 SERVICE_FILE="/etc/systemd/system/$SERVICE_NAME.service"
 
+> "$LOG_FILE"
+# Ensure the script is run as root
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root. Use sudo."
    exit 1
+fi
+
+# Check if the service exists
+if systemctl list-units --type=service --all | grep -q "$SERVICE_NAME.service"; then
+    echo "Найден существующий сервис '$SERVICE_NAME'. Удаляем..."
+    # Stop the service if it's running
+    sudo systemctl stop $SERVICE_NAME
+    # Disable the service so it doesn’t start on boot
+    sudo systemctl disable $SERVICE_NAME
+    # Remove the systemd service file
+    sudo rm -f $SERVICE_FILE
+    # Reload systemd
+    sudo systemctl daemon-reload
+
+    echo "Сервис '$SERVICE_NAME' удален."
 fi
 
 cat <<EOF > $SERVICE_FILE
@@ -142,8 +159,10 @@ systemctl enable $SERVICE_NAME
 echo "Стартуем сервис $SERVICE_NAME"
 systemctl start $SERVICE_NAME
 
-echo -e "${YELLOW}light-node запущена, ждем свой public key${NC}"
+#./light-node >> /var/log/light_node.log 2>&1 &
+echo "light-node запущена, ждем свой public key"
 
+# Ждем и покажем public key когда стартанет
 log_file="/var/log/light_node.log"
 
 check_public_key() {
@@ -151,9 +170,9 @@ check_public_key() {
 
   if [[ -n "$parsed_key" ]]; then
     echo -e "${GREEN}Ваш Public Key:${NC} $parsed_key"
-    return 0
+    return 0  # Success
   else
-    return 1
+    return 1  # Not found
   fi
 }
 
@@ -161,8 +180,9 @@ while true; do
   if check_public_key; then
     break
   else
-    echo -e "${YELLOW}Ждем Public Key...${NC}"  
+    echo -e "${YELLOW}Ждем Public Key...${NC}"
     sleep 30
   fi
 done
+
 echo -e "${GREEN}Установка завершена!${NC}"

@@ -13,7 +13,6 @@ echo -e "${YELLOW}Установка Main...${NC}"
       echo -e "${GREEN}Main успешно установлен!${NC}"
   else
       echo -e "${RED}Ошибка при установке Main!${NC}"
-      exit 1
   fi
 
   echo -e "${YELLOW}Установка Ufw...${NC}" 
@@ -22,7 +21,6 @@ echo -e "${YELLOW}Установка Main...${NC}"
       echo -e "${GREEN}Ufw успешно установлено!${NC}"
   else
       echo -e "${RED}Ошибка при установке Ufw!${NC}"
-      exit 1
   fi
 
 echo -e "${YELLOW}Удаляем Go...${NC}"

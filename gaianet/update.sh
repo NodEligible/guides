@@ -95,6 +95,7 @@ gaianet start
 
 sleep 10
 
+systemctl daemon-reload
 sudo systemctl start gaia-bot.service
 
 echo -e "${GREEN}Обновление завершено!${NC}"

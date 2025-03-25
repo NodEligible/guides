@@ -20,4 +20,4 @@ sleep 2
 systemctl daemon-reload
 sudo systemctl start gaia-bot.service
 
-echo -e "${GREEN}✅ Gaia Bot перезапущен с новым временем ожидания: ${TIME} сек.${NC}"
+echo -e "${GREEN}✅ Gaia Bot перезапущен с новым временем ожидания:${NC} ${TIME} сек."

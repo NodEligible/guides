@@ -38,7 +38,7 @@ read USER_API_KEY
 sed -i "s/HYPERBOLIC_API_KEY = \"\$API_KEY\"/HYPERBOLIC_API_KEY = \"$USER_API_KEY\"/" "$PROJECT_DIR/hyper_bot.py"
 
 # 6. Скачивание файла questions.txt
-QUESTIONS_URL="https://raw.githubusercontent.com/NodEligible/guides/main/hyperbolic/questions.tx"
+QUESTIONS_URL="https://raw.githubusercontent.com/NodEligible/guides/main/hyperbolic/questions.txt"
 curl -fsSL -o hyperbolic/questions.txt "$QUESTIONS_URL"
 
 # 7. Создание systemd сервиса

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Повний шлях до вхідного файлу
+INPUT_FILE="/root/phrases.txt"
+
+# Файл, у який запишемо очищені питання
+OUTPUT_FILE="/root/clean_phrases.txt"
+
+# Очистити файл виводу, якщо існує
+> "$OUTPUT_FILE"
+
+# Пройтись по кожному рядку і витягнути питання
+while IFS= read -r line; do
+  clean_line=$(echo "$line" | sed -e 's/^echo -e "\\\"//' -e 's/\\\"[[:space:]]*>\{1,2\}[[:space:]]*phrases.txt$//')
+  echo "$clean_line" >> "$OUTPUT_FILE"
+done < "$INPUT_FILE"
+
+echo "✅ Очищено. Питання записано в $OUTPUT_FILE"

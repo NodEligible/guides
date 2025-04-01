@@ -11,7 +11,7 @@ OUTPUT_FILE="/root/clean_phrases.txt"
 
 # Пройтись по кожному рядку і витягнути питання
 while IFS= read -r line; do
-  clean_line=$(echo "$line" | sed -e 's/^echo -e "\\\"//' -e 's/\\\"[[:space:]]*>\{1,2\}[[:space:]]*phrases.txt$//')
+ clean_line=$(echo "$line" | sed -e 's/^echo -e "\\\"//' -e 's/\\\"[[:space:]]*>\{1,2\}[[:space:]]*phrases.txt$//' -e 's/^"//' -e 's/"$//')
   echo "$clean_line" >> "$OUTPUT_FILE"
 done < "$INPUT_FILE"
 

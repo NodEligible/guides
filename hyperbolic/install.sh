@@ -7,7 +7,7 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-echo -e "${BLUE}Установка бота...${NC}"
+echo -e "${YELLOW}Установка бота...${NC}"
 
 # 1. Обновление системы и установка необходимых пакетов
 sudo apt update && sudo apt upgrade -y

@@ -131,7 +131,7 @@ IDENTITY_PATH=${IDENTITY_PATH:-$DEFAULT_IDENTITY_PATH}
     trap cleanup INT
 
 #lets go!
-echo -e "${YELLOW}Ставим python dependencies просто ждем...${NC}"
+echo -e "${YELLOW}Установка python dependencies...${NC}"
 pip install -r "$ROOT"/requirements-hivemind.txt > /dev/null
 pip install -r "$ROOT"/requirements.txt > /dev/null
 
@@ -147,7 +147,7 @@ else
    CONFIG_PATH="$ROOT/hivemind_exp/configs/gpu/grpo-qwen-2.5-0.5b-deepseek-r1.yaml"
 fi
 
-echo ">> Готово!"
+echo -e "${GREEN}python dependencies установлен!${NC}"
 
 if [ -n "${HF_TOKEN}" ]; then # Check if HF_TOKEN is already set and use if so. Else give user a prompt to choose.
    HUGGINGFACE_ACCESS_TOKEN=${HF_TOKEN}

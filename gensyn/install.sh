@@ -131,7 +131,7 @@ IDENTITY_PATH=${IDENTITY_PATH:-$DEFAULT_IDENTITY_PATH}
     trap cleanup INT
 
 #lets go!
-echo -e "${YELLOW}Ставим python dependencies 5 мин...${NC}"
+echo -e "${YELLOW}Ставим python dependencies просто ждем...${NC}"
 pip install -r "$ROOT"/requirements-hivemind.txt > /dev/null
 pip install -r "$ROOT"/requirements.txt > /dev/null
 
@@ -161,9 +161,7 @@ else
    esac
 fi
 
-echo ""
-echo ""
-echo "Good luck in the swarm!"
+echo "Удачи в рое!"
 # end official script part
 
 # делаем скрипт для будущего systemd сервиса

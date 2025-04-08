@@ -21,23 +21,23 @@ mkdir -p "$(dirname "$LOG_FILE")"
 touch "$LOG_FILE"
 chmod 644 "$LOG_FILE"
 
-# Запрос данных
+# Запрос данных у пользователя
 echo -e "${YELLOW}🔹 Введите ваш IDENTIFIER:${NC}"
 read -p "> " IDENTIFIER
-
 echo -e "${YELLOW}🔹 Введите ваш PIN:${NC}"
 read -p "> " PIN
 
+# Проверка на пустые значения
 if [[ -z "$IDENTIFIER" || -z "$PIN" ]]; then
     echo -e "${RED}❌ Ошибка: IDENTIFIER или PIN не могут быть пустыми!${NC}"
     exit 1
 fi
 
-# Сохраняем конфигурацию
+# Инфо: Сохраняем конфигурацию
 echo -e "${YELLOW}💾 Сохраняем конфигурацию...${NC}"
-echo "IDENTIFIER=$IDENTIFIER" | sudo tee "$CONFIG_FILE" > /dev/null
-echo "PIN=$PIN" | sudo tee -a "$CONFIG_FILE" > /dev/null
-sudo chmod 600 "$CONFIG_FILE"
+sudo tee $CONFIG_FILE > /dev/null <<< "IDENTIFIER=$IDENTIFIER"
+sudo tee -a $CONFIG_FILE > /dev/null <<< "PIN=$PIN"
+sudo chmod 600 $CONFIG_FILE
 echo -e "${GREEN}✅ Конфигурация сохранена в $CONFIG_FILE${NC}"
 
 # Создание monitor.sh

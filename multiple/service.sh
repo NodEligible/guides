@@ -3,8 +3,6 @@
 # Отображение логотипа
 curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 
-#!/bin/bash
-
 # Цвета
 YELLOW='\e[0;33m'
 GREEN='\033[0;32m'

@@ -23,13 +23,10 @@ NC='\033[0m'
       echo -e "${RED}Ошибка при установке Ufw!${NC}"
   fi
 
-apt-get install python3 python3-pip python3-venv python3-dev -y &>/dev/null
-
-
 FOLDER="rl-swarm"
 
 if [ -d "$FOLDER" ]; then
-   echo -e "${RED}Error: Папка '$FOLDER' уже существует. Удалите и перезапустите скрипт.${NC}" >&2
+    echo -e "${RED}Ошибка: Папка '$FOLDER' уже существует. Удалите и перезапустите скрипт.${NC}" >&2
     exit 1
 fi
 
@@ -45,15 +42,15 @@ NODE_VERSION=$(node -v 2>/dev/null | cut -d 'v' -f 2)
 
 # Check if the version is lower than 4.0.0
 if [[ -n "$NODE_VERSION" && $(echo -e "$NODE_VERSION\n18.0.0" | sort -V | head -n1) == "$NODE_VERSION" ]]; then
-    echo -e "${RED}Ошибка: версия Node.js ниже, чем 18.0.0 ($NODE_VERSION). Please upgrade manually.${NC}"
+    echo -e "${RED}Ошибка: Node.js version is lower than 18.0.0 ($NODE_VERSION). Обновите вручную.${NC}"
     exit 1
 fi
 
-echo -e "${YELLOW}Node.js версия  $NODE_VERSION. Продолжаем...${NC}"
+echo -e "${GREEN}Node.js версия $NODE_VERSION. Продолжаем...${NC}"
 
 #preinstall yarn, so its properly registered in ~/profile
 if ! command -v yarn >/dev/null 2>&1; then
-      echo "Yarn не установлен. Устанавливаем..."
+      echo -e "${YELLOW}Yarn не установлен. Устанавливаем...${NC}"
       curl -o- -L https://yarnpkg.com/install.sh 2>/dev/null | sh >/dev/null 2>&1
       echo 'export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"' >> ~/.profile
       source ~/.profile
@@ -62,7 +59,7 @@ fi
 echo -e "${YELLOW}Клонируем GIT проекта...${NC}"
 REPO_URL="https://github.com/gensyn-ai/rl-swarm.git"
 git clone "$REPO_URL" &>/dev/null
-cd rl-swarm || { echo "Failed to enter directory rl-swarm"; exit 1; }
+cd rl-swarm || { echo -e "${RED}Не удалось войти в директорию rl-swarm${NC}"; exit 1; }
 python3 -m venv .venv
 source .venv/bin/activate
 
@@ -98,10 +95,13 @@ IDENTITY_PATH=${IDENTITY_PATH:-$DEFAULT_IDENTITY_PATH}
     # run modal_login server
     cd modal-login
 
-    echo -e "${YELLOW}Запускаем yarn install${NC}"
+    echo -e "${YELLOW}Запускаем yarn install просто ждите...${NC}"
     yarn install &>/dev/null
+    yarn upgrade &>/dev/null
+    yarn add next@latest react react-dom &>/dev/null
+    yarn add viem@latest &>/dev/null
     yarn dev > /dev/null 2>&1 & # Run in background and suppress output
-    echo -e "${GREEN}Установка завершена${NC}"
+   echo -e "${GREEN}yarn install запущен${NC}"
 
     echo -e "${YELLOW}Пожалуйста, войдите в систему, чтобы создать кошелек сервера Ethereum.${NC}"
     SERVER_PID=$!  # Store the process ID
@@ -114,7 +114,7 @@ IDENTITY_PATH=${IDENTITY_PATH:-$DEFAULT_IDENTITY_PATH}
         echo -e "${YELLOW}Ждем авторизацию (localhost:3000)...${NC}"
         sleep 5  # Wait for 5 seconds before checking again
     done
-    echo -e "${YELLOW}Авторизировано. Продолжаем...${NC}"
+    echo -e "${GREEN}Авторизировано.${NC}"
 
     ORG_ID=$(awk 'BEGIN { FS = "\"" } !/^[ \t]*[{}]/ { print $(NF - 1); exit }' modal-login/temp-data/userData.json)
     echo "ORG_ID set to: $ORG_ID"
@@ -131,7 +131,7 @@ IDENTITY_PATH=${IDENTITY_PATH:-$DEFAULT_IDENTITY_PATH}
     trap cleanup INT
 
 #lets go!
-echo -e "${YELLOW}Установка python dependencies...${NC}"
+echo -e "${YELLOW}Ставим python dependencies просто ждите...${NC}"
 pip install -r "$ROOT"/requirements-hivemind.txt > /dev/null
 pip install -r "$ROOT"/requirements.txt > /dev/null
 
@@ -147,24 +147,25 @@ else
    CONFIG_PATH="$ROOT/hivemind_exp/configs/gpu/grpo-qwen-2.5-0.5b-deepseek-r1.yaml"
 fi
 
-echo -e "${GREEN}python dependencies установлен!${NC}"
+echo -e "${GREEN}Готово!${NC}"
 
 if [ -n "${HF_TOKEN}" ]; then # Check if HF_TOKEN is already set and use if so. Else give user a prompt to choose.
    HUGGINGFACE_ACCESS_TOKEN=${HF_TOKEN}
 else
-   read -p "Хотите ли вы перенести модели, которые вы обучаете в RL-рое, в Hugging Face Hub?? [y/N] " yn
+   read -p "Хотите ли вы перенести модели, которых вы обучаете в RL-рое, в Hugging Face Hub? [y/N] " yn
    yn=${yn:-N}  # Default to "N" if the user presses Enter
    case $yn in
       [Yy]* ) read -p "Введите свой токен доступа Hugging Face: " HUGGINGFACE_ACCESS_TOKEN;;
       [Nn]* ) HUGGINGFACE_ACCESS_TOKEN="None";;
-      * ) echo ">>> Ответ не был дан, поэтому НИ ОДНА модель не будет отправлена ​​в Hugging Face Hub." && HUGGINGFACE_ACCESS_TOKEN="None";;
+      * ) echo " Ответ не был дан, поэтому НИ ОДНА модель не будет отправлена ​​в Hugging Face Hub." && HUGGINGFACE_ACCESS_TOKEN="None";;
    esac
 fi
 
-echo "Удачи в рое!"
+echo -e "${GREEN}Удачи в рое!${NC}"
 # end official script part
 
 # делаем скрипт для будущего systemd сервиса
+echo -e "${YELLOW}Создаем скрипт для systemd сервиса...${NC}"
 OUTPUT_SCRIPT="$ROOT/gensyn_service.sh"
 
 if [ -n "$ORG_ID" ]; then
@@ -175,8 +176,8 @@ cat <<EOF > "$OUTPUT_SCRIPT"
 FOLDER="$ROOT"
 cd "\$FOLDER" || exit 1
 
-source .venv/bin/activate
 source /root/.profile
+source .venv/bin/activate
 
 cd modal-login
 yarn install
@@ -237,7 +238,7 @@ wait
 EOF
 fi
 chmod +x "$OUTPUT_SCRIPT"
-echo "Скрипт для systemd сервиса создан: $OUTPUT_SCRIPT"
+echo -e "${GREEN}Скрипт для systemd сервиса создан: $OUTPUT_SCRIPT${NC}"
 
 # создаем сам сервис в системе
 SERVICE_NAME="gensyn.service"
@@ -286,5 +287,4 @@ sleep 10
 cp "$ROOT/modal-login/temp-data/userApiKey.json" "$ROOT/userApiKey_backup.json"
 cp "$ROOT/modal-login/temp-data/userData.json" "$ROOT/userData_backup.json"
 
-echo -e "${YELLOW}systemd сервис создан и запущен.${NC}"
-echo -e "${GREEN}Установка завершена!${NC}"
+echo -e "${GREEN}Установка завершена.${NC}"

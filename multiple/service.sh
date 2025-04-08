@@ -3,6 +3,8 @@
 # Отображение логотипа
 curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 
+#!/bin/bash
+
 # Цвета
 YELLOW='\e[0;33m'
 GREEN='\033[0;32m'
@@ -13,108 +15,95 @@ INSTALL_DIR="/root/multiple_service"
 echo -e "${YELLOW}📁 Создание папки $INSTALL_DIR...${NC}"
 mkdir -p "$INSTALL_DIR"
 
-CONFIG_FILE="/root/multiple_service/multiple_config"
+CONFIG_FILE="$INSTALL_DIR/multiple_config"
+LOG_FILE="$INSTALL_DIR/monitor.log"
 
-# ------------------------------------------
-# Создаем файл для логов 
-# Шлях до файлу логування
-LOG_FILE="$HOME/multiple_service/monitor.log"
-
-# Створюємо директорію, якщо її немає
+# Создаем лог-файл
 mkdir -p "$(dirname "$LOG_FILE")"
-
-# Створюємо файл логування, якщо він не існує
 touch "$LOG_FILE"
-
-# Надаємо права на запис у файл
 chmod 644 "$LOG_FILE"
 
-# ------------------------------------------
-
-# Запрос данных у пользователя
+# Запрос данных
 echo -e "${YELLOW}🔹 Введите ваш IDENTIFIER:${NC}"
 read -p "> " IDENTIFIER
+
 echo -e "${YELLOW}🔹 Введите ваш PIN:${NC}"
 read -p "> " PIN
 
-# Проверка на пустые значения
 if [[ -z "$IDENTIFIER" || -z "$PIN" ]]; then
     echo -e "${RED}❌ Ошибка: IDENTIFIER или PIN не могут быть пустыми!${NC}"
     exit 1
 fi
 
-# Инфо: Сохраняем конфигурацию
+# Сохраняем конфигурацию
 echo -e "${YELLOW}💾 Сохраняем конфигурацию...${NC}"
-sudo tee $CONFIG_FILE > /dev/null <<< "IDENTIFIER=$IDENTIFIER"
-sudo tee -a $CONFIG_FILE > /dev/null <<< "PIN=$PIN"
-sudo chmod 600 $CONFIG_FILE
-
-# Инфо: Конфигурация сохранена
+echo "IDENTIFIER=$IDENTIFIER" | sudo tee "$CONFIG_FILE" > /dev/null
+echo "PIN=$PIN" | sudo tee -a "$CONFIG_FILE" > /dev/null
+sudo chmod 600 "$CONFIG_FILE"
 echo -e "${GREEN}✅ Конфигурация сохранена в $CONFIG_FILE${NC}"
-# --------------------------------------------------------------------------------------------------------------------------------------
-# Створення скрипта моніторингу контейнерів
+
+# Создание monitor.sh
 echo -e "${YELLOW}📝 Создание файла мониторинга...${NC}"
-cat <<EOF > "$INSTALL_DIR/monitor.sh"
+cat <<'EOF' > "$INSTALL_DIR/monitor.sh"
+#!/bin/bash
+
 YELLOW='\e[0;33m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-LOG_FILE="$HOME/multiple_service/monitor.log"
+LOG_FILE="/root/multiple_service/monitor.log"
+CONFIG_FILE="/root/multiple_service/multiple_config"
 
-if [ $# -ne 2 ]; then
-    echo "Usage: bash <(curl -s https://raw.githubusercontent.com/NodEligible/guides/main/multiple/healthcheck.sh) <IDENTIFIER> <PIN>"
+# Загружаем конфиг
+if [ -f "$CONFIG_FILE" ]; then
+    source "$CONFIG_FILE"
+else
+    echo -e "${RED}❌ Файл конфигурации не найден: $CONFIG_FILE${NC}"
     exit 1
 fi
 
-IDENTIFIER="$1"
-PIN="$2"
-
 while true; do
-STATUS_OUTPUT=$($HOME/multipleforlinux/multiple-cli status)
-if echo "$STATUS_OUTPUT" | grep -q " :False"; then
-    echo -e "\$(/usr/bin/date '+%Y-%m-%d %H:%M:%S') ⛔️ ${RED} Узел не запущен. Выполнение команды bind...${NC}" | tee -a "$LOG_FILE"
-    $HOME/multipleforlinux/multiple-cli bind --bandwidth-download 100 --identifier "$IDENTIFIER" --pin "$PIN" --storage 200 --bandwidth-upload 100
-else
-    echo -e "\$(/usr/bin/date '+%Y-%m-%d %H:%M:%S') ✅ ${GREEN} Узел уже привязан. NodeRun: True, IsMain: True.${NC}" | tee -a "$LOG_FILE"
-fi
-    # Wait for 5 minutes before checking again
+    STATUS_OUTPUT=$(/root/multipleforlinux/multiple-cli status)
+    if echo "$STATUS_OUTPUT" | grep -q " :False"; then
+        echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) ⛔️ ${RED} Узел не запущен. Выполнение команды bind...${NC}" | tee -a "$LOG_FILE"
+        /root/multipleforlinux/multiple-cli bind --bandwidth-download 100 --identifier "$IDENTIFIER" --pin "$PIN" --storage 200 --bandwidth-upload 100
+    else
+        echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) ✅ ${GREEN} Узел уже привязан. NodeRun: True, IsMain: True.${NC}" | tee -a "$LOG_FILE"
+    fi
     sleep 300
 done
+EOF
 
-# Робимо скрипт виконуваним
 chmod +x "$INSTALL_DIR/monitor.sh"
 
-# --------------------------------------------------------------------------------------------------------------------------------------
-
-
-# Инфо: Создаём systemd-сервис
+# Создание systemd-сервиса
 echo -e "${YELLOW}⚙️ Создаём systemd-сервис...${NC}"
 SERVICE_FILE="/etc/systemd/system/multiple-healthcheck.service"
 
-sudo tee $SERVICE_FILE > /dev/null <<EOF
+sudo tee "$SERVICE_FILE" > /dev/null <<EOF
 [Unit]
 Description=Multiple Health Check Service
 After=network.target
 
 [Service]
 User=root
-Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-EnvironmentFile=$CONFIG_FILE
-ExecStart=/bin/bash -c 'bash <(curl -s https://raw.githubusercontent.com/NodEligible/guides/main/multiple/healthcheck.sh) \$IDENTIFIER \$PIN'
+ExecStart=/bin/bash $INSTALL_DIR/monitor.sh
 Restart=always
 RestartSec=10
-StandardOutput=append:/root/multiple_service/service.log
-StandardError=append:/root/multiple_service/service.log
+StandardOutput=append:$INSTALL_DIR/service.log
+StandardError=append:$INSTALL_DIR/service.log
 
 [Install]
 WantedBy=multi-user.target
 EOF
 
-# Инфо: Запуск сервиса
+# Запуск сервиса
 echo -e "${YELLOW}🚀 Запускаем сервис multiple-healthcheck...${NC}"
 sudo systemctl daemon-reload
 sudo systemctl enable multiple-healthcheck
 sudo systemctl start multiple-healthcheck
+
 echo -e "${GREEN}✅ Установка завершена! Сервис запущен.${NC}"
+
 

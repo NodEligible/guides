@@ -18,7 +18,7 @@ CONFIG_FILE="/root/multiple_service/multiple_config"
 # ------------------------------------------
 # Создаем файл для логов 
 # Шлях до файлу логування
-LOG_FILE="$HOME/multiple_service/service.log"
+LOG_FILE="$HOME/multiple_service/monitor.log"
 
 # Створюємо директорію, якщо її немає
 mkdir -p "$(dirname "$LOG_FILE")"

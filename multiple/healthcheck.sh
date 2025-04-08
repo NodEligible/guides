@@ -3,6 +3,8 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
+LOG_FILE="$HOME/multiple_service/monitor.log"
+
 if [ $# -ne 2 ]; then
     echo "Usage: bash <(curl -s https://raw.githubusercontent.com/NodEligible/guides/main/multiple/healthcheck.sh) <IDENTIFIER> <PIN>"
     exit 1

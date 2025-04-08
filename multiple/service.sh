@@ -42,7 +42,7 @@ Description=Multiple Health Check Service
 After=network.target
 
 [Service]
-User=$USER
+User=root
 EnvironmentFile=$CONFIG_FILE
 ExecStart=/bin/bash -c 'bash <(curl -s https://raw.githubusercontent.com/NodEligible/guides/main/multiple/healthcheck.sh) \$IDENTIFIER \$PIN'
 Restart=always

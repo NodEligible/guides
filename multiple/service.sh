@@ -25,8 +25,8 @@ fi
 
 # Сохраняем данные в файл
 echo -e "${YELLOW}💾 Сохраняем конфигурацию...${NC}"
-echo "IDENTIFIER=$IDENTIFIER" | sudo tee $CONFIG_FILE > /dev/null
-echo "PIN=$PIN" | sudo tee -a $CONFIG_FILE > /dev/null
+echo "IDENTIFIER=$IDENTIFIER" | sudo tee $CONFIG_FILE 
+echo "PIN=$PIN" | sudo tee -a $CONFIG_FILE 
 sudo chmod 600 $CONFIG_FILE
 echo -e "${GREEN}✅ Конфигурация сохранена в $CONFIG_FILE${NC}"
 
@@ -49,7 +49,7 @@ StandardOutput=journal
 StandardError=journal
 
 [Install]
-WantedBy=multi-user.target" | sudo tee $SERVICE_FILE > /dev/null
+WantedBy=multi-user.target" | sudo tee $SERVICE_FILE 
 
 # Запускаем сервис
 echo -e "${YELLOW}🚀 Запускаем сервис multiple-healthcheck...${NC}"

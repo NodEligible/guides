@@ -89,8 +89,6 @@ User=root
 ExecStart=/bin/bash $INSTALL_DIR/monitor.sh
 Restart=always
 RestartSec=10
-StandardOutput=append:$INSTALL_DIR/service.log
-StandardError=append:$INSTALL_DIR/service.log
 
 [Install]
 WantedBy=multi-user.target

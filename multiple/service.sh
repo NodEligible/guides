@@ -9,7 +9,11 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-CONFIG_FILE="/root/multiple_service"
+INSTALL_DIR="/root/multiple_service"
+echo -e "${YELLOW}📁 Создание папки $INSTALL_DIR...${NC}"
+mkdir -p "$INSTALL_DIR"
+
+CONFIG_FILE="/root/multiple_service/multiple_config"
 
 # Запрос данных у пользователя
 echo -e "${YELLOW}🔹 Введите ваш IDENTIFIER:${NC}"

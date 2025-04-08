@@ -23,19 +23,21 @@ if [[ -z "$IDENTIFIER" || -z "$PIN" ]]; then
     exit 1
 fi
 
-# Сохраняем данные в файл
+# Инфо: Сохраняем конфигурацию
 echo -e "${YELLOW}💾 Сохраняем конфигурацию...${NC}"
-echo "IDENTIFIER=$IDENTIFIER" | sudo tee $CONFIG_FILE 
-echo "PIN=$PIN" | sudo tee -a $CONFIG_FILE 
+sudo tee $CONFIG_FILE > /dev/null <<< "IDENTIFIER=$IDENTIFIER"
+sudo tee -a $CONFIG_FILE > /dev/null <<< "PIN=$PIN"
 sudo chmod 600 $CONFIG_FILE
+
+# Инфо: Конфигурация сохранена
 echo -e "${GREEN}✅ Конфигурация сохранена в $CONFIG_FILE${NC}"
 
-# Создаём systemd-сервис
+# Инфо: Создаём systemd-сервис
+echo -e "${YELLOW}⚙️ Создаём systemd-сервис...${NC}"
 SERVICE_FILE="/etc/systemd/system/multiple-healthcheck.service"
 
-echo -e "${YELLOW}⚙️ Создаём systemd-сервис...${NC}"
-
-echo "[Unit]
+sudo tee $SERVICE_FILE > /dev/null <<EOF
+[Unit]
 Description=Multiple Health Check Service
 After=network.target
 
@@ -49,13 +51,13 @@ StandardOutput=journal
 StandardError=journal
 
 [Install]
-WantedBy=multi-user.target" | sudo tee $SERVICE_FILE 
+WantedBy=multi-user.target
+EOF
 
-# Запускаем сервис
+# Инфо: Запуск сервиса
 echo -e "${YELLOW}🚀 Запускаем сервис multiple-healthcheck...${NC}"
 sudo systemctl daemon-reload
 sudo systemctl enable multiple-healthcheck
 sudo systemctl start multiple-healthcheck
-
 echo -e "${GREEN}✅ Установка завершена! Сервис запущен.${NC}"
 

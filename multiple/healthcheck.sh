@@ -14,7 +14,7 @@ PIN="$2"
 while true; do
 STATUS_OUTPUT=$($HOME/multipleforlinux/multiple-cli status)
 if echo "$STATUS_OUTPUT" | grep -q " :False"; then
-    echo -e "${RED}Узел не запущен. Выполнение команды bind...${NC}
+    echo -e "${RED}Узел не запущен. Выполнение команды bind...${NC}"
     $HOME/multipleforlinux/multiple-cli bind --bandwidth-download 100 --identifier "$IDENTIFIER" --pin "$PIN" --storage 200 --bandwidth-upload 100
 else
     echo -e "${GREEN}Узел уже привязан. NodeRun: True, IsMain: True${NC}"

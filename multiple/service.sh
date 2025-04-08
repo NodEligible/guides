@@ -63,12 +63,13 @@ After=network.target
 
 [Service]
 User=root
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 EnvironmentFile=$CONFIG_FILE
 ExecStart=/bin/bash -c 'bash <(curl -s https://raw.githubusercontent.com/NodEligible/guides/main/multiple/healthcheck.sh) \$IDENTIFIER \$PIN'
 Restart=always
 RestartSec=10
-StandardOutput=journal
-StandardError=journal
+StandardOutput=append:/root/multiple_service/service.log
+StandardError=append:/root/multiple_service/service.log
 
 [Install]
 WantedBy=multi-user.target

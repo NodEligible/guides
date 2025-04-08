@@ -1,6 +1,6 @@
 # Check if both arguments are provided
 if [ $# -ne 2 ]; then
-    echo "Usage: bash <(curl -s https://raw.githubusercontent.com/NodEligible/guides/main/multiple/service.sh) <IDENTIFIER> <PIN>"
+    echo "Usage: bash <(curl -s https://raw.githubusercontent.com/NodEligible/guides/main/multiple/healthcheck.sh) <IDENTIFIER> <PIN>"
     exit 1
 fi
 

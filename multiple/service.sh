@@ -42,7 +42,7 @@ fi
 
 # Создание monitor.sh
 echo -e "${YELLOW}📝 Создание файла мониторинга...${NC}"
-cat <<'EOF' > "$INSTALL_DIR/monitor.sh"
+cat <<EOF > "$INSTALL_DIR/monitor.sh"
 #!/bin/bash
 
 YELLOW='\e[0;33m'
@@ -53,21 +53,11 @@ NC='\033[0m'
 LOG_FILE="/root/multiple_service/monitor.log"
 # CONFIG_FILE="/root/multiple_service/multiple_config"
 
-# Загружаем конфиг
-IDENTIFIER="$1"
-PIN="$2"
-
-if [[ -z "$IDENTIFIER" || -z "$PIN" ]]; then
-    echo -e "${RED}❌ Ошибка: параметры не переданы!${NC}" | tee -a "$LOG_FILE"
-    exit 1
-fi
-
-
 while true; do
     STATUS_OUTPUT=$(/root/multipleforlinux/multiple-cli status)
     if echo "$STATUS_OUTPUT" | grep -q " :False"; then
         echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) ⛔️ ${RED} Узел не запущен. Выполнение команды bind...${NC}" | tee -a "$LOG_FILE"
-        /root/multipleforlinux/multiple-cli bind --bandwidth-download 100 --identifier "$IDENTIFIER" --pin "$PIN" --storage 200 --bandwidth-upload 100
+        /root/multipleforlinux/multiple-cli bind --bandwidth-download 100 --identifier "${IDENTIFIER}" --pin "${PIN}" --storage 200 --bandwidth-upload 100
     else
         echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) ✅ ${GREEN} Узел уже привязан. NodeRun: True, IsMain: True.${NC}" | tee -a "$LOG_FILE"
     fi
@@ -88,7 +78,7 @@ After=network.target
 
 [Service]
 User=root
-ExecStart=/bin/bash $INSTALL_DIR/monitor.sh "$IDENTIFIER" "$PIN"
+ExecStart=/bin/bash /root/multiple_service/monitor.sh
 Restart=always
 RestartSec=10
 

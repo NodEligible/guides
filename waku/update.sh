@@ -85,7 +85,7 @@ echo_info() {
   echo -e "${YELLOW}   docker-compose -f $HOME/nwaku-compose/docker-compose.yml logs -f --tail=100 \n ${NC}"
   ip_address=$(hostname -I | awk '{print $1}') >/dev/null
   echo -e "${GREEN}Для проверки дашборда графаны, перейдите по ссылке: ${NC}"
-  echo -e "${YELLOW}   http://$ip_address:3004/d/yns_4vFVk/nwaku-monitoring \n ${NC}"
+  echo -e "${YELLOW}http://$ip_address:3004/d/yns_4vFVk/nwaku-monitoring \n ${NC}"
 }
 
 logo

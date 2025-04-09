@@ -12,17 +12,17 @@ NC='\033[0m'
 cleanup() {
   echo -e "${YELLOW}Очистка...${NC}"
   docker-compose -f $HOME/nwaku-compose/docker-compose.yml down
-  # mkdir -p $HOME/nwaku_backups
-  # if [ -d "$HOME/nwaku_backups/keystore0.30" ]; then
-  #   echo "Бекап уже сделан"
-  # else
-  #   echo "Делаем бекап ключей"
-  #   mkdir -p $HOME/nwaku_backups/keystore0.30
-  #   cp $HOME/nwaku-compose/keystore/keystore.json $HOME/nwaku_backups/keystore0.30/keystore.json
-  #   rm -rf $HOME/nwaku-compose/keystore/
-  # fi
+  mkdir -p $HOME/nwaku_backups
+  if [ -d "$HOME/nwaku_backups/keystore0.34" ]; then
+    echo -e "${GREEN}Бекап уже сделан${NC}"
+  else
+    echo -e "${YELLOW}Делаем бекап ключей${NC}"
+    mkdir -p $HOME/nwaku_backups/keystore0.34
+    cp $HOME/nwaku-compose/keystore/keystore.json $HOME/nwaku_backups/keystore0.34/keystore.json
+    rm -rf $HOME/nwaku-compose/keystore
+  fi
   
-  # rm -rf $HOME/nwaku-compose/rln_tree/ 
+  rm -rf $HOME/nwaku-compose/rln_tree
   cd $HOME/nwaku-compose
   git restore . &>/dev/null
   echo -e "${GREEN}Чистка завершена!${NC}"

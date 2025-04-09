@@ -34,11 +34,11 @@ if [[ -z "$IDENTIFIER" || -z "$PIN" ]]; then
 fi
 
 # Инфо: Сохраняем конфигурацию
-echo -e "${YELLOW}💾 Сохраняем конфигурацию...${NC}"
-sudo tee $CONFIG_FILE > /dev/null <<< "IDENTIFIER=$IDENTIFIER"
-sudo tee -a $CONFIG_FILE > /dev/null <<< "PIN=$PIN"
-sudo chmod 600 $CONFIG_FILE
-echo -e "${GREEN}✅ Конфигурация сохранена в $CONFIG_FILE${NC}"
+# echo -e "${YELLOW}💾 Сохраняем конфигурацию...${NC}"
+# sudo tee $CONFIG_FILE > /dev/null <<< "IDENTIFIER=$IDENTIFIER"
+# sudo tee -a $CONFIG_FILE > /dev/null <<< "PIN=$PIN"
+# sudo chmod 600 $CONFIG_FILE
+# echo -e "${GREEN}✅ Конфигурация сохранена в $CONFIG_FILE${NC}"
 
 # Создание monitor.sh
 echo -e "${YELLOW}📝 Создание файла мониторинга...${NC}"
@@ -51,15 +51,15 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 LOG_FILE="/root/multiple_service/monitor.log"
-CONFIG_FILE="/root/multiple_service/multiple_config"
+# CONFIG_FILE="/root/multiple_service/multiple_config"
 
 # Загружаем конфиг
-if [ -f "$CONFIG_FILE" ]; then
-    source "$CONFIG_FILE"
-else
-    echo -e "${RED}❌ Файл конфигурации не найден: $CONFIG_FILE${NC}"
-    exit 1
-fi
+# if [ -f "$CONFIG_FILE" ]; then
+   # source "$CONFIG_FILE"
+# else
+   # echo -e "${RED}❌ Файл конфигурации не найден: $CONFIG_FILE${NC}"
+   # exit 1
+# fi
 
 while true; do
     STATUS_OUTPUT=$(/root/multipleforlinux/multiple-cli status)

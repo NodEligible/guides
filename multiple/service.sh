@@ -56,12 +56,12 @@ LOG_FILE="/root/multiple_service/monitor.log"
 while true; do
     STATUS_OUTPUT=\$(/root/multipleforlinux/multiple-cli status)
     if echo "\$STATUS_OUTPUT" | grep -q " :False"; then
-        echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) [⛔️ ERROR] ${RED} Узел не привязан к сети.${NC}" | tee -a "$LOG_FILE"
+        echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) [⛔️ ERROR] ${RED}Нода${NC} Multiple ${RED}не привязан к сети.${NC}" | tee -a "$LOG_FILE"
         /root/multipleforlinux/multiple-cli bind --bandwidth-download 100 --identifier "${IDENTIFIER}" --pin "${PIN}" --storage 200 --bandwidth-upload 100
         sllep 4
         echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) [🔄 WAIT] Ожидание 5 минут до следующей проверки..." | tee -a "$LOG_FILE"
     else
-        echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) [✅ STATUS] ${GREEN} Узел привязан к сети.${NC}" | tee -a "$LOG_FILE"
+        echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) [✅ STATUS] ${GREEN}Нода${NC} Multiple ${GREEN}привязана к сети.${NC}" | tee -a "$LOG_FILE"
     fi
     sleep 300
 done

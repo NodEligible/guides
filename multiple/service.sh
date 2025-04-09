@@ -54,7 +54,7 @@ LOG_FILE="/root/multiple_service/monitor.log"
 # CONFIG_FILE="/root/multiple_service/multiple_config"
 
 while true; do
-    STATUS_OUTPUT=$(/root/multipleforlinux/multiple-cli status)
+    STATUS_OUTPUT=\$(/root/multipleforlinux/multiple-cli status)
     if echo "$STATUS_OUTPUT" | grep -q " :False"; then
         echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) ⛔️ ${RED} Узел не запущен. Выполнение команды bind...${NC}" | tee -a "$LOG_FILE"
         /root/multipleforlinux/multiple-cli bind --bandwidth-download 100 --identifier "${IDENTIFIER}" --pin "${PIN}" --storage 200 --bandwidth-upload 100

@@ -54,12 +54,14 @@ LOG_FILE="/root/multiple_service/monitor.log"
 # CONFIG_FILE="/root/multiple_service/multiple_config"
 
 # Загружаем конфиг
-# if [ -f "$CONFIG_FILE" ]; then
-   # source "$CONFIG_FILE"
-# else
-   # echo -e "${RED}❌ Файл конфигурации не найден: $CONFIG_FILE${NC}"
-   # exit 1
-# fi
+IDENTIFIER="$1"
+PIN="$2"
+
+if [[ -z "$IDENTIFIER" || -z "$PIN" ]]; then
+    echo -e "${RED}❌ Ошибка: параметры не переданы!${NC}" | tee -a "$LOG_FILE"
+    exit 1
+fi
+
 
 while true; do
     STATUS_OUTPUT=$(/root/multipleforlinux/multiple-cli status)
@@ -86,7 +88,7 @@ After=network.target
 
 [Service]
 User=root
-ExecStart=/bin/bash $INSTALL_DIR/monitor.sh
+ExecStart=/bin/bash $INSTALL_DIR/monitor.sh "$IDENTIFIER" "$PIN"
 Restart=always
 RestartSec=10
 

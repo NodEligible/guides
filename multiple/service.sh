@@ -13,7 +13,7 @@ INSTALL_DIR="/root/multiple_service"
 echo -e "${YELLOW}📁 Создание папки $INSTALL_DIR...${NC}"
 mkdir -p "$INSTALL_DIR"
 
-CONFIG_FILE="$INSTALL_DIR/multiple_config"
+# CONFIG_FILE="$INSTALL_DIR/multiple_config"
 LOG_FILE="$INSTALL_DIR/monitor.log"
 
 # Создаем лог-файл

@@ -7,34 +7,34 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-  echo -e "${YELLOW}Установка Main...${NC}"
-  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
-  if [ $? -eq 0 ]; then
-      echo -e "${GREEN}Main успешно установлен!${NC}"
-  else
-      echo -e "${RED}Ошибка при установке Main!${NC}"
-  fi
+echo -e "${YELLOW}📥 Установка Main...${NC}"
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
+if [ $? -eq 0 ]; then
+    echo -e "${GREEN}✅ Main успешно установлен!${NC}"
+else
+    echo -e "${RED}❌ Ошибка при установке Main!${NC}"
+fi
 
-    echo -e "${YELLOW}Установка Ufw...${NC}" 
-  bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
-  if [ $? -eq 0 ]; then
-      echo -e "${GREEN}Ufw успешно установлено!${NC}"
-  else
-      echo -e "${RED}Ошибка при установке Ufw!${NC}"
-  fi
+echo -e "${YELLOW}📥 Установка Ufw...${NC}" 
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh)
+if [ $? -eq 0 ]; then
+    echo -e "${GREEN}✅ Ufw успешно установлено!${NC}"
+else
+    echo -e "${RED}❌ Ошибка при установке Ufw!${NC}"
+fi
 
   # create bash_profile if it doesn't exist
 [ -f ~/.bash_profile ] || touch ~/.bash_profile
 
-# Ollama
-echo "Ставим Ollama..."
-curl -fsSL https://ollama.com/install.sh | sh &>/dev/null
-echo "Установка Ollama завершена"
-echo ""
 
-echo "Ставим Dria..."
+echo -e "${YELLOW}📥 Установка Ollama...${NC}"
+curl -fsSL https://ollama.com/install.sh | sh 
+echo -e "${GREEN}✅ Установка Ollama завершена!${NC}"
+
+
+echo -e "${YELLOW}🚀 Установка Dria...${NC}"
 cd $HOME
-curl -fsSL https://dria.co/launcher | bash &>/dev/null
+curl -fsSL https://dria.co/launcher | bash 
 
 # создаем сам сервис в системе
 SERVICE_NAME="dria.service"
@@ -55,7 +55,7 @@ if systemctl list-units --type=service --all | grep -q "$SERVICE_NAME"; then
     fi
     > "$ERROR_LOG_FILE"
     sudo systemctl daemon-reload
-    echo "Существующий $SERVICE_NAME удален."
+    echo -e "${YELLOW}🛑 Сервис $SERVICE_NAME уже есть по этому удаляем и устанавливаем новый.${NC}"
 fi
 
 
@@ -82,7 +82,7 @@ EOF
 # Reload systemd, enable and start the service
 sudo systemctl daemon-reload
 sudo systemctl enable dria.service
-echo "Установка Dria завершена"
-echo ""
+
 source ~/.bash_profile
 dkn-compute-launcher start
+echo -e "${GREEN}🚀 Установка завершена!${NC}"

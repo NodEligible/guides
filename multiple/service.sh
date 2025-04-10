@@ -7,7 +7,7 @@ curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/d
 YELLOW='\e[0;33m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
-BLUE='\033[0;34m'
+BLUE='\033[38;5;81m'
 NC='\033[0m'
 
 INSTALL_DIR="/root/multiple_service"
@@ -49,7 +49,7 @@ cat <<EOF > "$INSTALL_DIR/monitor.sh"
 YELLOW='\e[0;33m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
-BLUE='\033[0;34m'
+BLUE='\033[38;5;81m'
 NC='\033[0m'
 
 LOG_FILE="/root/multiple_service/monitor.log"

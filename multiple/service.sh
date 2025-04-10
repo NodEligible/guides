@@ -48,6 +48,7 @@ cat <<EOF > "$INSTALL_DIR/monitor.sh"
 YELLOW='\e[0;33m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
+BLUE='\033[0;34m'
 NC='\033[0m'
 
 LOG_FILE="/root/multiple_service/monitor.log"
@@ -59,7 +60,7 @@ while true; do
         echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) [⛔️ ERROR] ${RED}Нода${NC} Multiple ${RED}не привязана к сети.${NC}" | tee -a "$LOG_FILE"
         /root/multipleforlinux/multiple-cli bind --bandwidth-download 100 --identifier "${IDENTIFIER}" --pin "${PIN}" --storage 200 --bandwidth-upload 100
         sllep 2
-        echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) [🔄 WAIT]Привязка запущена ожидайте 5 минут до следующей проверки..." | tee -a "$LOG_FILE"
+        echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) [🔄 WAIT]${BLUE}Привязка запущена ожидайте${NC} 5 ${BLUE}минут до следующей проверки...${NC}" | tee -a "$LOG_FILE"
     else
         echo -e "$({ date '+%Y-%m-%d %H:%M:%S'; }) [✅ STATUS] ${GREEN}Нода${NC} Multiple ${GREEN}привязана к сети.${NC}" | tee -a "$LOG_FILE"
     fi

@@ -10,7 +10,8 @@ NC='\033[0m'
 echo -e "${YELLOW}Останавливаем ноду и запускаем обновление...${NC}"
 sudo systemctl stop gensyn.service
 cd $HOME/rl-swarm
-git pull
+git reset --hard HEAD
+git pull --rebase
 
 echo -e "${YELLOW}Запускаем ноду...${NC}"
 sudo systemctl start gensyn.service

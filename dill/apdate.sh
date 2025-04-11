@@ -42,7 +42,8 @@ cd $HOME
 
 wget https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/upgrade.sh -O $HOME/upgrade.sh
 chmod +x upgrade.sh
-sed -i 's|\./$DILL_DIR/1_start_dill_node\.sh| |' "$HOME/upgrade.sh"
+DILL_DIR="$HOME/dill"
+sed -i "s|\./$DILL_DIR/1_start_dill_node.sh| |" "$HOME/upgrade.sh"
 ./upgrade.sh &>/dev/null
 rm -rf $HOME/upgrade.sh
 

@@ -64,10 +64,17 @@ sed -i 's|exec-http.port 8545 tcp|exec-http.port 8945 tcp|' "$HOME/dill/default_
 sed -i 's|exec-port 30303 tcp|exec-port 30305 tcp|g; s|exec-port 30303 udp|exec-port 30305 udp|g' "$HOME/dill/default_ports.txt"
 
 # Замінюємо старий запуск на виклик dill_service.sh з параметрами
-sed -i 's|nohup \$PJROOT/\$NODE_BIN \$COMMON_FLAGS \$DISCOVERY_FLAGS \$VALIDATOR_FLAGS \$PORT_FLAGS > /dev/null 2>&1 &|\$PJROOT/dill_service.sh "\$PJROOT/\$NODE_BIN \$COMMON_FLAGS \$DISCOVERY_FLAGS \$VALIDATOR_FLAGS \$PORT_FLAGS"|' "$HOME/dill/start_dill_node.sh"
+sed -i 's|nohup \$PJROOT/\$NODE_BIN \$COMMON_FLAGS \$DISCOVERY_FLAGS \$VALIDATOR_FLAGS \$PORT_FLAGS > /dev/null 2>&1 &|\$PJROOT/dill_service.sh "\$PJROOT/\$NODE_BIN \$COMMON_FLAGS \$DISCOVERY_FLAGS \$VALIDATOR_FLAGS \$PORT_FLAGS"|' "root/dill/start_dill_node.sh"
 
 # Перезапускаємо ноду через systemd
+# 8. Перезапускаємо ноду через systemd
+echo -e "${YELLOW}🔁 Перезапускаємо Dill через systemd...${NC}"
 sudo systemctl daemon-reload
-sudo systemctl restart dill
+
+if sudo systemctl restart dill; then
+  echo -e "${GREEN}✅ Dill нода успішно оновлена та перезапущена!${NC}"
+else
+  echo -e "${RED}❌ Помилка під час перезапуску Dill. Перевір: journalctl -u dill -e${NC}"
+fi
 
 echo -e "${GREEN}Обновление завершено!${NC}"

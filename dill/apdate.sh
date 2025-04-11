@@ -45,7 +45,7 @@ wget https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/upgrade.sh
 chmod +x upgrade.sh
 
 # Видаляємо запуск 1_start_dill_node.sh, якщо він там є
-sed -i '/1_start_dill_node.sh/d' "$HOME/upgrade.sh"
+sed -i '/1_launch_dill_node.sh/d' "$HOME/upgrade.sh"
 
 # Запускаємо оновлення
 bash ./upgrade.sh

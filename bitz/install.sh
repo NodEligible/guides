@@ -58,9 +58,14 @@ solana-keygen new
 
 sleep 3
 
+# curl https://sh.rustup.rs -sSf | sh
+
+
+cargo install bitz
+
+
 echo -e "${YELLOW}Ваш приватный ключ${NC}"
 cat $HOME/.config/solana/id.json
-
 
 
 

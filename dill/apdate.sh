@@ -21,20 +21,18 @@ fi
 
 echo -e "${YELLOW}Обновляем Dill${NC}"
 cd $HOME
-
-# Завантажуємо скрипт оновлення Dill
 wget https://raw.githubusercontent.com/DillLabs/launch-dill-node/main/upgrade.sh -O $HOME/upgrade.sh
 chmod +x upgrade.sh
 sed -i 's|\./start_dill_node\.sh| |' "$HOME/upgrade.sh"
-bash ./upgrade.sh
-rm -f $HOME/upgrade.sh
+./upgrade.sh &>/dev/null
+rm -rf $HOME/upgrade.sh
 
-# Качаем скрипт с сервисником
+# Качаем скрипт для запуска через сервис
 cd $HOME/dill
-curl -sO https://raw.githubusercontent.com/NodEligible/guides/main/dill/dill_service.sh
+curl -sO https://raw.githubusercontent.com/DOUBLE-TOP/guides/main/dill/dill_service.sh
 chmod +x dill_service.sh
 
-# Заменяем порты 
+# Меняем дефолтные порты
 sed -i 's|monitoring-port  9080 tcp|monitoring-port  8380 tcp|' "$HOME/dill/default_ports.txt"
 sed -i 's|exec-http.port 8545 tcp|exec-http.port 8945 tcp|' "$HOME/dill/default_ports.txt"
 sed -i 's|exec-port 30303 tcp|exec-port 30305 tcp|g; s|exec-port 30303 udp|exec-port 30305 udp|g' "$HOME/dill/default_ports.txt"
@@ -42,7 +40,7 @@ sed -i 's|exec-port 30303 tcp|exec-port 30305 tcp|g; s|exec-port 30303 udp|exec-
 # Заменяем нохап запуск на создание сервисника
 sed -i 's|nohup \$PJROOT/\$NODE_BIN \$COMMON_FLAGS \$DISCOVERY_FLAGS \$VALIDATOR_FLAGS \$PORT_FLAGS > /dev/null 2>&1 &|\$PJROOT/dill_service.sh \"\$PJROOT/\$NODE_BIN \$COMMON_FLAGS \$DISCOVERY_FLAGS \$VALIDATOR_FLAGS \$PORT_FLAGS\"|' "$HOME/dill/start_dill_node.sh"
 
-# Запускаем скрипт по запуску ноды
+# Запускаем скрипт для старта ноды
 bash $HOME/dill/start_dill_node.sh
 
 echo -e "${GREEN}Обновление завершено!${NC}"

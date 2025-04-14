@@ -9,7 +9,10 @@ NC='\033[0m'
 
 echo -e "${YELLOW}📝 Создание systemd-сервиса...${NC}"
 
-cat <<EOF > "/etc/systemd/system/bitz.service"
+# Створюємо директорію для логів
+mkdir -p $HOME/bitz_service
+
+cat <<EOF | sudo tee /etc/systemd/system/bitz.service > /dev/null
 [Unit]
 Description=Bitz Collect Miner Service
 After=network.target
@@ -20,11 +23,12 @@ ExecStart=/root/.cargo/bin/bitz collect --cores 4
 Restart=always
 RestartSec=10
 LimitNOFILE=65535
+StandardOutput=append:$HOME/bitz_service/bitz.log
+StandardError=append:$HOME/bitz_service/bitz.log
 
 [Install]
 WantedBy=multi-user.target
 EOF
-
 
 sudo systemctl enable bitz
 sudo systemctl daemon-reload

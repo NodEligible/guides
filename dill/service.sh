@@ -9,13 +9,13 @@ echo -e "${YELLOW}📝 Создание systemd-сервиса...${NC}"
 
 cat <<EOF | sudo tee /etc/systemd/system/dill.service > /dev/null
 [Unit]
-Description=Dill node
+Description=Dill node (via nohup)
 After=network-online.target
 
 [Service]
 User=root
 WorkingDirectory=/root/dill
-ExecStart=/root/dill/start_dill_node.sh
+ExecStart=/bin/bash -c '/root/dill/start_dill_node.sh && tail -f /dev/null'
 Restart=always
 RestartSec=10
 LimitNOFILE=65535

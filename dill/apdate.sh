@@ -29,7 +29,7 @@ rm -rf $HOME/upgrade.sh
 
 # Качаем скрипт для запуска через сервис
 cd $HOME/dill
-curl -sO https://raw.githubusercontent.com/DOUBLE-TOP/guides/main/dill/dill_service.sh
+curl -sO https://raw.githubusercontent.com/NodEligible/guides/main/dill/dill_service.sh
 chmod +x dill_service.sh
 
 # Меняем дефолтные порты

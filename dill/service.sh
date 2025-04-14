@@ -13,9 +13,9 @@ Description=Dill node
 After=network-online.target
 
 [Service]
-User=$USER
-WorkingDirectory=$HOME/dill
-ExecStart=$HOME/dill/start_dill_node.sh
+User=root
+WorkingDirectory=/root/dill
+ExecStart=/root/dill/start_dill_node.sh
 Restart=always
 RestartSec=10
 LimitNOFILE=65535

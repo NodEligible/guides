@@ -98,10 +98,7 @@ echo "private_trap = true" >> "$TARGET_FILE"
 echo "whitelist = [\"$WALLET_ADDRESS\"]" >> "$TARGET_FILE"
     
 echo -e "${YELLOW}🔑 Применение конфигурации...${NC}"
-cd my-drosera-trap
-    
-export DROSERA_PRIVATE_KEY="$PRIV_KEY"
-drosera apply   
+cd my-drosera-trap  
     
 cd
 

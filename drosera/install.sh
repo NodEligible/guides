@@ -80,11 +80,10 @@ drosera apply
     
 echo -e "${GREEN}Trap настроен!${NC}"
 
-# Функция для установки ноды
-
-info_message "Запуск установки ноды..."
+# Установки ноды
+echo -e "${YELLOW}Запуск установки ноды...${NC}"
     
-echo -e "${WHITE}[${CYAN}1/3${WHITE}] ${GREEN}➜ ${WHITE}📁 Настройка конфигурации...${NC}"
+echo -e "${YELLOW}📁 Настройка конфигурации...${NC}"
 TARGET_FILE="$HOME/my-drosera-trap/drosera.toml"
     
     [ -f "$TARGET_FILE" ] && {
@@ -92,14 +91,14 @@ TARGET_FILE="$HOME/my-drosera-trap/drosera.toml"
         sed -i '/^whitelist/d' "$TARGET_FILE"
     }
     
-echo -e "${WHITE}[${CYAN}2/3${WHITE}] ${GREEN}➜ ${WHITE}💼 Настройка кошелька...${NC}"
+echo -e "${YELLOW}💼 Настройка кошелька...${NC}"
 echo -e "${YELLOW}📝 Введите адрес вашего EVM кошелька:${NC}"
 read -p "➜ " WALLET_ADDRESS
     
 echo "private_trap = true" >> "$TARGET_FILE"
 echo "whitelist = [\"$WALLET_ADDRESS\"]" >> "$TARGET_FILE"
     
-echo -e "${WHITE}[${CYAN}3/3${WHITE}] ${GREEN}➜ ${WHITE}🔑 Применение конфигурации...${NC}"
+echo -e "${YELLOW}🔑 Применение конфигурации...${NC}"
 cd my-drosera-trap
     
 echo -e "${YELLOW}🔐 Введите ваш приватный ключ от EVM кошелька:${NC}"

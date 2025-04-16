@@ -100,13 +100,8 @@ echo "whitelist = [\"$WALLET_ADDRESS\"]" >> "$TARGET_FILE"
 echo -e "${YELLOW}🔑 Применение конфигурации...${NC}"
 cd my-drosera-trap
     
-echo -e "${BLUE}🔐 Введите ваш приватный ключ от EVM кошелька:${NC}"
-read -p "➜ " PRIV_KEY
-    
 export DROSERA_PRIVATE_KEY="$PRIV_KEY"
-drosera apply
-    
-success_message "Нода успешно установлена!"
+drosera apply   
     
 cd
 
@@ -118,10 +113,6 @@ cd ~
 curl -LO https://github.com/drosera-network/releases/releases/download/v1.16.2/drosera-operator-v1.16.2-x86_64-unknown-linux-gnu.tar.gz
 tar -xvf drosera-operator-v1.16.2-x86_64-unknown-linux-gnu.tar.gz
 sudo cp drosera-operator /usr/bin
-    
-echo -e "${YELLOW}🔑 Регистрация оператора...${NC}"
-echo -e "${YELLOW}🔐 Введите ваш приватный ключ от EVM кошелька:${NC}"
-read -p "➜ " PRIV_KEY
     
 export DROSERA_PRIVATE_KEY="$PRIV_KEY"
 drosera-operator register --eth-rpc-url https://ethereum-holesky-rpc.publicnode.com --eth-private-key $DROSERA_PRIVATE_KEY

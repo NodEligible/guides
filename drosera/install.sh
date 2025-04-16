@@ -91,8 +91,7 @@ TARGET_FILE="$HOME/my-drosera-trap/drosera.toml"
         sed -i '/^whitelist/d' "$TARGET_FILE"
     }
     
-echo -e "${YELLOW}💼 Настройка кошелька...${NC}"
-echo -e "${YELLOW}📝 Введите адрес вашего EVM кошелька:${NC}"
+echo -e "${BLUE}📝 Введите адрес вашего EVM кошелька:${NC}"
 read -p "➜ " WALLET_ADDRESS
     
 echo "private_trap = true" >> "$TARGET_FILE"
@@ -101,7 +100,7 @@ echo "whitelist = [\"$WALLET_ADDRESS\"]" >> "$TARGET_FILE"
 echo -e "${YELLOW}🔑 Применение конфигурации...${NC}"
 cd my-drosera-trap
     
-echo -e "${YELLOW}🔐 Введите ваш приватный ключ от EVM кошелька:${NC}"
+echo -e "${BLUE}🔐 Введите ваш приватный ключ от EVM кошелька:${NC}"
 read -p "➜ " PRIV_KEY
     
 export DROSERA_PRIVATE_KEY="$PRIV_KEY"

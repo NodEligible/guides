@@ -27,20 +27,32 @@ sed -i 's|\./start_dill_node\.sh| |' "$HOME/upgrade.sh"
 ./upgrade.sh 
 rm -rf $HOME/upgrade.sh
 
-# Качаем скрипт для запуска через сервис
-cd $HOME/dill
-curl -sO https://raw.githubusercontent.com/NodEligible/guides/main/dill/dill_service.sh
-chmod +x dill_service.sh
-
 # Меняем дефолтные порты
 sed -i 's|monitoring-port  9080 tcp|monitoring-port  8380 tcp|' "$HOME/dill/default_ports.txt"
 sed -i 's|exec-http.port 8545 tcp|exec-http.port 8945 tcp|' "$HOME/dill/default_ports.txt"
 sed -i 's|exec-port 30303 tcp|exec-port 30305 tcp|g; s|exec-port 30303 udp|exec-port 30305 udp|g' "$HOME/dill/default_ports.txt"
 
-# Заменяем нохап запуск на создание сервисника
-sed -i 's|nohup \$PJROOT/\$NODE_BIN \$COMMON_FLAGS \$DISCOVERY_FLAGS \$VALIDATOR_FLAGS \$PORT_FLAGS > /dev/null 2>&1 &|\$PJROOT/dill_service.sh \"\$PJROOT/\$NODE_BIN \$COMMON_FLAGS \$DISCOVERY_FLAGS \$VALIDATOR_FLAGS \$PORT_FLAGS\"|' "$HOME/dill/start_dill_node.sh"
+echo -e "${YELLOW}📝 Создание systemd-сервиса...${NC}"
 
-# Запускаем скрипт для старта ноды
-bash $HOME/dill/start_dill_node.sh
+cat <<EOF | sudo tee /etc/systemd/system/dill.service > /dev/null
+[Unit]
+Description=Dill node (via nohup)
+After=network-online.target
+
+[Service]
+User=root
+WorkingDirectory=/root/dill
+ExecStart=/bin/bash -c '/root/dill/start_dill_node.sh && tail -f /dev/null'
+Restart=always
+RestartSec=10
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl enable dill
+sudo systemctl daemon-reload
+sudo systemctl start dill
 
 echo -e "${GREEN}Обновление завершено!${NC}"

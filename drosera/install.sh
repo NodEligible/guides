@@ -8,6 +8,19 @@ RED='\033[0;31m'
 BLUE='\033[38;5;81m'
 NC='\033[0m'
 
+echo -e "${YELLOW}⚙️ Запрос данных пользователя...${NC}"
+echo -e "${BLUE}📧 Введите вашу Github почту:${NC}"
+read -p "➜ " GITHUB_EMAIL
+    
+echo -e "${BLUE}👤 Введите ваш Github юзернейм:${NC}"
+read -p "➜ " GITHUB_USERNAME
+
+echo -e "${BLUE}🔐 Введите ваш приватный ключ от EVM кошелька:${NC}"
+read -p "➜ " PRIV_KEY
+
+echo -e "${BLUE}📝 Введите адрес вашего EVM кошелька:${NC}"
+read -p "➜ " WALLET_ADDRESS
+
 
 # Проверка наличия curl и установка, если не установлен
 echo -e "${YELLOW}Проверка наличия curl и установка, если не установлен...${NC}" 
@@ -44,8 +57,7 @@ for port in 31313 31314; do
     echo -e "${GREEN}Порт $port уже открыт.${NC}"
   fi
 done
-
-    
+  
 # Функция для деплоя Trap
 echo -e "${YELLOW}Настройка деплой Trap...${NC}"
     
@@ -57,13 +69,6 @@ echo -e "${YELLOW}📂 Создание директории...${NC}"
 mkdir my-drosera-trap
 cd my-drosera-trap
     
-echo -e "${YELLOW}⚙️ Запрос данных пользователя...${NC}"
-echo -e "${BLUE}📧 Введите вашу Github почту:${NC}"
-read -p "➜ " GITHUB_EMAIL
-    
-echo -e "${BLUE}👤 Введите ваш Github юзернейм:${NC}"
-read -p "➜ " GITHUB_USERNAME
-    
 git config --global user.email "$GITHUB_EMAIL"
 git config --global user.name "$GITHUB_USERNAME"
     
@@ -71,9 +76,6 @@ echo -e "${YELLOW}🛠️ Инициализация проекта...${NC}"
 forge init -t drosera-network/trap-foundry-template
 bun install
 forge build
-    
-echo -e "${BLUE}🔐 Введите ваш приватный ключ от EVM кошелька:${NC}"
-read -p "➜ " PRIV_KEY
     
 export DROSERA_PRIVATE_KEY="$PRIV_KEY"
 drosera apply
@@ -90,9 +92,6 @@ TARGET_FILE="$HOME/my-drosera-trap/drosera.toml"
         sed -i '/^private_trap/d' "$TARGET_FILE"
         sed -i '/^whitelist/d' "$TARGET_FILE"
     }
-    
-echo -e "${BLUE}📝 Введите адрес вашего EVM кошелька:${NC}"
-read -p "➜ " WALLET_ADDRESS
     
 echo "private_trap = true" >> "$TARGET_FILE"
 echo "whitelist = [\"$WALLET_ADDRESS\"]" >> "$TARGET_FILE"

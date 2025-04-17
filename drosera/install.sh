@@ -25,10 +25,10 @@ read -p "➜ " WALLET_ADDRESS
 echo -e "${YELLOW}Настройка портов...${NC}"
 for port in 31313 31314; do
   if ! ufw status | grep -qw "$port"; then
-    echo -e "${YELLOW}Открываем порт $port...${NC}"
+    echo -e "${YELLOW}Открываем порт${NC} $port..."
     ufw allow $port
   else
-    echo -e "${GREEN}Порт $port уже открыт.${NC}"
+    echo -e "${GREEN}Порт${NC} $port ${GREEN}уже открыт.${NC}"
   fi
 done
 

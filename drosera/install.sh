@@ -97,15 +97,14 @@ echo "private_trap = true" >> "$TARGET_FILE"
 echo "whitelist = [\"$WALLET_ADDRESS\"]" >> "$TARGET_FILE"
     
 echo -e "${YELLOW}🔑 Применение конфигурации...${NC}"
-cd my-drosera-trap  
-    
-cd
+cd my-drosera-trap     
     
 echo -e "${YELLOW}📥 Загрузка бинарных файлов...${NC}"
 cd ~
 curl -LO https://github.com/drosera-network/releases/releases/download/v1.16.2/drosera-operator-v1.16.2-x86_64-unknown-linux-gnu.tar.gz
 tar -xvf drosera-operator-v1.16.2-x86_64-unknown-linux-gnu.tar.gz
 sudo cp drosera-operator /usr/bin
+rm -f $HOME/drosera-operator-v1.16.2-x86_64-unknown-linux-gnu.tar.gz
     
 drosera-operator register --eth-rpc-url https://ethereum-holesky-rpc.publicnode.com --eth-private-key $DROSERA_PRIVATE_KEY
     

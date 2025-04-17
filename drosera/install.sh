@@ -86,6 +86,8 @@ forge init -t drosera-network/trap-foundry-template
 bun install
 forge build
 
+ln -sf /root/.drosera/bin/drosera /usr/local/bin/drosera
+
 export DROSERA_PRIVATE_KEY="$PRIV_KEY"
 drosera apply 
 echo -e "${GREEN}Trap настроен!${NC}"

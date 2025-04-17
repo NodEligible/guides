@@ -29,6 +29,8 @@ NC='\033[0m' # Сброс цвета
 # Бекап Dill
 sudo systemctl stop dill &>/dev/null
 
+kill -9 $(pgrep -f dill-node)
+
 cd $HOME
 mkdir -p dill_backups
 mkdir -p dill_backups/alps

@@ -77,9 +77,6 @@ forge init -t drosera-network/trap-foundry-template
 bun install
 forge build
     
-export DROSERA_PRIVATE_KEY="$PRIV_KEY"
-drosera apply
-    
 echo -e "${GREEN}Trap настроен!${NC}"
 
 # Установки ноды
@@ -103,7 +100,7 @@ tar -xvf drosera-operator-v1.16.2-x86_64-unknown-linux-gnu.tar.gz
 sudo cp drosera-operator /usr/bin
 rm -f $HOME/drosera-operator-v1.16.2-x86_64-unknown-linux-gnu.tar.gz
     
-drosera-operator register --eth-rpc-url https://ethereum-holesky-rpc.publicnode.com --eth-private-key $DROSERA_PRIVATE_KEY
+drosera-operator register --eth-rpc-url https://ethereum-holesky-rpc.publicnode.com --eth-private-key $PRIV_KEY
     
 echo -e "${YELLOW}⚙️ Создание сервиса...${NC}"
 SERVER_IP=$(curl -s https://api.ipify.org)
@@ -122,7 +119,7 @@ ExecStart=$(which drosera-operator) node --db-file-path \$HOME/.drosera.db --net
     --eth-rpc-url https://ethereum-holesky-rpc.publicnode.com \\
     --eth-backup-rpc-url https://1rpc.io/holesky \\
     --drosera-address 0xea08f7d533C2b9A62F40D5326214f39a8E3A32F8 \\
-    --eth-private-key $DROSERA_PRIVATE_KEY \\
+    --eth-private-key $PRIV_KEY \\
     --listen-address 0.0.0.0 \\
     --network-external-p2p-address $SERVER_IP \\
     --disable-dnr-confirmation true

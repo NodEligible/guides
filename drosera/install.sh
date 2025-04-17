@@ -110,7 +110,6 @@ curl -LO https://github.com/drosera-network/releases/releases/download/v1.16.2/d
 tar -xvf drosera-operator-v1.16.2-x86_64-unknown-linux-gnu.tar.gz
 sudo cp drosera-operator /usr/bin
     
-export DROSERA_PRIVATE_KEY="$PRIV_KEY"
 drosera-operator register --eth-rpc-url https://ethereum-holesky-rpc.publicnode.com --eth-private-key $DROSERA_PRIVATE_KEY
     
 echo -e "${YELLOW}⚙️ Создание сервиса...${NC}"

@@ -65,6 +65,9 @@ sed -i 's|$DILL_DIR/1_launch_dill_node.sh| |' "$HOME/dill.sh"
 ./dill.sh
 rm -rf $HOME/dill.sh
 
+# Принудительная остановка ноды
+kill -9 $(pgrep -f dill-node)
+
 # Заменяем порты 
 sed -i 's|monitoring-port  9080 tcp|monitoring-port  8380 tcp|' "$HOME/dill/default_ports.txt"
 sed -i 's|exec-http.port 8545 tcp|exec-http.port 8945 tcp|' "$HOME/dill/default_ports.txt"

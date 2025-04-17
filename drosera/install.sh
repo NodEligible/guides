@@ -125,6 +125,8 @@ echo "whitelist = [\"$WALLET_ADDRESS\"]" >> "$TARGET_FILE"
 export DROSERA_PRIVATE_KEY="$PRIV_KEY"
 drosera apply
 
+echo -e "${GREEN}Нода установлена${NC}"
+
 cd
 
 read -p "➡️  Нажмите Enter, чтобы продолжить..."

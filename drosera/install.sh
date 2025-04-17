@@ -62,6 +62,9 @@ done
 echo -e "${YELLOW}Настройка деплой Trap...${NC}"
     
 echo -e "${YELLOW}🔄 Обновление инструментов...${NC}"
+
+source /root/.bashrc
+
 droseraup
 foundryup
     

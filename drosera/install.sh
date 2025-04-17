@@ -21,6 +21,16 @@ read -p "➜ " PRIV_KEY
 echo -e "${BLUE}📝 Введите адрес вашего EVM кошелька:${NC}"
 read -p "➜ " WALLET_ADDRESS
 
+# Проверка и открытие портов
+echo -e "${YELLOW}Настройка портов...${NC}"
+for port in 31313 31314; do
+  if ! ufw status | grep -qw "$port"; then
+    echo -e "${YELLOW}Открываем порт $port...${NC}"
+    ufw allow $port
+  else
+    echo -e "${GREEN}Порт $port уже открыт.${NC}"
+  fi
+done
 
 # Проверка наличия curl и установка, если не установлен
 echo -e "${YELLOW}Проверка наличия curl и установка, если не установлен...${NC}" 
@@ -48,23 +58,10 @@ echo -e "${YELLOW}Установка дополнительных инструм
 curl -L https://app.drosera.io/install | bash
 curl -L https://foundry.paradigm.xyz | bash
 curl -fsSL https://bun.sh/install | bash
-    
-# Проверка и открытие портов
-echo -e "${YELLOW}Настройка портов...${NC}"
-for port in 31313 31314; do
-  if ! ufw status | grep -qw "$port"; then
-    echo -e "${YELLOW}Открываем порт $port...${NC}"
-    ufw allow $port
-  else
-    echo -e "${GREEN}Порт $port уже открыт.${NC}"
-  fi
-done
   
 # Функция для деплоя Trap
 echo -e "${YELLOW}Настройка деплой Trap...${NC}"
     
-echo -e "${YELLOW}🔄 Обновление инструментов...${NC}"
-
 source /root/.bashrc
 
 sleep 5

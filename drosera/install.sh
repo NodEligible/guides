@@ -42,6 +42,8 @@ echo -e "${YELLOW}Установка необходимых пакетов...${N
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt install curl ufw iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 
+sleep 5
+
 echo -e "${YELLOW}Установка дополнительных инструментов...${NC}"   
 curl -L https://app.drosera.io/install | bash
 curl -L https://foundry.paradigm.xyz | bash
@@ -64,6 +66,8 @@ echo -e "${YELLOW}Настройка деплой Trap...${NC}"
 echo -e "${YELLOW}🔄 Обновление инструментов...${NC}"
 
 source /root/.bashrc
+
+sleep 5
 
 droseraup
 foundryup

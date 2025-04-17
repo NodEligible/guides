@@ -64,6 +64,8 @@ echo -e "${YELLOW}Настройка деплой Trap...${NC}"
 
 ln -s /root/.drosera/bin/droseraup /usr/local/bin/droseraup
 ln -s /root/.foundry/bin/foundryup /usr/local/bin/foundryup
+ln -s /root/.foundry/bin/forge /usr/local/bin/forge
+ln -s /root/.bun/bin/bun /usr/local/bin/bun
     
 source /root/.bashrc
 

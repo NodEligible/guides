@@ -121,6 +121,13 @@ TARGET_FILE="$HOME/my-drosera-trap/drosera.toml"
     
 echo "private_trap = true" >> "$TARGET_FILE"
 echo "whitelist = [\"$WALLET_ADDRESS\"]" >> "$TARGET_FILE"
+
+export DROSERA_PRIVATE_KEY="$PRIV_KEY"
+drosera apply
+
+cd
+
+read -p "➡️  Нажмите Enter, чтобы продолжить..."
       
 echo -e "${YELLOW}📥 Загрузка бинарных файлов...${NC}"
 cd ~

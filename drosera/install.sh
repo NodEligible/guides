@@ -61,6 +61,9 @@ curl -fsSL https://bun.sh/install | bash
   
 # Функция для деплоя Trap
 echo -e "${YELLOW}Настройка деплой Trap...${NC}"
+
+ln -s /root/.drosera/bin/droseraup /usr/local/bin/droseraup
+ln -s /root/.foundry/bin/foundryup /usr/local/bin/foundryup
     
 source /root/.bashrc
 

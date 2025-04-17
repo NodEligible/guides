@@ -85,7 +85,9 @@ echo -e "${YELLOW}🛠️ Инициализация проекта...${NC}"
 forge init -t drosera-network/trap-foundry-template
 bun install
 forge build
- 
+
+export DROSERA_PRIVATE_KEY="$PRIV_KEY"
+drosera apply 
 echo -e "${GREEN}Trap настроен!${NC}"
 
 # -------------------------------------------------------------

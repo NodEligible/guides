@@ -15,11 +15,20 @@ read -p "➜ " GITHUB_EMAIL
 echo -e "${BLUE}👤 Введите ваш Github юзернейм:${NC}"
 read -p "➜ " GITHUB_USERNAME
 
-echo -e "${BLUE}🔐 Введите ваш приватный ключ от EVM кошелька:${NC}"
+echo -e "${BLUE}🔐 Введите ваш приватный ключ от EVM кошелька без 0x :${NC}"
 read -p "➜ " PRIV_KEY
 
 echo -e "${BLUE}📝 Введите адрес вашего EVM кошелька:${NC}"
 read -p "➜ " WALLET_ADDRESS
+
+echo -e "${BLUE}📡 Введите свой RPC адрес (или нажмите Enter  https://ethereum-holesky-rpc.publicnode.com):${NC}"
+read -p "➜ " new_rpc
+
+echo -e "${BLUE}⛓ Введите адресс вашей существующей Трапы (или нажмите Enter чтобы создать новую):${NC}"
+read -p "➜ " existing_trap
+
+# создаем файл .profile если его нет в системе
+[ -f /root/.profile ] || touch /root/.profile
 
 # Проверка и открытие портов
 echo -e "${YELLOW}Настройка портов...${NC}"
@@ -75,8 +84,8 @@ droseraup
 foundryup
     
 echo -e "${YELLOW}📂 Создание директории...${NC}"
-mkdir my-drosera-trap
-cd my-drosera-trap
+mkdir drosera
+cd drosera
     
 git config --global user.email "$GITHUB_EMAIL"
 git config --global user.name "$GITHUB_USERNAME"
@@ -88,31 +97,24 @@ forge build
 
 ln -sf /root/.drosera/bin/drosera /usr/local/bin/drosera
 
-export DROSERA_PRIVATE_KEY="$PRIV_KEY"
-drosera apply 
-echo -e "${GREEN}Trap настроен!${NC}"
+# Изменяем трапу если нужно
+if [ -n "$existing_trap" ]; then
+    echo -e "${GREEN}Вписали $existing_trap в файл drosera.toml${NC}"
+    echo "address = \"$existing_trap\"" >> drosera.toml
+else
+    echo -e "${YELLOW}Созадаем новую трапу.${NC}"
+fi
 
-# -------------------------------------------------------------
-delay_minutes=2
-total_seconds=$((delay_minutes * 60))
+# Меняем Rpc если нужно
+config_file=~/drosera/drosera.toml
+if [ -n "$new_rpc" ]; then
+    sed -i "s|^ethereum_rpc = \".*\"|ethereum_rpc = \"$new_rpc\"|" "$config_file"
+else
+    new_rpc="https://ethereum-holesky-rpc.publicnode.com"
+fi
 
-echo -e "\n⏳ Ожидание $delay_minutes минут..."
-
-for ((i=total_seconds; i>0; i--)); do
-    printf "\r⏱️  Осталось: %02d:%02d " $((i/60)) $((i%60))
-    sleep 1
-done
-
-echo -e "\n✅ Время вышло!"
-read -p "➡️  Нажмите Enter, чтобы продолжить..."
-
-# -------------------------------------------------------------
-
-# Установки ноды
-echo -e "${YELLOW}Запуск установки ноды...${NC}"
-    
 echo -e "${YELLOW}📁 Настройка конфигурации...${NC}"
-TARGET_FILE="$HOME/my-drosera-trap/drosera.toml"
+TARGET_FILE="$HOME/drosera/drosera.toml"
     
     [ -f "$TARGET_FILE" ] && {
         sed -i '/^private_trap/d' "$TARGET_FILE"
@@ -123,18 +125,28 @@ echo "private_trap = true" >> "$TARGET_FILE"
 echo "whitelist = [\"$WALLET_ADDRESS\"]" >> "$TARGET_FILE"
 
 export DROSERA_PRIVATE_KEY="$PRIV_KEY"
-drosera apply
+drosera apply 
 
-echo -e "${GREEN}Нода установлена${NC}"
+drosera dryrun
 
-cd
+echo -e "${GREEN}Trap настроен!${NC}"
 
 # -------------------------------------------------------------
+#delay_minutes=2
+#total_seconds=$((delay_minutes * 60))
 
+#echo -e "\n⏳ Ожидание $delay_minutes минут..."
+
+#for ((i=total_seconds; i>0; i--)); do
+#    printf "\r⏱️  Осталось: %02d:%02d " $((i/60)) $((i%60))
+#    sleep 1
+#done
+
+#echo -e "\n✅ Время вышло!"
 read -p "➡️  Нажмите Enter, чтобы продолжить..."
 
 # -------------------------------------------------------------
-      
+     
 echo -e "${YELLOW}📥 Загрузка бинарных файлов...${NC}"
 cd ~
 curl -LO https://github.com/drosera-network/releases/releases/download/v1.16.2/drosera-operator-v1.16.2-x86_64-unknown-linux-gnu.tar.gz
@@ -158,7 +170,7 @@ Restart=always
 RestartSec=15
 LimitNOFILE=65535
 ExecStart=$(which drosera-operator) node --db-file-path \$HOME/.drosera.db --network-p2p-port 31313 --server-port 31314 \\
-    --eth-rpc-url https://ethereum-holesky-rpc.publicnode.com \\
+    --eth-rpc-url $new_rpc \\
     --eth-backup-rpc-url https://1rpc.io/holesky \\
     --drosera-address 0xea08f7d533C2b9A62F40D5326214f39a8E3A32F8 \\
     --eth-private-key $PRIV_KEY \\

@@ -93,7 +93,7 @@ drosera apply
 echo -e "${GREEN}Trap настроен!${NC}"
 
 # -------------------------------------------------------------
-delay_minutes=15
+delay_minutes=2
 total_seconds=$((delay_minutes * 60))
 
 echo -e "\n⏳ Ожидание $delay_minutes минут..."
@@ -130,17 +130,7 @@ echo -e "${GREEN}Нода установлена${NC}"
 cd
 
 # -------------------------------------------------------------
-delay_minutes=2
-total_seconds=$((delay_minutes * 60))
 
-echo -e "\n⏳ Ожидание $delay_minutes минут..."
-
-for ((i=total_seconds; i>0; i--)); do
-    printf "\r⏱️  Осталось: %02d:%02d " $((i/60)) $((i%60))
-    sleep 1
-done
-
-echo -e "\n✅ Время вышло!"
 read -p "➡️  Нажмите Enter, чтобы продолжить..."
 
 # -------------------------------------------------------------

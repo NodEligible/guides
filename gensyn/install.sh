@@ -22,12 +22,43 @@ NC='\033[0m'
   else
       echo -e "${RED}Ошибка при установке Ufw!${NC}"
   fi
+  
+apt-get install python3 python3-pip python3-venv python3-dev -y 
+
+# Get the current Python version (major.minor format)
+current_version=$(python3 --version 2>&1 | awk '{print $2}')
+required_version="3.12"
+
+if [[ "$(echo -e "$current_version\n$required_version" | sort -V | head -n1)" != "$required_version" ]]; then
+    echo -e "${YELLOW}Версия Python ниже за 3.12. Устанавливаю Python 3.12...${NC}"
+    sudo apt install -y software-properties-common 
+    sudo add-apt-repository -y ppa:deadsnakes/ppa 
+    sudo apt update 
+    sudo apt install -y python3.12 python3.12-venv python3.12-dev 
+    sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 12
+    sudo update-alternatives --set python3 /usr/bin/python3.12
+    curl -sS https://bootstrap.pypa.io/get-pip.py | sudo python3.12 
+fi
+
+SERVICE_NAME="gensyn.service"
+if systemctl list-units --type=service --all | grep -q "$SERVICE_NAME"; then
+    echo -e "${YELLOW}Сервис gensyn активный, останавливаем...${NC}"
+    sudo systemctl stop "$SERVICE_NAME"
+    pkill next-server
+fi
 
 FOLDER="rl-swarm"
+PEM_FILE="swarm.pem"
+
+if [[ -f "$FOLDER/$PEM_FILE" ]]; then
+    echo -e "${YELLOW}Нашли файл${NC} $PEM_FILE ${YELLOW}в${NC} $FOLDER. ${YELLOW}Копирую в /root/...${NC}"
+    cp "$FOLDER/$PEM_FILE" /root/
+    echo -e "${YELLOW}Бекап${NC} $PEM_FILE ${YELLOW}сохранен - /root/${NC}$PEM_FILE.${NC}"
+fi
 
 if [ -d "$FOLDER" ]; then
-    echo -e "${RED}Ошибка: Папка '$FOLDER' уже существует. Удалите и перезапустите скрипт.${NC}" >&2
-    exit 1
+    echo -e "${YELLOW}Удаляем папку${NC} $FOLDER ${YELLOW}перед установкой.${NC}"
+    rm -rf "$FOLDER"
 fi
 
 # Check if Node.js is installed
@@ -40,17 +71,20 @@ fi
 # Get Node.js version
 NODE_VERSION=$(node -v 2>/dev/null | cut -d 'v' -f 2)
 
-# Check if the version is lower than 4.0.0
-if [[ -n "$NODE_VERSION" && $(echo -e "$NODE_VERSION\n18.0.0" | sort -V | head -n1) == "$NODE_VERSION" ]]; then
-    echo -e "${RED}Ошибка: Node.js version is lower than 18.0.0 ($NODE_VERSION). Обновите вручную.${NC}"
-    exit 1
+# Check if the version is lower than 20.18.0
+if [[ -n "$NODE_VERSION" && $(echo -e "$NODE_VERSION\n20.18.0" | sort -V | head -n1) == "$NODE_VERSION" ]]; then
+    echo -e "${RED}Версия NodeJS ниже 20.18.0 ($NODE_VERSION).${NC} ${YELLOW}Обновляем...${NC}"
+    curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - >/dev/null 2>&1
+    sudo apt install -y nodejs
+    echo -e "${GREEN}NodeJS обновлена: ${NC}"
+    node -v
 fi
 
-echo -e "${GREEN}Node.js версия $NODE_VERSION. Продолжаем...${NC}"
+echo -e "${GREEN}Node.js версия${NC}  $NODE_VERSION. ${YELLOW}Продолжаем установку...${NC}"
 
 #preinstall yarn, so its properly registered in ~/profile
 if ! command -v yarn >/dev/null 2>&1; then
-      echo -e "${YELLOW}Yarn не установлен. Устанавливаем...${NC}"
+      echo -e "${RED}Yarn не установлен.${NC} ${YELLOW}Устанавливаем...${NC}"
       curl -o- -L https://yarnpkg.com/install.sh 2>/dev/null | sh >/dev/null 2>&1
       echo 'export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"' >> ~/.profile
       source ~/.profile
@@ -58,8 +92,8 @@ fi
 
 echo -e "${YELLOW}Клонируем GIT проекта...${NC}"
 REPO_URL="https://github.com/gensyn-ai/rl-swarm.git"
-git clone "$REPO_URL" &>/dev/null
-cd rl-swarm || { echo -e "${RED}Не удалось войти в директорию rl-swarm${NC}"; exit 1; }
+git clone "$REPO_URL"
+cd rl-swarm || { echo "Failed to enter directory rl-swarm"; exit 1; }
 python3 -m venv .venv
 source .venv/bin/activate
 
@@ -74,15 +108,15 @@ export CONNECT_TO_TESTNET
 export ORG_ID
 export HF_HUB_DOWNLOAD_TIMEOUT=120  # 2 minutes
 
-#Check if public multi-address is given else set to default
+# Check if public multi-address is given else set to default
 DEFAULT_PUB_MULTI_ADDRS=""
 PUB_MULTI_ADDRS=${PUB_MULTI_ADDRS:-$DEFAULT_PUB_MULTI_ADDRS}
 
-#Check if peer multi-address is given else set to default
+# Check if peer multi-address is given else set to default
 DEFAULT_PEER_MULTI_ADDRS="/ip4/38.101.215.13/tcp/30002/p2p/QmQ2gEXoPJg6iMBSUFWGzAabS2VhnzuS782Y637hGjfsRJ" # gensyn coordinator node
 PEER_MULTI_ADDRS=${PEER_MULTI_ADDRS:-$DEFAULT_PEER_MULTI_ADDRS}
 
-#Check if host multi-address is given else set to default
+# Check if host multi-address is given else set to default
 DEFAULT_HOST_MULTI_ADDRS="/ip4/0.0.0.0/tcp/38331"
 HOST_MULTI_ADDRS=${HOST_MULTI_ADDRS:-$DEFAULT_HOST_MULTI_ADDRS}
 
@@ -91,17 +125,81 @@ HOST_MULTI_ADDRS=${HOST_MULTI_ADDRS:-$DEFAULT_HOST_MULTI_ADDRS}
 DEFAULT_IDENTITY_PATH="$ROOT"/swarm.pem
 IDENTITY_PATH=${IDENTITY_PATH:-$DEFAULT_IDENTITY_PATH}
 
+SMALL_SWARM_CONTRACT="0x69C6e1D608ec64885E7b185d39b04B491a71768C"
+BIG_SWARM_CONTRACT="0x6947c6E196a48B77eFa9331EC1E3e45f3Ee5Fd58"
+
+# Will ignore any visible GPUs if set.
+CPU_ONLY=${CPU_ONLY:-""}
+
+# Set if successfully parsed from modal-login/temp-data/userData.json.
+ORG_ID=${ORG_ID:-""}
+
+GREEN_TEXT="\033[32m"
+BLUE_TEXT="\033[34m"
+RESET_TEXT="\033[0m"
+
+echo_green() {
+    echo -e "$GREEN_TEXT$1$RESET_TEXT"
+}
+
+echo_blue() {
+    echo -e "$BLUE_TEXT$1$RESET_TEXT"
+}
+
+ROOT_DIR="$(cd $(dirname ${BASH_SOURCE[0]}) && pwd)"
+
+echo -e "\033[38;5;224m"
+cat << "EOF"
+    ██████  ██            ███████ ██     ██  █████  ██████  ███    ███
+    ██   ██ ██            ██      ██     ██ ██   ██ ██   ██ ████  ████
+    ██████  ██      █████ ███████ ██  █  ██ ███████ ██████  ██ ████ ██
+    ██   ██ ██                 ██ ██ ███ ██ ██   ██ ██   ██ ██  ██  ██
+    ██   ██ ███████       ███████  ███ ███  ██   ██ ██   ██ ██      ██
+
+    From Gensyn
+
+EOF
+
+while true; do
+    echo -en $GREEN_TEXT
+    read -p ">> К какому рою вы хотели бы присоединиться (Math (A) or Math Hard (B))? [A/b] " ab
+    echo -en $RESET_TEXT
+    ab=${ab:-A}  # Default to "A" if the user presses Enter
+    case $ab in
+        [Aa]*)  USE_BIG_SWARM=false && break ;;
+        [Bb]*)  USE_BIG_SWARM=true && break ;;
+        *)  echo ">>> Пожалуйста, ответьте A или B." ;;
+    esac
+done
+if [ "$USE_BIG_SWARM" = true ]; then
+    SWARM_CONTRACT="$BIG_SWARM_CONTRACT"
+else
+    SWARM_CONTRACT="$SMALL_SWARM_CONTRACT"
+fi
+
+while true; do
+    echo -en $GREEN_TEXT
+    read -p ">> Сколько параметров (в миллиардах)? [0.5, 1.5, 7, 32, 72] " pc
+    echo -en $RESET_TEXT
+    pc=${pc:-0.5}  # Default to "0.5" if the user presses Enter
+    case $pc in
+        0.5 | 1.5 | 7 | 32 | 72) PARAM_B=$pc && break ;;
+        *)  echo ">>> Please answer in [0.5, 1.5, 7, 32, 72]." ;;
+    esac
+done
+
 # rl-swarm code
     # run modal_login server
     cd modal-login
 
-    echo -e "${YELLOW}Запускаем yarn install просто ждите...${NC}"
-    yarn install &>/dev/null
-    yarn upgrade &>/dev/null
-    yarn add next@latest react react-dom &>/dev/null
-    yarn add viem@latest &>/dev/null
+    echo -e "${YELLOW}Запускаем yarn install...${NC}"
+    yarn install 
+    #yarn upgrade &>/dev/null
+    #yarn add next@latest react react-dom &>/dev/null
+    #yarn add viem@latest &>/dev/null
     yarn dev > /dev/null 2>&1 & # Run in background and suppress output
-   echo -e "${GREEN}yarn install запущен${NC}"
+    echo -e "${GREEN}yarn install запущен${NC}"
+
 
     echo -e "${YELLOW}Пожалуйста, войдите в систему, чтобы создать кошелек сервера Ethereum.${NC}"
     SERVER_PID=$!  # Store the process ID
@@ -117,34 +215,63 @@ IDENTITY_PATH=${IDENTITY_PATH:-$DEFAULT_IDENTITY_PATH}
     echo -e "${GREEN}Авторизировано.${NC}"
 
     ORG_ID=$(awk 'BEGIN { FS = "\"" } !/^[ \t]*[{}]/ { print $(NF - 1); exit }' modal-login/temp-data/userData.json)
-    echo "ORG_ID set to: $ORG_ID"
+    echo "Your ORG_ID is set to: $ORG_ID"
 
     # Function to clean up the server process
     cleanup() {
-        echo "Shutting down server..."
+        echo_green ">> Shutting down trainer..."
         kill $SERVER_PID
         rm -r modal-login/temp-data/*.json
         exit 0
     }
 
     # Set up trap to catch Ctrl+C and call cleanup
-    trap cleanup INT
+    #trap cleanup EXIT
+
+    echo -e "${YELLOW}Ждем активацию API ключа...${NC}"
+    while true; do
+        STATUS=$(curl -s "http://localhost:3000/api/get-api-key-status?orgId=$ORG_ID")
+        if [[ "$STATUS" == "activated" ]]; then
+           echo -e "${GREEN}API ключ активирован!${NC}"
+            break
+        else
+            echo -e "${YELLOW}Ждем активацию API ключа...${NC}"
+            sleep 5
+        fi
+    done
+    ENV_FILE="$ROOT"/modal-login/.env
+    sed -i "3s/.*/SMART_CONTRACT_ADDRESS=$SWARM_CONTRACT/" "$ENV_FILE"
+
+if [[ -f "/root/$PEM_FILE" ]]; then
+    echo -e "${YELLOW}Нашли бекап файла${NC} $PEM_FILE ${YELLOW}в /root/. Копирую в папку проекта${NC} $ROOT..."
+    cp "/root/$PEM_FILE" "$ROOT/"
+fi
 
 #lets go!
 echo -e "${YELLOW}Ставим python dependencies просто ждите...${NC}"
-pip install -r "$ROOT"/requirements-hivemind.txt > /dev/null
-pip install -r "$ROOT"/requirements.txt > /dev/null
+pip install --upgrade pip &>/dev/null
 
-if ! which nvidia-smi; then
-   #You don't have a NVIDIA GPU
-   CONFIG_PATH="$ROOT/hivemind_exp/configs/mac/grpo-qwen-2.5-0.5b-deepseek-r1.yaml"
-elif [ -n "$CPU_ONLY" ]; then
-   # ... or we don't want to use it
-   CONFIG_PATH="$ROOT/hivemind_exp/configs/mac/grpo-qwen-2.5-0.5b-deepseek-r1.yaml"
+if [ -n "$CPU_ONLY" ] || ! command -v nvidia-smi &> /dev/null; then
+    # CPU-only mode or no NVIDIA GPU found
+    pip install -r "$ROOT"/requirements-cpu.txt &>/dev/null
+    #pip install hf_xet &>/dev/null
+    CONFIG_PATH="$ROOT/hivemind_exp/configs/mac/grpo-qwen-2.5-0.5b-deepseek-r1.yaml" # TODO: Fix naming.
+    GAME="gsm8k"
 else
-   #NVIDIA GPU found
-   pip install -r "$ROOT"/requirements_gpu.txt > /dev/null
-   CONFIG_PATH="$ROOT/hivemind_exp/configs/gpu/grpo-qwen-2.5-0.5b-deepseek-r1.yaml"
+    # NVIDIA GPU found
+    pip install -r "$ROOT"/requirements-gpu.txt &>/dev/null
+    pip install flash-attn --no-build-isolation &>/dev/null
+
+    case "$PARAM_B" in
+        32 | 72) CONFIG_PATH="$ROOT/hivemind_exp/configs/gpu/grpo-qwen-2.5-${PARAM_B}b-bnb-4bit-deepseek-r1.yaml" && break ;;
+        0.5 | 1.5 | 7) CONFIG_PATH="$ROOT/hivemind_exp/configs/gpu/grpo-qwen-2.5-${PARAM_B}b-deepseek-r1.yaml" && break ;;
+        *)  echo ">>> Пожалуйста, ответьте in [0.5, 1.5, 7, 32, 72]." ;;
+    esac
+    if [ "$USE_BIG_SWARM" = true ]; then
+        GAME="dapo"
+    else
+        GAME="gsm8k"
+    fi
 fi
 
 echo -e "${GREEN}Готово!${NC}"
@@ -157,7 +284,7 @@ else
    case $yn in
       [Yy]* ) read -p "Введите свой токен доступа Hugging Face: " HUGGINGFACE_ACCESS_TOKEN;;
       [Nn]* ) HUGGINGFACE_ACCESS_TOKEN="None";;
-      * ) echo " Ответ не был дан, поэтому НИ ОДНА модель не будет отправлена ​​в Hugging Face Hub." && HUGGINGFACE_ACCESS_TOKEN="None";;
+      * ) echo ">>> Ответ не был дан, поэтому НИ ОДНА модель не будет отправлена ​​в Hugging Face Hub" && HUGGINGFACE_ACCESS_TOKEN="None";;
    esac
 fi
 
@@ -179,6 +306,8 @@ cd "\$FOLDER" || exit 1
 source /root/.profile
 source .venv/bin/activate
 
+pkill next-server
+
 cd modal-login
 yarn install
 yarn dev > /dev/null 2>&1 &
@@ -189,12 +318,16 @@ HUGGINGFACE_ACCESS_TOKEN="$HUGGINGFACE_ACCESS_TOKEN"
 IDENTITY_PATH="$IDENTITY_PATH"
 ORG_ID="$ORG_ID"
 CONFIG_PATH="$CONFIG_PATH"
+SWARM_CONTRACT="$SWARM_CONTRACT"
+GAME="$GAME"
 
     python -m hivemind_exp.gsm8k.train_single_gpu \
         --hf_token "$HUGGINGFACE_ACCESS_TOKEN" \
         --identity_path "$IDENTITY_PATH" \
         --modal_org_id "$ORG_ID" \
-        --config "$CONFIG_PATH"
+        --contract_address "$SWARM_CONTRACT" \
+        --config "$CONFIG_PATH" \
+        --game "$GAME"
 
 wait
 EOF
@@ -209,13 +342,7 @@ cd "\$FOLDER" || exit 1
 source /root/.profile
 source .venv/bin/activate
 
-if [ ! -f "$ROOT/modal-login//temp-data/userApiKey.json" ]; then
-    cp "$ROOT/userApiKey_backup.json" "$ROOT/modal-login//temp-data/userApiKey.json"
-fi
-
-if [ ! -f "$ROOT/modal-login//temp-data/userData.json" ]; then
-    cp "$ROOT/userData_backup.json" "$ROOT/modal-login//temp-data/userData.json"
-fi
+pkill next-server
 
 
 # Set parameters
@@ -225,15 +352,16 @@ CONFIG_PATH="$CONFIG_PATH"
 PUB_MULTI_ADDRS="$PUB_MULTI_ADDRS"
 PEER_MULTI_ADDRS="$PEER_MULTI_ADDRS"
 HOST_MULTI_ADDRS="$HOST_MULTI_ADDRS"
+GAME="$GAME"
 
-
-python -m hivemind_exp.gsm8k.train_single_gpu \
+    python -m hivemind_exp.gsm8k.train_single_gpu \
         --hf_token "$HUGGINGFACE_ACCESS_TOKEN" \
         --identity_path "$IDENTITY_PATH" \
         --public_maddr "$PUB_MULTI_ADDRS" \
-        --initial_peers "$PEER_MULTI_ADDRS"\
+        --initial_peers "$PEER_MULTI_ADDRS" \
         --host_maddr "$HOST_MULTI_ADDRS" \
-        --config "$CONFIG_PATH"
+        --config "$CONFIG_PATH" \
+        --game "$GAME"
 
 wait
 EOF

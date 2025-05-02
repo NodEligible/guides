@@ -192,7 +192,7 @@ done
     # run modal_login server
     cd modal-login
 
-    echo -e "${YELLOW}Запускаем yarn install просто ждите...${NC}"
+    echo -e "${YELLOW}Запускаем yarn install...${NC}"
     yarn install 
     #yarn upgrade &>/dev/null
     #yarn add next@latest react react-dom &>/dev/null

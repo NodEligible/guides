@@ -162,13 +162,13 @@ EOF
 
 while true; do
     echo -en $GREEN_TEXT
-    read -p ">> Which swarm would you like to join (Math (A) or Math Hard (B))? [A/b] " ab
+    read -p ">> К какому рою вы хотели бы присоединиться (Math (A) or Math Hard (B))? [A/b] " ab
     echo -en $RESET_TEXT
     ab=${ab:-A}  # Default to "A" if the user presses Enter
     case $ab in
         [Aa]*)  USE_BIG_SWARM=false && break ;;
         [Bb]*)  USE_BIG_SWARM=true && break ;;
-        *)  echo ">>> Please answer A or B." ;;
+        *)  echo ">>> Пожалуйста, ответьте A или B." ;;
     esac
 done
 if [ "$USE_BIG_SWARM" = true ]; then
@@ -179,7 +179,7 @@ fi
 
 while true; do
     echo -en $GREEN_TEXT
-    read -p ">> How many parameters (in billions)? [0.5, 1.5, 7, 32, 72] " pc
+    read -p ">> Сколько параметров (в миллиардах)? [0.5, 1.5, 7, 32, 72] " pc
     echo -en $RESET_TEXT
     pc=${pc:-0.5}  # Default to "0.5" if the user presses Enter
     case $pc in
@@ -192,17 +192,16 @@ done
     # run modal_login server
     cd modal-login
 
-    echo "Запускаем yarn install (ориентировочное время 2-5 мин)"
-    yarn install &>/dev/null
+    echo -e "${YELLOW}Запускаем yarn install просто ждите...${NC}"
+    yarn install 
     #yarn upgrade &>/dev/null
     #yarn add next@latest react react-dom &>/dev/null
     #yarn add viem@latest &>/dev/null
     yarn dev > /dev/null 2>&1 & # Run in background and suppress output
-    echo "Установка завершена"
-    echo "-----------------------------------------------------------------------------"
-    echo ""
+    echo -e "${GREEN}yarn install запущен${NC}"
 
-    echo "Please login to create an Ethereum Server Wallet"
+
+    echo -e "${YELLOW}Пожалуйста, войдите в систему, чтобы создать кошелек сервера Ethereum.${NC}"
     SERVER_PID=$!  # Store the process ID
     sleep 5
     #open http://localhost:3000
@@ -210,10 +209,10 @@ done
 
     # Wait until modal-login/temp-data/userData.json exists
     while [ ! -f "modal-login/temp-data/userData.json" ]; do
-        echo "Ждем авторизацию (localhost:3000)..."
+        echo -e "${YELLOW}Ждем авторизацию (localhost:3000)...${NC}"
         sleep 5  # Wait for 5 seconds before checking again
     done
-    echo "Авторизировано. Продолжаем..."
+    echo -e "${GREEN}Авторизировано.${NC}"
 
     ORG_ID=$(awk 'BEGIN { FS = "\"" } !/^[ \t]*[{}]/ { print $(NF - 1); exit }' modal-login/temp-data/userData.json)
     echo "Your ORG_ID is set to: $ORG_ID"
@@ -229,14 +228,14 @@ done
     # Set up trap to catch Ctrl+C and call cleanup
     #trap cleanup EXIT
 
-    echo "Ждем активацию API ключа..."
+    echo -e "${YELLOW}Ждем активацию API ключа...${NC}"
     while true; do
         STATUS=$(curl -s "http://localhost:3000/api/get-api-key-status?orgId=$ORG_ID")
         if [[ "$STATUS" == "activated" ]]; then
-            echo "API ключ активирован! Продолжаем..."
+           echo -e "${GREEN}API ключ активирован!${NC}"
             break
         else
-            echo "Ждем активацию API ключа..."
+            echo -e "${YELLOW}Ждем активацию API ключа...${NC}"
             sleep 5
         fi
     done
@@ -244,12 +243,12 @@ done
     sed -i "3s/.*/SMART_CONTRACT_ADDRESS=$SWARM_CONTRACT/" "$ENV_FILE"
 
 if [[ -f "/root/$PEM_FILE" ]]; then
-    echo "Нашли бекап файла $PEM_FILE в /root/. Копирую в папку проекта $ROOT..."
+    echo -e "${YELLOW}Нашли бекап файла${NC} $PEM_FILE ${YELLOW}в /root/. Копирую в папку проекта${NC} $ROOT..."
     cp "/root/$PEM_FILE" "$ROOT/"
 fi
 
 #lets go!
-echo "Ставим python dependencies (5-15 мин)..."
+echo -e "${YELLOW}Ставим python dependencies просто ждите...${NC}"
 pip install --upgrade pip &>/dev/null
 
 if [ -n "$CPU_ONLY" ] || ! command -v nvidia-smi &> /dev/null; then
@@ -266,7 +265,7 @@ else
     case "$PARAM_B" in
         32 | 72) CONFIG_PATH="$ROOT/hivemind_exp/configs/gpu/grpo-qwen-2.5-${PARAM_B}b-bnb-4bit-deepseek-r1.yaml" && break ;;
         0.5 | 1.5 | 7) CONFIG_PATH="$ROOT/hivemind_exp/configs/gpu/grpo-qwen-2.5-${PARAM_B}b-deepseek-r1.yaml" && break ;;
-        *)  echo ">>> Please answer in [0.5, 1.5, 7, 32, 72]." ;;
+        *)  echo ">>> Пожалуйста, ответьте in [0.5, 1.5, 7, 32, 72]." ;;
     esac
     if [ "$USE_BIG_SWARM" = true ]; then
         GAME="dapo"
@@ -275,28 +274,25 @@ else
     fi
 fi
 
-echo ">> Готово!"
-echo ""
-echo ""
+echo -e "${GREEN}Готово!${NC}"
 
 if [ -n "${HF_TOKEN}" ]; then # Check if HF_TOKEN is already set and use if so. Else give user a prompt to choose.
    HUGGINGFACE_ACCESS_TOKEN=${HF_TOKEN}
 else
-   read -p "Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N] " yn
+   read -p "Хотите ли вы перенести модели, которых вы обучаете в RL-рое, в Hugging Face Hub? [y/N] " yn
    yn=${yn:-N}  # Default to "N" if the user presses Enter
    case $yn in
-      [Yy]* ) read -p "Enter your Hugging Face access token: " HUGGINGFACE_ACCESS_TOKEN;;
+      [Yy]* ) read -p "Введите свой токен доступа Hugging Face: " HUGGINGFACE_ACCESS_TOKEN;;
       [Nn]* ) HUGGINGFACE_ACCESS_TOKEN="None";;
-      * ) echo ">>> No answer was given, so NO models will be pushed to Hugging Face Hub" && HUGGINGFACE_ACCESS_TOKEN="None";;
+      * ) echo ">>> Ответ не был дан, поэтому НИ ОДНА модель не будет отправлена ​​в Hugging Face Hub" && HUGGINGFACE_ACCESS_TOKEN="None";;
    esac
 fi
 
-echo ""
-echo ""
-echo_green "Good luck in the swarm!"
+echo -e "${GREEN}Удачи в рое!${NC}"
 # end official script part
 
 # делаем скрипт для будущего systemd сервиса
+echo -e "${YELLOW}Создаем скрипт для systemd сервиса...${NC}"
 OUTPUT_SCRIPT="$ROOT/gensyn_service.sh"
 
 if [ -n "$ORG_ID" ]; then
@@ -371,7 +367,7 @@ wait
 EOF
 fi
 chmod +x "$OUTPUT_SCRIPT"
-echo "Скрипт для systemd сервиса создан: $OUTPUT_SCRIPT"
+echo -e "${GREEN}Скрипт для systemd сервиса создан: $OUTPUT_SCRIPT${NC}"
 
 # создаем сам сервис в системе
 SERVICE_NAME="gensyn.service"
@@ -420,5 +416,4 @@ sleep 10
 cp "$ROOT/modal-login/temp-data/userApiKey.json" "$ROOT/userApiKey_backup.json"
 cp "$ROOT/modal-login/temp-data/userData.json" "$ROOT/userData_backup.json"
 
-echo "systemd сервис создан и запущен."
-echo "Смотреть логи можно командой: tail -n 20 -f $ERROR_LOG_FILE"
+echo -e "${GREEN}Установка завершена.${NC}"

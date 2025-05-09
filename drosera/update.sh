@@ -23,7 +23,7 @@ NC='\033[0m'
 
 # get private key to do drosera apply with it
 SERVICE_FILE="/etc/systemd/system/drosera.service"
-echo "private_key=$(grep 'ExecStart=' "$SERVICE_FILE" | sed -n 's/.*--eth-private-key \([^ ]*\).*/\1/p')"
+private_key=$(grep 'ExecStart=' "$SERVICE_FILE" | sed -n 's/.*--eth-private-key \([^ ]*\).*/\1/p')
 echo "private_key=$private_key"
 echo "drosera apply --private-key="$private_key""
 

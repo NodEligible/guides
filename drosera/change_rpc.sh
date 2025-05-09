@@ -35,4 +35,4 @@ echo -e "${GREEN}Изменен --eth-rpc-url в файле $service_file${NC}"
 systemctl daemon-reexec
 systemctl daemon-reload
 systemctl restart drosera.service
-echo -e "${GREEN} Изменение RPC завершено! ${NC}"
+echo -e "${GREEN}Изменение RPC завершено!${NC}"

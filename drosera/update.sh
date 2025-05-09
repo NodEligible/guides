@@ -8,24 +8,24 @@ RED='\033[0;31m'
 BLUE='\033[38;5;81m'
 NC='\033[0m'
 
-echo -e "${YELLOW}Останавливаем drosera${NC}"
-service drosera stop
-source /root/.profile
-echo -e "${YELLOW}Обновляемм Drosera${NC}"
-curl -s -L https://app.drosera.io/install | bash
-droseraup 
+# echo -e "${YELLOW}Останавливаем drosera${NC}"
+# service drosera stop
+# source /root/.profile
+# echo -e "${YELLOW}Обновляемм Drosera${NC}"
+# curl -s -L https://app.drosera.io/install | bash
+# droseraup 
 
-if [ ! -f drosera.toml ]; then
-  cd drosera
-fi
-echo -e "Обновляем drosera_rpc${NC}"
-sed -i 's|^drosera_rpc =.*|drosera_rpc = "https://relay.testnet.drosera.io"|' drosera.toml
+# if [ ! -f drosera.toml ]; then
+#   cd drosera
+# fi
+# echo -e "Обновляем drosera_rpc${NC}"
+# sed -i 's|^drosera_rpc =.*|drosera_rpc = "https://relay.testnet.drosera.io"|' drosera.toml
 
 # get private key to do drosera apply with it
-SERVICE_FILE="/etc/systemd/system/drosera.service"
-private_key=$(grep 'ExecStart=' "$SERVICE_FILE" | sed -n 's/.*--eth-private-key \([^ ]*\).*/\1/p')
+echo "SERVICE_FILE="/etc/systemd/system/drosera.service""
+echo "private_key=$(grep 'ExecStart=' "$SERVICE_FILE" | sed -n 's/.*--eth-private-key \([^ ]*\).*/\1/p')"
 
-drosera apply --private-key="$private_key"
+echo "drosera apply --private-key="$private_key""
 
-service drosera start
+# service drosera start
 echo -e "${GREEN}Обновление завершено!${NC}" 

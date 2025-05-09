@@ -9,7 +9,7 @@ BLUE='\033[38;5;81m'
 NC='\033[0m'
 
 # echo -e "${YELLOW}Останавливаем drosera${NC}"
-# service drosera stop
+# sudo systemctl stop drosera
 # source /root/.profile
 # echo -e "${YELLOW}Обновляемм Drosera${NC}"
 # curl -s -L https://app.drosera.io/install | bash
@@ -24,8 +24,17 @@ NC='\033[0m'
 # get private key to do drosera apply with it
 echo "SERVICE_FILE="/etc/systemd/system/drosera.service""
 echo "private_key=$(grep 'ExecStart=' "$SERVICE_FILE" | sed -n 's/.*--eth-private-key \([^ ]*\).*/\1/p')"
-
+echo "private_key=$private_key"
 echo "drosera apply --private-key="$private_key""
 
-# service drosera start
+
+# SERVICE_FILE="/etc/systemd/system/drosera.service"
+# private_key=$(grep 'ExecStart=' "$SERVICE_FILE" | sed -n 's/.*--eth-private-key \([^ ]*\).*/\1/p')
+# echo "private_key=$private_key"
+# drosera apply --private-key="$private_key"
+
+
+
+
+# sudo systemctl start drosera
 echo -e "${GREEN}Обновление завершено!${NC}" 

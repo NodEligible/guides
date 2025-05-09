@@ -18,7 +18,7 @@ NC='\033[0m'
 # if [ ! -f drosera.toml ]; then
 #   cd drosera
 # fi
-# echo -e "Обновляем drosera_rpc${NC}"
+# echo -e "${YELLOW}Обновляем drosera_rpc${NC}"
 # sed -i 's|^drosera_rpc =.*|drosera_rpc = "https://relay.testnet.drosera.io"|' drosera.toml
 
 # get private key to do drosera apply with it

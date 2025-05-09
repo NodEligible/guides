@@ -22,7 +22,7 @@ NC='\033[0m'
 # sed -i 's|^drosera_rpc =.*|drosera_rpc = "https://relay.testnet.drosera.io"|' drosera.toml
 
 # get private key to do drosera apply with it
-echo "SERVICE_FILE="/etc/systemd/system/drosera.service""
+SERVICE_FILE="/etc/systemd/system/drosera.service"
 echo "private_key=$(grep 'ExecStart=' "$SERVICE_FILE" | sed -n 's/.*--eth-private-key \([^ ]*\).*/\1/p')"
 echo "private_key=$private_key"
 echo "drosera apply --private-key="$private_key""

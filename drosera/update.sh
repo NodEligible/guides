@@ -13,7 +13,9 @@ sudo systemctl stop drosera
 source /root/.profile
 echo -e "${YELLOW}Обновляемм Drosera${NC}"
 curl -s -L https://app.drosera.io/install | bash
-droseraup 
+droseraup
+sudo cp /root/.drosera/bin/drosera-operator /usr/bin/drosera-operator
+sudo chmod +x /usr/bin/drosera-operator
 
 if [ ! -f drosera.toml ]; then
   cd drosera
@@ -26,6 +28,6 @@ SERVICE_FILE="/etc/systemd/system/drosera.service"
 private_key=$(grep 'ExecStart=' "$SERVICE_FILE" | sed -n 's/.*--eth-private-key \([^ ]*\).*/\1/p')
 echo "drosera apply --private-key="$private_key""
 
-
 sudo systemctl start drosera
-echo -e "${GREEN}Обновление завершено!${NC}" 
+echo -e "${GREEN}Обновление завершено!${NC}"
+

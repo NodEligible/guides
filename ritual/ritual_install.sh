@@ -9,9 +9,13 @@ BLUE='\033[38;5;81m'
 NC='\033[0m'
 
 request_param() {
-    read -p "$1: " param
-    echo $param
+    local prompt="$1"
+    local param
+    echo -en "${prompt}: "
+    read param
+    echo "$param"
 }
+
 
 # Запрашиваем параметры у пользователя
 echo -e "${YELLOW}Пожалуйста, введите следующие параметры для настройки ноды:${NC}"

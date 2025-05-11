@@ -40,8 +40,6 @@ echo "export PATH=\$PATH:$HOME/gaianet/bin" >> $HOME/.bashrc
 
 sleep 3
 
-ln -sf /root/gaianet/bin/gaianetup /usr/local/bin/gaianetup
-
 source $HOME/.bashrc
 
 sleep 5

@@ -100,8 +100,8 @@ echo -e "${GREEN}Forge успешно установлен!${NC}"
 cd $HOME/infernet-container-starter/projects/hello-world/contracts/lib/
 rm -r forge-std
 rm -r infernet-sdk
-forge install --no-commit foundry-rs/forge-std
-forge install --no-commit ritual-net/infernet-sdk
+forge install foundry-rs/forge-std
+forge install ritual-net/infernet-sdk
 
 # Deploy Consumer Contract
 cd $HOME/infernet-container-starter

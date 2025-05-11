@@ -1,6 +1,10 @@
 #!/bin/bash
 
 curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
+YELLOW='\e[0;33m'
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m'
 
 # Функция для запроса параметра у пользователя
 request_param() {
@@ -9,14 +13,14 @@ request_param() {
 }
 
 # Запрашиваем параметры у пользователя
-echo "Пожалуйста, введите следующие параметры для настройки ноды:"
+echo -e "${YELLOW}Пожалуйста, введите следующие параметры для настройки ноды:${NC}"
 RPC_URL=$(request_param "Введите RPC URL")
 PRIVATE_KEY=$(request_param "Введите ваш приватный ключ (начинающийся с 0x)")
 
 if [[ "$PRIVATE_KEY" == 0x* ]]; then
-    echo "Вы ввели приватный ключ верно!"
+    echo -e "${GREEN}Вы ввели приватный ключ верно!${NC}"
 else
-    echo "Приватный ключ введен не верно. Приватный ключ должен начинаться с 0x"
+    echo -e "${RED}Приватный ключ введен не верно. Приватный ключ должен начинаться с${NC} 0x"
     exit 1
 fi
 
@@ -110,11 +114,11 @@ CONTRACT_ADDRESS=$(grep "Deployed SaysHello" logs.txt | awk '{print $NF}')
 rm -rf logs.txt
 
 if [ -z "$CONTRACT_ADDRESS" ]; then
-  echo -e "${err}Произошла ошибка: не удалось прочитать contractAddress из $CONTRACT_DATA_FILE${end}"
+  echo -e "${RED}Произошла ошибка: не удалось прочитать contractAddress из${NC} $CONTRACT_DATA_FILE"
   exit 1
 fi
 
-echo -e "${fmt}Адрес вашего контракта: $CONTRACT_ADDRESS${end}"
+echo -e "${GREEN}Адрес вашего контракта:${NC} $CONTRACT_ADDRESS${end}"
 sed -i 's|0x13D69Cf7d6CE4218F646B759Dcf334D82c023d8e|'$CONTRACT_ADDRESS'|' "$HOME/infernet-container-starter/projects/hello-world/contracts/script/CallContract.s.sol"
 
 # Call Consumer Contract
@@ -130,3 +134,5 @@ wget https://raw.githubusercontent.com/NodEligible/guides/refs/heads/main/ritual
 docker compose up -d
 
 docker rm -fv infernet-anvil  &>/dev/null
+
+echo -e "${GREEN}Обновление завершено!${NC}"

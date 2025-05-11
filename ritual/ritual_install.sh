@@ -20,7 +20,7 @@ PRIVATE_KEY=$(request_param "Введите ваш приватный ключ (
 if [[ "$PRIVATE_KEY" == 0x* ]]; then
     echo -e "${GREEN}Вы ввели приватный ключ верно!${NC}"
 else
-    echo -e "${RED}Приватный ключ введен не верно. Приватный ключ должен начинаться с 0x${NC}"
+    echo -e "${RED}Приватный ключ введен не верно. Приватный ключ должен начинаться с${NC} 0x"
     exit 1
 fi
 
@@ -167,11 +167,11 @@ CONTRACT_ADDRESS=$(grep "Deployed SaysHello" logs.txt | awk '{print $NF}')
 rm -rf logs.txt
 
 if [ -z "$CONTRACT_ADDRESS" ]; then
-  echo -e "${err}Произошла ошибка: не удалось прочитать contractAddress из $CONTRACT_DATA_FILE${end}"
+  echo -e "${RED}Произошла ошибка: не удалось прочитать contractAddress из${NC} $CONTRACT_DATA_FILE"
   exit 1
 fi
 
-echo -e "${fmt}Адрес вашего контракта: $CONTRACT_ADDRESS${end}"
+echo -e "${GREEN}Адрес вашего контракта:${NC} $CONTRACT_ADDRESS"
 sed -i 's|0x13D69Cf7d6CE4218F646B759Dcf334D82c023d8e|'$CONTRACT_ADDRESS'|' "$HOME/infernet-container-starter/projects/hello-world/contracts/script/CallContract.s.sol"
 
 # Call Consumer Contract
@@ -188,4 +188,4 @@ docker compose up -d
 
 docker rm -fv infernet-anvil  &>/dev/null
 
-echo -e "${GREEN}Ritual успешно установлен!${NC}"
+echo -e "${GREEN}Установка Ritua завершена!${NC}"

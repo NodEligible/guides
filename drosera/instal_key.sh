@@ -165,7 +165,7 @@ Description=drosera node service
 After=network-online.target
 
 [Service]
-CPUQuota=200%
+CPUQuota=150%
 User=$USER
 Restart=always
 RestartSec=15

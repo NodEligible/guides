@@ -93,7 +93,7 @@ if [[ "$ldd_version" == "2.39" ]]; then
     chmod +x pop
     pop_cmd="/opt/popcache/pop"
 else
-    echo -e "${YELLOW}Билдим нужную версию glibc (2.39)${NC}"
+    echo -e "${YELLOW}Билдим нужную версию glibc (2.39) Просто ждите${NC}"
     # ubuntu 22.04 compatability
     mkdir -p /opt/glibc-build
     cd /opt/glibc-build

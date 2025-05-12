@@ -100,12 +100,12 @@ else
     
     # installing glibc 2.39
     wget http://ftp.gnu.org/gnu/libc/glibc-2.39.tar.gz 
-    tar -xf glibc-2.39.tar.gz 
+    tar -xf glibc-2.39.tar.gz &>/dev/null
     mkdir glibc-2.39-build glibc-2.39-install
     cd glibc-2.39-build
-    ../glibc-2.39/configure --prefix=/opt/glibc-build/glibc-2.39-install 
-    make -j$(nproc) 
-    make install 
+    ../glibc-2.39/configure --prefix=/opt/glibc-build/glibc-2.39-install &>/dev/null
+    make -j$(nproc) &>/dev/null
+    make install &>/dev/null
 
     sudo chown -R root:root /opt/glibc-build
     chmod -R a+rx /opt/glibc-build

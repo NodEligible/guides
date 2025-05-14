@@ -8,7 +8,7 @@ from datetime import datetime
 from typing import List, Dict, Optional
 
 #---------------
-SLEEP_TIME = 30
+SLEEP_TIME = 10
 #---------------
 
 # Настройка логирования

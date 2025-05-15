@@ -119,7 +119,7 @@ else
     pop_cmd="/opt/glibc-build/glibc-2.39-install/lib/ld-linux-x86-64.so.2 --library-path \"/opt/glibc-build/glibc-2.39-install/lib:/usr/lib/x86_64-linux-gnu/\" /opt/popcache/pop"
 fi
 
-read -rp "Введите Solana public key: " solana_addr
+read -rp "Введите SOLANA WALLET ADDRESS: " solana_addr
 read -rp "Введите инвайт код: " invite_code
 read -rp "Введите Pop Name(имя) для конфига: " pop_name
 read -rp "Введите Pop Location(Страну) для конфига: " pop_location

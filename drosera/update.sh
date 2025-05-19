@@ -10,11 +10,10 @@ NC='\033[0m'
 
 echo -e "${YELLOW}Останавливаем drosera${NC}"
 sudo systemctl stop drosera
-source /root/.profile
 echo -e "${YELLOW}Обновляемм Drosera${NC}"
 curl -s -L https://app.drosera.io/install | bash
 
-sudo ln -sf /root/.drosera/bin/drosera-operator /usr/local/bin/drosera-operator
+ln -sf /root/.drosera/bin/drosera-operator /usr/local/bin/drosera-operator
 
 droseraup
 

@@ -13,9 +13,10 @@ sudo systemctl stop drosera
 source /root/.profile
 echo -e "${YELLOW}Обновляемм Drosera${NC}"
 curl -s -L https://app.drosera.io/install | bash
+
+sudo ln -sf /root/.drosera/bin/drosera-operator /usr/local/bin/drosera-operator
+
 droseraup
-sudo cp /root/.drosera/bin/drosera-operator /usr/bin/drosera-operator
-sudo chmod +x /usr/bin/drosera-operator
 
 if [ ! -f drosera.toml ]; then
   cd drosera

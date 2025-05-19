@@ -13,8 +13,6 @@ sudo systemctl stop drosera
 echo -e "${YELLOW}Обновляемм Drosera${NC}"
 curl -s -L https://app.drosera.io/install | bash
 
-ln -sf /root/.drosera/bin/drosera-operator /usr/local/bin/drosera-operator
-
 droseraup
 
 if [ ! -f drosera.toml ]; then

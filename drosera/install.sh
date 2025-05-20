@@ -63,24 +63,38 @@ sudo apt install curl ufw iptables build-essential git wget lz4 jq make gcc nano
 
 sleep 5
 
+echo -e "${YELLOW}📥 Установка Drosera CLI${NC}"
+curl -s -L https://app.drosera.io/install | bash 
+echo 'export PATH="$PATH:/root/.drosera/bin"' >> /root/.profile
+
+# Робимо глобальний symlink
+ln -sf /root/.drosera/bin/droseraup /usr/local/bin/droseraup
+ln -sf /root/.drosera/bin/drosera-operator /usr/local/bin/drosera-operator
+ln -sf /root/.drosera/bin/drosera /usr/local/bin/drosera
+
+source /root/.bashrc
+
+sleep 2
+
+droseraup
+
+sleep 2
+
 echo -e "${YELLOW}Установка дополнительных инструментов...${NC}"   
-curl -L https://app.drosera.io/install | bash
 curl -L https://foundry.paradigm.xyz | bash
 curl -fsSL https://bun.sh/install | bash
   
 # Функция для деплоя Trap
 echo -e "${YELLOW}Настройка деплой Trap...${NC}"
-
-ln -sf /root/.drosera/bin/droseraup /usr/local/bin/droseraup
+# Створюємо symlink-и для foundry та bun
 ln -sf /root/.foundry/bin/foundryup /usr/local/bin/foundryup
 ln -sf /root/.foundry/bin/forge /usr/local/bin/forge
-ln -sf /root/.bun/bin/bun /usr/local/bin/bun
-    
+ln -sf /root/.bun/bin/bun /usr/local/bin/bun  
+
 source /root/.bashrc
 
 sleep 5
 
-droseraup
 foundryup
     
 echo -e "${YELLOW}📂 Создание директории...${NC}"
@@ -146,13 +160,7 @@ echo -e "${GREEN}Trap настроен!${NC}"
 read -p "➡️  Нажмите Enter, чтобы продолжить..."
 
 # -------------------------------------------------------------
-     
-echo -e "${YELLOW}📥 Загрузка бинарных файлов...${NC}"
-cd ~
-curl -LO https://github.com/drosera-network/releases/releases/download/v1.16.2/drosera-operator-v1.16.2-x86_64-unknown-linux-gnu.tar.gz
-tar -xvf drosera-operator-v1.16.2-x86_64-unknown-linux-gnu.tar.gz
-sudo cp drosera-operator /usr/bin
-rm -f $HOME/drosera-operator-v1.16.2-x86_64-unknown-linux-gnu.tar.gz
+      
     
 drosera-operator register --eth-rpc-url https://ethereum-holesky-rpc.publicnode.com --eth-private-key $PRIV_KEY
     
@@ -165,6 +173,7 @@ Description=drosera node service
 After=network-online.target
 
 [Service]
+CPUQuota=150%
 User=$USER
 Restart=always
 RestartSec=15
@@ -186,4 +195,4 @@ sudo systemctl daemon-reload
 sudo systemctl enable drosera
 sudo systemctl start drosera
 
-echo -e "${GREEN}Установка завершена!${NC}"    
+echo -e "${GREEN}Установка завершена!${NC}"  

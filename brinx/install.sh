@@ -9,6 +9,16 @@ RED='\033[0;31m'
 BLUE='\033[38;5;81m'
 NC='\033[0m' # Сброс цвета
 # ----------------------------------------------------------------------------------------------------------------
+# Function to validate UUID format
+validate_uuid() {
+    local uuid=$1
+    if [[ $uuid =~ ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$ ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
 # Prompt user for WORKER_PORT
 echo -e "${BLUE}Введите порт для воркера (Enter - по умолчанию 5011): ${NC}"
 read -p "➜ " USER_PORT
@@ -65,16 +75,6 @@ docker rmi -f admier/brinxai_nodes-text-ui
 docker rmi -f admier/brinxai_nodes-stabled
 docker rmi -f admier/brinxai_nodes-rembg
 docker rmi -f admier/brinxai_nodes-upscaler
-
-# Function to validate UUID format
-validate_uuid() {
-    local uuid=$1
-    if [[ $uuid =~ ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$ ]]; then
-        return 0
-    else
-        return 1
-    fi
-}
 
 # Update package list and install dependencies
 sudo apt-get install -y gnupg lsb-release

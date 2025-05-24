@@ -8,6 +8,8 @@ RED='\033[0;31m'
 BLUE='\033[38;5;81m'
 NC='\033[0m'
 
+echo -e "${BLUE}🔐 Введите имя:${NC}"
+read -p "➜" NAME
 
   echo -e "${YELLOW}Установка Main...${NC}"
   bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)
@@ -17,7 +19,6 @@ NC='\033[0m'
       echo -e "${RED}Ошибка при установке Main!${NC}"
   fi
 
-read -p "Введите моникер (имя): " NAME
 
 SERVER_IP=$(hostname -I | awk '{print $1}')
 OG_PORT=12

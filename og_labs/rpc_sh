@@ -9,7 +9,7 @@ BLUE='\033[38;5;81m'
 NC='\033[0m'
 
 echo -e "${BLUE}👤 Введите имя:${NC}"
-read -p "➜" NAME
+read -p "➜ " NAME
 
   echo -e "${YELLOW}Установка Main...${NC}"
   bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh)

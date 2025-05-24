@@ -8,7 +8,24 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 BLUE='\033[38;5;81m'
 NC='\033[0m' # Сброс цвета
+# ----------------------------------------------------------------------------------------------------------------
+# Prompt user for WORKER_PORT
+echo -e "${BLUE}Введите порт для воркера (Enter - по умолчанию 5011): ${NC}"
+read -p "➜ " USER_PORT
+USER_PORT=${USER_PORT:-5011}
 
+# Prompt user for node_UUID
+while true; do
+    echo -e "${BLUE}Введите UUID ноды (например 234efgr-546fg-65fhy-444g56-436545445)${NC}"
+    read -p "➜ " NODE_UUID
+    if validate_uuid "$NODE_UUID"; then
+        echo -e "${GREEN}UUID принят.${NC}"
+        break
+    else
+        echo -e "${RED}Неверный формат UUID. Введите UUID (например 234efgr-546fg-65fhy-444g56-436545445).${NC}"
+    fi
+done
+# ----------------------------------------------------------------------------------------------------------------
   echo -e "${YELLOW}Установка Docker...${NC}"
   bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh)
   if [ $? -eq 0 ]; then
@@ -71,25 +88,7 @@ if command -v nvidia-smi &> /dev/null; then
 else
     echo -e "${YELLOW}GPU не найден.${NC}"
 fi
-
-# Prompt user for WORKER_PORT
-
-echo -e "${BLUE}Введите порт для воркера (Enter - по умолчанию 5011): ${NC}"
-read -p "➜ " USER_PORT
-USER_PORT=${USER_PORT:-5011}
-
-# Prompt user for node_UUID
-while true; do
-    echo -e "${BLUE}Введите UUID ноды (например 234efgr-546fg-65fhy-444g56-436545445)${NC}"
-    read -p "➜ " NODE_UUID
-    if validate_uuid "$NODE_UUID"; then
-        echo -e "${GREEN}UUID принят.${NC}"
-        break
-    else
-        echo -e "${RED}Неверный формат UUID. Введите UUID (например 234efgr-546fg-65fhy-444g56-436545445).${NC}"
-    fi
-done
-
+# ---------------------------------------------------------------------------------
 mkdir -p $HOME/brinxai_worker
 cd $HOME/brinxai_worker
 

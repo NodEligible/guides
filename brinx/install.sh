@@ -61,7 +61,7 @@ done
   fi
 
 # Removing old installation if exists
-echo -e "${YELLOW}Удаляем старый brinx.ai (если стоит)${NC}"
+echo -e "${YELLOW}Удаляем старый brinx.ai (если стоит и если увидите ошибки это норм значит у вас нет пред ведущих файлов ноды)${NC}"
 docker stop brinxai_worker-worker-1
 docker stop brinxai_relay
 docker stop text-ui

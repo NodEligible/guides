@@ -19,9 +19,9 @@ NC='\033[0m' # Сброс цвета
   fi
 
 echo -e "${YELLOW}Удаляем ноду если установлена...${NC}"
-docker stop brinxai_relay
-docker rm -f brinxai_relay
-docker rmi -f admier/brinxai_nodes-relay
+docker stop brinxai_relay &>/dev/null
+docker rm -f brinxai_relay &>/dev/null
+docker rmi -f admier/brinxai_nodes-relay &>/dev/null
 
 echo -e "${YELLOW}Установка BrixAI Relay${NC}"
 ARCH=$(dpkg --print-architecture)

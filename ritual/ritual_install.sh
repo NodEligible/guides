@@ -47,7 +47,6 @@ install_main() {
         echo -e "${GREEN}Main успешно установлен!${NC}"
     else
         echo -e "${RED}Ошибка при установке Main!${NC}"
-        exit 1
     fi
 }
 
@@ -58,7 +57,6 @@ install_ufw() {
         echo -e "${GREEN}Ufw успешно установлен!${NC}"
     else
         echo -e "${RED}Ошибка при установке Ufw!${NC}"
-        exit 1
     fi
 }
 
@@ -69,7 +67,6 @@ install_docker() {
         echo -e "${GREEN}Docker успешно установлен!${NC}"
     else
         echo -e "${RED}Ошибка при установке Docker!${NC}"
-        exit 1
     fi
 }
 

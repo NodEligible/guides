@@ -53,13 +53,15 @@ if [ -z "$TA_KEY_PATH" ]; then
   exit 1
 fi
 DEST_PATH="/var/lib/docker/volumes/openvpn_data/_data/"
-cp "$TA_KEY_PATH" "$DEST_PATH"
+cp "$TA_KEY_PATH" "$VOLUME_PATH"
+#cp "$TA_KEY_PATH" "$DEST_PATH"
 if [ $? -eq 0 ]; then
-  echo -e "${GREEN}Файл ta.key успешно скопирован в${NC}" $DEST_PATH
+  echo -e "${GREEN}Файл ta.key успешно скопирован в${NC}" $VOLUME_PATH
 else
   echo -e "${RED}Ошибка копирования файла${NC}"
 fi
-CONF_FILE="/var/lib/docker/volumes/openvpn_data/_data/openvpn.conf"
+#CONF_FILE="/var/lib/docker/volumes/openvpn_data/_data/openvpn.conf"
+CONF_FILE="${VOLUME_PATH}/openvpn.conf"
 sed -i 's/^push "push "redirect-gateway def1 bypass-dhcp""/push "redirect-gateway def1 bypass-dhcp"/' "$CONF_FILE"
 
 echo -e "${YELLOW}Перезапуск контейнера${NC}"

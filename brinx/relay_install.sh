@@ -47,6 +47,21 @@ if [ -z "$VOLUME_PATH" ]; then
   exit 1
 fi
 
+# -------------------------------------------------------------
+delay_minutes=1
+total_seconds=$((delay_minutes * 60))
+
+echo -e "\n⏳ Ожидание $delay_minutes минут..."
+
+for ((i=total_seconds; i>0; i--)); do
+    printf "\r⏱️  Осталось: %02d:%02d " $((i/60)) $((i%60))
+    sleep 1
+done
+
+echo -e "\n✅ Время вышло!"
+
+# -------------------------------------------------------------
+
 TA_KEY_PATH=$(find "$VOLUME_PATH" -type f -name "ta.key" | head -n 1)
 if [ -z "$TA_KEY_PATH" ]; then
   echo -e "${RED}Файл ta.key не найден в ${VOLUME_PATH}${NC}"

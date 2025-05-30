@@ -20,7 +20,6 @@ else
 fi
 
 sudo ufw allow 21000/tcp
-sudo ufw allow 22000/tcp
 
 # Обновление и установка зависимостей
 echo -e "${YELLOW}Обновление пакетов...${NC}"

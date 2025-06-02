@@ -7,7 +7,7 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-cd /opt/popcache || { echo "Директория /opt/popcache не найдена"; exit 1; }
+cd /opt/popcache || { echo -e "${RED}❌ Директория /opt/popcache не найдена"; exit 1; }
 
 echo -e "${YELLOW}🛑 Остановка сервиса PIPE...${NC}"
 systemctl stop popcache.service

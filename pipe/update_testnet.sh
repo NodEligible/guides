@@ -40,4 +40,4 @@ else
     echo -e "${RED}❌ Ошибка при запуске сервиса PIPE!${NC}"
 fi
 
-echo -e "${GREEN}✅ Обновление PIPE завершено!${NC}
+echo -e "${GREEN}✅ Обновление PIPE завершено!${NC}"

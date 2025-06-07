@@ -30,7 +30,7 @@ else
 fi
 
 echo -e "${YELLOW}Делаем бекап...${NC}"
-DATA_FILE="/root/cysic_backup/cysic-verifier.db"
+DATA_FILE="/root/cysic_backup/keys"
 
 # 🔹 Перевіряємо, чи файл існує, якщо так — видаляємо перед новим копіюванням
 if [[ -f "$DATA_FILE" ]]; then
@@ -39,15 +39,15 @@ if [[ -f "$DATA_FILE" ]]; then
 fi
 
 # Налаштування директорій
-SOURCE_DIR="/root/cysic-verifier/data"
+SOURCE_DIR="/root/.cysic/keys"
 BACKUP_DIR="/root/cysic_backup"
 
 # Перевіряємо, чи існує директорія для бекапу, якщо ні — створюємо її
 mkdir -p "$BACKUP_DIR"
 
 # Копіюємо потрібні файли
-if [[ -f "$SOURCE_DIR/cysic-verifier.db" ]]; then
-    cp "$SOURCE_DIR/cysic-verifier.db" "$BACKUP_DIR/"
+if [[ -f "$SOURCE_DIR/keys" ]]; then
+    cp "$SOURCE_DIR/keys" "$BACKUP_DIR/"
     echo -e "${GREEN}Бекап сделан!${NC}"
 else
     echo -e "${RED}Файл базы данных не найден в $SOURCE_DIR!${NC}"
@@ -122,8 +122,8 @@ chmod +x ~/cysic-verifier/start.sh
 sleep 3
 
 # Повертаємо резервну копію назад
-if [[ -f "$BACKUP_DIR/cysic-verifier.db" ]]; then
-    cp "$BACKUP_DIR/cysic-verifier.db" "$SOURCE_DIR/cysic-verifier.db"
+if [[ -f "$BACKUP_DIR/keys" ]]; then
+    cp "$BACKUP_DIR/keys" "$SOURCE_DIR/cysic-verifier.db"
     echo -e "${GREEN}Бекап восстановлен!${NC}"
 else
     echo -e "${RED}Резервная копия не найдена. Пропуск восстановления.${NC}"

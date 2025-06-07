@@ -42,8 +42,9 @@ echo -e "${YELLOW}Удаление старых каталогов и устан
 rm -rf ~/cysic-verifier
 cd ~
 mkdir cysic-verifier
-curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/verifier_linux > ~/cysic-verifier/verifier
-curl -L https://github.com/cysic-labs/phase2_libs/releases/download/v1.0.0/libdarwin_verifier.so > ~/cysic-verifier/libdarwin_verifier.so
+curl -L https://github.com/cysic-labs/cysic-phase3/releases/download/v1.0.0/verifier_linux >~/cysic-verifier/verifier
+curl -L https://github.com/cysic-labs/cysic-phase3/releases/download/v1.0.0/libdarwin_verifier.so >~/cysic-verifier/libdarwin_verifier.so
+curl -L https://github.com/cysic-labs/cysic-phase3/releases/download/v1.0.0/librsp.so >~/cysic-verifier/librsp.so
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}Каталоги созданы успешно!${NC}"
 else
@@ -56,7 +57,6 @@ cat <<EOF > ~/cysic-verifier/config.yaml
 # Not Change
 chain:
   # Not Change
-  # endpoint: "node-pre.prover.xyz:80"
   endpoint: "grpc-testnet.prover.xyz:80"
   # Not Change
   chain_id: "cysicmint_9001-1"
@@ -69,8 +69,7 @@ claim_reward_address: "$CLAIM_REWARD_ADDRESS"
 
 server:
   # don't modify this
-  # cysic_endpoint: "https://api-pre.prover.xyz"
-  cysic_endpoint: "https://api-testnet.prover.xyz"
+  cysic_endpoint: "https://ws-pre.prover.xyz"
 EOF
 
 # Налаштування виконуваного файлу та запуск

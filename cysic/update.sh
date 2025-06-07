@@ -9,15 +9,7 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 # Перевірка, чи передано параметри
-if [ "$#" -ne 1 ]; then
-    read -p "Введите адрес кошелька для ревардов:" CLAIM_REWARD_ADDRESS
-    if [ -z "$CLAIM_REWARD_ADDRESS" ]; then
-        echo -e "${RED}Адрес получения вознаграждения не может быть пустым. Выход...${NC}"
-        exit 1
-    fi
-else
-    CLAIM_REWARD_ADDRESS=$1
-fi
+CLAIM_REWARD_ADDRESS="0x0000000000000000000000000000000000000000"
 
 # Оновлення системи
 echo -e "${YELLOW}Обновление пакетов...${NC}"
@@ -37,9 +29,43 @@ else
      echo -e "${RED}Ошибка при установке Docker!${NC}"
 fi
 
+echo -e "${YELLOW}Делаем бекап...${NC}"
+DATA_FILE="/root/cysic_backup/cysic-verifier.db"
+
+# 🔹 Перевіряємо, чи файл існує, якщо так — видаляємо перед новим копіюванням
+if [[ -f "$DATA_FILE" ]]; then
+    echo -e "⚠️ Файл $DATA_FILE уже есть. Удаляю..."
+    sudo rm -f "$DATA_FILE"
+fi
+
+# Налаштування директорій
+SOURCE_DIR="/root/cysic-verifier/data"
+BACKUP_DIR="/root/cysic_backup"
+
+# Перевіряємо, чи існує директорія для бекапу, якщо ні — створюємо її
+mkdir -p "$BACKUP_DIR"
+
+# Копіюємо потрібні файли
+if [[ -f "$SOURCE_DIR/cysic-verifier.db" ]]; then
+    cp "$SOURCE_DIR/cysic-verifier.db" "$BACKUP_DIR/"
+    echo -e "${GREEN}Бекап сделан!${NC}"
+else
+    echo -e "${RED}Файл базы данных не найден в $SOURCE_DIR!${NC}"
+fi
+
 # Видалення старих каталогів і створення нових
 echo -e "${YELLOW}Удаление старых каталогов и установка новых${NC}"
+sudo systemctl stop cysic-verifier.service
+pkill -f "./verifier"
 rm -rf ~/cysic-verifier
+rm -rf ~/cysic-verifier/logs.txt
+rm -f ~/cysic-verifier/manage_verifier.sh
+rm -rf $HOME/.cysic
+sudo systemctl disable cysic-verifier.service 
+sudo systemctl daemon-reload
+
+sleep 3
+
 cd ~
 mkdir cysic-verifier
 curl -L https://github.com/cysic-labs/cysic-phase3/releases/download/v1.0.0/verifier_linux >~/cysic-verifier/verifier
@@ -93,6 +119,16 @@ EOF
 
 # Налаштування прав для виконання скрипта
 chmod +x ~/cysic-verifier/start.sh
+
+sleep 3
+
+# Повертаємо резервну копію назад
+if [[ -f "$BACKUP_DIR/cysic-verifier.db" ]]; then
+    cp "$BACKUP_DIR/cysic-verifier.db" "$SOURCE_DIR/cysic-verifier.db"
+    echo -e "${GREEN}Бекап восстановлен!${NC}"
+else
+    echo -e "${RED}Резервная копия не найдена. Пропуск восстановления.${NC}"
+fi
 
 # Створення скрипта управління
 cat <<EOF > ~/cysic-verifier/manage_verifier.sh
@@ -156,8 +192,11 @@ WantedBy=multi-user.target
 EOF
 
 # Увімкнення сервісу
-sudo systemctl enable cysic-verifier.service &>/dev/null
+sudo systemctl enable cysic-verifier.service 
 sudo systemctl daemon-reload
 sudo systemctl start cysic-verifier.service
 
-echo -e "${GREEN}Установка ноды Cysic завершена🚀${NC}"
+# Удаляем бекап
+rm -rf /root/cysic_backup
+
+echo -e "${GREEN}Обновление ноды Cysic завершено🚀${NC}"

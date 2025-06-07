@@ -18,7 +18,7 @@ else
 fi
 
 echo -e "${YELLOW}📥 Загрузка новой версии PIPE...${NC}"
-wget https://download.pipe.network/static/pop-v0.3.1-linux-x64.tar.gz
+wget https://download.pipe.network/static/pop-v0.3.2-linux-x64.tar.gz
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✅ PIPE успешно загружен!${NC}"
 else
@@ -28,8 +28,8 @@ fi
 
 echo -e "${YELLOW}🔄 Обновляем PIPE_TESTNET...${NC}"
 rm -f pop
-tar -xvzf pop-v0.3.1-linux-x64.tar.gz
-rm -f pop-v0.3.1-linux-x64.tar.gz
+tar -xvzf pop-v0.3.2-linux-x64.tar.gz
+rm -f pop-v0.3.2-linux-x64.tar.gz
 chmod +x pop
 
 echo -e "${YELLOW}🚀 Запуск сервиса PIPE...${NC}"

@@ -8,9 +8,6 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-# Перевірка, чи передано параметри
-CLAIM_REWARD_ADDRESS="0x0000000000000000000000000000000000000000"
-
 # Оновлення системи
 echo -e "${YELLOW}Обновление пакетов...${NC}"
 sudo apt update && sudo apt upgrade -y
@@ -51,6 +48,12 @@ if [[ -f "$SOURCE_DIR/keys" ]]; then
     echo -e "${GREEN}Бекап сделан!${NC}"
 else
     echo -e "${RED}Файл базы данных не найден в $SOURCE_DIR!${NC}"
+fi
+
+CONFIG_FILE="/root/cysic-verifier/config.yaml"
+if [[ -f "$CONFIG_FILE" ]]; then
+    CLAIM_REWARD_ADDRESS=$(grep 'claim_reward_address:' "$CONFIG_FILE" | awk -F'"' '{print $2}')
+    echo -e "${GREEN}Сохраняем адрес: $CLAIM_REWARD_ADDRESS${NC}"
 fi
 
 # Видалення старих каталогів і створення нових
@@ -123,7 +126,7 @@ sleep 3
 
 # Повертаємо резервну копію назад
 if [[ -f "$BACKUP_DIR/keys" ]]; then
-    cp "$BACKUP_DIR/keys" "$SOURCE_DIR/cysic-verifier.db"
+    cp "$BACKUP_DIR/keys" "$SOURCE_DIR//keys"
     echo -e "${GREEN}Бекап восстановлен!${NC}"
 else
     echo -e "${RED}Резервная копия не найдена. Пропуск восстановления.${NC}"

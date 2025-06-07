@@ -58,10 +58,9 @@ echo -e "${YELLOW}Удаление старых каталогов и устан
 sudo systemctl stop cysic-verifier.service
 pkill -f "./verifier"
 rm -rf ~/cysic-verifier
-rm -rf ~/cysic-verifier/logs.txt
-rm -f ~/cysic-verifier/manage_verifier.sh
 rm -rf $HOME/.cysic
 sudo systemctl disable cysic-verifier.service 
+sudo rm /etc/systemd/system/cysic-verifier.service
 sudo systemctl daemon-reload
 
 sleep 3

@@ -9,6 +9,9 @@ NC='\033[0m'
 
 cd /opt/popcache || { echo -e "${RED}❌ Директория /opt/popcache не найдена"; exit 1; }
 
+# ✅ Автоматично змінюємо власника директорії
+chown root:root /opt/popcache
+
 echo -e "${YELLOW}🛑 Остановка сервиса PIPE...${NC}"
 systemctl stop popcache.service
 if [ $? -eq 0 ]; then

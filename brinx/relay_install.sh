@@ -72,18 +72,18 @@ if [ -z "$TA_KEY_PATH" ]; then
   exit 1
 fi
 
-DEST_PATH="/var/lib/docker/volumes/openvpn_data/_data/"
-
-if [ "$VOLUME_PATH" != "$DEST_PATH" ]; then
-  cp "$TA_KEY_PATH" "$DEST_PATH"
-  echo -e "${GREEN}Файл ta.key успешно скопирован в ${DEST_PATH}${NC}"
+# Принудительно копируем обратно — нужно для корректной регистрации порта
+cp "$TA_KEY_PATH" "$VOLUME_PATH"
+if [ $? -eq 0 ]; then
+  echo -e "${GREEN}Файл ta.key успешно скопирован в ${VOLUME_PATH}${NC}"
 else
-  echo -e "${BLUE}Файл уже находится в целевой директории${NC}"
+  echo -e "${RED}Ошибка при копировании файла ta.key${NC}"
 fi
 
-
+# Обновляем конфиг (если строка уже корректна — ничего не меняется)
 CONF_FILE="${VOLUME_PATH}/openvpn.conf"
-sed -i 's/^push "redirect-gateway def1 bypass-dhcp"$/push "redirect-gateway def1 bypass-dhcp"/' "$CONF_FILE"
+sed -i 's/^push ".*redirect-gateway def1.*"$/push "redirect-gateway def1 bypass-dhcp"/' "$CONF_FILE"
 
-echo -e "${YELLOW}Перезапуск контейнера${NC}"
+echo -e "${YELLOW}Перезапуск контейнера...${NC}"
 docker restart "$CONTAINER_NAME"
+

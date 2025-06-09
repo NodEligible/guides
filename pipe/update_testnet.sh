@@ -21,7 +21,7 @@ fi
 echo -e "${YELLOW}📥 Загрузка новой версии PIPE...${NC}"
 
 # Видалення попередніх архівів
-rm -f pop-v0.3.2-linux-x64.tar.gz pop-v0.3.2-linux-x64.tar.gz.* 2>/dev/null
+rm -f pop-v*.tar.gz pop-v*.tar.gz.* 2>/dev/null
 
 # Завантаження з перезаписом
 # wget -O pop-v0.3.2-linux-x64.tar.gz https://download.pipe.network/static/pop-v0.3.2-linux-x64.tar.gz

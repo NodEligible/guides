@@ -83,7 +83,7 @@ fi
 
 # Обновляем конфиг (если строка уже корректна — ничего не меняется)
 CONF_FILE="${VOLUME_PATH}/openvpn.conf"
-sed -i 's/^push ".*redirect-gateway def1.*"$/push "redirect-gateway def1 bypass-dhcp"/' "$CONF_FILE"
+sed -i 's/^push "push "redirect-gateway def1 bypass-dhcp""/push "redirect-gateway def1 bypass-dhcp"/' "$CONF_FILE"
 
 echo -e "${YELLOW}Перезапуск контейнера...${NC}"
 docker restart "$CONTAINER_NAME"

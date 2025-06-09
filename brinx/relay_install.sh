@@ -21,7 +21,8 @@ echo -e "${YELLOW}Удаляем ноду если установлена...${NC
 docker stop watchtower &>/dev/null || true
 docker stop brinxai_relay_amd64 &>/dev/null || true
 docker stop brinxai_relay_arm64 &>/dev/null || true
-docker rm -f brinxai_relay &>/dev/null
+docker rm -f brinxai_relay_amd64 &>/dev/null
+docker rm -f brinxai_relay_arm64 &>/dev/null
 docker rmi -f admier/brinxai_nodes-relay &>/dev/null
 docker rmi -f containrrr/watchtower &>/dev/null
 

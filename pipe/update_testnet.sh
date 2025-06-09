@@ -9,8 +9,6 @@ NC='\033[0m'
 
 cd /opt/popcache || { echo -e "${RED}❌ Директория /opt/popcache не найдена"; exit 1; }
 
-# ✅ Автоматично змінюємо власника директорії
-chown root:root /opt/popcache
 
 echo -e "${YELLOW}🛑 Остановка сервиса PIPE...${NC}"
 systemctl stop popcache.service
@@ -26,7 +24,8 @@ echo -e "${YELLOW}📥 Загрузка новой версии PIPE...${NC}"
 rm -f pop-v0.3.2-linux-x64.tar.gz pop-v0.3.2-linux-x64.tar.gz.* 2>/dev/null
 
 # Завантаження з перезаписом
-wget -O pop-v0.3.2-linux-x64.tar.gz https://download.pipe.network/static/pop-v0.3.2-linux-x64.tar.gz
+# wget -O pop-v0.3.2-linux-x64.tar.gz https://download.pipe.network/static/pop-v0.3.2-linux-x64.tar.gz
+wget https://download.pipe.network/static/pop-v0.3.2-linux-x64.tar.gz
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✅ PIPE успешно загружен!${NC}"
 else

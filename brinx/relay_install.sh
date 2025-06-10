@@ -30,10 +30,10 @@ echo -e "${YELLOW}Установка BrixAI Relay${NC}"
 ARCH=$(dpkg --print-architecture)
 
 if [ "$ARCH" = "amd64" ]; then
-    URL="https://raw.githubusercontent.com/admier1/BrinxAI-Relay-Nodes/main/install_brinxai_relay_amd64.sh"
+    URL="https://raw.githubusercontent.com/admier1/BrinxAI-Relay-Nodes/refs/heads/main/install_brinxai_relay_amd64.sh"
     CONTAINER_NAME="brinxai_relay_amd64"
 else
-    URL="https://raw.githubusercontent.com/admier1/BrinxAI-Relay-Nodes/main/install_brinxai_relay_arm64.sh"
+    URL="https://raw.githubusercontent.com/admier1/BrinxAI-Relay-Nodes/refs/heads/main/install_brinxai_relay_arm64.sh"
     CONTAINER_NAME="brinxai_relay_arm64"
 fi
 

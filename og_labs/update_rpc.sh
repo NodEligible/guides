@@ -65,7 +65,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart geth.service
 sudo systemctl restart 0gchaind.service
 
-echo -e "${YELLOW}Текущая версия RPC ноды должна быть версия${NC} 1.2.0"
+echo -e "${YELLOW}Текущая версия RPC ноды (должна быть версия${NC} 1.2.0${YELLOW})${NC}"
 0gchaind version
 
 echo -e "${GREEN}Обновление завершено!${NC}" 

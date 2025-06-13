@@ -8,9 +8,6 @@ RED='\033[0;31m'
 BLUE='\033[38;5;81m'
 NC='\033[0m'
 
-echo "Обновление до версии 1.2.0"
-
-
 SERVER_IP=$(hostname -I | awk '{print $1}')
 OG_PORT=12
 
@@ -68,7 +65,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart geth.service
 sudo systemctl restart 0gchaind.service
 
-echo -e "${YELLOW}Текущая версия RPC ноды${NC}"
+echo -e "${YELLOW}Текущая версия RPC ноды должна быть версия${NC} 1.2.0"
 0gchaind version
 
 echo -e "${GREEN}Обновление завершено!${NC}" 

@@ -88,7 +88,7 @@ fi
 rm -rf /root/gaianet_backup
 
 echo -e "${YELLOW}Инициализация конфигурации...${NC}"
-gaianet init
+gaianet init --config https://raw.githubusercontent.com/GaiaNet-AI/node-configs/main/qwen2-0.5b-instruct/config.json
 
 echo -e "${YELLOW}Старт${NC}"
 gaianet start

@@ -34,7 +34,7 @@ BACKUP_DIR="/root/gaianet_backup"
 mkdir -p "$BACKUP_DIR"
 
 # Копіюємо потрібні файли
-cp "$SOURCE_DIR/config.json" "$BACKUP_DIR/config.json"
+# cp "$SOURCE_DIR/config.json" "$BACKUP_DIR/config.json"
 cp "$SOURCE_DIR/nodeid.json" "$BACKUP_DIR/nodeid.json"
 cp "$SOURCE_DIR/deviceid.txt" "$BACKUP_DIR/deviceid.txt"
 
@@ -56,7 +56,7 @@ rm -rf /root/gaianet/deviceid.txt
 
 sleep 3
 
-cp "$BACKUP_DIR/config.json" "$SOURCE_DIR/config.json"
+# cp "$BACKUP_DIR/config.json" "$SOURCE_DIR/config.json"
 cp "$BACKUP_DIR/nodeid.json" "$SOURCE_DIR/nodeid.json"
 cp "$BACKUP_DIR/deviceid.txt" "$SOURCE_DIR/deviceid.txt"
 

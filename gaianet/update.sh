@@ -50,7 +50,7 @@ echo -e "${YELLOW}Обновляем GaiaNet...${NC}"
 
 sleep 3
 # Удаляем новые файлы
-rm -rf /root/gaianet/config.json
+# rm -rf /root/gaianet/config.json
 rm -rf /root/gaianet/nodeid.json
 rm -rf /root/gaianet/deviceid.txt
 

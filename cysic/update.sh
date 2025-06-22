@@ -28,28 +28,29 @@ fi
 
 echo -e "${YELLOW}Делаем бекап...${NC}"
 DATA_FILE="/root/cysic_backup/keys"
-
-# 🔹 Перевіряємо, чи файл існує, якщо так — видаляємо перед новим копіюванням
-if [[ -f "$DATA_FILE" ]]; then
-   echo -e "${YELLOW}⚠️ Файл${NC} $DATA_FILE ${YELLOW}уже есть. Удаляю...${NC}"
-    sudo rm -f "$DATA_FILE"
-fi
-
-# Налаштування директорій
 SOURCE_DIR="/root/.cysic/keys"
 BACKUP_DIR="/root/cysic_backup"
 
-# Перевіряємо, чи існує директорія для бекапу, якщо ні — створюємо її
-mkdir -p "$BACKUP_DIR"
-
-# Копіюємо потрібні файли
-if [[ -f "$SOURCE_DIR/keys" ]]; then
-    cp "$SOURCE_DIR/keys" "$BACKUP_DIR/"
-    echo -e "${GREEN}Бекап сделан!${NC}"
-else
-    echo -e "${RED}Файл базы данных не найден в $SOURCE_DIR!${NC}"
+# Видаляємо попередній бекап (не обов'язково, можна пропустити)
+if [[ -f "$DATA_FILE" ]]; then
+    echo -e "${YELLOW}⚠️ Файл${NC} $DATA_FILE ${YELLOW}уже есть. Удаляю...${NC}"
+    sudo rm -f "$DATA_FILE"
 fi
 
+# Створюємо директорію, якщо не існує
+mkdir -p "$BACKUP_DIR"
+
+# Знаходимо перший .key файл у директорії
+KEY_FILE=$(find "$SOURCE_DIR" -type f -name "*.key" | head -n 1)
+
+if [[ -f "$KEY_FILE" ]]; then
+    cp "$KEY_FILE" "$BACKUP_DIR/"
+    echo -e "${GREEN}Бекап сделан: $(basename "$KEY_FILE")${NC}"
+else
+    echo -e "${RED}Файл ключа (.key) не найден в $SOURCE_DIR!${NC}"
+fi
+
+# Отримуємо адресу для винагороди з конфігурації
 CONFIG_FILE="/root/cysic-verifier/config.yaml"
 if [[ -f "$CONFIG_FILE" ]]; then
     CLAIM_REWARD_ADDRESS=$(grep 'claim_reward_address:' "$CONFIG_FILE" | awk -F'"' '{print $2}')
@@ -126,13 +127,17 @@ chmod +x ~/cysic-verifier/start.sh
 sleep 3
 
 # Повертаємо резервну копію назад
-if [[ -f "$BACKUP_DIR/keys" ]]; then
-    cp "$BACKUP_DIR/keys" "$SOURCE_DIR//keys"
-    echo -e "${GREEN}Бекап восстановлен!${NC}"
+KEY_FILE=$(find "$BACKUP_DIR" -type f -name "*.key" | head -n 1)
+
+if [[ -f "$KEY_FILE" ]]; then
+    mkdir -p "$SOURCE_DIR"
+    cp "$KEY_FILE" "$SOURCE_DIR/"
+    echo -e "${GREEN}Бекап восстановлен: $(basename "$KEY_FILE")${NC}"
 else
     echo -e "${RED}Резервная копия не найдена. Пропуск восстановления.${NC}"
     exit 1
 fi
+
 
 # Створення скрипта управління
 cat <<EOF > ~/cysic-verifier/manage_verifier.sh

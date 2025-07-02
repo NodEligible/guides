@@ -26,6 +26,8 @@ case $MODEL_CHOICE in
   *) echo "❌ Неверный выбор. Выход."; exit 1 ;;
 esac
 
+echo -e "${YELLOW} Будет установлена модель:${NC}$MODEL"
+
 echo -e "${YELLOW}Установка дополнительных пакетов скрыта...${NC}"
 echo -e "${YELLOW}Установка Docker...${NC}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh) &>/dev/null

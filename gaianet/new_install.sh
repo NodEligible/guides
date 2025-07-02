@@ -8,6 +8,7 @@ RED='\033[0;31m'
 BLUE='\033[38;5;81m'
 NC='\033[0m'
 
+#  Добавити команди на видалення
 
 echo -e "${YELLOW} Выберите модель для установки:${NC}"
 echo -e "1) phi-3-mini-instruct-4k ${BLUE}(легкая, 2-3GB RAM, 1-2CPU)${NC}"
@@ -29,7 +30,7 @@ esac
 
 echo -e "${YELLOW} Будет установлена модель:${NC}$MODEL"
 
-echo -e "${YELLOW}Установка дополнительных пакетов скрыта...${NC}"
+echo -e "${YELLOW}Установка дополнительных програм скрыта...${NC}"
 echo -e "${YELLOW}Установка Docker...${NC}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh) &>/dev/null
 

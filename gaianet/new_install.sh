@@ -57,7 +57,7 @@ ln -sf /root/gaianet/bin/gaianetup /usr/local/bin/gaianetup
 
 source $HOME/.bashrc
 
-sleep 5
+sleep 2
 
 # if ! command -v gaianet &> /dev/null; then
 #     echo -e "${RED}❌ Ошибка: gaianet не найден! Путь $HOME/gaianet/bin не добавлен в PATH.${NC}"

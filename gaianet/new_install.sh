@@ -5,15 +5,16 @@ curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/d
 YELLOW='\e[0;33m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
+BLUE='\033[38;5;81m'
 NC='\033[0m'
 
 
 echo -e "${YELLOW} Выберите модель для установки:${NC}"
-echo "1) phi-3-mini-instruct-4k (легкая, 2-3GB RAM, 1-2CPU)"
-echo "2) qwen1.5-0.5b-instruct (легкая, 4-6GB RAM, 2+CPU)"
-echo "3) qwen2-0.5b-instruct (баланс рекомендую ставить, 8–10GB RAM, 4+CPU)"
-echo "4) mistral-0.3-7b-instruct (средне тяжелая, 12–14GB, 6+CPU)"
-echo "5) llama-3.1-8b-instruct (тяжелая, 16-20GB RAM, 6+CPU)"
+echo -e "1) phi-3-mini-instruct-4k ${BLUE}(легкая, 2-3GB RAM, 1-2CPU)${NC}"
+echo -e "2) qwen1.5-0.5b-instruct ${BLUE}(легкая, 4-6GB RAM, 2+CPU)${NC}"
+echo -e "3) qwen2-0.5b-instruct ${GREEN}(баланс рекомендую ставить, 8–10GB RAM, 4+CPU)${NC}"
+echo -e "4) mistral-0.3-7b-instruct ${YELLOW}(средне тяжелая, 12–14GB, 6+CPU)${NC}"
+echo -e "5) llama-3.1-8b-instruct ${YELLOW}(тяжелая, 16-20GB RAM, 6+CPU)${NC}"
 
 read -p "➜ Введите номер модели: " MODEL_CHOICE
 

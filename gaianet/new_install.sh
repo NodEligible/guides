@@ -28,7 +28,7 @@ case $MODEL_CHOICE in
   *) echo "❌ Неверный выбор. Выход."; exit 1 ;;
 esac
 
-echo -e "${YELLOW} Будет установлена модель:${NC}$MODEL"
+echo -e "${YELLOW} Будет установлена модель:${NC}$MODEL_CHOICE"
 
 echo -e "${YELLOW}Установка дополнительных програм скрыта...${NC}"
 echo -e "${YELLOW}Установка Docker...${NC}"
@@ -72,7 +72,7 @@ sleep 2
 # fi
 
 echo -e "${YELLOW}Инициализация конфигурации...${NC}"
-gaianet init --config "https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/$MODEL/config.json"
+gaianet init --config "https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/$MODEL_CHOICE/config.json"
 
 echo -e "${YELLOW}Создаем сервис...${NC}"
 cat <<EOF> /etc/systemd/system/gaianet.service

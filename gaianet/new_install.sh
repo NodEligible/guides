@@ -36,7 +36,7 @@ case $MODEL in
   *) echo "❌ Неверный выбор. Выход."; exit 1 ;;
 esac
 
-echo -e "${YELLOW} Будет установлена модель:${NC}$MODEL"
+echo -e "${YELLOW}Будет установлена модель:${NC}$MODEL"
 
 echo -e "${YELLOW}Установка дополнительных програм скрыта...${NC}"
 echo -e "${YELLOW}Установка Docker...${NC}"

@@ -26,7 +26,7 @@ systemctl daemon-reload
 
 echo -e "${YELLOW} Выберите модель для установки:${NC}"
 echo -e "1) qwen1.5-0.5b-instruct ${BLUE}(легкая, 4-6GB RAM, 2+CPU)${NC}"
-echo -e "2) qwen2-0.5b-instruct ${GREEN}(баланс рекомендую ставить, 8–10GB RAM, 4+CPU)${NC}"
+echo -e "2) qwen2-0.5b-instruct ${GREEN}(Рекомендую ставить так как стояла у нас с самого начала и за неё дают больше пойнтов, 8–10GB RAM, 4+CPU)${NC}"
 
 read -p "➜ Введите номер модели: " MODEL
 

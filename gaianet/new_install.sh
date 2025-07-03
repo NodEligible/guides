@@ -81,7 +81,7 @@ sleep 2
 # fi
 
 echo -e "${YELLOW}Инициализация конфигурации...${NC}"
-gaianet init --config "https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/$MODEL/config.json"
+gaianet init --config https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/$MODEL/config.json
 
 echo -e "${YELLOW}Создаем сервис...${NC}"
 cat <<EOF> /etc/systemd/system/gaianet.service

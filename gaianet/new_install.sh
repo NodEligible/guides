@@ -25,20 +25,14 @@ rm -rf ~/.profile.wasmedge_backup
 systemctl daemon-reload
 
 echo -e "${YELLOW} Выберите модель для установки:${NC}"
-echo -e "1) phi-3-mini-instruct-4k ${BLUE}(легкая, 2-3GB RAM, 1-2CPU)${NC}"
-echo -e "2) qwen1.5-0.5b-instruct ${BLUE}(легкая, 4-6GB RAM, 2+CPU)${NC}"
-echo -e "3) qwen2-0.5b-instruct ${GREEN}(баланс рекомендую ставить, 8–10GB RAM, 4+CPU)${NC}"
-echo -e "4) mistral-0.3-7b-instruct ${YELLOW}(средне тяжелая, 12–14GB, 6+CPU)${NC}"
-echo -e "5) llama-3.1-8b-instruct ${YELLOW}(тяжелая, 16-20GB RAM, 6+CPU)${NC}"
+echo -e "1) qwen1.5-0.5b-instruct ${BLUE}(легкая, 4-6GB RAM, 2+CPU)${NC}"
+echo -e "2) qwen2-0.5b-instruct ${GREEN}(баланс рекомендую ставить, 8–10GB RAM, 4+CPU)${NC}"
 
 read -p "➜ Введите номер модели: " MODEL
 
 case $MODEL in
-  1) MODEL="phi-3-mini-instruct-4k" ;;
-  2) MODEL="qwen1.5-0.5b-instruct" ;;
-  3) MODEL="qwen2-0.5b-instruct" ;;
-  4) MODEL="mistral-0.3-7b-instruct" ;;
-  5) MODEL="llama-3.1-8b-instruct" ;;
+  1) MODEL="qwen1.5-0.5b-instruct" ;;
+  2) MODEL="qwen2-0.5b-instruct" ;;
   *) echo "❌ Неверный выбор. Выход."; exit 1 ;;
 esac
 
@@ -77,8 +71,8 @@ source $HOME/.bashrc
 echo -e "${YELLOW}Инициализация конфигурации...${NC}"
 gaianet init --config https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/$MODEL/config.json
 
-echo -e "${YELLOW}Создаем сервис...${NC}"
-
+echo -e "${YELLOW}Устанавливаем сервис...${NC}"
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/monitoring/main/node_service/gaianet.sh)
 
 echo -e "${GREEN}Установка GaiaNet завершена!${NC}"
 

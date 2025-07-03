@@ -16,6 +16,12 @@ rm -f /etc/systemd/system/gaianet.service
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/uninstall.sh' | bash
 rm -rf ~/gaia.sh 
 rm -rf ~/.wasmedge
+rm -rf ~/.bash_profile.gaianet_backup
+rm -rf ~/.bash_profile.wasmedge_backup
+rm -rf ~/.bashrc.gaianet_backup
+rm -rf ~/.bashrc.wasmedge_backup
+rm -rf ~/.profile.wasmedge_backup
+
 systemctl daemon-reload
 
 echo -e "${YELLOW} Выберите модель для установки:${NC}"

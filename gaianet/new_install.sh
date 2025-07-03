@@ -10,10 +10,8 @@ NC='\033[0m'
 
 #  Добавити команди на видалення
 echo -e "${YELLOW} Удаляем ноду если есть...${NC}"
-systemctl stop gaianet.service 
-systemctl disable gaianet.service 
+sudo systemctl stop gaianet-monitor 
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/uninstall.sh' | bash
-rm -f /etc/systemd/system/gaianet.service 
 rm -rf ~/gaia.sh 
 rm -rf ~/.wasmedge
 rm -rf ~/.bash_profile.gaianet_backup
@@ -75,5 +73,6 @@ echo -e "${YELLOW}Устанавливаем сервис...${NC}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/monitoring/main/node_service/gaianet.sh)
 
 echo -e "${GREEN}Установка GaiaNet завершена!${NC}"
-
+sleep 3
+sudo systemctl start gaianet-monitor
 

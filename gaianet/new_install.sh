@@ -10,7 +10,6 @@ NC='\033[0m'
 
 #  Добавити команди на видалення
 echo -e "${YELLOW} Удаляем ноду если есть...${NC}"
-gaianet stop 
 systemctl stop gaianet.service 
 systemctl disable gaianet.service 
 rm -f /etc/systemd/system/gaianet.service 

@@ -44,7 +44,8 @@ bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads
 
 
 echo -e "${YELLOW}Обновление пакетов...${NC}"
-sudo apt update && sudo apt upgrade -y &>/dev/null
+sudo apt update &>/dev/null
+sudo apt upgrade -y &>/dev/null
 sudo apt install -y python3-pip python3-dev python3-venv curl git &>/dev/null
 sudo apt install -y build-essential &>/dev/null
 pip3 install aiohttp &>/dev/null

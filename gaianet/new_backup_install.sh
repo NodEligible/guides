@@ -28,13 +28,17 @@ esac
 echo -e "${YELLOW}Будет установлена модель:${NC}$MODEL"
 
 echo -e "${YELLOW} Удаляем ноду если есть...${NC}"
-gaianet stop 
 systemctl stop gaianet.service 
 systemctl disable gaianet.service 
-rm -f /etc/systemd/system/gaianet.service 
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/uninstall.sh' | bash
+rm -f /etc/systemd/system/gaianet.service 
 rm -rf ~/gaia.sh 
-systemctl daemon-reload
+rm -rf ~/.wasmedge
+rm -rf ~/.bash_profile.gaianet_backup
+rm -rf ~/.bash_profile.wasmedge_backup
+rm -rf ~/.bashrc.gaianet_backup
+rm -rf ~/.bashrc.wasmedge_backup
+rm -rf ~/.profile.wasmedge_backup
 
 echo -e "${YELLOW}Установка Docker...${NC}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh) &>/dev/null
@@ -66,6 +70,8 @@ echo -e "${YELLOW} Дальше зайдите в директорию /root/gai
 echo -e "${YELLOW}-------------------------------------------------------------------------------------------------------------------------------------------------------------------${NC}"
 
 read -p "➡️  Нажмите Enter, чтобы продолжить..."
+
+source $HOME/.bashrc
 
 echo -e "${YELLOW}Инициализация конфигурации...${NC}"
 gaianet init --config https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/$MODEL/config.json

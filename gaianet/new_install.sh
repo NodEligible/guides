@@ -22,20 +22,6 @@ rm -rf ~/.profile.wasmedge_backup
 
 systemctl daemon-reload
 
-echo -e "${YELLOW} Выберите модель для установки:${NC}"
-echo -e "1) qwen1.5-0.5b-instruct ${BLUE}(легкая, 4-6GB RAM, 2+CPU)${NC}"
-echo -e "2) qwen2-0.5b-instruct ${GREEN}(Рекомендую ставить так как стояла у нас с самого начала и за неё дают больше пойнтов, 8–10GB RAM, 4+CPU)${NC}"
-
-read -p "➜ Введите номер модели: " MODEL
-
-case $MODEL in
-  1) MODEL="qwen1.5-0.5b-instruct" ;;
-  2) MODEL="qwen2-0.5b-instruct" ;;
-  *) echo "❌ Неверный выбор. Выход."; exit 1 ;;
-esac
-
-echo -e "${GREEN}Будет установлена модель:${NC}$MODEL"
-
 echo -e "${YELLOW}Установка дополнительных програм скрыта...${NC}"
 echo -e "${YELLOW}Установка Docker...${NC}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh) &>/dev/null
@@ -66,8 +52,19 @@ ln -sf /root/gaianet/bin/gaianetup /usr/local/bin/gaianetup
 
 source $HOME/.bashrc
 
+if ! command -v gaianet &> /dev/null; then
+    echo -e "${RED}❌ Ошибка: gaianet не найден! Путь $HOME/gaianet/bin не добавлен в PATH.${NC}"
+    echo -e "${RED}------------------------------------------------------------------------${NC}"
+    echo -e "${YELLOW}В случае ошибки выполняем следующие команды:${NC}"
+    echo -e "1️⃣ . source $HOME/.bashrc"
+    echo -e "2️⃣ . https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/qwen2-0.5b-instruct/config.json"
+    echo -e "3️⃣ . gaianet start"
+    echo -e "4️⃣ . sudo systemctl start gaianet-monitor"
+    exit 1
+fi
+
 echo -e "${YELLOW}Инициализация конфигурации...${NC}"
-gaianet init --config https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/$MODEL/config.json
+gaianet init --config https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/qwen2-0.5b-instruct/config.json
 
 echo -e "${YELLOW}Устанавливаем сервис...${NC}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/monitoring/main/node_service/gaianet.sh)

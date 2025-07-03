@@ -16,6 +16,7 @@ systemctl disable gaianet.service
 rm -f /etc/systemd/system/gaianet.service 
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/uninstall.sh' | bash
 rm -rf ~/gaia.sh 
+rm -rf ~/.wasmedge
 systemctl daemon-reload
 
 echo -e "${YELLOW} Выберите модель для установки:${NC}"

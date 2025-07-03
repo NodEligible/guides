@@ -12,8 +12,8 @@ NC='\033[0m'
 echo -e "${YELLOW} Удаляем ноду если есть...${NC}"
 systemctl stop gaianet.service 
 systemctl disable gaianet.service 
-rm -f /etc/systemd/system/gaianet.service 
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/uninstall.sh' | bash
+rm -f /etc/systemd/system/gaianet.service 
 rm -rf ~/gaia.sh 
 rm -rf ~/.wasmedge
 rm -rf ~/.bash_profile.gaianet_backup

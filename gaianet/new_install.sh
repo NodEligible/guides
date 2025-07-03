@@ -9,6 +9,14 @@ BLUE='\033[38;5;81m'
 NC='\033[0m'
 
 #  Добавити команди на видалення
+echo -e "${YELLOW} Удаляем ноду если есть...${NC}"
+gaianet stop 
+systemctl stop gaianet.service 
+systemctl disable gaianet.service 
+rm -f /etc/systemd/system/gaianet.service 
+curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/uninstall.sh' | bash
+rm -rf ~/gaia.sh 
+systemctl daemon-reload
 
 echo -e "${YELLOW} Выберите модель для установки:${NC}"
 echo -e "1) phi-3-mini-instruct-4k ${BLUE}(легкая, 2-3GB RAM, 1-2CPU)${NC}"
@@ -17,7 +25,7 @@ echo -e "3) qwen2-0.5b-instruct ${GREEN}(баланс рекомендую ст�
 echo -e "4) mistral-0.3-7b-instruct ${YELLOW}(средне тяжелая, 12–14GB, 6+CPU)${NC}"
 echo -e "5) llama-3.1-8b-instruct ${YELLOW}(тяжелая, 16-20GB RAM, 6+CPU)${NC}"
 
-read -p "➜ Введите номер модели: " MODEL_CHOICE
+read -p "➜ Введите номер модели: " MODEL
 
 case $MODEL_CHOICE in
   1) MODEL="phi-3-mini-instruct-4k" ;;
@@ -28,7 +36,7 @@ case $MODEL_CHOICE in
   *) echo "❌ Неверный выбор. Выход."; exit 1 ;;
 esac
 
-echo -e "${YELLOW} Будет установлена модель:${NC}$MODEL_CHOICE"
+echo -e "${YELLOW} Будет установлена модель:${NC}$MODEL"
 
 echo -e "${YELLOW}Установка дополнительных програм скрыта...${NC}"
 echo -e "${YELLOW}Установка Docker...${NC}"
@@ -72,7 +80,7 @@ sleep 2
 # fi
 
 echo -e "${YELLOW}Инициализация конфигурации...${NC}"
-gaianet init --config "https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/$MODEL_CHOICE/config.json"
+gaianet init --config "https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/$MODEL/config.json"
 
 echo -e "${YELLOW}Создаем сервис...${NC}"
 cat <<EOF> /etc/systemd/system/gaianet.service

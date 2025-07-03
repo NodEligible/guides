@@ -5,6 +5,7 @@ curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/d
 YELLOW='\e[0;33m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
+BLUE='\033[38;5;81m'
 NC='\033[0m'
 
 echo -e "${YELLOW} Выберите модель для установки:${NC}"
@@ -65,8 +66,8 @@ echo "export PATH=\$PATH:$HOME/gaianet/bin" >> $HOME/.bashrc
 
 sleep 2
 
-echo -e "${YELLOW}Пред установка GaiaNet завершена!${NC}" 
-echo -e "${YELLOW} Дальше зайдите в директорию /root/gaianet/ и удалите 2 файла deviceid.txt, nodeid.json и вместо них закиньте свои старые файлы и дале нажмите Ентер!${NC}"
+echo -e "${YELLOW}Перед установка GaiaNet завершена!${NC}" 
+echo -e "${BLUE}Дальше зайдите в директорию${NC} /root/gaianet/ ${BLUE}и удалите 2 файла${NC} deviceid.txt, nodeid.json ${BLUE}и вместо них закиньте свои старые файлы и дале нажмите Ентер!${NC}"
 echo -e "${YELLOW}-------------------------------------------------------------------------------------------------------------------------------------------------------------------${NC}"
 
 read -p "➡️  Нажмите Enter, чтобы продолжить..."

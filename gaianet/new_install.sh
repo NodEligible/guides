@@ -27,7 +27,7 @@ echo -e "5) llama-3.1-8b-instruct ${YELLOW}(тяжелая, 16-20GB RAM, 6+CPU)$
 
 read -p "➜ Введите номер модели: " MODEL
 
-case $MODEL_CHOICE in
+case $MODEL in
   1) MODEL="phi-3-mini-instruct-4k" ;;
   2) MODEL="qwen1.5-0.5b-instruct" ;;
   3) MODEL="qwen2-0.5b-instruct" ;;

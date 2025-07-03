@@ -78,28 +78,8 @@ echo -e "${YELLOW}Инициализация конфигурации...${NC}"
 gaianet init --config https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/$MODEL/config.json
 
 echo -e "${YELLOW}Создаем сервис...${NC}"
-cat <<EOF> /etc/systemd/system/gaianet.service
-[Unit]
-Description=GaiaNet Node Service
-After=network.target
 
-[Service]
-Type=simple
-User=root
-WorkingDirectory=/root/gaianet
-ExecStartPre=/root/gaianet/bin/gaianet stop
-ExecStart=/root/gaianet/bin/gaianet start
-Restart=on-failure
-RestartSec=10
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-systemctl daemon-reload
-systemctl enable gaianet.service
-systemctl start gaianet.service
 
 echo -e "${GREEN}Установка GaiaNet завершена!${NC}"
-echo -e "${YELLOW}Проверка логов запуска${NC}"
-echo "journalctl -u gaianet.service -f"
+
+

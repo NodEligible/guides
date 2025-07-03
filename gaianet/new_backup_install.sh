@@ -25,7 +25,7 @@ case $MODEL in
   *) echo "❌ Неверный выбор. Выход."; exit 1 ;;
 esac
 
-echo -e "${YELLOW}Будет установлена модель:${NC}$MODEL"
+echo -e "${GREEN}Будет установлена модель:${NC}$MODEL"
 
 echo -e "${YELLOW} Удаляем ноду если есть...${NC}"
 systemctl stop gaianet.service 

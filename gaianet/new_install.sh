@@ -9,8 +9,12 @@ BLUE='\033[38;5;81m'
 NC='\033[0m'
 
 #  Добавити команди на видалення
-echo -e "${YELLOW} Удаляем ноду если есть...${NC}"
+echo -e "${YELLOW} Удаляем ноду и сервис если есть...${NC}"
 sudo systemctl stop gaianet-monitor 
+sudo systemctl disable gaianet-monitor
+systemctl daemon-reload
+rm -f /root/gaianet_service
+rm -f /etc/systemd/system/gaianet-monitor.service
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/uninstall.sh' | bash
 rm -rf ~/gaia.sh 
 rm -rf ~/.wasmedge
@@ -59,9 +63,11 @@ if ! command -v gaianet &> /dev/null; then
     echo -e "1️⃣ . source $HOME/.bashrc"
     echo -e "2️⃣ . https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/qwen2-0.5b-instruct/config.json"
     echo -e "3️⃣ . gaianet start"
-    echo -e "4️⃣ . sudo systemctl start gaianet-monitor"
+    echo -e "4️⃣ . bash <(curl -s https://raw.githubusercontent.com/NodEligible/monitoring/main/node_service/gaianet.sh)"
+    echo -e "5️⃣ . sudo systemctl start gaianet-monitor"
     exit 1
 fi
+
 
 echo -e "${YELLOW}Инициализация конфигурации...${NC}"
 gaianet init --config https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/qwen2-0.5b-instruct/config.json

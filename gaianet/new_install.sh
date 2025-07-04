@@ -72,10 +72,10 @@ fi
 echo -e "${YELLOW}Инициализация конфигурации...${NC}"
 gaianet init --config https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/qwen2-0.5b-instruct/config.json
 
+gaianet start
+
 echo -e "${YELLOW}Устанавливаем сервис...${NC}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/monitoring/main/node_service/gaianet.sh)
 
-echo -e "${GREEN}Установка GaiaNet завершена!${NC}"
-sleep 3
-sudo systemctl start gaianet-monitor
+echo -e "${GREEN}Установка GaiaNet и сервиса для мониторинга завершена!${NC}"
 

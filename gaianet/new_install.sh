@@ -80,3 +80,6 @@ bash <(curl -s https://raw.githubusercontent.com/NodEligible/monitoring/main/nod
 
 echo -e "${GREEN}Установка GaiaNet и сервиса для мониторинга завершена!${NC}"
 
+echo -e "${YELLOW}Просмотр логов сервиса...${NC}"
+echo "tail -n 100 -f ~/gaianet_service/monitor.log"
+

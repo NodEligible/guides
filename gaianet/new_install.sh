@@ -65,7 +65,6 @@ if ! command -v gaianet &> /dev/null; then
     echo -e "2️⃣ . https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/qwen2-0.5b-instruct/config.json"
     echo -e "3️⃣ . gaianet start"
     echo -e "4️⃣ . bash <(curl -s https://raw.githubusercontent.com/NodEligible/monitoring/main/node_service/gaianet.sh)"
-    echo -e "5️⃣ . sudo systemctl start gaianet-monitor"
     exit 1
 fi
 

@@ -9,12 +9,12 @@ BLUE='\033[38;5;81m'
 NC='\033[0m'
 
 #  Добавити команди на видалення
-echo -e "${YELLOW} Удаляем ноду и сервис если есть...${NC}"
+echo -e "${YELLOW}Удаляем ноду и сервис если есть...${NC}"
 sudo systemctl stop gaianet-monitor 
 sudo systemctl disable gaianet-monitor
 systemctl daemon-reload
-rm -rf /root/gaianet_service
-rm -rf /etc/systemd/system/gaianet-monitor.service
+rm -rf /root/gaianet_service &>/dev/null
+rm -rf /etc/systemd/system/gaianet-monitor.service &>/dev/null
 gaianet stop
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/uninstall.sh' | bash
 rm -rf ~/gaia.sh 

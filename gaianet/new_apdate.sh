@@ -7,9 +7,6 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-echo -e "${YELLOW}Останавливаем сервис...${NC}"
-sudo systemctl stop gaianet-monitor
-
 echo -e "${YELLOW}Останавливаем gaia-bot...${NC}"
 sudo systemctl stop gaia-bot.service
 
@@ -42,6 +39,15 @@ cp "$SOURCE_DIR/nodeid.json" "$BACKUP_DIR/nodeid.json"
 cp "$SOURCE_DIR/deviceid.txt" "$BACKUP_DIR/deviceid.txt"
 
 echo -e "${GREEN}Бекап сделан!${NC}"
+
+# Удаляем сервис
+sudo systemctl stop gaianet-monitor  &>/dev/null
+sudo systemctl disable gaianet-monitor &>/dev/null
+systemctl daemon-reload
+rm -rf /root/gaianet_service &>/dev/null
+rm -rf /etc/systemd/system/gaianet-monitor.service &>/dev/null
+
+sleep 3
 
 # Удаляем гаю
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/uninstall.sh' | bash
@@ -107,8 +113,8 @@ gaianet start
 
 sleep 5
 
-echo -e "${YELLOW}Запускаем сервис...${NC}"
-sudo systemctl start gaianet-monitor
+echo -e "${YELLOW}Устанавливаем сервис...${NC}"
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/monitoring/main/node_service/gaianet.sh)
 
 echo -e "${YELLOW}Запускаем gaia-bot${NC}"
 sudo systemctl start gaia-bot.service

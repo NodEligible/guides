@@ -12,8 +12,8 @@ echo -e "${YELLOW} Удаляем ноду и сервис если есть...$
 sudo systemctl stop gaianet-monitor 
 sudo systemctl disable gaianet-monitor
 systemctl daemon-reload
-rm -f /root/gaianet_service
-rm -f /etc/systemd/system/gaianet-monitor.service
+rm -rf /root/gaianet_service
+rm -rf /etc/systemd/system/gaianet-monitor.service
 gaianet stop
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/uninstall.sh' | bash
 rm -rf ~/gaia.sh 

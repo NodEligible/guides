@@ -8,31 +8,13 @@ RED='\033[0;31m'
 BLUE='\033[38;5;81m'
 NC='\033[0m'
 
-echo -e "${YELLOW} Выберите модель для установки:${NC}"
-echo -e "1) phi-3-mini-instruct-4k ${BLUE}(легкая, 2-3GB RAM, 1-2CPU)${NC}"
-echo -e "2) qwen1.5-0.5b-instruct ${BLUE}(легкая, 4-6GB RAM, 2+CPU)${NC}"
-echo -e "3) qwen2-0.5b-instruct ${GREEN}(баланс рекомендую ставить, 8–10GB RAM, 4+CPU)${NC}"
-echo -e "4) mistral-0.3-7b-instruct ${YELLOW}(средне тяжелая, 12–14GB, 6+CPU)${NC}"
-echo -e "5) llama-3.1-8b-instruct ${YELLOW}(тяжелая, 16-20GB RAM, 6+CPU)${NC}"
-
-read -p "➜ Введите номер модели: " MODEL
-
-case $MODEL in
-  1) MODEL="phi-3-mini-instruct-4k" ;;
-  2) MODEL="qwen1.5-0.5b-instruct" ;;
-  3) MODEL="qwen2-0.5b-instruct" ;;
-  4) MODEL="mistral-0.3-7b-instruct" ;;
-  5) MODEL="llama-3.1-8b-instruct" ;;
-  *) echo "❌ Неверный выбор. Выход."; exit 1 ;;
-esac
-
-echo -e "${GREEN}Будет установлена модель:${NC}$MODEL"
-
-echo -e "${YELLOW} Удаляем ноду если есть...${NC}"
-systemctl stop gaianet.service 
-systemctl disable gaianet.service 
+echo -e "${YELLOW} Удаляем ноду и сервис если есть...${NC}"
+sudo systemctl stop gaianet-monitor 
+sudo systemctl disable gaianet-monitor
+systemctl daemon-reload
+rm -f /root/gaianet_service
+rm -f /etc/systemd/system/gaianet-monitor.service
 curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/uninstall.sh' | bash
-rm -f /etc/systemd/system/gaianet.service 
 rm -rf ~/gaia.sh 
 rm -rf ~/.wasmedge
 rm -rf ~/.bash_profile.gaianet_backup
@@ -41,6 +23,9 @@ rm -rf ~/.bashrc.gaianet_backup
 rm -rf ~/.bashrc.wasmedge_backup
 rm -rf ~/.profile.wasmedge_backup
 
+systemctl daemon-reload
+
+echo -e "${YELLOW}Установка дополнительных програм скрыта...${NC}"
 echo -e "${YELLOW}Установка Docker...${NC}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/docker.sh) &>/dev/null
 
@@ -75,12 +60,15 @@ read -p "➡️  Нажмите Enter, чтобы продолжить..."
 source $HOME/.bashrc
 
 echo -e "${YELLOW}Инициализация конфигурации...${NC}"
-gaianet init --config https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/$MODEL/config.json
+gaianet init --config https://raw.githubusercontent.com/NodEligible/guides/main/gaianet/node-configs/qwen2-0.5b-instruct/config.json
 
-echo -e "${YELLOW}Создаем сервис...${NC}"
+gaianet start
 
+echo -e "${YELLOW}Устанавливаем сервис...${NC}"
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/monitoring/main/node_service/gaianet.sh)
 
-echo -e "${GREEN}Установка GaiaNet завершена!${NC}"
+echo -e "${GREEN}Установка GaiaNet и сервиса для мониторинга завершена!${NC}"
+
 
 
 

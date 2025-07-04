@@ -43,6 +43,19 @@ cp "$SOURCE_DIR/deviceid.txt" "$BACKUP_DIR/deviceid.txt"
 
 echo -e "${GREEN}Бекап сделан!${NC}"
 
+# Удаляем гаю
+curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/uninstall.sh' | bash
+rm -rf ~/gaia.sh 
+rm -rf ~/.wasmedge
+rm -rf ~/.bash_profile.gaianet_backup
+rm -rf ~/.bash_profile.wasmedge_backup
+rm -rf ~/.bashrc.gaianet_backup
+rm -rf ~/.bashrc.wasmedge_backup
+rm -rf ~/.profile.wasmedge_backup
+
+systemctl daemon-reload
+
+
 echo -e "${YELLOW}Обновляем GaiaNet...${NC}"
   curl -sSfL 'https://github.com/GaiaNet-AI/gaianet-node/releases/latest/download/install.sh' | bash
   if [ $? -eq 0 ]; then

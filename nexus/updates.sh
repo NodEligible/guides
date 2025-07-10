@@ -10,5 +10,5 @@ NC='\033[0m'
 echo -e "${YELLOW}Обновление Nexus...${NC}"
 source /root/.bashrc
 
-yes | curl -fsSL https://cli.nexus.xyz/ | sh
+curl https://cli.nexus.xyz/ | sh
 echo -e "${GREEN}Обновление Nexus завершено${NC}"

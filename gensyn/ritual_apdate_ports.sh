@@ -5,28 +5,39 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-IMAGE_NAME="ritualnetwork/hello-world-infernet:latest"
+CONTAINER_NAME="hello-world"
 CONFIG_FILE="$HOME/infernet-container-starter/deploy/config.json"
+CONFIG_FILE_OWN="$HOME/infernet-container-starter/projects/hello-world/container/config.json"
 
-# Get the container ID using the image
-CONTAINER_ID=$(docker ps -a --filter "ancestor=$IMAGE_NAME" --format "{{.ID}}")
+if docker ps -a --filter "name=^/${CONTAINER_NAME}$" --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$"; then
+  echo -e "${YELLOW}🛑 Останавливаем инфраструктуру Ritual...${NC}"
+  docker compose -f "$HOME/infernet-container-starter/deploy/docker-compose.yaml" down
 
-# Check if both the container exists and the config file exists
-if [ -n "$CONTAINER_ID" ] && [ -f "$CONFIG_FILE" ]; then
-    CONTAINER_NAME=$(docker inspect --format '{{.Name}}' "$CONTAINER_ID" | sed 's/^\/\?//')
-
-    echo -e "${YELLOW}Контейнер найден, останавливаем и удаляем:${NC} $CONTAINER_NAME"
-    
+  if docker ps --filter "name=^/${CONTAINER_NAME}$" --filter "status=running" | grep -q "${CONTAINER_NAME}"; then
+    echo -e "${YELLOW}⏹ Останавливаем контейнер ${CONTAINER_NAME}...${NC}"
     docker stop "$CONTAINER_NAME"
-    docker rm "$CONTAINER_NAME"
-    
-    echo -e "${YELLOW}Контейнер удален.${NC}"
+  fi
 
+  echo -e "${YELLOW}🗑 Удаляем контейнер ${CONTAINER_NAME}...${NC}"
+  docker rm "$CONTAINER_NAME"
+
+  if [ -f "$CONFIG_FILE" ]; then
+    echo -e "${YELLOW}🔧 Изменяем порт 3000 → 3009 в конфигурационных файлах...${NC}"
     sed -i 's/3000/3009/g' "$CONFIG_FILE"
-    echo -e "${GREEN}В файле${NC} $CONFIG_FILE: ${GREEN}заменили порт 3000 на 3009.${NC}"
+    sed -i 's/3000/3009/g' "$CONFIG_FILE_OWN"
 
-    echo -e "${YELLOW}Запускаем контейнер назад.${NC}"
-    docker run -d --name "$CONTAINER_NAME" --restart unless-stopped -v "$CONFIG_FILE:/app/config.json" ritualnetwork/hello-world-infernet:latest
+    echo -e "${GREEN}✅ Порт успешно изменён в файлах:${NC}"
+    echo -e " - $CONFIG_FILE"
+    echo -e " - $CONFIG_FILE_OWN"
 
-    echo -e "${GREEN}Готово.${NC}"
+    echo -e "${YELLOW}🚀 Запускаем инфраструктуру снова...${NC}"
+    docker compose -f "$HOME/infernet-container-starter/deploy/docker-compose.yaml" up -d
+
+    echo -e "${GREEN}✅ Готово. Инфраструктура работает на новом порту 3009.${NC}"
+  else
+    echo -e "${RED}❌ Файл конфигурации не найден: $CONFIG_FILE${NC}"
+  fi
+else
+  echo -e "${RED}❌ Контейнер '${CONTAINER_NAME}' не найден. Ritual, возможно, не установлен или уже удалён.${NC}"
 fi
+

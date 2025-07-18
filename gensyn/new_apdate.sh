@@ -7,8 +7,6 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-
-
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh) &>/dev/null
 
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh) &>/dev/null
@@ -19,7 +17,7 @@ apt-get install python3 python3-pip python3-venv python3-dev -y &>/dev/null
 current_version=$(python3 --version 2>&1 | awk '{print $2}')
 required_version="3.13"
 if [[ "$(echo -e "$current_version\n$required_version" | sort -V | head -n1)" != "$required_version" ]]; then
-    echo -e "${YELLOW}Python версия ниже за 3.13. Установка Python 3.13...${NC}"
+    echo "Python версия ниже за 3.13. Устанавливаю Python 3.13..."
     sudo apt install -y software-properties-common &>/dev/null
     sudo add-apt-repository -y ppa:deadsnakes/ppa &>/dev/null
     sudo apt update &>/dev/null
@@ -31,7 +29,7 @@ fi
 
 SERVICE_NAME="gensyn.service"
 if systemctl list-units --type=service --all | grep -q "$SERVICE_NAME"; then
-    echo -e "${YELLOW}Останавливаем сервис...${NC}"
+    echo "Нашли существующий сервис gensyn, останавливаем..."
     sudo systemctl stop "$SERVICE_NAME"
     pkill next-server
 fi
@@ -40,19 +38,19 @@ FOLDER="rl-swarm"
 PEM_FILE="swarm.pem"
 
 if [[ -f "$FOLDER/$PEM_FILE" ]]; then
-    echo -e "${YELLOW}Нашли файл${NC} $PEM_FILE в $FOLDER. ${YELLOW}Копирую в /root/...${NC}"
+    echo "Нашли файл $PEM_FILE в $FOLDER. Копирую в /root/..."
     cp "$FOLDER/$PEM_FILE" /root/
-    echo -e "${GREEN}Бекап $PEM_FILE сохранен - /root/$PEM_FILE.${NC}"
+    echo "Бекап $PEM_FILE сохранен - /root/$PEM_FILE."
 fi
 
 if [ -d "$FOLDER" ]; then
-    echo -e "${YELLOW}Удаляем папку${NC} $FOLDER ${YELLOW}перед установкой.${NC}"
+    echo "Удаляем папку $FOLDER перед установкой."
     rm -rf "$FOLDER"
 fi
 
 # Check if Node.js is installed
 if ! command -v node &> /dev/null; then
-    echo -e "${YELLOW}Node.js не установлена. Устанавливаем...${NC}"
+    echo "Node.js не установлена. Устанавливаем..."
     curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
     sudo apt install -y nodejs
 fi
@@ -62,7 +60,7 @@ NODE_VERSION=$(node -v 2>/dev/null | cut -d 'v' -f 2)
 
 # Check if the version is lower than 20.18.0
 if [[ -n "$NODE_VERSION" && $(echo -e "$NODE_VERSION\n20.18.0" | sort -V | head -n1) == "$NODE_VERSION" ]]; then
-    echo -e "${YELLOW}Версия NodeJS ниже 20.18.0 ($NODE_VERSION). Обновляем...${NC}"
+    echo "Версия NodeJS ниже 20.18.0 ($NODE_VERSION). Обновляем..."
     curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - >/dev/null 2>&1
     sudo apt install -y nodejs >/dev/null 2>&1
     echo "NodeJS обновлена: "
@@ -74,13 +72,13 @@ echo "Node.js версия  $NODE_VERSION. Продолжаем..."
 
 #preinstall yarn, so its properly registered in ~/profile
 if ! command -v yarn >/dev/null 2>&1; then
-      echo -e "${YELLOW}Yarn не установлен. Устанавливаем...${NC}"
+      echo "Yarn не установлен. Устанавливаем..."
       curl -o- -L https://yarnpkg.com/install.sh 2>/dev/null | sh >/dev/null 2>&1
       echo 'export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"' >> ~/.profile
       source ~/.profile
 fi
 
-echo -e "${YELLOW}Клонируем GIT проекта...${NC}"
+echo "Клонируем GIT проекта..."
 REPO_URL="https://github.com/gensyn-ai/rl-swarm.git"
 git clone "$REPO_URL" &>/dev/null
 cd rl-swarm || { echo "Failed to enter directory rl-swarm"; exit 1; }
@@ -98,7 +96,7 @@ set -euo pipefail
 ROOT=$PWD
 
 # GenRL Swarm version to use
-GENRL_SWARM_TAG="v0.1.1"
+GENRL_TAG="v0.1.1"
 
 export IDENTITY_PATH
 export GENSYN_RESET_CONFIG
@@ -222,7 +220,7 @@ if [ "$CONNECT_TO_TESTNET" = true ]; then
 
     # Docker image already builds it, no need to again.
     if [ -z "$DOCKER" ]; then
-        yarn install --immutable --silent
+        yarn install --immutable --silent > /dev/null 2>&1
         echo "Building server"
         yarn build > "$ROOT/logs/yarn.log" 2>&1
     fi
@@ -264,50 +262,30 @@ fi
 echo_green ">> Ставим библиотеки с помощью pip..."
 pip install --upgrade pip &>/dev/null
 
-# Clone GenRL repository to user's working directory
-echo_green ">> Initializing and updating GenRL..."
-if [ ! -d "$ROOT/genrl-swarm" ]; then
-    git clone --depth=1 --branch "$GENRL_SWARM_TAG" https://github.com/gensyn-ai/genrl-swarm.git "$ROOT/genrl-swarm"
-else
-    # Check if we are on the correct tag
-    cd "$ROOT/genrl-swarm"
-    CURRENT_TAG=$(git describe --tags --exact-match 2>/dev/null || echo "unknown")
-    if [ "$CURRENT_TAG" != "$GENRL_SWARM_TAG" ]; then
-        echo_green ">> Обновляем genrl-swarm к версии tag $GENRL_SWARM_TAG..."
-        git fetch --tags
-        git checkout "$GENRL_SWARM_TAG"
-        git pull origin "$GENRL_SWARM_TAG"
-    fi
-    cd "$ROOT"
-fi
+# echo_green ">> Installing GenRL..."
+pip install gensyn-genrl==0.1.4
+pip install reasoning-gym>=0.1.20 # for reasoning gym env
+pip install trl # for grpo config, will be deprecated soon
+pip install hivemind@git+https://github.com/gensyn-ai/hivemind@639c964a8019de63135a2594663b5bec8e5356dd # We need the latest, 1.1.11 is broken
 
-echo_green ">> Ставим GenRL."
-if [ -d "$ROOT/genrl-swarm" ]; then
-    cd "$ROOT/genrl-swarm"
-    pip install -e .[examples] &>/dev/null
-    cd "$ROOT" 
-else
-    echo_red "Error: genrl-swarm submodule not found at $ROOT/genrl-swarm"
-    exit 1
-fi
 
 if [ ! -d "$ROOT/configs" ]; then
     mkdir "$ROOT/configs"
 fi  
 if [ -f "$ROOT/configs/rg-swarm.yaml" ]; then
     # Use cmp -s for a silent comparison. If different, backup and copy.
-    if ! cmp -s "$ROOT/genrl-swarm/recipes/rgym/rg-swarm.yaml" "$ROOT/configs/rg-swarm.yaml"; then
+    if ! cmp -s "$ROOT/rgym_exp/config/rg-swarm.yaml" "$ROOT/configs/rg-swarm.yaml"; then
         if [ -z "$GENSYN_RESET_CONFIG" ]; then
             echo_green ">> Found differences in rg-swarm.yaml. If you would like to reset to the default, set GENSYN_RESET_CONFIG to a non-empty value."
         else
             echo_green ">> Found differences in rg-swarm.yaml. Backing up existing config."
             mv "$ROOT/configs/rg-swarm.yaml" "$ROOT/configs/rg-swarm.yaml.bak"
-            cp "$ROOT/genrl-swarm/recipes/rgym/rg-swarm.yaml" "$ROOT/configs/rg-swarm.yaml"
+            cp "$ROOT/rgym_exp/config/rg-swarm.yaml" "$ROOT/configs/rg-swarm.yaml"
         fi
     fi
 else
     # If the config doesn't exist, just copy it.
-    cp "$ROOT/genrl-swarm/recipes/rgym/rg-swarm.yaml" "$ROOT/configs/rg-swarm.yaml"
+    cp "$ROOT/rgym_exp/config/rg-swarm.yaml" "$ROOT/configs/rg-swarm.yaml"
 fi
 
 if [ -n "$DOCKER" ]; then
@@ -322,29 +300,29 @@ if [ -n "${HF_TOKEN}" ]; then # Check if HF_TOKEN is already set and use if so. 
     HUGGINGFACE_ACCESS_TOKEN=${HF_TOKEN}
 else
     echo -en $GREEN_TEXT
-    read -p ">> Хотите ли вы перенести модели, которых вы обучаете в RL-рое, в Hugging Face Hub? [y/N] " yn
+    read -p ">> Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N] " yn
     echo -en $RESET_TEXT
     yn=${yn:-N} # Default to "N" if the user presses Enter
     case $yn in
-        [Yy]*) read -p "Введите свой токен доступа Hugging Face: " HUGGINGFACE_ACCESS_TOKEN ;;
+        [Yy]*) read -p "Enter your Hugging Face access token: " HUGGINGFACE_ACCESS_TOKEN ;;
         [Nn]*) HUGGINGFACE_ACCESS_TOKEN="None" ;;
-        *) echo ">>> Ответ не был дан, поэтому НИ ОДНА модель не будет отправлена ​​в Hugging Face Hub." && HUGGINGFACE_ACCESS_TOKEN="None" ;;
+        *) echo ">>> No answer was given, so NO models will be pushed to Hugging Face Hub" && HUGGINGFACE_ACCESS_TOKEN="None" ;;
     esac
 fi
 
 echo -en $GREEN_TEXT
-read -p ">> Введите имя модели, которую вы хотите использовать, в формате huggingface repo/name или нажмите [Enter], чтобы использовать модель по умолчанию. " MODEL_NAME
+read -p ">> Enter the name of the model you want to use in huggingface repo/name format, or press [Enter] to use the default model. " MODEL_NAME
 echo -en $RESET_TEXT
 
 # Only export MODEL_NAME if user provided a non-empty value
 if [ -n "$MODEL_NAME" ]; then
     export MODEL_NAME
-    echo_green ">> Использование модели: $MODEL_NAME"
+    echo_green ">> Using model: $MODEL_NAME"
 else
-    echo_green ">> Использование модели по умолчанию из конфигурации"
+    echo_green ">> Using default model from config"
 fi
 
-echo_green ">> Удачи в рое!"
+echo_green ">> Good luck in the swarm!"
 # end official script part
 
 # делаем скрипт для будущего systemd сервиса
@@ -380,14 +358,14 @@ cd modal-login
 yarn start >> "$ROOT/logs/yarn.log" 2>&1 & # Run in background and log output
 
 cd ..
-python "$ROOT/genrl-swarm/src/genrl_swarm/runner/swarm_launcher.py" \
-    --config-path "$ROOT/configs" \
+python -m rgym_exp.runner.swarm_launcher \
+    --config-path "$ROOT/rgym_exp/config" \
     --config-name "rg-swarm.yaml"
 
 wait
 EOF
 chmod +x "$OUTPUT_SCRIPT"
-echo -e "${YELLOW}Скрипт для systemd сервиса создан: $OUTPUT_SCRIPT${NC}"
+echo "Скрипт для systemd сервиса создан: $OUTPUT_SCRIPT"
 
 # создаем сам сервис в системе
 SERVICE_NAME="gensyn.service"
@@ -435,5 +413,5 @@ sudo systemctl start gensyn.service
 sleep 10
 [ -f "$ROOT/swarm.pem" ] && cp "$ROOT/swarm.pem" "/root/swarm.pem.backup"
 
-echo -e "${GREEN}Обновление завершено!${NC}"
-echo -e "${GREEN}Логи :${NC} tail -n 20 -f $ERROR_LOG_FILE"
+echo -e "${GREEN}Обновление завершено.${NC}"
+echo "Смотреть логи можно командой: tail -n 20 -f $ERROR_LOG_FILE"

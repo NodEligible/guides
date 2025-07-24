@@ -65,12 +65,13 @@ sleep 5
 
 echo -e "${YELLOW}📥 Установка Drosera CLI${NC}"
 curl -s -L https://app.drosera.io/install | bash 
+export PATH="$PATH:/root/.drosera/bin"
 echo 'export PATH="$PATH:/root/.drosera/bin"' >> /root/.profile
 
-# Робимо глобальний symlink
+# Робимо глобальні symlink-и
+ln -sf /root/.drosera/bin/drosera /usr/local/bin/drosera
 ln -sf /root/.drosera/bin/droseraup /usr/local/bin/droseraup
 ln -sf /root/.drosera/bin/drosera-operator /usr/local/bin/drosera-operator
-ln -sf /root/.drosera/bin/drosera /usr/local/bin/drosera
 
 source /root/.bashrc
 

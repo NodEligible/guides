@@ -196,3 +196,6 @@ sudo systemctl enable drosera
 sudo systemctl start drosera
 
 echo -e "${GREEN}Установка завершена!${NC}"  
+echo -e "${YELLOW}Команда для логов${NC}"
+echo "journalctl -u drosera.service -f"
+

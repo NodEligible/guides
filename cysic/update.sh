@@ -15,7 +15,6 @@ if [ $? -eq 0 ]; then
     echo -e "${GREEN}Пакеты успешно обновлены!${NC}"
 else
     echo -e "${RED}Ошибка при обновлении пакетов!${NC}"
-    exit 1
 fi
 
 echo -e "${YELLOW}Установка Docker...${NC}"

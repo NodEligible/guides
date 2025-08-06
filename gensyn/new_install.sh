@@ -267,7 +267,6 @@ echo_green ">> Ставим библиотеки с помощью pip..."
 pip install --upgrade pip &>/dev/null
 
 # echo_green ">> Installing GenRL..."
-
 pip install "trl<0.20.0"
 pip install gensyn-genrl==0.1.4
 pip install reasoning-gym>=0.1.20 # for reasoning gym env

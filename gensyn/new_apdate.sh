@@ -415,6 +415,7 @@ Restart=always
 RestartSec=5
 StandardOutput=append:$LOG_FILE
 StandardError=append:$ERROR_LOG_FILE
+LimitNOFILE=65535
 
 [Install]
 WantedBy=multi-user.target

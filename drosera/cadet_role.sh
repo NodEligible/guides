@@ -171,3 +171,7 @@ cast call 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608 \
   --rpc-url https://ethereum-hoodi-rpc.publicnode.com || true
 
 echo -e "${YELLOW}⚠️ Если результат = true → твоя Discord Cadet Role скоро обновится.${NC}"
+
+service drosera restart
+
+

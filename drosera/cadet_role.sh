@@ -19,15 +19,15 @@ if [ -z "$DISCORD_NAME" ]; then
   exit 1
 fi
 
-read -p "👉 Введи свой wallet address (0x...): " WALLET_ADDR
-if [ -z "$WALLET_ADDR" ]; then
-  echo -e "${RED}❌ Wallet address не может быть пустым!${NC}"
-  exit 1
-fi
-
 read -p "👉 Введи TRAP_ADDRESS (из dashboard): " TRAP_ADDR
 if [ -z "$TRAP_ADDR" ]; then
   echo -e "${RED}❌ Trap address не может быть пустым!${NC}"
+  exit 1
+fi
+
+read -p "👉 Введи свой wallet address (0x...): " WALLET_ADDR
+if [ -z "$WALLET_ADDR" ]; then
+  echo -e "${RED}❌ Wallet address не может быть пустым!${NC}"
   exit 1
 fi
 

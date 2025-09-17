@@ -82,7 +82,7 @@ echo -e "${YELLOW}Инициализация ловушки...${NC}"
 # Create new trap project (skip if already exists)
 if [ ! -d ~/my-drosera-trap ]; then
   mkdir -p ~/my-drosera-trap && cd ~/my-drosera-trap
-  forge init -t drosera-network/trap-foundry-template --force
+  forge init -t drosera-network/trap-foundry-template
   bun install || true
 else
   cd ~/my-drosera-trap

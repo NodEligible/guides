@@ -2,6 +2,9 @@
 
 curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 
+#Удаляем папку если есть
+rm -rf ~/my-drosera-trap
+
 set -euo pipefail
 IFS=$'\n\t'
 

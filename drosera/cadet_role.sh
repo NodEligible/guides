@@ -45,7 +45,7 @@ echo -e "${YELLOW}🚀 Drosera Trap helper — Nodes Garden / Mintair Cadet Role
 echo
 
 echo -e "${YELLOW}Установка дополнительных инструментов (если нужно)...${NC}" 
-sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get update && sudo apt-get upgrade -y &>/dev/null
 
 # --- Install Drosera ---
 if ! command -v drosera >/dev/null 2>&1; then

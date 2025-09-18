@@ -180,7 +180,6 @@ echo -e "\n✅ Время вышло!"
 # -------------------------------------------------------------
 
 # Ensure cast is available
-source ~/.bashrc || true
 export PATH="$HOME/.foundry/bin:$PATH"
 
 # Verify role

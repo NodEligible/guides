@@ -195,7 +195,7 @@ echo -e "Ответ контракта: $result"
 if [[ "$result" == "true" ]]; then
   echo -e "${GREEN}✅ Результат: $result — роль скоро обновится!${NC}"
 else
-  echo -e "${RED}❌ Результат: $result — что-то не так, проверь whitelist/Trap.sol${NC}"
+  echo -e "${RED}❌ Результат: $result — что-то не так${NC}"
 fi
   
 echo -e "${GREEN}✅ Деплой завершен!${NC}"

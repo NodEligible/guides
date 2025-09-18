@@ -8,6 +8,9 @@ RED='\033[0;31m'
 BLUE='\033[38;5;81m'
 NC='\033[0m'
 
+echo
+echo
+
 read -p "👉 Введи свой wallet address (0x...): " WALLET_ADDR
 if [ -z "$WALLET_ADDR" ]; then
   echo -e "${RED}❌ Wallet address не может быть пустым!${NC}"

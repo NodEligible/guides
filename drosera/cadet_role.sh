@@ -163,18 +163,42 @@ else
   echo -e "${RED}⏭️ Пропущен деплой (ключ не введен)${NC}"
 fi
 
+# -------------------------------------------------------------
+delay_minutes=5
+total_seconds=$((delay_minutes * 60))
+
+echo -e "\n⏳ Ожидание $delay_minutes минут..."
+
+for ((i=total_seconds; i>0; i--)); do
+    printf "\r⏱️  Осталось: %02d:%02d " $((i/60)) $((i%60))
+    sleep 1
+done
+
+echo -e "\n✅ Время вышло!"
+read -p "➡️  Нажмите Enter, чтобы продолжить..."
+
+# -------------------------------------------------------------
+
 # Ensure cast is available
 source ~/.bashrc || true
 export PATH="$HOME/.foundry/bin:$PATH"
 
 # Verify role
 echo -e "${BLUE}▶️ Проверка isResponder...${NC}"
-cast call 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608 \
+result=$(cast call 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608 \
   "isResponder(address)(bool)" \
   "$WALLET_ADDR" \
-  --rpc-url https://ethereum-hoodi-rpc.publicnode.com || true
+  --rpc-url https://ethereum-hoodi-rpc.publicnode.com 2>/dev/null || echo "false")
 
-echo -e "${YELLOW}⚠️ Если результат = true → твоя Discord Cadet Role скоро обновится.${NC}"
+echo -e "Ответ контракта: $result"
+
+if [[ "$result" == "true" ]]; then
+  echo -e "${GREEN}✅ Результат: $result — роль скоро обновится!${NC}"
+else
+  echo -e "${RED}❌ Результат: $result — что-то не так, проверь whitelist/Trap.sol${NC}"
+fi
+  
+echo -e "${GREEN}✅ Деплой завершен!${NC}"
 
 service drosera restart
 

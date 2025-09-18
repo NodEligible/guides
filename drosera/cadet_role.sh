@@ -163,6 +163,10 @@ else
   echo -e "${RED}⏭️ Пропущен деплой (ключ не введен)${NC}"
 fi
 
+# Ensure cast is available
+source ~/.bashrc || true
+export PATH="$HOME/.foundry/bin:$PATH"
+
 # Verify role
 echo -e "${BLUE}▶️ Проверка isResponder...${NC}"
 cast call 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608 \

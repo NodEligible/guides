@@ -60,7 +60,7 @@ echo -e "${YELLOW}🔧 Начинаем установку PipeCDN Node...${NC}"
 sleep 1
 
 # === 2. Оновлення системи ===
-echo -e "${YELLOW}📦 Обновление системы (Установка скрыта просто ждите)...${NC}"
+echo -e "${YELLOW}📦 Обновление системы ...${NC}"
 sudo apt update -y && sudo apt upgrade -y &>/dev/null
 
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh) &>/dev/null

@@ -229,4 +229,3 @@ fi
 
 echo -e "${GREEN}🎉 Установка завершена!${NC}"
 echo -e "${GREEN}Проверить логи:${NC} tail -f /opt/pipe/logs/stdout.log"
-echo -e "${GREEN}Проверить статус:${NC} curl http://localhost:8081/health"

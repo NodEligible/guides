@@ -110,6 +110,34 @@ HTTPS_PORT=443
 UPNP_ENABLED=false
 EOF
 
+# === Проверка GLIBC ===
+GLIBC_VER=$(ldd --version | head -n1 | awk '{print $NF}')
+if (( $(echo "$GLIBC_VER < 2.39" | bc -l) )); then
+    echo -e "${YELLOW}⚙️ Обнаружена glibc версии $GLIBC_VER — требуется 2.39.${NC}"
+    echo -e "${YELLOW}Билдим нужную версию glibc (2.39). Просто ждите...${NC}"
+
+    mkdir -p /opt/glibc-build
+    cd /opt/glibc-build
+
+    wget -q http://ftp.gnu.org/gnu/libc/glibc-2.39.tar.gz
+    tar -xf glibc-2.39.tar.gz &>/dev/null
+    mkdir glibc-2.39-build glibc-2.39-install
+    cd glibc-2.39-build
+    ../glibc-2.39/configure --prefix=/opt/glibc-build/glibc-2.39-install &>/dev/null
+    make -j$(nproc) &>/dev/null
+    make install &>/dev/null
+
+    sudo chown -R root:root /opt/glibc-build
+    chmod -R a+rx /opt/glibc-build
+
+    echo -e "${GREEN}✅ GLIBC 2.39 успешно установлена локально.${NC}"
+
+    pop_cmd="/opt/glibc-build/glibc-2.39-install/lib/ld-linux-x86-64.so.2 --library-path \"/opt/glibc-build/glibc-2.39-install/lib:/usr/lib/x86_64-linux-gnu/\" /opt/pipe/pop"
+else
+    echo -e "${GREEN}✅ GLIBC версии $GLIBC_VER уже подходит.${NC}"
+    pop_cmd="/opt/pipe/pop"
+fi
+
 # === 7. Налаштування UFW ===
 echo -e "${YELLOW}🧱 Открываем порты 80 і 443...${NC}"
 sudo ufw allow 80/tcp
@@ -127,7 +155,7 @@ Wants=network-online.target
 
 [Service]
 WorkingDirectory=/opt/pipe
-ExecStart=/bin/bash -c 'source /opt/pipe/.env && /opt/pipe/pop'
+ExecStart=/bin/bash -c 'source /opt/pipe/.env && $pop_cmd'
 Restart=always
 RestartSec=5
 StandardOutput=journal

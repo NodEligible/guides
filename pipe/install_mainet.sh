@@ -57,7 +57,19 @@ if [[ -z "$DISK_CACHE" ]]; then
 else
   echo -e "✅ Установлено пользовательское значение: ${DISK_CACHE} GB"
 fi
+
 # =====================================================================
+# echo -e "${YELLOW}🛑 Удаляем PipeCDN Node если есть...${NC}"
+sudo systemctl stop pipe &>/dev/null
+sudo systemctl disable pipe &>/dev/null
+sudo systemctl daemon-reload &>/dev/null
+
+rm -rf /opt/pipe &>/dev/null
+# Видалити прописні команди
+rm -rf /usr/local/bin/pop &>/dev/null
+rm -rf /etc/systemd/system/pipe.service &>/dev/null
+# =====================================================================
+
 echo -e "${YELLOW}🔧 Начинаем установку PipeCDN Node...${NC}"
 sleep 1
 

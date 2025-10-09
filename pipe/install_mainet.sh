@@ -15,13 +15,14 @@ if [[ $(lsb_release -is) != "Ubuntu" && $(lsb_release -is) != "Debian" ]]; then
 fi
 
 # Запрос інфи
-
+# =====================================================================
 # Автовизначення локації
 CITY=$(curl -s ipinfo.io/city)
 COUNTRY=$(curl -s ipinfo.io/country)
 DEFAULT_LOCATION="${CITY}, ${COUNTRY}"
 read -rp "➡️ Локація (Enter = ${DEFAULT_LOCATION}): " NODE_LOCATION
 NODE_LOCATION=${NODE_LOCATION:-$DEFAULT_LOCATION}
+# =====================================================================
 # Адрес кошелька
 # === Перевірка Solana wallet адреси ===
 while true; do
@@ -54,7 +55,7 @@ if [[ -z "$DISK_CACHE" ]]; then
 else
   echo -e "✅ Установлено пользовательское значение: ${DISK_CACHE} GB"
 fi
-
+# =====================================================================
 echo -e "${YELLOW}🔧 Начинаем установку PipeCDN Node...${NC}"
 sleep 1
 

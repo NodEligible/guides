@@ -139,6 +139,10 @@ echo -e "${YELLOW}🧱 Открываем порты 80 і 443...${NC}"
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 sudo ufw reload
+# Створюємо папку для логів і надаємо права
+sudo mkdir -p /opt/pipe/logs
+sudo chmod 755 /opt/pipe/logs
+
 
 # === 8. Створення systemd сервісу ===
 echo -e "${YELLOW}⚙️ Создание systemd сервиса...${NC}"
@@ -151,11 +155,12 @@ Wants=network-online.target
 
 [Service]
 WorkingDirectory=/opt/pipe
-ExecStart=/bin/bash -c 'source /opt/pipe/.env && $pop_cmd'
+EnvironmentFile=/opt/pipe/.env
+ExecStart=$pop_cmd
 Restart=always
 RestartSec=5
-StandardOutput=journal
-StandardError=journal
+StandardOutput=append:/opt/pipe/logs/stdout.log
+StandardError=append:/opt/pipe/logs/stderr.log
 LimitNOFILE=65535
 
 [Install]

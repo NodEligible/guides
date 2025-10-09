@@ -76,6 +76,14 @@ sudo mkdir -p /opt/pipe && cd /opt/pipe || exit 1
 # === 5. Завантаження останнього binary ===
 echo -e "${YELLOW}⬇️ Загрузка последнего релиза pop...${NC}"
 sudo curl -L https://pipe.network/p1-cdn/releases/latest/download/pop -o pop
+# Перевірка чи pop дійсно викачався 
+if [[ ! -f /opt/pipe/pop ]]; then
+  echo -e "${RED}❌ Ошибка: не удалось скачать бинарный файл pop.${NC}"
+  exit 1
+else
+  echo -e "${GREEN}✅ Файл pop успешно загружен!${NC}"
+fi
+
 sudo chmod +x pop
 
 # === 6. Створення .env ===

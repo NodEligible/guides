@@ -113,21 +113,25 @@ EOF
 GLIBC_VER=$(ldd --version | head -n1 | awk '{print $NF}')
 if (( $(echo "$GLIBC_VER < 2.39" | bc -l) )); then
     echo -e "${YELLOW}⚙️ Обнаружена glibc версии $GLIBC_VER — требуется 2.39.${NC}"
-    echo -e "${YELLOW}Билдим нужную версию glibc (2.39). Просто ждите...${NC}"
 
-    sudo rm -rf /opt/glibc-build
-    mkdir -p /opt/glibc-build && cd /opt/glibc-build
-    wget -q http://ftp.gnu.org/gnu/libc/glibc-2.39.tar.gz
-    tar -xf glibc-2.39.tar.gz &>/dev/null
-    mkdir glibc-2.39-build glibc-2.39-install
-    cd glibc-2.39-build
-    ../glibc-2.39/configure --prefix=/opt/glibc-build/glibc-2.39-install &>/dev/null
-    make -j$(nproc) &>/dev/null
-    make install &>/dev/null
-    sudo chown -R root:root /opt/glibc-build
-    chmod -R a+rx /opt/glibc-build
+    if [ -d "/opt/glibc-build/glibc-2.39-install" ]; then
+        echo -e "${GREEN}✅ Локальная GLIBC 2.39 уже установлена, пересборка не требуется.${NC}"
+    else
+        echo -e "${YELLOW}🧩 Билдим GLIBC 2.39 (первый раз, это может занять 10–20 минут)...${NC}"
 
-    echo -e "${GREEN}✅ GLIBC 2.39 успешно установлена локально.${NC}"
+        mkdir -p /opt/glibc-build && cd /opt/glibc-build
+        wget -q http://ftp.gnu.org/gnu/libc/glibc-2.39.tar.gz
+        tar -xf glibc-2.39.tar.gz &>/dev/null
+        mkdir glibc-2.39-build glibc-2.39-install
+        cd glibc-2.39-build
+        ../glibc-2.39/configure --prefix=/opt/glibc-build/glibc-2.39-install &>/dev/null
+        make -j$(nproc) &>/dev/null
+        make install &>/dev/null
+        sudo chown -R root:root /opt/glibc-build
+        chmod -R a+rx /opt/glibc-build
+        echo -e "${GREEN}✅ GLIBC 2.39 успешно установлена локально.${NC}"
+    fi
+
     pop_cmd="/opt/glibc-build/glibc-2.39-install/lib/ld-linux-x86-64.so.2 --library-path \"/opt/glibc-build/glibc-2.39-install/lib:/usr/lib/x86_64-linux-gnu/\" /opt/pipe/pop"
 else
     echo -e "${GREEN}✅ GLIBC версии $GLIBC_VER уже подходит.${NC}"

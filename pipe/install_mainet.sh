@@ -26,7 +26,7 @@ NODE_LOCATION=${NODE_LOCATION:-$DEFAULT_LOCATION}
 # Адрес кошелька
 # === Перевірка Solana wallet адреси ===
 while true; do
-  read -rp "➡️ Введите Solana wallet public key: " WALLET
+  read -rp "➡️ Введите Solana wallet address: " WALLET
   if [[ "$WALLET" =~ ^[1-9A-HJ-NP-Za-km-z]{32,44}$ ]]; then
     echo -e "✅ Адрес Solana правильный."
     break

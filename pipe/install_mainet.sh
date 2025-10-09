@@ -61,14 +61,16 @@ sleep 1
 
 # === 2. Оновлення системи ===
 echo -e "${YELLOW}📦 Обновление системы ...${NC}"
-sudo apt update -y && sudo apt upgrade -y &>/dev/null
+sudo apt update -y &>/dev/null
+sudo apt upgrade -y &>/dev/null
 
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/main.sh) &>/dev/null
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/ufw.sh) &>/dev/null
 sudo apt install gawk bison build-essential manpages-dev ca-certificates -y &>/dev/null
 
 # === 3. Встановлення залежностей ===
-sudo apt install -y curl lsof jq ufw &>/dev/null
+sudo apt install -y &>/dev/null
+curl lsof jq ufw &>/dev/null
 
 # === 4. Створення директорії ===
 echo -e "${YELLOW}📁 Создаем /opt/pipe ...${NC}"

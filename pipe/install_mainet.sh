@@ -20,7 +20,7 @@ fi
 CITY=$(curl -s ipinfo.io/city)
 COUNTRY=$(curl -s ipinfo.io/country)
 DEFAULT_LOCATION="${CITY}, ${COUNTRY}"
-read -rp "➡️ Локація (Enter = ${DEFAULT_LOCATION}): " NODE_LOCATION
+read -rp "➡️ Локация (Enter = ${DEFAULT_LOCATION}): " NODE_LOCATION
 NODE_LOCATION=${NODE_LOCATION:-$DEFAULT_LOCATION}
 # =====================================================================
 # Адрес кошелька

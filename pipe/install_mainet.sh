@@ -151,7 +151,8 @@ sudo chmod 755 /opt/pipe/logs
 
 
 # прописуємо шлях для команд так як вони не працюють по дефолту в ubuntu 22.04, а нода зроблена під 24.04
-source /opt/pipe/.env 2>/dev/null
+# === Додаємо глобальний wrapper для pop ===
+echo -e "${YELLOW}🔧 Добавляем глобальную команду pop (для Ubuntu 22.04)...${NC}"
 
 sudo tee /usr/local/bin/pop > /dev/null <<'EOF'
 #!/bin/bash
@@ -215,5 +216,5 @@ fi
 # curl -s http://localhost:8081/health || echo -e "${RED}❌ Не удалось подключиться к /health${NC}"
 
 echo -e "${GREEN}🎉 Установка завершена!${NC}"
-echo -e "${GREEN}Проверить логи: sudo journalctl -u pipe -f${NC}"
-echo -e "${GREEN}Проверить статус: curl http://localhost:8081/health${NC}"
+echo -e "${GREEN}Проверить логи:${NC} tail -f /opt/pipe/logs/stdout.log"
+echo -e "${GREEN}Проверить статус:${NC} curl http://localhost:8081/health"

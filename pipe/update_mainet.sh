@@ -18,26 +18,33 @@ sudo systemctl stop pipe || echo -e "${RED}⚠️ Не удалось остан
 sudo systemctl disable pipe || true
 sudo systemctl daemon-reload
 
-echo -e "${YELLOW}📦 Создание резервной копии данных ноды...${NC}"
-BACKUP_DIR="/root/pipe_backup_$(date +"%Y%m%d_%H%M%S")"
-mkdir -p "$BACKUP_DIR"
+echo -e "${YELLOW}📦 Проверка существования резервной копии данных ноды...${NC}"
+BACKUP_DIR="/root/pipe_backup"
 
-if [[ -f /opt/pipe/data/node_identity.key ]]; then
-    cp /opt/pipe/data/node_identity.key "$BACKUP_DIR/"
-    echo -e "${GREEN}✅ Файл node_identity.key сохранен в $BACKUP_DIR${NC}"
+# Проверяем, существует ли уже папка бэкапа
+if [[ -d "$BACKUP_DIR" ]]; then
+    echo -e "${GREEN}✅ Резервная копия уже существует: $BACKUP_DIR${NC}"
+    echo -e "${YELLOW}⏭ Пропускаем создание новой копии.${NC}"
 else
-    echo -e "${RED}⚠️ Файл node_identity.key не найден!${NC}"
+    echo -e "${YELLOW}📦 Создание резервной копии данных ноды...${NC}"
+    mkdir -p "$BACKUP_DIR"
+
+    if [[ -f /opt/pipe/data/node_identity.key ]]; then
+        cp /opt/pipe/data/node_identity.key "$BACKUP_DIR/"
+        echo -e "${GREEN}✅ Файл node_identity.key сохранен в $BACKUP_DIR${NC}"
+    else
+        echo -e "${RED}⚠️ Файл node_identity.key не найден!${NC}"
+    fi
+
+    if [[ -f /opt/pipe/data/node_state.json ]]; then
+        cp /opt/pipe/data/node_state.json "$BACKUP_DIR/"
+        echo -e "${GREEN}✅ Файл node_state.json сохранен в $BACKUP_DIR${NC}"
+    else
+        echo -e "${RED}⚠️ Файл node_state.json не найден!${NC}"
+    fi
+
+    echo -e "${GREEN}📁 Резервная копия создана: $BACKUP_DIR${NC}"
 fi
-
-if [[ -f /opt/pipe/data/node_state.json ]]; then
-    cp /opt/pipe/data/node_state.json "$BACKUP_DIR/"
-    echo -e "${GREEN}✅ Файл node_state.json сохранен в $BACKUP_DIR${NC}"
-else
-    echo -e "${RED}⚠️ Файл node_state.json не найден!${NC}"
-fi
-
-echo -e "${GREEN}📁 Резервная копия завершена. Каталог: $BACKUP_DIR${NC}"
-
 
 echo -e "${YELLOW}🔄 Скачиваем последнюю версию PIPE...${NC}"
 sudo curl -L https://pipe.network/p1-cdn/releases/latest/download/pop -o pop

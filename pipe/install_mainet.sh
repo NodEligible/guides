@@ -230,4 +230,4 @@ fi
 # curl -s http://localhost:8081/health || echo -e "${RED}❌ Не удалось подключиться к /health${NC}"
 
 echo -e "${GREEN}🎉 Установка завершена!${NC}"
-echo -e "${GREEN}Проверить логи:${NC} tail -f /opt/pipe/logs/stdout.log"
+echo -e "${GREEN}Проверить логи:${NC} tail -n 100 -f /opt/pipe/logs/stdout.log"

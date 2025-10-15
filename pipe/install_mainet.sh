@@ -10,6 +10,54 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
+
+echo -e "${YELLOW}🧹 Проверка и удаление старых установок ноды...${NC}"
+FOUND_OLD=false
+
+# --- Mainnet Cleanup ---
+if systemctl list-units --type=service --all | grep -q "pipe.service"; then
+  FOUND_OLD=true
+  echo -e "${YELLOW}🛑 Обнаружена старая mainnet-нода. Удаляем...${NC}"
+  sudo systemctl stop pipe 2>/dev/null
+  sudo systemctl disable pipe 2>/dev/null
+  sudo systemctl daemon-reload 2>/dev/null
+  sudo rm -f /etc/systemd/system/pipe.service
+  sudo rm -rf /opt/pipe
+  sudo rm -f /usr/local/bin/pop
+  echo -e "${GREEN}✅ Старая mainnet-нода успешно удалена.${NC}"
+fi
+
+# --- Testnet Cleanup ---
+if systemctl list-units --type=service --all | grep -q "popcache.service"; then
+  FOUND_OLD=true
+  echo -e "${YELLOW}🛑 Обнаружена старая testnet-нода. Удаляем...${NC}"
+  sudo systemctl stop popcache.service 2>/dev/null
+  sudo systemctl disable popcache.service 2>/dev/null
+  sudo systemctl daemon-reload 2>/dev/null
+  sudo rm -f /etc/systemd/system/popcache.service
+  sudo rm -rf /opt/popcache
+  echo -e "${GREEN}✅ Старая testnet-нода успешно удалена.${NC}"
+fi
+
+# --- Devnet Cleanup ---
+if systemctl list-units --type=service --all | grep -q "pop.service"; then
+  FOUND_OLD=true
+  echo -e "${YELLOW}🛑 Обнаружена старая devnet-нода. Удаляем...${NC}"
+  sudo systemctl stop pop 2>/dev/null
+  sudo systemctl disable pop 2>/dev/null
+  sudo systemctl daemon-reload 2>/dev/null
+  sudo rm -f /etc/systemd/system/pop.service
+  sudo rm -rf /opt/dcdn
+  echo -e "${GREEN}✅ Старая devnet-нода успешно удалена.${NC}"
+fi
+
+if [ "$FOUND_OLD" = false ]; then
+  echo -e "${GREEN}✅ Старых установок не обнаружено. Система чистая.${NC}"
+else
+  echo -e "${GREEN}🧽 Очистка завершена. Все старые версии ноды удалены.${NC}"
+fi
+
+
 # === 1. Перевірка ОС ===
 if [[ $(lsb_release -is) != "Ubuntu" && $(lsb_release -is) != "Debian" ]]; then
   echo -e "${RED}❌ Поддерживаются только Ubuntu 22.04+ или Debian 11+.${NC}"

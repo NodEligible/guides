@@ -173,13 +173,18 @@ sudo tee /usr/local/bin/pop > /dev/null <<'EOF'
 # === Pipe POP wrapper with GLIBC 2.39 support ===
 LD_PATH="/opt/glibc-build/glibc-2.39-install/lib"
 POP_BIN="/opt/pipe/pop"
+WORKDIR="/opt/pipe"
 
-# Завантажуємо змінні середовища
-if [ -f /opt/pipe/.env ]; then
-  source /opt/pipe/.env
+# Завантажуємо змінні середовища і експортуємо їх
+if [ -f "$WORKDIR/.env" ]; then
+  set -o allexport
+  source "$WORKDIR/.env"
+  set +o allexport
 fi
 
-exec "$LD_PATH/ld-linux-x86-64.so.2" \
+cd "$WORKDIR" || exit 1
+
+"$LD_PATH/ld-linux-x86-64.so.2" \
   --library-path "$LD_PATH:/usr/lib/x86_64-linux-gnu/" \
   "$POP_BIN" "$@"
 EOF

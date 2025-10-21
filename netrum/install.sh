@@ -152,6 +152,8 @@ fi
 
 echo -e "${GREEN}✅ Майнинг успешно активирован!${NC}"
 
+cd
+
 # === Создание systemd сервиса ===
 SERVICE_FILE="/etc/systemd/system/netrum-mining.service"
 echo -e "${YELLOW}🛠 Создаём systemd сервис для майнинга...${NC}"

@@ -116,6 +116,7 @@ Restart=always
 RestartSec=10
 StandardOutput=append:/var/log/netrum_mining.log
 StandardError=append:/var/log/netrum_mining.log
+LimitNOFILE=65535
 
 [Install]
 WantedBy=multi-user.target

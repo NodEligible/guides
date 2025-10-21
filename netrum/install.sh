@@ -8,6 +8,7 @@
 YELLOW='\033[0;33m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
+CYAN='\033[0;36m'
 NC='\033[0m'
 
 echo -e "${YELLOW}═══════════════════════════════════════════════════════${NC}"
@@ -74,41 +75,67 @@ echo -e "${YELLOW}📦 Устанавливаем npm пакеты...${NC}"
 npm install
 npm link
 
-# === Создание или импорт кошелька ===
+# === Функція контролю етапів ===
+pause_step() {
+  echo -e "${CYAN}────────────────────────────────────────────${NC}"
+  read -p "⏸️  Нажмите Enter, чтобы перейти к следующему шагу..."
+  echo -e "${CYAN}────────────────────────────────────────────${NC}"
+}
+
+# === 1️⃣ Импорт кошелька ===
 echo -e "${YELLOW}💰  Импорт существующего кошелька${NC}"
+if ! netrum-import-wallet; then
+  echo -e "${RED}❌ Ошибка при импорте кошелька.${NC}"
+  exit 1
+fi
+pause_step
 
-netrum-import-wallet
-sleep 10
+# === 2️⃣ Проверка кошелька ===
+echo -e "${YELLOW}🔍 Проверяем кошелёк${NC}"
+if ! netrum-wallet; then
+  echo -e "${RED}❌ Кошелёк не найден или повреждён.${NC}"
+  exit 1
+fi
+pause_step
 
-# Перевіраєм гаманець
-echo -e "${YELLOW}Провераем кошел${NC}"
-netrum-wallet 
-sleep 10
+# === 3️⃣ Создание Node ID ===
+echo -e "${YELLOW}🆔 Создаём Node ID${NC}"
+if ! netrum-node-id; then
+  echo -e "${RED}❌ Не удалось создать Node ID.${NC}"
+  exit 1
+fi
+pause_step
 
-# Створюємо id файл
-echo -e "${YELLOW}Создаем Node ID${NC}"
-netrum-node-id
-sleep 10
+# === 4️⃣ Подпись узла ===
+echo -e "${YELLOW}✍️  Подписываем сообщение ключом узла${NC}"
+if ! netrum-node-sign; then
+  echo -e "${RED}❌ Ошибка при подписи узла.${NC}"
+  exit 1
+fi
+pause_step
 
-# Підписати повідомлення ключем вузла
-echo -e "${YELLOW}Ставим подпись${NC}"
-netrum-node-sign
-sleep 15
-
-# === Регистрация ноды ===
+# === 5️⃣ Регистрация ноды ===
 echo -e "${YELLOW}🌐 Регистрируем ноду в сети (нужно немного BASE для газа)...${NC}"
-netrum-node-register
-sleep sleep 15
+if ! netrum-node-register; then
+  echo -e "${RED}❌ Ошибка при регистрации ноды.${NC}"
+  exit 1
+fi
+pause_step
 
-# Запускаєм синхронізацію
-echo -e "${YELLOW}Запускаем синк${NC}"
-netrum-sync
-sleep 20
+# === 6️⃣ Запуск синхронизации ===
+echo -e "${YELLOW}🔄 Запускаем синхронизацию${NC}"
+if ! netrum-sync; then
+  echo -e "${RED}❌ Ошибка при запуске синхронизации.${NC}"
+  exit 1
+fi
+pause_step
 
-# Запускаєм майнінг
-echo -e "${YELLOW}Запускаем майнинг${NC}"
-netrum-mining
-sleep 20
+# === 7️⃣ Запуск майнинга ===
+echo -e "${YELLOW}⛏️  Запускаем майнинг${NC}"
+if ! netrum-mining; then
+  echo -e "${RED}❌ Ошибка при запуске майнинга.${NC}"
+  exit 1
+fi
 
 # === Создание systemd сервиса ===
 SERVICE_FILE="/etc/systemd/system/netrum-mining.service"

@@ -79,6 +79,9 @@ fi
 echo -e "${YELLOW}🌐 Регистрируем ноду в сети (нужно немного BASE для газа)...${NC}"
 netrum-node-register
 
+
+exit 1
+
 # === Создание systemd сервиса ===
 SERVICE_FILE="/etc/systemd/system/netrum.service"
 echo -e "${YELLOW}🛠 Создаём systemd сервис...${NC}"

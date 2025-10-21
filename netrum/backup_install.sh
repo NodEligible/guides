@@ -99,7 +99,6 @@ sleep 3
 
 cd
 
-echo -e "${YELLOW}Создание systemd netrum-mining:${NC}"
 # === Создание systemd сервиса ===
 SERVICE_FILE="/etc/systemd/system/netrum-mining.service"
 echo -e "${YELLOW}🛠 Создаём systemd сервис для майнинга...${NC}"

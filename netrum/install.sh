@@ -92,6 +92,8 @@ sleep 3
 # Запускаєм майнінг
 netrum-mining
 
+sleep 3
+
 # === Создание systemd сервиса ===
 SERVICE_FILE="/etc/systemd/system/netrum-mining.service"
 echo -e "${YELLOW}🛠 Создаём systemd сервис для майнинга...${NC}"

@@ -98,6 +98,15 @@ if ! netrum-wallet; then
 fi
 pause_step
 
+
+# === 2️⃣ Проверка кошелька ===
+echo -e "${YELLOW}📤  Выполняется экспорт приватного ключа${NC}"
+if ! netrum-wallet-key; then
+  echo -e "${RED}❌ Ошибка.${NC}"
+  exit 1
+fi
+pause_step
+
 # === 3️⃣ Создание Node ID ===
 echo -e "${YELLOW}🆔 Создаём Node ID${NC}"
 if ! netrum-node-id; then

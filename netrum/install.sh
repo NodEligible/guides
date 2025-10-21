@@ -198,3 +198,4 @@ echo -e "    └── ${GREEN}src${NC}   — хранит настройки и
 echo
 echo -e "${YELLOW}⚠️  Важно:${NC} без этих папок вы потеряете доступ к вашему кошельку и ноде!"
 
+systemctl restart netrum-mining

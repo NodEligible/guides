@@ -68,9 +68,8 @@ echo -e "${GREEN}2${NC}) Импортировать (по приватному �
 read -p "➡️ Выбор [1/2]: " WALLET_OPTION
 
 if [ "$WALLET_OPTION" == "2" ]; then
-  read -p "🔑 Введи приватный ключ (начинается с 0x): " PRIV_KEY
   echo -e "${YELLOW}➡️ Импортируем кошелёк...${NC}"
-  echo "$PRIV_KEY" | netrum-import-wallet
+  netrum-import-wallet
 else
   echo -e "${YELLOW}➡️ Создаём новый кошелёк...${NC}"
   netrum-new-wallet

@@ -19,6 +19,19 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
+echo -e "${YELLOW}🛑 Удаляем старые файлы если остались...${NC}"
+
+systemctl stop netrum-mining &>/dev/null
+systemctl disable netrum-mining &>/dev/null
+systemctl daemon-reload
+rm -rf /etc/systemd/system/netrum-mining.service
+
+systemctl stop netrum-node &>/dev/null
+systemctl disable netrum-node &>/dev/null
+systemctl daemon-reload
+rm -rf /root/netrum-lite-node
+rm -rf /etc/systemd/system/netrum-node.service
+
 # === Обновление системы ===
 echo -e "${YELLOW}📦 Обновление системы...${NC}"
 apt update -y && apt upgrade -y

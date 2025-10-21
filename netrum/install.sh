@@ -169,3 +169,15 @@ echo -e "${YELLOW}────────────────────�
 echo -e "${GREEN}📄 Логи синка:${NC} journalctl -fu netrum-node.service"
 echo -e "${GREEN}📄 Логи майнера:${NC} tail -n 10 /var/log/netrum_mining.log"
 echo -e "${YELLOW}──────────────────────────────────────────────${NC}"
+
+echo -e "${YELLOW}──────────────────────${NC}"
+echo -e "${GREEN}📦  Делаем бекап${NC}"
+echo -e "${YELLOW}──────────────────────${NC}"
+echo
+echo -e "${YELLOW}📁  Сохраните две эти папки:${NC}"
+echo -e "    ${CYAN}/root/netrum-lite-node/${NC}"
+echo -e "    ├── ${GREEN}data${NC}  — содержит ваш кошелёк и ключи ноды"
+echo -e "    └── ${GREEN}src${NC}   — хранит настройки и идентификатор узла"
+echo
+echo -e "${YELLOW}⚠️  Важно:${NC} без этих папок вы потеряете доступ к вашему кошельку и ноде!"
+

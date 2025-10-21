@@ -94,21 +94,21 @@ netrum-mining
 exit 1
 
 # === Создание systemd сервиса ===
-SERVICE_FILE="/etc/systemd/system/netrum.service"
-echo -e "${YELLOW}🛠 Создаём systemd сервис...${NC}"
+SERVICE_FILE="/etc/systemd/system/netrum-mining.service"
+echo -e "${YELLOW}🛠 Создаём systemd сервис для майнинга...${NC}"
 cat <<EOF > $SERVICE_FILE
 [Unit]
-Description=Netrum Lite Node CLI
+Description=Netrum Lite Node - Mining Service
 After=network.target
 
 [Service]
 User=root
-WorkingDirectory=/opt/netrum-lite-node
-ExecStart=/usr/bin/netrum-mining
+WorkingDirectory=/root/netrum-lite-node
+ExecStart=/usr/bin/node /root/netrum-lite-node/src/system/mining/live-log.js
 Restart=always
 RestartSec=10
-StandardOutput=append:/var/log/netrum.log
-StandardError=append:/var/log/netrum.log
+StandardOutput=append:/var/log/netrum_mining.log
+StandardError=append:/var/log/netrum_mining.log
 
 [Install]
 WantedBy=multi-user.target
@@ -116,8 +116,8 @@ EOF
 
 # === Активация сервиса ===
 systemctl daemon-reload
-systemctl enable netrum
-systemctl start netrum
+systemctl enable netrum-mining
+systemctl start netrum-mining
 
 echo -e "${GREEN}✅ Установка и запуск Netrum Lite Node завершены!${NC}"
 echo -e "${YELLOW}──────────────────────────────────────────────${NC}"

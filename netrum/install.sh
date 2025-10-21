@@ -98,11 +98,10 @@ if ! netrum-wallet; then
 fi
 pause_step
 
-
-# === Проверка кошелька ===
-echo -e "${YELLOW}📤  Выполняется экспорт приватного ключа${NC}"
-if ! netrum-wallet-key; then
-  echo -e "${RED}❌ Ошибка.${NC}"
+# === Проверка Base-домена ===
+echo -e "${YELLOW}🌐  Проверяем Base-домен (.base)${NC}"
+if ! netrum-check-basename; then
+  echo -e "${RED}❌ Ошибка при проверке Base-домена.${NC}"
   exit 1
 fi
 pause_step

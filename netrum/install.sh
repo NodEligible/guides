@@ -78,25 +78,37 @@ npm link
 echo -e "${YELLOW}💰  Импорт существующего кошелька${NC}"
 
 netrum-import-wallet
+sleep 10
 
-sleep 3
+# Перевіраєм гаманець
+echo -e "${YELLOW}Провераем кошел${NC}"
+netrum-wallet 
+sleep 10
+
 # Створюємо id файл
+echo -e "${YELLOW}Создаем Node ID${NC}"
 netrum-node-id
-sleep 3
+sleep 10
+
 # Підписати повідомлення ключем вузла
+echo -e "${YELLOW}Ставим подпись${NC}"
 netrum-node-sign
-sleep 3
+sleep 15
+
 # === Регистрация ноды ===
 echo -e "${YELLOW}🌐 Регистрируем ноду в сети (нужно немного BASE для газа)...${NC}"
 netrum-node-register
+sleep sleep 15
 
 # Запускаєм синхронізацію
+echo -e "${YELLOW}Запускаем синк${NC}"
 netrum-sync
-sleep 3
-# Запускаєм майнінг
-netrum-mining
+sleep 20
 
-sleep 3
+# Запускаєм майнінг
+echo -e "${YELLOW}Запускаем майнинг${NC}"
+netrum-mining
+sleep 20
 
 # === Создание systemd сервиса ===
 SERVICE_FILE="/etc/systemd/system/netrum-mining.service"
@@ -127,8 +139,6 @@ systemctl start netrum-mining
 
 echo -e "${GREEN}✅ Установка и запуск Netrum Lite Node завершены!${NC}"
 echo -e "${YELLOW}──────────────────────────────────────────────${NC}"
-echo -e "${GREEN}📍 Проверить статус:${NC}  systemctl status netrum"
-echo -e "${GREEN}📄 Логи:${NC}          tail -f /var/log/netrum.log"
-echo -e "${GREEN}💰 Клейм наград:${NC}  netrum-claim"
-echo -e "${GREEN}🧩 Инфо о кошельке:${NC} netrum-wallet"
+echo -e "${GREEN}📄 Логи синка:${NC} journalctl -fu netrum-node.service"
+echo -e "${GREEN}📄 Логи майнера:${NC} tail -n 10 /var/log/netrum_mining.log"
 echo -e "${YELLOW}──────────────────────────────────────────────${NC}"

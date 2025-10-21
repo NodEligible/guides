@@ -1,8 +1,6 @@
 #!/bin/bash
-# ==========================================
-# 🚀 Установка Netrum Lite Node CLI (v1.0)
-# by NodEligible
-# ==========================================
+
+curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/display_logo.sh | bash
 
 # === Цвета ===
 YELLOW='\033[0;33m'
@@ -11,7 +9,7 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 echo -e "${YELLOW}═══════════════════════════════════════════════════════${NC}"
-echo -e "${GREEN}     🚀 Установка Netrum Lite Node CLI (v2.0.0)${NC}"
+echo -e "${GREEN}     🚀 Востановление Netrum Lite Node CLI (v2.0.0)${NC}"
 echo -e "${YELLOW}═══════════════════════════════════════════════════════${NC}"
 sleep 1
 
@@ -61,41 +59,30 @@ echo -e "${YELLOW}📦 Устанавливаем npm пакеты...${NC}"
 npm install
 npm link
 
-echo -e "${YELLOW}Дале закиньте файлы бекапа в...${NC}"
-
-
-
+echo -e "${YELLOW}────────────────────────────────────────────────────────────${NC}"
+echo -e "${GREEN}📦  Этап восстановления Netrum Lite Node из резервной копии${NC}"
+echo -e "${YELLOW}────────────────────────────────────────────────────────────${NC}"
+echo
+echo -e "${YELLOW}1️⃣  Загрузите файлы вашего бэкапа в каталог:${NC}"
+echo -e "    ${CYAN}/root/netrum-lite-node/${NC}"
+echo
+echo -e "${YELLOW}2️⃣  Удалите папки, которые были созданы при установке:${NC}"
+echo -e "    ${RED}data${NC}  и  ${RED}src${NC}"
+echo
+echo -e "${YELLOW}3️⃣  Скопируйте свои папки из бэкапа на их место:${NC}"
+echo -e "    ${GREEN}/root/netrum-lite-node/data${NC}"
+echo -e "    ${GREEN}/root/netrum-lite-node/src${NC}"
+echo
+echo -e "${YELLOW}⚠️  ВАЖНО:${NC}"
+echo -e "   - Структура каталогов должна оставаться такой же, как в бэкапе."
+echo -e "   - Не изменяйте имена папок и файлов внутри data и src."
+echo -e "   - После копирования проверьте права доступа:"
 
 read -p "➡️  Нажмите Enter, чтобы продолжить..."
 
-
-
-
-
-
-
-
-
-
-
-
-# Тут створити таймер і попередження якщо створюєте новий кош то тре закинути туди ефір в бейсі на 6$  --  Поки скіп
-sleep 3
-# Створюємо id файл
-netrum-node-id
-sleep 3
-# Підписати повідомлення ключем вузла
-netrum-node-sign
-sleep 3
-# === Регистрация ноды ===
-echo -e "${YELLOW}🌐 Регистрируем ноду в сети (нужно немного BASE для газа)...${NC}"
-netrum-node-register
-
-# Запускаєм синхронізацію
+# пускаєм синхронізацію
 netrum-sync
 sleep 3
-# Запускаєм майнінг
-netrum-mining
 
 # === Создание systemd сервиса ===
 SERVICE_FILE="/etc/systemd/system/netrum-mining.service"
@@ -125,8 +112,6 @@ systemctl start netrum-mining
 
 echo -e "${GREEN}✅ Установка и запуск Netrum Lite Node завершены!${NC}"
 echo -e "${YELLOW}──────────────────────────────────────────────${NC}"
-echo -e "${GREEN}📍 Проверить статус:${NC}  systemctl status netrum"
-echo -e "${GREEN}📄 Логи:${NC}          tail -f /var/log/netrum.log"
-echo -e "${GREEN}💰 Клейм наград:${NC}  netrum-claim"
-echo -e "${GREEN}🧩 Инфо о кошельке:${NC} netrum-wallet"
+echo -e "${GREEN}📄 Логи синка:${NC} journalctl -fu netrum-node.service"
+echo -e "${GREEN}📄 Логи майнера:${NC} tail -n 10 /var/log/netrum_mining.log"
 echo -e "${YELLOW}──────────────────────────────────────────────${NC}"

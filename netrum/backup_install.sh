@@ -41,20 +41,8 @@ echo -e "${YELLOW}🔧 Установка необходимых пакетов.
 apt install -y curl bc jq speedtest-cli ufw git
 
 # === Установка Node.js v20 ===
-echo -e "${YELLOW}🧩 Проверка версии Node.js...${NC}"
-if ! command -v node >/dev/null 2>&1; then
-  echo -e "${RED}Node.js не найден. Устанавливаем v20...${NC}"
-  curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-  apt install -y nodejs
-else
-  NODE_VER=$(node -v | sed 's/v//')
-  NODE_MAJOR=$(echo "$NODE_VER" | cut -d. -f1)
-  if [ "$NODE_MAJOR" -lt 20 ]; then
-    echo -e "${YELLOW}🔁 Обновляем Node.js до v20...${NC}"
-    curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-    apt install -y nodejs
-  fi
-fi
+echo -e "${YELLOW}🧩 Установка Node.js...${NC}"
+bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/nodejs.sh)
 
 # === Клонирование репозитория ===
 cd /root

@@ -19,6 +19,7 @@ echo -e "${YELLOW}────────────────────�
 echo
 echo -e "${YELLOW}📁  Сохраните следующую папку${NC} data ${YELLOW}и отдельно файлы з папки${NC} src:"
 echo -e "    ${CYAN}/root/netrum-lite-node/data${NC}                    — данные ноды (включает базу и ключи)"
+echo
 echo -e "    ${CYAN}/root/netrum-lite-node/src/wallet/key.txt${NC}       — приватный ключ вашего кошелька"
 echo -e "    ${CYAN}/root/netrum-lite-node/src/identity/node-id/basename.txt${NC} — имя идентификатора ноды"
 echo -e "    ${CYAN}/root/netrum-lite-node/src/identity/node-id/id.txt${NC}       — уникальный ID вашей ноды"

@@ -12,7 +12,7 @@ CYAN='\033[0;36m'
 NC='\033[0m'
 
 echo -e "${YELLOW}═══════════════════════════════════════════════════════${NC}"
-echo -e "${GREEN}     🚀 Установка Netrum Lite Node CLI (v2.0.0)${NC}"
+echo -e "${GREEN}     🚀 Установка Netrum Lite Node CLI${NC}"
 echo -e "${YELLOW}═══════════════════════════════════════════════════════${NC}"
 sleep 1
 

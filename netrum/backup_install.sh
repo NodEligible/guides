@@ -70,8 +70,9 @@ echo
 echo -e "${YELLOW}2️⃣  Удалите папку data если она создалась при установке:${NC}"
 echo -e "    ${RED}data${NC}"
 echo
-echo -e "${YELLOW}3️⃣  Скопируйте свою папку и файлы из бэкапа обратно в папку src:${NC}"
+echo -e "${YELLOW}3️⃣  Скопируйте свою папку${NC} data ${YELLOW}и файлы из бэкапа обратно в папку${NC} src:"
 echo -e "    ${GREEN}/root/netrum-lite-node/data${NC}"
+echo
 echo -e "    ${GREEN}/root/netrum-lite-node/src/wallet/key.txt${NC}"
 echo -e "    ${GREEN}/root/netrum-lite-node/src/identity/node-id/basename.txt${NC}"
 echo -e "    ${GREEN}/root/netrum-lite-node/src/identity/node-id/id.txt${NC}"

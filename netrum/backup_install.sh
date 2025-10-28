@@ -67,12 +67,14 @@ echo
 echo -e "${YELLOW}1️⃣  Загрузите файлы вашего бэкапа в каталог:${NC}"
 echo -e "    ${CYAN}/root/netrum-lite-node/${NC}"
 echo
-echo -e "${YELLOW}2️⃣  Удалите папки, которые были созданы при установке:${NC}"
-echo -e "    ${RED}data${NC}  и  ${RED}src${NC}"
+echo -e "${YELLOW}2️⃣  Удалите папку data если она создалась при установке:${NC}"
+echo -e "    ${RED}data${NC}"
 echo
-echo -e "${YELLOW}3️⃣  Скопируйте свои папки из бэкапа на их место:${NC}"
+echo -e "${YELLOW}3️⃣  Скопируйте свою папку и файлы из бэкапа обратно:${NC}"
 echo -e "    ${GREEN}/root/netrum-lite-node/data${NC}"
-echo -e "    ${GREEN}/root/netrum-lite-node/src${NC}"
+echo -e "    ${GREEN}/root/netrum-lite-node/src/wallet/key.txt${NC}"
+echo -e "    ${GREEN}/root/netrum-lite-node/src/identity/node-id/basename.txt${NC}"
+echo -e "    ${GREEN}/root/netrum-lite-node/src/identity/node-id/id.txt${NC}"
 echo
 echo -e "${YELLOW}⚠️  ВАЖНО:${NC}"
 echo -e "   - Структура каталогов должна оставаться такой же, как в бэкапе."

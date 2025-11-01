@@ -19,21 +19,24 @@ NODE_DIR="/root/netrum-lite-node"
 echo -e "${YELLOW}📦 Проверка наличия папки бэкапа...${NC}"
 
 if [ -d "$BACKUP_DIR" ]; then
-  echo -e "${RED}⚠️ Папка ${BACKUP_DIR} уже существует. Удалите её или переименуйте перед созданием нового бэкапа.${NC}"
-  exit 1
+  echo -e "${GREEN}✅ Папка ${BACKUP_DIR} уже существует — повторное создание не требуется.${NC}"
+  echo -e "${YELLOW}ℹ️  Используется существующий бэкап. Пропускаю этап создания.${NC}"
+else
+  echo -e "${YELLOW}🗂️  Папка бэкапа не найдена. Создаю новую...${NC}"
+  mkdir -p "$BACKUP_DIR"
+
+  echo -e "${YELLOW}📁  Копирую важные файлы...${NC}"
+  cp -r "$NODE_DIR/data" "$BACKUP_DIR/" 2>/dev/null
+  cp "$NODE_DIR/src/wallet/key.txt" "$BACKUP_DIR/" 2>/dev/null
+  cp "$NODE_DIR/src/identity/node-id/basename.txt" "$BACKUP_DIR/" 2>/dev/null
+  cp "$NODE_DIR/src/identity/node-id/id.txt" "$BACKUP_DIR/" 2>/dev/null
+
+  echo -e "${GREEN}✅  Бэкап успешно создан в ${BACKUP_DIR}${NC}"
 fi
 
-echo -e "${YELLOW}🗂️ Создаю папку бэкапа...${NC}"
-mkdir -p "$BACKUP_DIR"
 
-echo -e "${YELLOW}📁 Копирую важные файлы...${NC}"
-cp -r "$NODE_DIR/data" "$BACKUP_DIR/" 2>/dev/null
-cp "$NODE_DIR/src/wallet/key.txt" "$BACKUP_DIR/" 2>/dev/null
-cp "$NODE_DIR/src/identity/node-id/basename.txt" "$BACKUP_DIR/" 2>/dev/null
-cp "$NODE_DIR/src/identity/node-id/id.txt" "$BACKUP_DIR/" 2>/dev/null
-
-echo -e "${GREEN}✅ Бэкап успешно создан в ${BACKUP_DIR}${NC}"
 sleep 3
+
 echo -e "${YELLOW}🛑 Удаляем старые файлы если остались...${NC}"
 
 systemctl stop netrum-mining &>/dev/null

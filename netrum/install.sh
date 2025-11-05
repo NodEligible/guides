@@ -256,8 +256,8 @@ WorkingDirectory=/root/netrum-lite-node
 ExecStart=/usr/bin/node /root/netrum-lite-node/src/system/mining/live-log.js
 Restart=always
 RestartSec=10
-StandardOutput=append:/root/netrum-lite-node/logs/netrum_mining.log
-StandardError=append:/root/netrum-lite-node/logs/netrum_mining.log
+StandardOutput=append:/var/log/netrum_mining.log
+StandardError=append:/var/log/netrum_mining.log
 LimitNOFILE=65535
 
 [Install]
@@ -272,7 +272,7 @@ systemctl start netrum-mining
 echo -e "${GREEN}✅ Установка и запуск Netrum Lite Node завершены!${NC}"
 echo -e "${YELLOW}──────────────────────────────────────────────${NC}"
 echo -e "${GREEN}📄 Логи синка:${NC} tail -n 50 -f /root/netrum-lite-node/logs/netrum_node.log"
-echo -e "${GREEN}📄 Логи майнера:${NC} tail -n 50 -f /root/netrum-lite-node/logs/netrum_mining.log"
+echo -e "${GREEN}📄 Логи майнера:${NC} tail -n 10 /var/log/netrum_mining.log"
 echo -e "${GREEN}📄 Логи Тасков:${NC} tail -n 50 -f /root/netrum-lite-node/logs/netrum_task.log"
 echo -e "${YELLOW}──────────────────────────────────────────────${NC}"
 

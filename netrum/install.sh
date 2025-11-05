@@ -138,6 +138,8 @@ npm link
 
 # Даємо права на виконання
 chmod +x /usr/bin/netrum*
+chmod -R +x /usr/local/bin/netrum* 2>/dev/null || true
+chmod -R +x /usr/local/lib/node_modules/netrum-cli-v2/cli/* 2>/dev/null || true
 
 # === Функція контролю етапів ===
 pause_step() {

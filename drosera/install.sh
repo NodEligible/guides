@@ -195,7 +195,7 @@ EOF"
 
 sudo systemctl daemon-reload
 sudo systemctl enable drosera   
-sudo systemctl start drosera
+sudo systemctl restart drosera
 
 echo -e "${GREEN}Установка завершена!${NC}"  
 echo -e "${YELLOW}Посмотреть логи${NC}"

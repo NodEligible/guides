@@ -73,7 +73,7 @@ apt update -y && apt upgrade -y curl
 # apt install -y curl bc jq speedtest-cli ufw git
 
 # === Установка Node.js v20 ===
-echo -e "${YELLOW}🧩 Установка Node.js...${NC}"
+echo -e "${YELLOW}🧩 Установка Node.js (Скрыта)...${NC}"
 bash <(curl -s https://raw.githubusercontent.com/NodEligible/programs/refs/heads/main/nodejs.sh)
 
 echo -e "${YELLOW}🔧 Установка Нового Ookla...${NC}"

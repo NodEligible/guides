@@ -430,4 +430,4 @@ sleep 10
 [ -f "$ROOT/swarm.pem" ] && cp "$ROOT/swarm.pem" "/root/swarm.pem.backup"
 
 echo -e "${GREEN}Обновление завершено.${NC}"
-echo "Смотреть логи можно командой: tail -n 20 -f $ERROR_LOG_FILE"
+echo "Смотреть логи можно командой: tail -n 100 -f $ERROR_LOG_FILE"

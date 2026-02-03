@@ -135,8 +135,9 @@ npm install
 npm link
 
 # Даємо права на виконання
-chmod +x /usr/bin/netrum* 2>/dev/null || true
+chmod +x /usr/bin/netrum*
 chmod -R +x /usr/local/bin/netrum* 2>/dev/null || true
+chmod -R +x /usr/local/lib/node_modules/netrum-cli-v2/cli/* 2>/dev/null || true
 
 sleep 3
 
@@ -188,6 +189,7 @@ sleep 3
 
 # пускаєм синхронізацію
 netrum-sync
+
 sleep 3
 
 # === Активация майнинга ===

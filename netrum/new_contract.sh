@@ -135,12 +135,8 @@ npm install
 npm link
 
 # Даємо права на виконання
-
-chmod +x /usr/bin/netrum*
+chmod +x /usr/bin/netrum* 2>/dev/null || true
 chmod -R +x /usr/local/bin/netrum* 2>/dev/null || true
-chmod -R +x /usr/local/lib/node_modules/netrum-cli-v2/cli/* 2>/dev/null || true
-# Всі npm-bin symlink-и
-chmod -h +x /root/.nvm/versions/node/v24.10.0/bin/netrum*
 
 sleep 3
 

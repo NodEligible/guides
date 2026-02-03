@@ -234,6 +234,10 @@ systemctl daemon-reload
 systemctl enable netrum-mining
 systemctl start netrum-mining
 
+sleep 3
+
+systemctl restart netrum-task
+
 echo -e "${GREEN}✅ Обновление Netrum под новый контракт завершено!${NC}"
 echo -e "${YELLOW}──────────────────────────────────────────────${NC}"
 echo -e "${GREEN}📄 Логи синка:${NC} tail -n 50 -f /root/netrum-lite-node/logs/netrum_node.log"
